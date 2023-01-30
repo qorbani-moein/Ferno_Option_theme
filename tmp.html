@@ -1,0 +1,79 @@
+
+script
+addEventListener(load, (event) = {
+   Get the product count
+  var cart_product_count = document.getElementsByClassName(
+    bdt-wc-product-inner
+  ).length;
+   Create HTML markup for the product quantity
+  var quantity = `
+      style
+          .quantity_cart{
+              width 30%;
+              color yellow;
+              position absolute;
+              background #2c2c2c;
+              left 0px;
+              top 0;
+              display flex;
+              flex-wrap nowrap;
+              align-content stretch;
+              justify-content space-evenly;
+              align-items center;
+              border 1px solid yellow;
+              border-radius 10px;
+          }
+          .quantity_cart input{
+              width 50% !important;
+              color yellow;
+              background #2c2c2c;
+              padding 0px;
+              text-aligncenter;
+          }
+
+          input-webkit-outer-spin-button,
+          input-webkit-inner-spin-button {
+              -webkit-appearance none;
+              margin 0;
+          }
+
+          input[type=number]focus-visible {
+
+          }
+          input[type=number] {
+              -moz-appearance textfield;
+          }
+      style
+      div class=quantity_cart
+          span+span
+          input class=number_quantity_cart type=number name=cart_quantity min=1 max=10 
+          span-span
+      div
+  `;
+   Loop through each product and add the quantity markup
+  for (var i = 0; i  cart_product_count; i++) {
+    document.getElementsByClassName(bdt-wc-product-inner)[i].innerHTML +=
+      quantity;
+  }
+});
+script
+
+
+
+
+
+
+
+script
+  function moein_click(){
+      console.log(moein_click);
+       Get the WooCommerce Cart ID
+      var cart_id = 'wc_cart_session_' + localStorage.getItem('woocommerce_cart_hash');
+       Get the item data from the cart
+      var cart_items = JSON.parse(localStorage.getItem(cart_id));
+       Decrease one item from the cart
+      cart_items[item_id]['quantity']--;
+       Update the cart
+      localStorage.setItem(cart_id, JSON.stringify(cart_items));
+  }
+script
