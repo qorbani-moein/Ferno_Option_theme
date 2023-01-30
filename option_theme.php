@@ -1,6 +1,6 @@
 <?php
 
-/**
+/*
  * Plugin Name: Option Theme - Eight
  * Description: All Option of Your Site
  * Plugin URI: https://eightco.org
@@ -8,18 +8,15 @@
  * Version: 0.1
  * Author URI: https://eightco.org
  *
- * Text Domain: eightco
  * 
- * /
-
-/*
- * Moein Added
  */
+
  
- 
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 // moein add ajax
-
 function ajax_add_to_cart(){
     
     
