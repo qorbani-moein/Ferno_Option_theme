@@ -17,22 +17,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // moein add ajax
-function ajax_add_to_cart(){
+// function ajax_add_to_cart(){
     
     
-    global $woocommerce;
+//     global $woocommerce;
     
-    $remove_url = $woocommerce->cart->get_remove_url( $cart_item_key );
-        echo '<a style="color:yellow;" href="'.$remove_url.'"class="remove-item">Remove-moein-item</a>';
-        echo '<a style="color:blue;" href="">Empty</a>';
-    foreach ( $woocommerce->cart->get_cart() as $cart_item_key => $cart_item ) {
-      if($cart_item['product_id'] == $current_package_id ){
-        $remove_url = $woocommerce->cart->get_remove_url( $cart_item_key );
-        echo '<a style="color:red" href="'.$remove_url.'class="remove-item">Remove-moein-item</a>';
-      } 
-    } 
+//     $remove_url = $woocommerce->cart->get_remove_url( $cart_item_key );
+//         echo '<a style="color:yellow;" href="'.$remove_url.'"class="remove-item">Remove-moein-item</a>';
+//         echo '<a style="color:blue;" href="">Empty</a>';
+//     foreach ( $woocommerce->cart->get_cart() as $cart_item_key => $cart_item ) {
+//       if($cart_item['product_id'] == $current_package_id ){
+//         $remove_url = $woocommerce->cart->get_remove_url( $cart_item_key );
+//         echo '<a style="color:red" href="'.$remove_url.'class="remove-item">Remove-moein-item</a>';
+//       } 
+//     } 
     
-}
+// }
 // add_action('wp_footer','ajax_add_to_cart');
 // add_action('wp_head','ajax_add_to_cart');
 // add_action('wp-footer','ajax_add_to_cart');
