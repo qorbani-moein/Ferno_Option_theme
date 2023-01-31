@@ -134,11 +134,11 @@ function script_page_cart(){
       });
       
       const click_quantity = (id) => {
-        var id_target = id;
-        if (id_target.search("plus"))
-          document.getElementById(id_target).value ++;
+        console.log(id);
+        if (id.search("plus"))
+          document.getElementById(id).value ++;
         else
-          document.getElementById(id_target).value --;
+          document.getElementById(id).value --;
         // tag_input[id_target.slice(-1)].value = document.getElementById(id_target).value;
       }
 
