@@ -106,9 +106,9 @@ function script_page_cart(){
             var len_num_product = document.getElementsByClassName("input-text").length;
             var quantity_product = `
             <div class="quantity_cart">
-                <span class="quantity_cart_plus">+</span>
-                <input class="number_quantity_cart" type="number" name="cart_quantity" min="1" max="10" />
-                <span class="quantity_cart_minus">-</span>
+                <span class="quantity_cart_plus" id="quantity_cart_plus">+</span>
+                <input class="number_quantity_cart" id="quantity_cart" type="number" name="cart_quantity" min="1" max="10" />
+                <span class="quantity_cart_minus" id="quantity_cart_minus">-</span>
             </div>
             `;
             for(var i = 0 ; i < len_num_product ; i++){
