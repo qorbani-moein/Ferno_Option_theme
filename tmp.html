@@ -65,20 +65,22 @@
         </div>
         `;
         var tag_input = document.querySelectorAll("input[type=text]");
+        console.log(tag_input.length);
+        console.log(tag_input);
         for(var i = 0 ; i <= len_num_product ; i++){
             document.getElementsByClassName("woolentor-cart-product-content")[i].innerHTML += quantity_product.split("nth").join(i);
             
             document.getElementById("quantity_cart_" + i).value = tag_input[i].value;
 
-            document.getElementById("quantity_cart_plus_" + i).onclick= function () {
-                document.getElementById("quantity_cart_" + i).value ++;
-                tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
-              }
+            // document.getElementById("quantity_cart_plus_" + i).onclick= function () {
+            //     document.getElementById("quantity_cart_" + i).value ++;
+            //     tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
+            //   }
             
-            document.getElementById("quantity_cart_minus_" + i).onclick= function () {
-              document.getElementById("quantity_cart_" + i).value --;
-              tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
-            }
+            // document.getElementById("quantity_cart_minus_" + i).onclick= function () {
+            //   document.getElementById("quantity_cart_" + i).value --;
+            //   tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
+            // }
         }
 
     });
