@@ -101,6 +101,7 @@ function script_page_cart(){
             -moz-appearance: textfield;
         }
     </style>
+    
     <script>
     addEventListener("load", (event) => {
         var len_num_product = document.getElementsByClassName("input-text").length;
@@ -137,14 +138,15 @@ function script_page_cart(){
         console.log(id);
         var id_target = id.split("_");
         id_target = id_target[id_target.length-1];
-        console.log(id_target);
+        console.log(id.search("plus"));
 
-        if (id.search("plus")){
-          document.getElementById("quantity_cart_" + id_target).value ++;}
-        else if(id.search("minus")){
-          document.getElementById("quantity_cart_" + id_target).value --;}
+        if (id.search("plus")>0)
+          document.getElementById("quantity_cart_" + id_target).value ++;
+        else
+          document.getElementById("quantity_cart_" + id_target).value --;
         // tag_input[id_target.slice(-1)].value = document.getElementById(id_target).value;
       }
+
 
     </script>
     ';
