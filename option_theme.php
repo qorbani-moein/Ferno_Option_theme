@@ -101,7 +101,7 @@ function script_page_cart(){
             -moz-appearance: textfield;
         }
     </style>
-    
+
     <script>
     addEventListener("load", (event) => {
         var len_num_product = document.getElementsByClassName("input-text").length;
@@ -143,10 +143,9 @@ function script_page_cart(){
         if (id.search("plus")>0)
           document.getElementById("quantity_cart_" + id_target).value ++;
         else
-          document.getElementById("quantity_cart_" + id_target).value --;
+          if(document.getElementById("quantity_cart_" + id_target).value >= 0) document.getElementById("quantity_cart_" + id_target).value --;
         // tag_input[id_target.slice(-1)].value = document.getElementById(id_target).value;
       }
-
 
     </script>
     ';
