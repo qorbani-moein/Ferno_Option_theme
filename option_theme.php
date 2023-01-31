@@ -112,19 +112,23 @@ function script_page_cart(){
             </div>
             `;
             for(var i = 0 ; i < len_num_product ; i++){
-            document.getElementsByClassName("woolentor-cart-product-content")[i].innerHTML += quantity_product;
+                document.getElementsByClassName("woolentor-cart-product-content")[i].innerHTML += quantity_product;
+                document.getElementsByTagName("input")[i].value = document.getElementById("quantity_cart")[i].value;
+                document.getElementsByTagName("input")[i].value = document.getElementById("quantity_cart")[i].value;
+
+                document.getElementById("quantity_cart_plus")[i].onclick= function () {
+                    document.getElementById("quantity_cart")[i].value ++;
+                    document.getElementsByTagName("input")[i].value = document.getElementById("quantity_cart")[i].value;
+                  }
+                
+                  document.getElementById("quantity_cart_minus")[i].onclick= function () {
+                    document.getElementById("quantity_cart")[i].value --;
+                    document.getElementsByTagName("input")[i].value = document.getElementById("quantity_cart")[i].value;
+                  }
             }
+
         });
         
-        document.getElementById("quantity_cart_plus").onclick= function () {
-            document.getElementById("quantity_cart").value ++;
-            document.getElementsByTagName("input")[0].value = document.getElementById("quantity_cart").value;
-          }
-        
-          document.getElementById("quantity_cart_minus").onclick= function () {
-            document.getElementById("quantity_cart").value --;
-            document.getElementsByTagName("input")[1].value = document.getElementById("quantity_cart").value;
-          }
     </script>
     ';
 }
