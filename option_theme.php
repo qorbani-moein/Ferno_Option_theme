@@ -111,22 +111,22 @@ function script_page_cart(){
                 <span class="quantity_cart_minus" id="quantity_cart_minus_nth">-</span>
             </div>
             `;
-            var tag_input = document.getElementsByTagName("input");
+            var tag_input = document.querySelectorAll('input[type=text]');
             for(var i = 0 ; i < len_num_product ; i++){
                 document.getElementsByClassName("woolentor-cart-product-content")[i].innerHTML += quantity_product.split("nth").join(i);
                 
-                document.getElementById("quantity_cart_" + i).value = tag_input[i+2].value;
-                document.getElementById("quantity_cart_" + i).value = tag_input[i+2].value;
+                document.getElementById("quantity_cart_" + i).value = tag_input[i].value;
+                document.getElementById("quantity_cart_" + i).value = tag_input[i].value;
 
 
                 document.getElementById("quantity_cart_plus_" + i).onclick= function () {
                     document.getElementById("quantity_cart_" + i).value ++;
-                    tag_input[i+2].value = document.getElementById("quantity_cart_" + i).value;
+                    tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
                 }
                 
                 document.getElementById("quantity_cart_minus_" + i).onclick= function () {
                     document.getElementById("quantity_cart_" + i).value --;
-                    tag_input[i+2].value = document.getElementById("quantity_cart_" + i).value;
+                    tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
                 }
             }
 
