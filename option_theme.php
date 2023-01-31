@@ -60,8 +60,8 @@ function script_page_cart(){
     echo '
     <style>
         .quantity_cart{
-            width: 30%;
-            color: yellow;
+            width: 25%;
+            color: #FFD15E;
             position: absolute;
             background: #2c2c2c;
             left: 0px;
@@ -71,12 +71,18 @@ function script_page_cart(){
             align-content: stretch;
             justify-content: space-evenly;
             align-items: center;
-            border: 1px solid yellow;
-            border-radius: 10px;
+            border: 1px solid #FFD15E;
+            border-radius: 50px;
+            margin-left: 20px;
+            height: 40px;
+            font-size: 20px;
+            padding: 0px 3px 5px 3px;
         }
+        .quantity_cart span{
+            color: #FFD15E;
         .quantity_cart input{
             width: 50% !important;
-            color: yellow;
+            color: white;
             background: #2c2c2c;
             padding: 0px;
             text-align:center;
