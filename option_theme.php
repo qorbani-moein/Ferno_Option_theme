@@ -119,15 +119,15 @@ function script_page_cart(){
                 
                 document.getElementById("quantity_cart_" + i).value = tag_input[i].value;
 
-                // document.getElementById("quantity_cart_plus_" + i).onclick= function () {
-                //     document.getElementById("quantity_cart_" + i).value ++;
-                //     tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
-                //   }
+                document.getElementById("quantity_cart_plus_" + i).onclick= function () {
+                    document.getElementById("quantity_cart_" + i).value ++;
+                    tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
+                  }
                 
-                // document.getElementById("quantity_cart_minus_" + i).onclick= function () {
-                //   document.getElementById("quantity_cart_" + i).value --;
-                //   tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
-                // }
+                document.getElementById("quantity_cart_minus_" + i).onclick= function () {
+                  document.getElementById("quantity_cart_" + i).value --;
+                  tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
+                }
             }
 
         });
