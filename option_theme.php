@@ -37,45 +37,78 @@ function remove_quantity(){
 
 
 
-//Enqueue Ajax Scripts
-function enqueue_cart_qty_ajax() {
-    wp_register_script( 'cart-qty-ajax-js', get_template_directory_uri() . '/js/cart-qty-ajax.js', array( 'jquery' ), '', true );
-    wp_localize_script( 'cart-qty-ajax-js', 'cart_qty_ajax', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
-    wp_enqueue_script( 'cart-qty-ajax-js' );
-}
-// add_action('wp_enqueue_scripts', 'enqueue_cart_qty_ajax');
+add_action( 'wp_footer', 'script_query_page' );
 
-function ajax_qty_cart() {
-
-    // Set item key as the hash found in input.qty's name
-    $cart_item_key = $_POST['hash'];
-
-    // Get the array of values owned by the product we're updating
-    $threeball_product_values = WC()->cart->get_cart_item( $cart_item_key );
-
-    // Get the quantity of the item in the cart
-    $threeball_product_quantity = apply_filters( 'woocommerce_stock_amount_cart_item', apply_filters( 'woocommerce_stock_amount', preg_replace( "/[^0-9\.]/", '', filter_var($_POST['quantity'], FILTER_SANITIZE_NUMBER_INT)) ), $cart_item_key );
-
-    // Update cart validation
-    $passed_validation  = apply_filters( 'woocommerce_update_cart_validation', true, $cart_item_key, $threeball_product_values, $threeball_product_quantity );
-
-    // Update the quantity of the item in the cart
-    if ( $passed_validation ) {
-        WC()->cart->set_quantity( $cart_item_key, $threeball_product_quantity, true );
-    }
-
-    // Refresh the page
-    echo do_shortcode( '[woocommerce_cart]' );
-
-    die();
-
+function script_query_page(){
+    $current_page = $_SERVER['SCRIPT_URI'];
+    $page_cart = 'https://' . $_SERVER['SERVER_NAME'] . '/cart/' ;
+    // $page_shop_en = 'https://' . $_SERVER['SERVER_NAME'] . '/en/shop/' ;
+    
+        // console("current_page: " . $current_page); 
+        // console("page_shop_en: " . substr($current_page,0,strlen($page_shop_en)));
+        // console('page_shop_fa: ' . $page_shop_fa);
+    
+    if ($current_page == $page_cart){
+        // console("single_product true");
+        script_page_cart();
+    } //elseif($current_page == substr($current_page,0,strlen($page_shop_en))){
+    //     script_page_shop_EnToFa();
+    // }
 }
 
-// add_action('wp_ajax_qty_cart', 'ajax_qty_cart');
-// add_action('wp_ajax_nopriv_qty_cart', 'ajax_qty_cart');
+function script_page_cart(){
+    echo '
+    <style>
+        .quantity_cart{
+            width: 30%;
+            color: yellow;
+            position: absolute;
+            background: #2c2c2c;
+            left: 0px;
+            top: 0;
+            display: flex;
+            flex-wrap: nowrap;
+            align-content: stretch;
+            justify-content: space-evenly;
+            align-items: center;
+            border: 1px solid yellow;
+            border-radius: 10px;
+        }
+        .quantity_cart input{
+            width: 50% !important;
+            color: yellow;
+            background: #2c2c2c;
+            padding: 0px;
+            text-align:center;
+        }
 
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
 
-
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+    <script>
+        addEventListener("load", (event) => {
+            var len_num_product = document.getElementsByClassName("input-text").length;
+            var quantity_product = `
+            <div class="quantity_cart">
+                <span class="quantity_cart_plus">+</span>
+                <input class="number_quantity_cart" type="number" name="cart_quantity" min="1" max="10" />
+                <span class="quantity_cart_minus">-</span>
+            </div>
+            `;
+            for(var i = 0 ; i < len_num_product ; i++){
+            document.getElementsByClassName("woolentor-cart-product-content")[i].innerHTML += quantity_product;
+            }
+        });
+    </script>
+    ';
+}
 
 function console($txt , $key = null){
     echo'
