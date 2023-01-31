@@ -65,7 +65,7 @@ function script_page_cart(){
             position: absolute;
             background: #2c2c2c;
             left: 0px;
-            top: 45px;
+            top: 35px;
             display: flex;
             flex-wrap: nowrap;
             align-content: stretch;
@@ -115,6 +115,16 @@ function script_page_cart(){
             document.getElementsByClassName("woolentor-cart-product-content")[i].innerHTML += quantity_product;
             }
         });
+        
+        document.getElementById("quantity_cart_plus").onclick= function () {
+            document.getElementById("quantity_cart").value ++;
+            document.getElementsByTagName("input")[0].value = document.getElementById("quantity_cart").value;
+          }
+        
+          document.getElementById("quantity_cart_minus").onclick= function () {
+            document.getElementById("quantity_cart").value --;
+            document.getElementsByTagName("input")[1].value = document.getElementById("quantity_cart").value;
+          }
     </script>
     ';
 }
