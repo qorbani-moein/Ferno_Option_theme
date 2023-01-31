@@ -80,6 +80,7 @@ function script_page_cart(){
         }
         .quantity_cart span{
             color: #FFD15E;
+        }
         .quantity_cart input{
             width: 50% !important;
             color: white;
