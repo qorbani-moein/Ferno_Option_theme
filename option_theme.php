@@ -106,28 +106,31 @@ function script_page_cart(){
             var len_num_product = document.getElementsByClassName("input-text").length;
             var quantity_product = `
             <div class="quantity_cart">
-                <span class="quantity_cart_plus" id="quantity_cart_plus">+</span>
-                <input class="number_quantity_cart" id="quantity_cart" type="number" name="cart_quantity" min="1" max="10" />
-                <span class="quantity_cart_minus" id="quantity_cart_minus">-</span>
+                <span class="quantity_cart_plus" id="quantity_cart_plus_nth">+</span>
+                <input class="number_quantity_cart" id="quantity_cart_nth" type="number" name="cart_quantity" min="1" max="10" />
+                <span class="quantity_cart_minus" id="quantity_cart_minus_nth">-</span>
             </div>
             `;
             for(var i = 0 ; i < len_num_product ; i++){
-                document.getElementsByClassName("woolentor-cart-product-content")[i].innerHTML += quantity_product;
-                document.getElementsByTagName("input")[i].value = document.getElementById("quantity_cart")[i].value;
-                document.getElementsByTagName("input")[i].value = document.getElementById("quantity_cart")[i].value;
-
-                document.getElementById("quantity_cart_plus")[i].onclick= function () {
-                    document.getElementById("quantity_cart")[i].value ++;
-                    document.getElementsByTagName("input")[i].value = document.getElementById("quantity_cart")[i].value;
-                  }
+                document.getElementsByClassName("woolentor-cart-product-content")[i].innerHTML += quantity_product.replace("nth",i);
                 
-                  document.getElementById("quantity_cart_minus")[i].onclick= function () {
-                    document.getElementById("quantity_cart")[i].value --;
-                    document.getElementsByTagName("input")[i].value = document.getElementById("quantity_cart")[i].value;
-                  }
+                document.getElementById("quantity_cart_" + i)[i].value = document.getElementsByTagName("input")[i].value;
+                document.getElementById("quantity_cart_" + i)[i].value = document.getElementsByTagName("input")[i].value;
+
+
+                document.getElementById("quantity_cart_plus_" + i).onclick= function () {
+                    document.getElementById("quantity_cart_" + i).value ++;
+                    document.getElementsByTagName("input")[i].value = document.getElementById("quantity_cart_" + i).value;
+                }
+                
+                document.getElementById("quantity_cart_minus_" + i).onclick= function () {
+                    document.getElementById("quantity_cart_" + i).value --;
+                    document.getElementsByTagName("input")[i].value = document.getElementById("quantity_cart_" + i).value;
+                }
             }
 
         });
+
         
     </script>
     ';
