@@ -139,7 +139,7 @@ function script_page_cart(){
           document.getElementById(id_target).value ++;
         else
           document.getElementById(id_target).value --;
-        tag_input[id_target.slice(-1)].value = document.getElementById(id_target).value;
+        // tag_input[id_target.slice(-1)].value = document.getElementById(id_target).value;
       }
 
     </script>
