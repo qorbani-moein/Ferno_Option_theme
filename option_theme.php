@@ -65,7 +65,7 @@ function script_page_cart(){
             position: absolute;
             background: #2c2c2c;
             left: 0px;
-            top: 0;
+            top: 45px;
             display: flex;
             flex-wrap: nowrap;
             align-content: stretch;
@@ -80,6 +80,7 @@ function script_page_cart(){
             background: #2c2c2c;
             padding: 0px;
             text-align:center;
+            border-color: #0000;
         }
 
         input::-webkit-outer-spin-button,
