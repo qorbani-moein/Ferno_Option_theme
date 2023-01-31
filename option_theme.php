@@ -120,12 +120,12 @@ function script_page_cart(){
 
                 document.getElementById("quantity_cart_plus_" + i).onclick= function () {
                     document.getElementById("quantity_cart_" + i).value ++;
-                    document.getElementsByTagName("input")[i].value = document.getElementById("quantity_cart_" + i).value;
+                    document.getElementsByTagName("input").item(i).value = document.getElementById("quantity_cart_" + i).value;
                 }
                 
                 document.getElementById("quantity_cart_minus_" + i).onclick= function () {
                     document.getElementById("quantity_cart_" + i).value --;
-                    document.getElementsByTagName("input")[i].value = document.getElementById("quantity_cart_" + i).value;
+                    document.getElementsByTagName("input").item(i).value = document.getElementById("quantity_cart_" + i).value;
                 }
             }
 
