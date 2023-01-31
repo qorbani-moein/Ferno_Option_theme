@@ -79,7 +79,7 @@ function script_page_cart(){
             padding: 0px 3px 5px 3px;
         }
         .quantity_cart span{
-            color: #FFD15E;
+            color: #FFD15E !important;
         }
         .quantity_cart input{
             width: 50% !important;
@@ -88,6 +88,7 @@ function script_page_cart(){
             padding: 0px;
             text-align:center;
             border-color: #0000;
+            padding: 2px 0px 0px 3px;
         }
 
         input::-webkit-outer-spin-button,
