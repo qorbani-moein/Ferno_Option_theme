@@ -88,10 +88,14 @@
       
       const click_quantity = (id) => {
         console.log(id);
+        var id_target = id.split("_");
+        id_target = id_target[id_target.length-1];
+        console.log(id_target);
+
         if (id.search("plus"))
-          document.getElementById(id).value ++;
+          document.getElementById("quantity_cart_" + id_target).value ++;
         else
-          document.getElementById(id).value --;
+          document.getElementById("quantity_cart_" + id_target).value --;
         // tag_input[id_target.slice(-1)].value = document.getElementById(id_target).value;
       }
 
