@@ -111,10 +111,10 @@ function script_page_cart(){
                 <span class="quantity_cart_minus" id="quantity_cart_minus_nth">-</span>
             </div>
             `;
-            var tag_input = document.querySelectorAll("input[type=text]");
+            var tag_input = document.querySelectorAll("input[type=number]");
             console.log(tag_input.length);
             console.log(tag_input);
-            for(var i = 0 ; i <= len_num_product ; i++){
+            for(var i = 0 ; i < len_num_product ; i++){
                 document.getElementsByClassName("woolentor-cart-product-content")[i].innerHTML += quantity_product.split("nth").join(i);
                 
                 document.getElementById("quantity_cart_" + i).value = tag_input[i].value;
@@ -131,6 +131,7 @@ function script_page_cart(){
             }
 
         });
+
 
     </script>
     ';
