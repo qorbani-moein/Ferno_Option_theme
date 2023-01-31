@@ -139,10 +139,10 @@ function script_page_cart(){
         id_target = id_target[id_target.length-1];
         console.log(id_target);
 
-        if (id.search("plus"))
-          document.getElementById("quantity_cart_" + id_target).value ++;
-        else
-          document.getElementById("quantity_cart_" + id_target).value --;
+        if (id.search("plus")){
+          document.getElementById("quantity_cart_" + id_target).value ++;}
+        elseif(id.search("minus")){
+          document.getElementById("quantity_cart_" + id_target).value --;}
         // tag_input[id_target.slice(-1)].value = document.getElementById(id_target).value;
       }
 
