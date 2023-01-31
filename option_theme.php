@@ -120,16 +120,25 @@ function script_page_cart(){
                 document.getElementById("quantity_cart_" + i).value = tag_input[i].value;
 
                 document.getElementById("quantity_cart_plus_" + i).onclick= function () {
-                    document.getElementById("quantity_cart_" + i).value ++;
+                    // document.getElementById("quantity_cart_" + i).value ++;
+                    document.getElementById(event.srcElement.id).value ++;
                     tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
-                  }
+                }
                 
                 document.getElementById("quantity_cart_minus_" + i).onclick= function () {
-                  document.getElementById("quantity_cart_" + i).value --;
-                  tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
+                document.getElementById("quantity_cart_" + i).value --;
+                tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
                 }
             }
 
+            const click_quantity = (event) => {
+            var id_target = event.srcElement.id;
+            if (id_target.search("plus"))
+                document.getElementById(id_target).value ++;
+            else
+                document.getElementById(id_target).value --;
+            tag_input[id_target.slice(-1)].value = document.getElementById(id_target).value;
+            }
         });
 
 
