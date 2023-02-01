@@ -135,19 +135,25 @@ function script_page_cart(){
       });
       
       const click_quantity = (id) => {
-        console.log(id);
+        
         var id_target = id.split("_");
         id_target = id_target[id_target.length-1];
-        console.log(id.search("plus"));
-
+        
+        
         if (id.search("plus")>0){
           document.getElementById("quantity_cart_" + id_target).value ++;
         }
         else{
           if(document.getElementById("quantity_cart_" + id_target).value > 0) 
-            document.getElementById("quantity_cart_" + id_target).value --;
+          document.getElementById("quantity_cart_" + id_target).value --;
         }
-        document.querySelectorAll("input[type=number]")[id_target] = document.getElementById("quantity_cart_" + id_target).value;
+        document.getElementsByClassName("input-text")[id_target].value = document.getElementById("quantity_cart_" + id_target).value;
+
+        
+        console.log("id" . id);
+        console.log("id_target" . id_target);
+        console.log(id.search("plus"));
+        // document.querySelectorAll("input[type=number]")[id_target] = document.getElementById("quantity_cart_" + id_target).value;
         // tag_input[id_target.slice(-1)].value = document.getElementById(id_target).value;
       }
 
