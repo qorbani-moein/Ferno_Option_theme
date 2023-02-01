@@ -185,10 +185,10 @@ function script_page_cart(){
       }
     
       addEventListener("load", (event) => {
-        cart_quantity_product();
+        // cart_quantity_product();
     
         // add listener update cart button
-        document.getElementsByClassName("button")[0].addEventListener("onclick",cart_quantity_product());
+        // document.getElementsByClassName("button")[0].addEventListener("onclick",cart_quantity_product());
     
       });
 
