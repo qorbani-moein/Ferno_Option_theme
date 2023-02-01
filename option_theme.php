@@ -138,7 +138,7 @@ function script_page_cart(){
           if(document.getElementById("quantity_cart_" + id_target).value > 0) {
             document.getElementById("quantity_cart_" + id_target).value --;
             if (document.getElementById("quantity_cart_" + id_target).value == 1){
-              document.querySelectorAll(".woolentor-cart-product-actions a").style = "display: block !important;";
+              document.getElementsByClassName("woolentor-cart-product-actions-btn")[id_target].style = "display: block !important;";
             }
           }
         }
