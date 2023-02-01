@@ -149,10 +149,10 @@ function script_page_cart(){
         }
         document.getElementsByClassName("input-text")[id_target].value = document.getElementById("quantity_cart_" + id_target).value;
 
-        
-        console.log("id" . id);
-        console.log("id_target" . id_target);
-        console.log(id.search("plus"));
+
+        console.log("id - " . id);
+        console.log("id_target - " . id_target);
+        console.log("id.search - " . id.search("plus"));
         // document.querySelectorAll("input[type=number]")[id_target] = document.getElementById("quantity_cart_" + id_target).value;
         // tag_input[id_target.slice(-1)].value = document.getElementById(id_target).value;
       }
