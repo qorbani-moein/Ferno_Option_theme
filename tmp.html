@@ -61,12 +61,12 @@ setInterval(time_check_frm,1000);
 
 function time_check_frm(){
   try{
-    var exist_elem = document.getElementById("quantity_cart_0").innerHTML;
+    var exist_elem = document.getElementsByClassName("number_quantity_cart").length;
   }catch(e){
 
   }
   console.log("exist_elem - " + exist_elem);
-   if(!exist_elem)
+   if(exist_elem == 0)
     cart_quantity_product();
 }
 
