@@ -143,8 +143,8 @@ function script_page_cart(){
           }
         }
         document.getElementsByClassName("input-text")[id_target].value = document.getElementById("quantity_cart_" + id_target).value;
-        document.getElementsByClassName("button")[1].removeAttribute("disabled");
-        document.getElementsByClassName("button")[1].click();
+        document.getElementsByClassName("button")[0].removeAttribute("disabled");
+        document.getElementsByClassName("button")[0].click();
     
     
         // console.log("id - " + id);
@@ -188,7 +188,7 @@ function script_page_cart(){
         cart_quantity_product();
     
         // add listener update cart button
-        document.getElementsByClassName("button")[1].addEventListener("onclick",cart_quantity_product());
+        document.getElementsByClassName("button")[0].addEventListener("onclick",cart_quantity_product());
     
       });
 

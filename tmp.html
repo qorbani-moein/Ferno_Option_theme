@@ -88,8 +88,8 @@ function time_check_frm(){
       }
     }
     document.getElementsByClassName("input-text")[id_target].value = document.getElementById("quantity_cart_" + id_target).value;
-    document.getElementsByClassName("button")[1].removeAttribute("disabled");
-    document.getElementsByClassName("button")[1].click();
+    document.getElementsByClassName("button")[0].removeAttribute("disabled");
+    document.getElementsByClassName("button")[0].click();
 
 
     // console.log("id - " + id);
@@ -133,7 +133,7 @@ function time_check_frm(){
     cart_quantity_product();
 
     // add listener update cart button
-    document.getElementsByClassName("button")[1].addEventListener("onclick",cart_quantity_product());
+    document.getElementsByClassName("button")[0].addEventListener("onclick",cart_quantity_product());
 
   });
 
