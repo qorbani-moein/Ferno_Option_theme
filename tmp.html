@@ -99,7 +99,8 @@
           if(document.getElementById("quantity_cart_" + id_target).value > 0) 
             document.getElementById("quantity_cart_" + id_target).value --;
         }
-        document.querySelectorAll("input[type=number]")[id_target] = document.getElementById("quantity_cart_" + id_target).value;
+        document.getElementsByClassName("input-text")[id].value = document.getElementById("quantity_cart_" + id_target).value;
+        // document.querySelectorAll("input[type=number]")[id_target] = document.getElementById("quantity_cart_" + id_target).value;
         // tag_input[id_target.slice(-1)].value = document.getElementById(id_target).value;
       }
 
