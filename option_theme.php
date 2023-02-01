@@ -100,6 +100,12 @@ function script_page_cart(){
         input[type=number] {
             -moz-appearance: textfield;
         }
+        .button:nth-child(1){
+            display: none !important;
+        }
+        .input-text {
+            display: none;
+        }
     </style>
 
     <script>
