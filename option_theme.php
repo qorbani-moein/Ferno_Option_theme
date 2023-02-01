@@ -103,7 +103,41 @@ function script_page_cart(){
     </style>
 
     <script>
+
     addEventListener("load", (event) => {
+        cart_quantity_product();
+    
+      });
+            
+      // add listener update cart button
+      document.getElementsByClassName("button")[1].addEventListener("click",cart_quantity_product());
+    
+      //Click on + or - quantity
+      const click_quantity = (id) => {
+        var id_target = id.split("_");
+        id_target = id_target[id_target.length-1];
+        
+        
+        if (id.search("plus")>0){
+          document.getElementById("quantity_cart_" + id_target).value ++;
+        }
+        else{
+          if(document.getElementById("quantity_cart_" + id_target).value > 0) 
+          document.getElementById("quantity_cart_" + id_target).value --;
+        }
+        document.getElementsByClassName("input-text")[id_target].value = document.getElementById("quantity_cart_" + id_target).value;
+        document.getElementsByClassName("button")[1].removeAttribute("disabled");
+        document.getElementsByClassName("button")[1].click();
+    
+    
+        console.log("id - " + id);
+        console.log("id_target - " + id_target);
+        console.log("id.search - " + id.search("plus"));
+        // document.querySelectorAll("input[type=number]")[id_target] = document.getElementById("quantity_cart_" + id_target).value;
+        // tag_input[id_target.slice(-1)].value = document.getElementById(id_target).value;
+      }
+    
+      const cart_quantity_product = () =>{
         var len_num_product = document.getElementsByClassName("input-text").length;
         var quantity_product = `
           <div class="quantity_cart">
@@ -119,7 +153,7 @@ function script_page_cart(){
             document.getElementsByClassName("woolentor-cart-product-content")[i].innerHTML += quantity_product.split("nth").join(i);
             
             document.getElementById("quantity_cart_" + i).value = tag_input[i].value;
-
+    
             // document.getElementById("quantity_cart_plus_" + i).onclick= function () {
             //     // document.getElementById("quantity_cart_" + i).value ++;
             //     document.getElementById(event.srcElement.id).value ++;
@@ -131,34 +165,7 @@ function script_page_cart(){
             //   tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
             // }
         }
-
-      });
-      
-      const click_quantity = (id) => {
-        
-        var id_target = id.split("_");
-        id_target = id_target[id_target.length-1];
-        
-        
-        if (id.search("plus")>0){
-          document.getElementById("quantity_cart_" + id_target).value ++;
-        }
-        else{
-          if(document.getElementById("quantity_cart_" + id_target).value > 0) 
-          document.getElementById("quantity_cart_" + id_target).value --;
-        }
-        document.getElementsByClassName("input-text")[id_target].value = document.getElementById("quantity_cart_" + id_target).value;
-        document.getElementsByClassName("button")[1].removeAttribute("disabled");
-        document.getElementsByClassName("button")[1].click();
-
-
-        console.log("id - " + id);
-        console.log("id_target - " + id_target);
-        console.log("id.search - " + id.search("plus"));
-        // document.querySelectorAll("input[type=number]")[id_target] = document.getElementById("quantity_cart_" + id_target).value;
-        // tag_input[id_target.slice(-1)].value = document.getElementById(id_target).value;
-      }
-
+    }
     </script>
     ';
 }
