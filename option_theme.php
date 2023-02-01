@@ -165,7 +165,6 @@ function script_page_cart(){
 
     // add listener update cart button
     document.getElementsByClassName("button")[1].addEventListener("onclick",cart_quantity_product());
-
   });
 
     </script>
