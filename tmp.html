@@ -56,7 +56,18 @@
 
 <script>
 
-        
+
+setInterval(time_check_frm,1000);
+
+function time_check_frm(){
+  try{
+    var exist_elem = document.getElementById("quantity_cart_0").innerHTML;
+  }catch(e){
+
+  }
+   if(!exist_elem)
+    cart_quantity_product();
+}
 
   //Click on + or - quantity
   const click_quantity = (id) => {
