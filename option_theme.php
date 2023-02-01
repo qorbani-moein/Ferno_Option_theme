@@ -138,7 +138,7 @@ function script_page_cart(){
           if(document.getElementById("quantity_cart_" + id_target).value > 0) {
             document.getElementById("quantity_cart_" + id_target).value --;
             if (document.getElementById("quantity_cart_" + id_target).value == 1){
-              document.getElementsByClassName("woolentor-cart-product-actions-btn")[id_target].style = "display: block !important;";
+              document.getElementsByClassName("woolentor-cart-product-actions-btn")[id_target+1].style = "display: block !important;";
             }
           }
         }
@@ -181,6 +181,9 @@ function script_page_cart(){
             //   document.getElementById("quantity_cart_" + i).value --;
             //   tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
             // }
+            if (document.getElementById("quantity_cart_" + i).value == 1){
+              document.getElementsByClassName("woolentor-cart-product-actions-btn")[i].style = "display: block !important;";
+            }
         }
       }
     
