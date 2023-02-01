@@ -83,7 +83,7 @@
     // tag_input[id_target.slice(-1)].value = document.getElementById(id_target).value;
   }
 
-  function cart_quantity_product {
+  function cart_quantity_product (){
     var len_num_product = document.getElementsByClassName("input-text").length;
     var quantity_product = `
       <div class="quantity_cart">
@@ -111,7 +111,7 @@
         //   tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
         // }
     }
-
+  }
 
   addEventListener("load", (event) => {
     cart_quantity_product();
@@ -120,7 +120,7 @@
     document.getElementsByClassName("button")[1].addEventListener("click",cart_quantity_product());
 
   });
-}
+  
 </script>
 
 script function moein_click(){ console.log(moein_click); // Get the WooCommerce

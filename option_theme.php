@@ -103,6 +103,8 @@ function script_page_cart(){
     </style>
 
     <script>
+
+    
     //Click on + or - quantity
     const click_quantity = (id) => {
       var id_target = id.split("_");
@@ -128,7 +130,7 @@ function script_page_cart(){
       // tag_input[id_target.slice(-1)].value = document.getElementById(id_target).value;
     }
   
-    function cart_quantity_product {
+    function cart_quantity_product (){
       var len_num_product = document.getElementsByClassName("input-text").length;
       var quantity_product = `
         <div class="quantity_cart">
@@ -156,7 +158,7 @@ function script_page_cart(){
           //   tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
           // }
       }
-  
+    }
   
     addEventListener("load", (event) => {
       cart_quantity_product();
@@ -165,7 +167,6 @@ function script_page_cart(){
       document.getElementsByClassName("button")[1].addEventListener("click",cart_quantity_product());
   
     });
-  }
 
     </script>
     ';
