@@ -112,7 +112,7 @@ function resource($elem , $type = null, $start = null , $end = null){
         input[type=number] {
             -moz-appearance: textfield;
         }
-      '
+      ';
       break;
     case "style-cart":
         $result = '
