@@ -63,11 +63,11 @@ function script_page_category(){
 }
 
 function script_page_cart(){
-    echo resource("box-number","css" , $start = true , $end = null) . resource("style-cart","css" , $start = null , $end = true) . resource("script-cart","js");
+    echo "<style>" . resource("box-number") . resource("style-cart") "</style>" . resource("script-cart","js");
 }
 
 
-function resource($elem , $type = null, $start = null , $end = null){
+function resource($elem , $type = null){
   switch ($elem){
     case "box-number":
       $result = '
@@ -246,8 +246,8 @@ function resource($elem , $type = null, $start = null , $end = null){
       break;
   }
 
-  $result = if($type == 'style' || $type == 'css') $start || $start==null ? '<style>' : '' . $result . $end || $end == null ? '</style>': '';
-  $result = if($type == 'script' || $type == 'js') $start || $start==null ? '<script>' : ''  . $result . $end || $end == null  ? '</script>': '';
+  if($type == 'style' || $type == 'css') $result = '<style>' . $result . '</style>';
+  if($type == 'script' || $type == 'js') $result = '<script>' . $result . '</script>';
   return  $result;
 }
 
