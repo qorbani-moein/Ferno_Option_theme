@@ -183,7 +183,8 @@ function script_page_cart(){
             //   tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
             // }
             if (document.getElementById("quantity_cart_" + i).value == 1){
-              document.getElementsByClassName("woolentor-cart-product-actions-btn")[i+2].style = "display: block !important;";
+              document.getElementsByTagName("a").getElementsByClassName("woolentor-cart-product-actions-btn")[i].style = "display: block !important;";
+              // document.getElementsByClassName("woolentor-cart-product-actions-btn")[i+2].style = "display: block !important;";
             }
         }
       }
