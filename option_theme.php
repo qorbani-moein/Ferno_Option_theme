@@ -42,6 +42,7 @@ add_action( 'wp_footer', 'script_query_page' );
 function script_query_page(){
     $current_page = $_SERVER['SCRIPT_URI'];
     $page_cart = 'https://' . $_SERVER['SERVER_NAME'] . '/cart/' ;
+    $page_category = 'https://' . $_SERVER['SERVER_NAME'] . '/category/' ;
     // $page_shop_en = 'https://' . $_SERVER['SERVER_NAME'] . '/en/shop/' ;
     
         // console("current_page: " . $current_page); 
@@ -49,76 +50,82 @@ function script_query_page(){
         // console('page_shop_fa: ' . $page_shop_fa);
     
     if ($current_page == $page_cart){
-        // console("single_product true");
-        script_page_cart();
+      script_page_cart();
+    }elseif($current_page == $page_category){
+      script_page_category();
     } //elseif($current_page == substr($current_page,0,strlen($page_shop_en))){
     //     script_page_shop_EnToFa();
     // }
 }
 
-function script_page_cart(){
-    echo resource("style-cart");
-    echo resource("elem-cart");
+function script_page_category(){
+  echo resource("script-category","js");
 }
 
-function resource($elem){
+function script_page_cart(){
+    echo resource("style-cart","css") . resource("script-cart","js");
+}
+
+
+function resource($elem , $type = null, $start = null , $end = null){
   switch ($elem){
+    case "box-number":
+      $result = '
+        .quantity_cart{
+            width: 25%;
+            color: #FFD15E;
+            position: absolute;
+            background: #2c2c2c;
+            left: 0px;
+            top: 35px;
+            display: flex;
+            flex-wrap: nowrap;
+            align-content: stretch;
+            justify-content: space-evenly;
+            align-items: center;
+            border: 1px solid #FFD15E;
+            border-radius: 50px;
+            margin-left: 20px;
+            height: 40px;
+            font-size: 20px;
+            padding: 0px 3px 5px 3px;
+        }
+        .quantity_cart span{
+            color: #FFD15E !important;
+        }
+        .quantity_cart input{
+            width: 50% !important;
+            color: white;
+            background: #2c2c2c;
+            padding: 0px;
+            text-align:center;
+            border-color: #0000;
+            padding: 2px 0px 0px 3px;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+      '
+      break;
     case "style-cart":
         $result = '
-          <style>
-            .quantity_cart{
-                width: 25%;
-                color: #FFD15E;
-                position: absolute;
-                background: #2c2c2c;
-                left: 0px;
-                top: 35px;
-                display: flex;
-                flex-wrap: nowrap;
-                align-content: stretch;
-                justify-content: space-evenly;
-                align-items: center;
-                border: 1px solid #FFD15E;
-                border-radius: 50px;
-                margin-left: 20px;
-                height: 40px;
-                font-size: 20px;
-                padding: 0px 3px 5px 3px;
-            }
-            .quantity_cart span{
-                color: #FFD15E !important;
-            }
-            .quantity_cart input{
-                width: 50% !important;
-                color: white;
-                background: #2c2c2c;
-                padding: 0px;
-                text-align:center;
-                border-color: #0000;
-                padding: 2px 0px 0px 3px;
-            }
-
-            input::-webkit-outer-spin-button,
-            input::-webkit-inner-spin-button {
-                -webkit-appearance: none;
-                margin: 0;
-            }
-
-            input[type=number] {
-                -moz-appearance: textfield;
-            }
             .button:nth-child(1){
                 display: none !important;
             }
             .input-text {
                 display: none;
             }
-        </style>
         ';
       break;
-    case "elem-cart":
+    case "script-cart":
         $result = '
-          <script>
             // check every secend cart if not have data
             setInterval(time_check_frm,1000);
             function time_check_frm(){
@@ -178,11 +185,70 @@ function resource($elem){
                     }
                 }
               }
-          </script>
         ';
       break;
+    case "script-category":
+      $result = '
+        addEventListener("load", (event) => {
+          // Get the product count
+          var cart_product_count = document.getElementsByClassName(
+            "bdt-wc-product-inner"
+          ).length;
+          // Create HTML markup for the product quantity
+          var quantity = `
+              <style>
+                  .quantity_cart{
+                      width: 30%;
+                      color: yellow;
+                      position: absolute;
+                      background: #2c2c2c;
+                      left: 0px;
+                      top: 0;
+                      display: flex;
+                      flex-wrap: nowrap;
+                      align-content: stretch;
+                      justify-content: space-evenly;
+                      align-items: center;
+                      border: 1px solid yellow;
+                      border-radius: 10px;
+                  }
+                  .quantity_cart input{
+                      width: 50% !important;
+                      color: yellow;
+                      background: #2c2c2c;
+                      padding: 0px;
+                      text-align:center;
+                  }
+
+                  input::-webkit-outer-spin-button,
+                  input::-webkit-inner-spin-button {
+                      -webkit-appearance: none;
+                      margin: 0;
+                  }
+
+                  input[type=number] {
+                      -moz-appearance: textfield;
+                  }
+              </style>
+              <div class="quantity_cart">
+                  <span>+</span>
+                  <input class="number_quantity_cart" type="number" name="cart_quantity" min="1" max="10" />
+                  <span>-</span>
+              </div>
+          `;
+          // Loop through each product and add the quantity markup
+          for (var i = 0; i < cart_product_count; i++) {
+            document.getElementsByClassName("bdt-wc-product-inner")[i].innerHTML +=
+              quantity;
+          }
+        });
+      ';
+      break;
   }
-  return $result;
+
+  $result = if($type == 'style' || $type == 'css') $start || $start==null ? '<style>' : '' . $result . $end || $end == null ? '</style>': '';
+  $result = if($type == 'script' || $type == 'js') $start || $start==null ? '<script>' : ''  . $result . $end || $end == null  ? '</script>': '';
+  return  $result;
 }
 
 function console($txt , $key = null){
