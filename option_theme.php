@@ -68,7 +68,9 @@ function script_page_category()
 
   foreach ($items as $item => $values) {
     console($values['data']->get_id(), "id product");
-    console($values, "values");
+    var_dump($values);
+    // $product_description = get_post($item[$values['data']->get_id()])->post_content;
+    // console($product_description, "product_description");
 
 
     // $_product =  wc_get_product( $values['data']->get_id()); 
