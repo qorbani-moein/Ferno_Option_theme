@@ -103,14 +103,17 @@ function script_page_category()
 
   foreach ( $products as $product ){
     echo '<pre class="moein_pre">';
-    echo  $product->get_status();  // Product status
-    echo  $product->get_type();  // Product type
-    echo  $product->get_id();    // Product ID
-    echo  $product->get_title(); // Product title
-    echo  $product->get_slug(); // Product slug
-    echo  $product->get_price(); // Product price
-    echo  $product->get_catalog_visibility(); // Product visibility
-    echo  $product->get_stock_status(); // Product stock status
+    echo  $product->get_status() . ' - (get_status)';  // Product status
+    echo  $product->get_type() . ' - (get_type)';  // Product type
+    echo  $product->get_id() . ' - (get_id)';    // Product ID
+    echo  $product->get_title() . ' - (get_title)'; // Product title
+    echo  $product->get_slug() . ' - (get_slug)'; // Product slug
+    echo  $product->get_price() . ' - (get_price)'; // Product price
+    echo  $product->get_catalog_visibility() . ' - (get_catalog_visibility)'; // Product visibility
+    echo  $product->get_stock_status() . ' - (get_stock_status)'; // Product stock status
+    echo  $product->get_description() . ' - (get_description)'; // Product get_description
+    echo $product->get_image(); // Returns the main product image.
+    echo $product->get_image_id(); // Get main image ID.
     // product date information
     echo $product->get_date_created()->date('Y-m-d H:i:s');
     echo $product->get_date_modified()->date('Y-m-d H:i:s');
