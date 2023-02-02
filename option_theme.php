@@ -57,14 +57,14 @@ function script_query_page(){
 }
 
 function script_page_cart(){
-    echo resource("style-cart") + resource("elem-cart");
+    echo resource("style-cart");
+    echo resource("elem-cart");
 }
 
-function resource(elem){
-  var result;
-  switch (elem){
+function resource($elem){
+  switch ($elem){
     case "style-cart":
-        result = '
+        $result = '
           <style>
             .quantity_cart{
                 width: 25%;
@@ -117,7 +117,7 @@ function resource(elem){
         ';
       break;
     case "elem-cart":
-        result = '
+        $result = '
           <script>
             // check every secend cart if not have data
             setInterval(time_check_frm,1000);
@@ -182,7 +182,7 @@ function resource(elem){
         ';
       break;
   }
-  return result;
+  return $result;
 }
 
 function console($txt , $key = null){
