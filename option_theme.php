@@ -112,7 +112,6 @@ function script_page_cart(){
 
 
 
-
     setInterval(time_check_frm,1000);
 
     function time_check_frm(){
@@ -183,7 +182,9 @@ function script_page_cart(){
             //   tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
             // }
             if (document.getElementById("quantity_cart_" + i).value == 1){
-              document.getElementsByTagName("a").getElementsByClassName("woolentor-cart-product-actions-btn")[i].style = "display: block !important;";
+              // var x = document.getElementsByTagName("a").getElementsByClassName("woolentor-cart-product-actions-btn")[i].style = "display: block !important;";
+              var x = document.getElementsByTagName("a").getElementsByClassName("woolentor-cart-product-actions-btn");
+              console.log(x);
               // document.getElementsByClassName("woolentor-cart-product-actions-btn")[i+2].style = "display: block !important;";
             }
         }
