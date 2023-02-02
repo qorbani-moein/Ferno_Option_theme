@@ -98,6 +98,24 @@ function script_page_category()
   // }
 
   echo resource("box-number", 'css') . resource("script-category", "js");
+
+  $products = wc_get_products( array( 'status' => 'publish', 'limit' => -1 ) );
+
+  foreach ( $products as $product ){
+    echo '<pre class="moein_pre">';
+    echo  $product->get_status();  // Product status
+    echo  $product->get_type();  // Product type
+    echo  $product->get_id();    // Product ID
+    echo  $product->get_title(); // Product title
+    echo  $product->get_slug(); // Product slug
+    echo  $product->get_price(); // Product price
+    echo  $product->get_catalog_visibility(); // Product visibility
+    echo  $product->get_stock_status(); // Product stock status
+    // product date information
+    echo $product->get_date_created()->date('Y-m-d H:i:s');
+    echo $product->get_date_modified()->date('Y-m-d H:i:s');
+    echo '</pre>';
+  }
 }
 
 function script_page_cart()
