@@ -69,12 +69,12 @@ function script_page_category()
   foreach ($items as $item => $values) {
     console($values['data']->get_id(), "id product");
     // console($values['data'], "data");
-    console($values['data']->get_description(), "description");
-    $product_description = '
-    <p id="product_description_' . $values['data']->get_id() . '" hidden>
-      ' . $values['data']->get_description() . '
-    </p>
-    ';
+    // console($values['data']->get_description(), "description");
+    // $product_description = '
+    // <p id="product_description_' . $values['data']->get_id() . '" hidden>
+    //   ' . $values['data']->get_description() . '
+    // </p>
+    // ';
     // console($values['data']->description(), "description");
     // console($values['data']['description'], "description");
 
