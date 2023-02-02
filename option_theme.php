@@ -70,7 +70,7 @@ function script_page_category()
     console($values['data']->get_id(), "id product");
     // console($values['data'], "data");
     console($values['data']->get_description(), "description");
-    console($values['data']->description(), "description");
+    // console($values['data']->description(), "description");
     // console($values['data']['description'], "description");
 
     // var_dump($values);
