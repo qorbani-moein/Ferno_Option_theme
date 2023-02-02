@@ -70,6 +70,11 @@ function script_page_category()
     console($values['data']->get_id(), "id product");
     // console($values['data'], "data");
     console($values['data']->get_description(), "description");
+    $product_description = '
+    <p id="product_description_' . $values['data']->get_id() . '" hidden>
+      ' . $values['data']->get_description() . '
+    </p>
+    ';
     // console($values['data']->description(), "description");
     // console($values['data']['description'], "description");
 
@@ -83,6 +88,14 @@ function script_page_category()
     // $price = get_post_meta($values['product_id'] , '_price', true);
     // echo "  Price: ".$price."<br>";
   }
+
+  $order = new WC_Order('82');
+
+foreach ($order->get_items() as $item)
+{
+    $product_description = get_post($item['product_id'])->post_content; // I used wordpress built-in functions to get the product object 
+    console($product_description, 'product_description222');
+}
 
   echo resource("box-number", 'css') . resource("script-category", "js");
 }
