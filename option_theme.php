@@ -31,9 +31,9 @@ function remove_quantity()
 
 
 
-  console($id, 'id');
-  console($cart_id, 'cart_id');
-  console($cart_item_id, 'cart_item_id');
+  // console($id, 'id');
+  // console($cart_id, 'cart_id');
+  // console($cart_item_id, 'cart_item_id');
 }
 
 
@@ -68,8 +68,7 @@ function script_page_category()
 
   foreach ($items as $item => $values) {
     console($values['data']->get_id(), "id product");
-    $product_description = get_post($item[$values['data']->get_id()])->post_content;
-    console($product_description, "product_description");
+    console($values, "values");
 
 
     // $_product =  wc_get_product( $values['data']->get_id()); 
