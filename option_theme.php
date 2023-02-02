@@ -94,7 +94,7 @@ function script_page_category()
   foreach ($order->get_items() as $item)
   {
       $product_description = get_post($item['product_id'])->post_content; // I used wordpress built-in functions to get the product object 
-      console($product_description, 'product_description222');
+      // console($product_description, 'product_description222');
   }
 
   echo resource("box-number", 'css') . resource("script-category", "js");
