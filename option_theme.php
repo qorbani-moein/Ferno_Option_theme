@@ -57,148 +57,132 @@ function script_query_page(){
 }
 
 function script_page_cart(){
-    echo '
-    <style>
-        .quantity_cart{
-            width: 25%;
-            color: #FFD15E;
-            position: absolute;
-            background: #2c2c2c;
-            left: 0px;
-            top: 35px;
-            display: flex;
-            flex-wrap: nowrap;
-            align-content: stretch;
-            justify-content: space-evenly;
-            align-items: center;
-            border: 1px solid #FFD15E;
-            border-radius: 50px;
-            margin-left: 20px;
-            height: 40px;
-            font-size: 20px;
-            padding: 0px 3px 5px 3px;
-        }
-        .quantity_cart span{
-            color: #FFD15E !important;
-        }
-        .quantity_cart input{
-            width: 50% !important;
-            color: white;
-            background: #2c2c2c;
-            padding: 0px;
-            text-align:center;
-            border-color: #0000;
-            padding: 2px 0px 0px 3px;
-        }
+    echo resource("style-cart") + resource("elem-cart");
+}
 
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        input[type=number] {
-            -moz-appearance: textfield;
-        }
-        .button:nth-child(1){
-            display: none !important;
-        }
-        .input-text {
-            display: none;
-        }
-    </style>
-
-    <script>
-
-
-
-
-    setInterval(time_check_frm,1000);
-
-    function time_check_frm(){
-      try{
-        var exist_elem = document.getElementsByClassName("number_quantity_cart").length;
-      }catch(e){
-    
-      }
-      console.log("exist_elem - " + exist_elem);
-       if(exist_elem == 0)
-        cart_quantity_product();
-    }
-    
-      //Click on + or - quantity
-      const click_quantity = (id) => {
-        var id_target = id.split("_");
-        id_target = id_target[id_target.length-1];
-        
-        
-        if (id.search("plus")>0){
-          document.getElementById("quantity_cart_" + id_target).value ++;
-        }
-        else{
-          if(document.getElementById("quantity_cart_" + id_target).value > 0) {
-            document.getElementById("quantity_cart_" + id_target).value --;
-            if (document.getElementById("quantity_cart_" + id_target).value == 1){
-              // document.getElementsByClassName("woolentor-cart-product-actions-btn")[id_target+2].style = "display: block !important;";
+function resource(elem){
+  var result;
+  switch (elem){
+    case "style-cart":
+        result = '
+          <style>
+            .quantity_cart{
+                width: 25%;
+                color: #FFD15E;
+                position: absolute;
+                background: #2c2c2c;
+                left: 0px;
+                top: 35px;
+                display: flex;
+                flex-wrap: nowrap;
+                align-content: stretch;
+                justify-content: space-evenly;
+                align-items: center;
+                border: 1px solid #FFD15E;
+                border-radius: 50px;
+                margin-left: 20px;
+                height: 40px;
+                font-size: 20px;
+                padding: 0px 3px 5px 3px;
             }
-          }
-        }
-        document.getElementsByClassName("input-text")[id_target].value = document.getElementById("quantity_cart_" + id_target).value;
-        document.getElementsByClassName("button")[0].removeAttribute("disabled");
-        document.getElementsByClassName("button")[0].click();
-    
-    
-        // console.log("id - " + id);
-        // console.log("id_target - " + id_target);
-        // console.log("id.search - " + id.search("plus"));
-        // document.querySelectorAll("input[type=number]")[id_target] = document.getElementById("quantity_cart_" + id_target).value;
-        // tag_input[id_target.slice(-1)].value = document.getElementById(id_target).value;
-      }
-    
-      function cart_quantity_product (){
-        var len_num_product = document.getElementsByClassName("input-text").length;
-        var quantity_product = `
-          <div class="quantity_cart">
-              <span class="quantity_cart_plus" onclick="click_quantity(this.id)" id="quantity_cart_plus_nth">+</span>
-              <input class="number_quantity_cart" id="quantity_cart_nth" type="number" name="cart_quantity" min="1" max="10" />
-              <span class="quantity_cart_minus" onclick="click_quantity(this.id)" id="quantity_cart_minus_nth">-</span>
-          </div>
-        `;
-        var tag_input = document.querySelectorAll("input[type=number]");
-        // console.log(tag_input.length);
-        // console.log(tag_input);
-        for(var i = 0 ; i < len_num_product ; i++){
-            document.getElementsByClassName("woolentor-cart-product-content")[i].innerHTML += quantity_product.split("nth").join(i);
-            
-            document.getElementById("quantity_cart_" + i).value = tag_input[i].value;
-    
-            // document.getElementById("quantity_cart_plus_" + i).onclick= function () {
-            //     // document.getElementById("quantity_cart_" + i).value ++;
-            //     document.getElementById(event.srcElement.id).value ++;
-            //     tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
-            //   }
-            
-            // document.getElementById("quantity_cart_minus_" + i).onclick= function () {
-            //   document.getElementById("quantity_cart_" + i).value --;
-            //   tag_input[i].value = document.getElementById("quantity_cart_" + i).value;
-            // }
-            if (document.getElementById("quantity_cart_" + i).value == 1){
-              document.querySelectorAll("a.woolentor-cart-product-actions-btn")[i].style = "display: block !important;";
-              // document.getElementsByClassName("woolentor-cart-product-actions-btn")[i+2].style = "display: block !important;";
+            .quantity_cart span{
+                color: #FFD15E !important;
             }
-        }
-      }
-    
-      addEventListener("load", (event) => {
-        // cart_quantity_product();
-    
-        // add listener update cart button
-        // document.getElementsByClassName("button")[0].addEventListener("onclick",cart_quantity_product());
-    
-      });
+            .quantity_cart input{
+                width: 50% !important;
+                color: white;
+                background: #2c2c2c;
+                padding: 0px;
+                text-align:center;
+                border-color: #0000;
+                padding: 2px 0px 0px 3px;
+            }
 
-    </script>
-    ';
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            input[type=number] {
+                -moz-appearance: textfield;
+            }
+            .button:nth-child(1){
+                display: none !important;
+            }
+            .input-text {
+                display: none;
+            }
+        </style>
+        ';
+      break;
+    case "elem-cart":
+        result = '
+          <script>
+            // check every secend cart if not have data
+            setInterval(time_check_frm,1000);
+            function time_check_frm(){
+              var exist_elem = document.getElementsByClassName("number_quantity_cart").length;
+              // console.log("exist_elem - " + exist_elem);
+              if(exist_elem == 0)
+                cart_quantity_product();
+            }
+            
+              //Click on + or - quantity
+              const click_quantity = (id) => {
+                var id_target = id.split("_");
+                id_target = id_target[id_target.length-1];
+                
+                //add or minus with click on + - and change input box
+                if (id.search("plus")>0){
+                  document.getElementById("quantity_cart_" + id_target).value ++;
+                }
+                else{
+                  if(document.getElementById("quantity_cart_" + id_target).value > 0) {
+                    document.getElementById("quantity_cart_" + id_target).value --;
+                  }
+                }
+            
+                //put new value to input box woocommerce
+                document.getElementsByClassName("input-text")[id_target].value = document.getElementById("quantity_cart_" + id_target).value;
+                //enable button update cart and click it
+                document.getElementsByClassName("button")[0].removeAttribute("disabled");
+                document.getElementsByClassName("button")[0].click();
+            
+              }
+            
+              function cart_quantity_product (){
+                var len_num_product = document.getElementsByClassName("input-text").length;
+                
+                //add box quantity (- 1 +) HTML to end of div
+                var quantity_product = `
+                  <div class="quantity_cart">
+                      <span class="quantity_cart_plus" onclick="click_quantity(this.id)" id="quantity_cart_plus_nth">+</span>
+                      <input class="number_quantity_cart" id="quantity_cart_nth" type="number" name="cart_quantity" min="1" max="10" disabled=""/>
+                      <span class="quantity_cart_minus" onclick="click_quantity(this.id)" id="quantity_cart_minus_nth">-</span>
+                  </div>
+                `;
+            
+                //get all value of [input] number cart woocommerce
+                var tag_input = document.querySelectorAll("input[type=number]");
+                for(var i = 0 ; i < len_num_product ; i++){
+                    //replace nth to id for per rendring
+                    document.getElementsByClassName("woolentor-cart-product-content")[i].innerHTML += quantity_product.split("nth").join(i);
+                    
+                    //put value of [input] number cart woocommerce to my [input] quantity box
+                    document.getElementById("quantity_cart_" + i).value = tag_input[i].value;
+            
+                    //show recycle bin if cart is one
+                    if (document.getElementById("quantity_cart_" + i).value == 1){
+                      document.querySelectorAll("a.woolentor-cart-product-actions-btn")[i].style = "display: block !important;";
+                    }
+                }
+              }
+          </script>
+        ';
+      break;
+  }
+  return result
 }
 
 function console($txt , $key = null){
