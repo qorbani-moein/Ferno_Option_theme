@@ -63,7 +63,7 @@ function script_page_category(){
 }
 
 function script_page_cart(){
-    echo "<style>" . resource("box-number") . resource("style-cart") "</style>" . resource("script-cart","js");
+    echo "<style>" . resource("box-number") . resource("style-cart") . "</style>" . resource("script-cart","js");
 }
 
 
