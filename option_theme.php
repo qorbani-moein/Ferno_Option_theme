@@ -182,7 +182,7 @@ function resource(elem){
         ';
       break;
   }
-  return result
+  return result;
 }
 
 function console($txt , $key = null){
