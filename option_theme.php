@@ -10,65 +10,86 @@
  * Text Domain: woo-ajax-add-to-cart
  * License: GPLv3
  */
- 
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '-1' );
+
+if (!defined('ABSPATH')) {
+  die('-1');
 }
 
 
-add_shortcode('moein_remove_quantity','remove_quantity');
+add_shortcode('moein_remove_quantity', 'remove_quantity');
 
-function remove_quantity(){
-    $cart = WC()->instance()->cart;
-    $id = '82';
-    $cart_id = $cart->generate_cart_id($id);
-    $cart_item_id = $cart->find_product_in_cart($cart_id);
-    
-    if($cart_item_id)
-       $cart->set_quantity($cart_item_id,1);
-    
-    
-    
-    
-    console($id , 'id');
-    console($cart_id , 'cart_id');
-    console($cart_item_id , 'cart_item_id');
+function remove_quantity()
+{
+  $cart = WC()->instance()->cart;
+  $id = '82';
+  $cart_id = $cart->generate_cart_id($id);
+  $cart_item_id = $cart->find_product_in_cart($cart_id);
+
+  if ($cart_item_id)
+    $cart->set_quantity($cart_item_id, 1);
+
+
+
+
+  console($id, 'id');
+  console($cart_id, 'cart_id');
+  console($cart_item_id, 'cart_item_id');
 }
 
 
 
-add_action( 'wp_footer', 'script_query_page' );
+add_action('wp_footer', 'script_query_page');
 
-function script_query_page(){
-    $current_page = $_SERVER['SCRIPT_URI'];
-    $page_cart = 'https://' . $_SERVER['SERVER_NAME'] . '/cart/' ;
-    $page_category = 'https://' . $_SERVER['SERVER_NAME'] . '/category/' ;
-    // $page_shop_en = 'https://' . $_SERVER['SERVER_NAME'] . '/en/shop/' ;
-    
-        // console("current_page: " . $current_page); 
-        // console("page_shop_en: " . substr($current_page,0,strlen($page_shop_en)));
-        // console('page_shop_fa: ' . $page_shop_fa);
-    
-    if ($current_page == $page_cart){
-      script_page_cart();
-    }elseif($current_page == $page_category){
-      script_page_category();
-    } //elseif($current_page == substr($current_page,0,strlen($page_shop_en))){
-    //     script_page_shop_EnToFa();
-    // }
+function script_query_page()
+{
+  $current_page = $_SERVER['SCRIPT_URI'];
+  $page_cart = 'https://' . $_SERVER['SERVER_NAME'] . '/cart/';
+  $page_category = 'https://' . $_SERVER['SERVER_NAME'] . '/category/';
+  // $page_shop_en = 'https://' . $_SERVER['SERVER_NAME'] . '/en/shop/' ;
+
+  // console("current_page: " . $current_page); 
+  // console("page_shop_en: " . substr($current_page,0,strlen($page_shop_en)));
+  // console('page_shop_fa: ' . $page_shop_fa);
+
+  if ($current_page == $page_cart) {
+    script_page_cart();
+  } elseif ($current_page == $page_category) {
+    script_page_category();
+  } //elseif($current_page == substr($current_page,0,strlen($page_shop_en))){
+  //     script_page_shop_EnToFa();
+  // }
 }
 
-function script_page_category(){
-  echo resource("script-category","js");
+function script_page_category()
+{
+
+  global $woocommerce;
+  $items = $woocommerce->cart->get_cart();
+
+  foreach ($items as $item => $values) {
+    console($values['data']->get_id(), "id product");
+    $product_description = get_post($item[$values['data']->get_id()])->post_content;
+    console($product_description, "product_description");
+
+
+    // $_product =  wc_get_product( $values['data']->get_id()); 
+    // echo "<b>".$_product->get_title().'</b>  <br> Quantity: '.$values['quantity'].'<br>'; 
+    // $price = get_post_meta($values['product_id'] , '_price', true);
+    // echo "  Price: ".$price."<br>";
+  }
+
+  echo resource("box-number", 'css') . resource("script-category", "js");
 }
 
-function script_page_cart(){
-    echo "<style>" . resource("box-number") . resource("style-cart") . "</style>" . resource("script-cart","js");
+function script_page_cart()
+{
+  echo "<style>" . resource("box-number") . resource("style-cart") . "</style>" . resource("script-cart", "js");
 }
 
 
-function resource($elem , $type = null){
-  switch ($elem){
+function resource($elem, $type = null)
+{
+  switch ($elem) {
     case "box-number":
       $result = '
         .quantity_cart{
@@ -115,7 +136,7 @@ function resource($elem , $type = null){
       ';
       break;
     case "style-cart":
-        $result = '
+      $result = '
             .button:nth-child(1){
                 display: none !important;
             }
@@ -125,7 +146,7 @@ function resource($elem , $type = null){
         ';
       break;
     case "script-cart":
-        $result = '
+      $result = '
             // check every secend cart if not have data
             setInterval(time_check_frm,1000);
             function time_check_frm(){
@@ -189,72 +210,22 @@ function resource($elem , $type = null){
       break;
     case "script-category":
       $result = '
-        addEventListener("load", (event) => {
-          // Get the product count
-          var cart_product_count = document.getElementsByClassName(
-            "bdt-wc-product-inner"
-          ).length;
-          // Create HTML markup for the product quantity
-          var quantity = `
-              <style>
-                  .quantity_cart{
-                      width: 30%;
-                      color: yellow;
-                      position: absolute;
-                      background: #2c2c2c;
-                      left: 0px;
-                      top: 0;
-                      display: flex;
-                      flex-wrap: nowrap;
-                      align-content: stretch;
-                      justify-content: space-evenly;
-                      align-items: center;
-                      border: 1px solid yellow;
-                      border-radius: 10px;
-                  }
-                  .quantity_cart input{
-                      width: 50% !important;
-                      color: yellow;
-                      background: #2c2c2c;
-                      padding: 0px;
-                      text-align:center;
-                  }
-
-                  input::-webkit-outer-spin-button,
-                  input::-webkit-inner-spin-button {
-                      -webkit-appearance: none;
-                      margin: 0;
-                  }
-
-                  input[type=number] {
-                      -moz-appearance: textfield;
-                  }
-              </style>
-              <div class="quantity_cart">
-                  <span>+</span>
-                  <input class="number_quantity_cart" type="number" name="cart_quantity" min="1" max="10" />
-                  <span>-</span>
-              </div>
-          `;
-          // Loop through each product and add the quantity markup
-          for (var i = 0; i < cart_product_count; i++) {
-            document.getElementsByClassName("bdt-wc-product-inner")[i].innerHTML +=
-              quantity;
-          }
-        });
       ';
       break;
   }
 
-  if($type == 'style' || $type == 'css') $result = '<style>' . $result . '</style>';
-  if($type == 'script' || $type == 'js') $result = '<script>' . $result . '</script>';
-  return  $result;
+  if ($type == 'style' || $type == 'css')
+    $result = '<style>' . $result . '</style>';
+  if ($type == 'script' || $type == 'js')
+    $result = '<script>' . $result . '</script>';
+  return $result;
 }
 
-function console($txt , $key = null){
-    echo'
+function console($txt, $key = null)
+{
+  echo '
         <script>
-            console.log("moein - ' .$key . ' - ' . $txt . '");
+            console.log("moein - ' . $key . ' - ' . $txt . '");
         </script>
     ';
 }
