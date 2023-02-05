@@ -158,7 +158,6 @@ function product_archive (){
           echo"</li>";
         }
       ?>
-      <
     </ul>
 
     </div>
