@@ -300,6 +300,34 @@ function resource($elem, $type = null)
       $result = '
       ';
       break;
+    case "style-card-product":
+      $result = '
+      .product_card{
+        border: 1px solid #606060 !important;
+        border-radius: 5px;
+        height: 120px;
+        margin: 20px;
+        padding: 5px 10px 10px 1px;
+      }
+      .product-img{
+        width: 40%;
+        padding-top: 15px;
+        padding-right: 0px;
+      }
+      .product-img img{
+        border-radius: 100%;
+        height: 80px;
+        width: 80px !important;
+        object-fit: cover;
+      }
+      .product-des{
+        width: 50%;
+        position: absolute;
+        top: 0px;
+        left: 10%;
+      }
+      ';
+      break;
   }
 
   if ($type == 'style' || $type == 'css')
