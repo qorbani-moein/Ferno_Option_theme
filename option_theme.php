@@ -139,15 +139,18 @@ function product_archive (){
     $categories = get_terms( ['taxonomy' => 'product_cat'] );
 
     // Getting a visual raw output
-    echo '<pre>'; var_dump( $categories ); echo '</pre>';
-    echo '<pre>'; var_dump( $categories[1] ); echo '</pre>';
-    echo '<pre>'; var_dump( $categories[1]['name'] ); echo '</pre>';
+    // echo '<pre>'; var_dump( $categories ); echo '</pre>';
+    // echo '<pre>'; var_dump( $categories[1] ); echo '</pre>';
+    // echo '<pre>'; var_dump( $categories[1]['name'] ); echo '</pre>';
     // $all_category = json_decode( $categories, true );
     ?>
     <ul class="list-category">
 
       <?php
         foreach ($categories as $category => $value) {
+          echo $category . "<br>";
+          echo $value . "<br>";
+
           if($category == "name"){
             echo '<li class="item-category">' . $value  . '</li>';
           }
