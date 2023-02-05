@@ -315,7 +315,7 @@ function resource($elem, $type = null)
         margin: 20px;
         padding: 5px 10px 10px 1px;
       }
-      .product_data{
+      .product-data{
         width: 78%;
         float: left;
       }
