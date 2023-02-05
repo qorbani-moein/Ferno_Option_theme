@@ -150,7 +150,7 @@ function product_archive (){
         foreach ($categories as $category => $value) {
           echo 'category' . $category . "<br>";
           // echo $value . "<br>";
-          foreach ($category as $item => $value_item) {
+          foreach ($value as $item => $value_item) {
             echo 'item' . $item  . "<br>";
             echo 'value_item' . $value_item  . "<br>";
           }
