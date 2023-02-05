@@ -159,7 +159,7 @@ function product_archive (){
             <div class="product-price">
               <bdi>
                 <?php echo $product->get_price(); ?>
-                <span class="woocommerce-Price-currencySymbol"><?php echo $product->get_regular_price(); ?></span>
+                <span class="woocommerce-Price-currencySymbol"><?php echo $product->get_price_html(); ?></span>
               </bdi>
             </div>
             <div class="product-quantity">
