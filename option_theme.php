@@ -103,31 +103,32 @@ function script_page_category()
 }
 
 function product_archive (){
+  // $products = wc_get_products( array( 'status' => 'publish', 'limit' => -1 ) );
+
+  // foreach ( $products as $product ){
+    // echo '<pre class="moein_pre">';
+    // echo  $product->get_status() . ' - (get_status)';  // Product status
+    // echo  $product->get_type() . ' - (get_type)';  // Product type
+    // echo  $product->get_id() . ' - (get_id)';    // Product ID
+    // echo  $product->get_title() . ' - (get_title)'; // Product title
+    // echo  $product->get_slug() . ' - (get_slug)'; // Product slug
+    // echo  $product->get_price() . ' - (get_price)'; // Product price
+    // echo  $product->get_catalog_visibility() . ' - (get_catalog_visibility)'; // Product visibility
+    // echo  $product->get_stock_status() . ' - (get_stock_status)'; // Product stock status
+    // echo  $product->get_description() . ' - (get_description)'; // Product get_description
+    // // product date image
+    // echo $product->get_image(); // Returns the main product image.
+    // echo $product->get_image_id(); // Get main image ID.
+    // // product date information
+    // echo $product->get_date_created()->date('Y-m-d H:i:s');
+    // echo $product->get_date_modified()->date('Y-m-d H:i:s');
+    // echo '</pre>';
+  // }
+
   $products = wc_get_products( array( 'status' => 'publish', 'limit' => -1 ) );
 
-  foreach ( $products as $product ){
-    echo '<pre class="moein_pre">';
-    echo  $product->get_status() . ' - (get_status)';  // Product status
-    echo  $product->get_type() . ' - (get_type)';  // Product type
-    echo  $product->get_id() . ' - (get_id)';    // Product ID
-    echo  $product->get_title() . ' - (get_title)'; // Product title
-    echo  $product->get_slug() . ' - (get_slug)'; // Product slug
-    echo  $product->get_price() . ' - (get_price)'; // Product price
-    echo  $product->get_catalog_visibility() . ' - (get_catalog_visibility)'; // Product visibility
-    echo  $product->get_stock_status() . ' - (get_stock_status)'; // Product stock status
-    echo  $product->get_description() . ' - (get_description)'; // Product get_description
-    // product date image
-    echo $product->get_image(); // Returns the main product image.
-    echo $product->get_image_id(); // Get main image ID.
-    // product date information
-    echo $product->get_date_created()->date('Y-m-d H:i:s');
-    echo $product->get_date_modified()->date('Y-m-d H:i:s');
-    echo '</pre>';
-  }
+  ?>
 
-  $products = wc_get_products( array( 'status' => 'publish', 'limit' => -1 ) );
-  foreach ($products as $product) {
-    ?>
   <div class="products-image-category">
 
   </div>
@@ -136,6 +137,11 @@ function product_archive (){
 
   </div>
 
+  <?php
+  foreach ($products as $product) {
+    ?>
+
+  <!-- card of product -->
   <a href="#">
   <div class="products-archive">
     <div class="product_card">
@@ -153,7 +159,7 @@ function product_archive (){
           <p><?php $product->get_price(); ?></p>
         </div>
         <div class="product-quantity">
-            <p>+ 1 - </p>
+            <p> + 1 - </p>
         </div>
       </div>
     </div>
