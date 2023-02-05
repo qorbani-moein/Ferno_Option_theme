@@ -143,7 +143,7 @@ function product_archive (){
       ?>
 
       <!-- card of product -->
-      <a href="#">
+      <!-- <a href="#"> -->
       
         <div class="product_card">
           <div class="product-img">
@@ -165,7 +165,7 @@ function product_archive (){
           </div>
         </div>
       
-      <a>
+      <!-- <a> -->
 
       <?php
     }
