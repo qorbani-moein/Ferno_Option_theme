@@ -157,10 +157,7 @@ function product_archive (){
               <p><?php echo $product->get_description(); ?></p>
             </div>
             <div class="product-price">
-              <bdi>
-                <?php echo $product->get_price(); ?>
-                <span class="woocommerce-Price-currencySymbol"><?php echo $product->get_price_html(); ?></span>
-              </bdi>
+              <?php echo $product->get_price_html(); ?>
             </div>
             <div class="product-quantity">
                 <p> + 1 - </p>
@@ -322,6 +319,12 @@ function resource($elem, $type = null)
         width: 78%;
         float: left;
       }
+      .product-price{
+        color: whtie;
+      }
+      .product-price bdi{
+        color: #939393;
+      }
       .product-img{
         width: 40%;
         padding-top: 15px;
@@ -335,13 +338,25 @@ function resource($elem, $type = null)
         object-fit: cover;
       }
       .product-title{
+        margin-bottom: 7px;
         color: #FFFFFF;
       }
       .product-title h2{
-        font-size: 14px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
       }
       .product-title{
         color: white
+      }
+      .product-des p{
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        text-align: right;
       }
       .product-des{
         color: #BDBDBD;
