@@ -314,7 +314,7 @@ function resource($elem, $type = null)
         var len_card_product = document.getElementsByClassName("product_card").length;
         
         document.getElementById("test1").addEventListener("click", function(){
-          console.log{document.getElementsByClassName("product_card")[0].getAttribute);
+          console.log(document.getElementsByClassName("product_card")[0].getAttribute("data-category"));
         });
 
 
