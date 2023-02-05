@@ -142,7 +142,9 @@ function product_archive (){
   echo '<pre>'; print_r( $categories ); echo '</pre>';
   ?>
   </div>
-
+<button id="test1" style="color:white">
+  click me
+</button>
   <div class="products-archive">
     <?php
     foreach ($products as $product) {
@@ -310,6 +312,10 @@ function resource($elem, $type = null)
     case "script-category":
       $result = '
         var len_card_product = document.getElementsByClassName("product_card").length;
+        
+        document.getElementById("test1").addEventListener("click", function(){
+          console.log(this.getAttribute("data-category"));
+        });
         console.log(len_card_product);
         for(var i=0 ; i <= len_card_product ; i++){
           document.getElementsByClassName("product_card")[i+1].addEventListener("click", function(){
