@@ -146,7 +146,7 @@ function product_archive (){
   <div class="products-archive">
     <div class="product_card">
       <div class="product-img">
-
+        <?php echo $product->get_image(); ?>
       </div>
       <div class="product-data">
         <div class="product-title">
