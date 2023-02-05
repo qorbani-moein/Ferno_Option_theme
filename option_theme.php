@@ -97,7 +97,7 @@ function script_page_category()
   //     // console($product_description, 'product_description222');
   // }
 
-  echo '<style>' . resource("box-number") . resource("style-card-product") . '</style>' . resource("script-category", "js");
+  echo '<style>' . resource("box-number") . resource("style-card-product") . resource("style-category") . '</style>' . resource("script-category", "js");
 
 
 }
@@ -204,7 +204,7 @@ function product_archive (){
 
 function script_page_cart()
 {
-  echo "<style>" . resource("box-number") . resource("style-cart") . resource("style-category") . "</style>" . resource("script-cart", "js");
+  echo "<style>" . resource("box-number") . resource("style-cart") . "</style>" . resource("script-cart", "js");
 }
 
 
