@@ -143,7 +143,7 @@ function product_archive (){
       ?>
 
       <!-- card of product -->
-      <!-- <a href="#"> -->
+      <a href="<?php echo get_permalink( $product->get_id() ); ?>">
       
         <div class="product_card">
           <div class="product-img">
@@ -157,7 +157,10 @@ function product_archive (){
               <p><?php echo $product->get_description(); ?></p>
             </div>
             <div class="product-price">
-              <p><?php echo $product->get_price(); ?></p>
+              <bdi>
+                <?php echo $product->get_price(); ?>
+                <span class="woocommerce-Price-currencySymbol"><?php echo $product->get_regular_price(); ?></span>
+              </bdi>
             </div>
             <div class="product-quantity">
                 <p> + 1 - </p>
@@ -165,7 +168,7 @@ function product_archive (){
           </div>
         </div>
       
-      <!-- <a> -->
+      <a>
 
       <?php
     }
@@ -337,8 +340,17 @@ function resource($elem, $type = null)
       .product-title h2{
         font-size: 14px;
       }
+      .product-title{
+        color: white
+      }
       .product-des{
         color: #BDBDBD;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* number of lines to show */
+                line-clamp: 2; 
+        -webkit-box-orient: vertical;
       }
       ';
       break;
