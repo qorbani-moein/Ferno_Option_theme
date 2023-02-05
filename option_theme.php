@@ -150,13 +150,10 @@ function product_archive (){
         foreach ($categories as $category => $value) {          
           foreach ($value as $item => $value_item) {
             if($item=="name" && $value_item!=""){
-              echo '<li class="item-category">' . $value_item . '<li>';
+              // echo '<li class="item-category">' . $value_item . '<li>';
+              echo $value_item;
             }
           }
-
-          // if($category == "name"){
-          //   echo '<li class="item-category">' . $value  . '</li>';
-          // }
         }
       ?>
       <
