@@ -145,14 +145,13 @@ function product_archive (){
     // $all_category = json_decode( $categories, true );
     ?>
     <ul class="list-category">
-
+      
       <?php
-        foreach ($categories as $category => $value) {
-          echo 'category: ' . $category . "<br>";
-          // echo $value . "<br>";
+        foreach ($categories as $category => $value) {          
           foreach ($value as $item => $value_item) {
-            echo 'item: ' . $item  . "<br>";
-            echo 'value_item: ' . $value_item  . "<br>";
+            if($item=="name"){
+              echo '<li class="item-category">' . $value_item . '<li>';
+            }
           }
 
           // if($category == "name"){
@@ -160,6 +159,7 @@ function product_archive (){
           // }
         }
       ?>
+      <
     </ul>
 
     </div>
