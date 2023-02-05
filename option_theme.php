@@ -145,7 +145,7 @@ function product_archive (){
     ?>
     <ul class="list-category">
       <?php for ($i = 0; $i <= count($categories); $i++) { ?>
-        <li class="item-category"> <?php echo $categories[$i + 1]['name']; ?> </li>
+        <li class="item-category"> <?php echo $categories[0]; ?> </li>
       <?php } ?>
     </ul>
 
