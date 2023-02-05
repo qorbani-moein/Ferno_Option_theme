@@ -145,9 +145,14 @@ function product_archive (){
     // $all_category = json_decode( $categories, true );
     ?>
     <ul class="list-category">
-      <?php for ($i = 0; $i <= count($categories); $i++) { ?>
-        <li class="item-category"> <?php echo $categories[0]; ?> </li>
-      <?php } ?>
+
+      <?php
+        foreach ($categories as $category => $value) {
+          if($category == "name"){
+            echo '<li class="item-category">' . $value  . '</li>';
+          }
+        }
+      ?>
     </ul>
 
     </div>
