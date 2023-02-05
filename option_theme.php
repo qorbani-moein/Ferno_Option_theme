@@ -137,36 +137,42 @@ function product_archive (){
 
   </div>
 
-  <?php
-  foreach ($products as $product) {
-    ?>
-
-  <!-- card of product -->
-  <a href="#">
   <div class="products-archive">
-    <div class="product_card">
-      <div class="product-img">
-        <?php echo $product->get_image(); ?>
-      </div>
-      <div class="product-data">
-        <div class="product-title">
-          <h2><?php echo $product->get_title(); ?></h2>
+    <?php
+    foreach ($products as $product) {
+      ?>
+
+      <!-- card of product -->
+      <a href="#">
+      
+        <div class="product_card">
+          <div class="product-img">
+            <?php echo $product->get_image(); ?>
+          </div>
+          <div class="product-data">
+            <div class="product-title">
+              <h2><?php echo $product->get_title(); ?></h2>
+            </div>
+            <div class="product-des">
+              <p><?php echo $product->get_description(); ?></p>
+            </div>
+            <div class="product-price">
+              <p><?php echo $product->get_price(); ?></p>
+            </div>
+            <div class="product-quantity">
+                <p> + 1 - </p>
+            </div>
+          </div>
         </div>
-        <div class="product-des">
-          <p><?php echo $product->get_description(); ?></p>
-        </div>
-        <div class="product-price">
-          <p><?php echo $product->get_price(); ?></p>
-        </div>
-        <div class="product-quantity">
-            <p> + 1 - </p>
-        </div>
-      </div>
-    </div>
+      
+      <a>
+
+      <?php
+    }
+    ?>
   </div>
-  <a>
   <?php
-  }
+
 }
 
 function script_page_cart()
@@ -309,10 +315,15 @@ function resource($elem, $type = null)
         margin: 20px;
         padding: 5px 10px 10px 1px;
       }
+      .product_data{
+        width: 78%;
+        float: left;
+      }
       .product-img{
         width: 40%;
         padding-top: 15px;
         padding-right: 0px;
+        position: absolute;
       }
       .product-img img{
         border-radius: 100%;
@@ -320,11 +331,14 @@ function resource($elem, $type = null)
         width: 80px !important;
         object-fit: cover;
       }
+      .product-title{
+        color: #FFFFFF;
+      }
+      .product-title h2{
+        font-size: 14px;
+      }
       .product-des{
-        width: 50%;
-        position: absolute;
-        top: 0px;
-        left: 10%;
+        color: #BDBDBD;
       }
       ';
       break;
