@@ -312,7 +312,7 @@ function resource($elem, $type = null)
         var len_card_product = document.getElementsByClassName("product_card").length;
         console.log(len_card_product);
         for(var i=0 ; i <= len_card_product ; i++){
-          document.getElementById("cart_product")[i].addEventListener("click", function(){
+          document.getElementsByClassName("product_card")[i].addEventListener("click", function(){
             console.log(this.getAttribute("data-category"));
           });
         }
