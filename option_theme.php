@@ -134,7 +134,13 @@ function product_archive (){
   </div>
 
   <div class="products-slug">
+    <?php
+  // Get Woocommerce product categories WP_Term objects
+  $categories = get_terms( ['taxonomy' => 'product_cat'] );
 
+  // Getting a visual raw output
+  echo '<pre>'; print_r( $categories ); echo '</pre>';
+  ?>
   </div>
 
   <div class="products-archive">
@@ -311,7 +317,7 @@ function resource($elem, $type = null)
       .product_card{
         border: 1px solid #606060 !important;
         border-radius: 5px;
-        height: 120px;
+        height: 150px;
         margin: 20px;
         padding: 5px 10px 10px 1px;
       }
@@ -320,11 +326,9 @@ function resource($elem, $type = null)
         float: left;
       }
       .product-price{
-        color: whtie;
-      }
-      .product-price bdi{
         color: #939393;
       }
+
       .product-img{
         width: 40%;
         padding-top: 15px;
@@ -366,6 +370,10 @@ function resource($elem, $type = null)
         -webkit-line-clamp: 2; /* number of lines to show */
                 line-clamp: 2; 
         -webkit-box-orient: vertical;
+        padding-left: 10px;
+      }
+      .woocommerce-Price-currencySymbol{
+        color: #939393;
       }
       ';
       break;
