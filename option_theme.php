@@ -193,7 +193,7 @@ function product_archive (){
 
 function script_page_cart()
 {
-  echo "<style>" . resource("box-number") . resource("style-cart") . "</style>" . resource("script-cart", "js");
+  echo "<style>" . resource("box-number") . resource("style-cart") . resource("style-category") . "</style>" . resource("script-cart", "js");
 }
 
 
