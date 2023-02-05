@@ -149,7 +149,7 @@ function product_archive (){
       <?php
         foreach ($categories as $category => $value) {
           echo $category . "<br>";
-          echo $value . "<br>";
+          // echo $value . "<br>";
 
           if($category == "name"){
             echo '<li class="item-category">' . $value  . '</li>';
