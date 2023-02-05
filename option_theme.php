@@ -345,17 +345,38 @@ function resource($elem, $type = null)
     case "style-category":
       $result = '
       .products-slug{
+
+        margin-bottom: 80px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        background-color: #333;
+        white-space: nowrap;
         display: inline-block;
-        padding: 0px !important;
-        background: #00000000;
-        max-width: 50px;
-        width: 50px;
+        width: 100%;
+        height: 50px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow-y: hidden;
+        -ms-overflow-style: none;
+        text-align: right;
       }
       .list-category{
         list-style-type: none;
+        margin: 0;
+          margin-bottom: 0px;
+        margin-bottom: 0px;
+        padding-top: 7px;
+        overflow: hidden;
+        background-color: #333333;
+        display: inline-flex;
+        overflow: auto;
         white-space: nowrap;
+        color: white;
       }
-      .item-category{
+      .item-category li{
         float: right;
         display: inline-block;
         color: white;
@@ -365,6 +386,7 @@ function resource($elem, $type = null)
         border-radius: 15px;
         background: #414141;
       }
+
       ';
       break;
     case "style-card-product":
