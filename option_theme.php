@@ -362,7 +362,7 @@ function resource($elem, $type = null)
         -ms-overflow-style: none;
         text-align: right;
       }
-      .list-category{
+      .products-slug ul{
         list-style-type: none;
         margin: 0;
           margin-bottom: 0px;
@@ -375,7 +375,7 @@ function resource($elem, $type = null)
         white-space: nowrap;
         color: white;
       }
-      .item-category li{
+      .products-slug li{
         float: right;
         display: inline-block;
         color: white;
