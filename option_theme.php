@@ -148,11 +148,11 @@ function product_archive (){
 
       <?php
         foreach ($categories as $category => $value) {
-          echo 'category' . $category . "<br>";
+          echo 'category: ' . $category . "<br>";
           // echo $value . "<br>";
           foreach ($value as $item => $value_item) {
-            echo 'item' . $item  . "<br>";
-            echo 'value_item' . $value_item  . "<br>";
+            echo 'item: ' . $item  . "<br>";
+            echo 'value_item: ' . $value_item  . "<br>";
           }
 
           // if($category == "name"){
