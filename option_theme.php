@@ -150,13 +150,13 @@ function product_archive (){
       </div>
       <div class="product-data">
         <div class="product-title">
-          <h2><?php $product->get_title(); ?></h2>
+          <h2><?php echo $product->get_title(); ?></h2>
         </div>
         <div class="product-des">
-          <p><?php $product->get_description(); ?></p>
+          <p><?php echo $product->get_description(); ?></p>
         </div>
         <div class="product-price">
-          <p><?php $product->get_price(); ?></p>
+          <p><?php echo $product->get_price(); ?></p>
         </div>
         <div class="product-quantity">
             <p> + 1 - </p>
