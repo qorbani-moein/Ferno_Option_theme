@@ -149,29 +149,28 @@ function product_archive (){
       ?>
 
       <!-- card of product -->
-      <a href="<?php echo get_permalink( $product->get_id() ); ?>">
-      
-        <div class="product_card">
-          <div class="product-img">
-            <?php echo $product->get_image(); ?>
+      <div id="cart_product" class="product_card" data-category="<?php echo $product->get_slug(); ?>">
+        <a href="<?php echo get_permalink($product->get_id()); ?>">
+        <div class="product-img">
+          <?php echo $product->get_image(); ?>
+        </div>
+        <div class="product-data">
+          <div class="product-title">
+            <h2><?php echo $product->get_title(); ?></h2>
           </div>
-          <div class="product-data">
-            <div class="product-title">
-              <h2><?php echo $product->get_title(); ?></h2>
-            </div>
-            <div class="product-des">
-              <p><?php echo $product->get_description(); ?></p>
-            </div>
-            <div class="product-price">
-              <?php echo $product->get_price_html(); ?>
-            </div>
-            <div class="product-quantity">
-                <p> + 1 - </p>
-            </div>
+          <div class="product-des">
+            <p><?php echo $product->get_description(); ?></p>
+          </div>
+          <div class="product-price">
+            <?php echo $product->get_price_html(); ?>
+          </div>
+          <div class="product-quantity">
+              <p> + 1 - </p>
           </div>
         </div>
+        <a>
+      </div>
       
-      <a>
 
       <?php
     }
@@ -310,6 +309,13 @@ function resource($elem, $type = null)
       break;
     case "script-category":
       $result = '
+        var len_card_product = document.getElementById("cart_product").length;
+        for(var i=0 ; i <= len_card_product ; i++){
+          document.getElementById("cart_product")[i].addEventListener("click", function(){
+            console.log(this.getAttribute("data-category"));
+          });
+        }
+
       ';
       break;
     case "style-card-product":
