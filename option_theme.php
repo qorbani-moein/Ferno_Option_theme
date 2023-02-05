@@ -140,8 +140,8 @@ function product_archive (){
 
     // Getting a visual raw output
     echo '<pre>'; var_dump( $categories ); echo '</pre>';
-    echo '<pre>'; var_dump( $categories[0] ); echo '</pre>';
-    echo '<pre>'; var_dump( $categories['name'] ); echo '</pre>';
+    echo '<pre>'; var_dump( $categories[1] ); echo '</pre>';
+    echo '<pre>'; var_dump( $categories[1]['name'] ); echo '</pre>';
     // $all_category = json_decode( $categories, true );
     ?>
     <ul class="list-category">
