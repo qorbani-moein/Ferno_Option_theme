@@ -135,12 +135,21 @@ function product_archive (){
 
   <div class="products-slug">
     <?php
-  // Get Woocommerce product categories WP_Term objects
-  $categories = get_terms( ['taxonomy' => 'product_cat'] );
+    // Get Woocommerce product categories WP_Term objects
+    $categories = get_terms( ['taxonomy' => 'product_cat'] );
 
-  // Getting a visual raw output
-  echo '<pre>'; print_r( $categories ); echo '</pre>';
-  ?>
+    // Getting a visual raw output
+    echo '<pre>'; print_r( $categories ); echo '</pre>';
+    // $all_category = json_decode( $categories, true );
+
+    ?>
+    <ul class="list-category">
+      <?php for ($i = 0; $i <= count($categories); $i++) { ?>
+      <li class="item-category"> <?php echo $categories['name']; ?> </li>
+      <?php } ?>
+    </ul>
+
+    </div>
   </div>
 <button id="test1" style="color:white">
   click me
@@ -313,11 +322,37 @@ function resource($elem, $type = null)
       $result = '
         var len_card_product = document.getElementsByClassName("product_card").length;
         
-        document.getElementById("test1").addEventListener("click", function(){
-          console.log(document.getElementsByClassName("product_card")[0].getAttribute("data-category"));
-        });
+        for(var i = 0 ; i <= len_card_product ; i++){
+          document.getElementById("test1").addEventListener("click", function(){
+            console.log(document.getElementsByClassName("product_card")[i].getAttribute("data-category"));
+          });
+        }
 
-
+      ';
+      break;
+    case "style-category":
+      $result = '
+      .products-slug{
+        display: inline-block;
+        padding: 0px !important;
+        background: #00000000;
+        max-width: 50px;
+        width: 50px;
+      }
+      .list-category{
+        list-style-type: none;
+        white-space: nowrap;
+      }
+      .item-category{
+        float: right;
+        display: inline-block;
+        color: white;
+        text-align: right;
+        margin: 0px 12px;
+        padding: 5px 10px;
+        border-radius: 15px;
+        background: #414141;
+      }
       ';
       break;
     case "style-card-product":
