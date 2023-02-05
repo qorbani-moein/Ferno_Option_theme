@@ -139,9 +139,10 @@ function product_archive (){
     $categories = get_terms( ['taxonomy' => 'product_cat'] );
 
     // Getting a visual raw output
-    echo '<pre>'; print_r( $categories ); echo '</pre>';
+    // echo '<pre>'; print_r( $categories ); echo '</pre>';
+    echo '<pre>'; print_r( $categories[0] ); echo '</pre>';
+    echo '<pre>'; print_r( $categories['name'] ); echo '</pre>';
     // $all_category = json_decode( $categories, true );
-
     ?>
     <ul class="list-category">
       <?php for ($i = 0; $i <= count($categories); $i++) { ?>
