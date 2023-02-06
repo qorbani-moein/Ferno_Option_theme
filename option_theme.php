@@ -358,7 +358,7 @@ function resource($elem, $type = null)
             //filter category
             var len_card_product = document.getElementsByClassName("product_card").length;
             var category_attr = e.target.innerHTML;
-            document.getElementsByClassName("caption-img-product").innerHTML = e.target.innerHTML;
+            document.getElementsByClassName("caption-img-product")[0].innerHTML = e.target.innerHTML;
             var category_attr_card;
             console.log("len_card_product.length: " + len_card_product);
             for(var i = 0 ; i <= len_card_product -1 ; i++){
