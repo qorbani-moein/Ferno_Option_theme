@@ -368,10 +368,16 @@ function resource($elem, $type = null)
             console.log(document.getElementsByClassName("product_card")[i].getAttribute("data-category"));
           });
         }
-        document.getElementsByClassName("item-category")[0].click = category_click();
-        document.getElementsByClassName("item-category")[1].click = category_click();
-        category_click(){
-          console.log(this.value);
+        //document.getElementsByClassName("item-category")[0].click = category_click();
+        var action_list_li_0 = document.getElementsByClassName("item-category")[0];
+        var action_list_li_1 = document.getElementsByClassName("item-category")[1];
+        action_list_li_0.addEventListener("click", set_ua_value, false);
+        action_list_li_1.addEventListener("click", set_ua_value, false);
+
+        function set_ua_value (e) {
+          if(e.target.nodeName == "A") {
+              console.log(e.target.innerHTML);
+            }
 
         }
         
