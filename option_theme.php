@@ -158,36 +158,6 @@ function product_archive (){
           }
           echo"</li>";
         }
-        foreach ($categories as $category => $value) {  
-          echo '<li class="item-category">';        
-          foreach ($value as $item => $value_item) {
-            if($item=="name" && $value_item!=""){
-              // echo '<li class="item-category">' . $value_item . '<li>';
-              echo $value_item;
-            }
-          }
-          echo"</li>";
-        }
-        foreach ($categories as $category => $value) {  
-          echo '<li class="item-category">';        
-          foreach ($value as $item => $value_item) {
-            if($item=="name" && $value_item!=""){
-              // echo '<li class="item-category">' . $value_item . '<li>';
-              echo $value_item;
-            }
-          }
-          echo"</li>";
-        }
-        foreach ($categories as $category => $value) {  
-          echo '<li class="item-category">';        
-          foreach ($value as $item => $value_item) {
-            if($item=="name" && $value_item!=""){
-              // echo '<li class="item-category">' . $value_item . '<li>';
-              echo $value_item;
-            }
-          }
-          echo"</li>";
-        }
       ?>
     </ul>
 
