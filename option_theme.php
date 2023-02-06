@@ -371,8 +371,9 @@ function resource($elem, $type = null)
         //document.getElementsByClassName("item-category")[0].click = category_click();
         
         var len_category = document.getElementsByClassName("product_card").length;
+        var action_list_li = [];
         for(var i = 0 ; i <= len_category ; i++){
-          var action_list_li[i] = document.getElementsByClassName("item-category")[i];
+          action_list_li[i] = document.getElementsByClassName("item-category")[i];
           action_list_li[i].addEventListener("click", set_ua_value, false);
         }
         // var action_list_li_0 = document.getElementsByClassName("item-category")[0];
