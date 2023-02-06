@@ -127,11 +127,11 @@ function product_archive (){
   // }
 
   $products = wc_get_products( array( 'status' => 'publish', 'limit' => -1 ) );
-
+  $thumbnail_id = get_woocommerce_term_meta( 22, 'thumbnail_id', true ); 
   ?>
 
   <div class="products-image-category">
-    <img class="img_product" src="<?php echo wp_get_attachment_url(22); ?>">
+    <img class="img_product" src="<?php echo wp_get_attachment_url($thumbnail_id); ?>">
   </div>
 
   <div class="products-slug">
