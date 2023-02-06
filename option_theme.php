@@ -389,7 +389,7 @@ function resource($elem, $type = null)
             var category_attr_card;
     
             for(var i = 0 ; i <= len_card_product -1 ; i++){
-              console.log("value_category")[i].innerHTML: " + document.getElementsByClassName("value_category")[i].innerHTML);
+              
               // category_attr_card = document.getElementsByClassName("product_card")[i].getAttribute("data-category");
               category_attr_card = document.querySelectorAll(".value_category a");
 
