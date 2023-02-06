@@ -132,12 +132,14 @@ function product_archive (){
 
   // get the query object
   $cat = $wp_query->get_queried_object();
-
+  console($cat, "cat");
   // get the thumbnail id using the queried category term_id
   $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true ); 
-
+  console($thumbnail_id, "thumbnail_id");
+  
   // get the image URL
   $image = wp_get_attachment_url( $thumbnail_id ); 
+  console($image, "image");
 
   // print the IMG HTML
   // echo "<img src='{$image}' alt='' width='762' height='365' />";
