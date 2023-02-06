@@ -389,10 +389,10 @@ function resource($elem, $type = null)
             for(var i = 0 ; i <= len_card_product -1 ; i++){
               console.log(document.getElementsByClassName("value_category")[i].innerHTML);
               // category_attr_card = document.getElementsByClassName("product_card")[i].getAttribute("data-category");
-              category_attr_card = document.getElementsByClassName("value_category")[i].innerHTML;
+              category_attr_card = document.queryselectorall(".value_category a");
 
               
-              if(category_attr != category_attr_card){
+              if(category_attr != category_attr_card[i].innerHTML){
                 console.log("hidden");
                 document.getElementsByClassName("product_card")[i].style.display = "none";
               }
