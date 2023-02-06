@@ -368,7 +368,13 @@ function resource($elem, $type = null)
             console.log(document.getElementsByClassName("product_card")[i].getAttribute("data-category"));
           });
         }
+        document.getElementsByClassName("item-category")[0].click = category_click();
+        document.getElementsByClassName("item-category")[1].click = category_click();
+        category_click(){
+          console.log(this.value);
 
+        }
+        
       ';
       break;
     case "style-category":
@@ -479,8 +485,8 @@ function resource($elem, $type = null)
         -webkit-box-orient: vertical;
         padding-left: 10px;
       }
-      .woocommerce-Price-currencySymbol{
-        color: #939393;
+      .woocommerce-Price-currencySymbol bdi{
+        color: white;
       }
       ';
       break;
