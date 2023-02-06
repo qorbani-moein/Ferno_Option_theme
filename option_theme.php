@@ -146,7 +146,7 @@ function product_archive (){
     // $all_category = json_decode( $categories, true );
     ?>
     <ul class="list-category">
-      
+      <li class="item-category">همه</li>
       <?php
         foreach ($categories as $category => $value) {  
           echo '<li class="item-category">';        
@@ -193,9 +193,7 @@ function product_archive (){
 
     </div>
   </div>
-<button id="test1" style="color:white">
-  click me
-</button>
+
   <div class="products-archive">
     <?php
     $j = 0;
@@ -400,6 +398,11 @@ function resource($elem, $type = null)
               for(var y = 0 ; y <= category_attr_card.length -1; y++){
                 console.log("y: " + y );
                 console.log("category_attr_card: " + category_attr_card[y].innerHTML);
+                
+                if(category_attr == "همه"){
+                  document.getElementsByClassName("product_card")[i].style.display = "block";
+                  break;
+                }
                 if(category_attr != category_attr_card[y].innerHTML){
                   console.log("hidden");
                   document.getElementsByClassName("product_card")[i].style.display = "none";
