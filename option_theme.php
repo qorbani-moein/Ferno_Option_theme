@@ -375,6 +375,8 @@ function resource($elem, $type = null)
         action_list_li_1.addEventListener("click", set_ua_value, false);
 
         function set_ua_value (e) {
+          console.log(e.target.innerHTML);
+          console.log(e.target.nodeName);
           if(e.target.nodeName == "A") {
               console.log(e.target.innerHTML);
             }
