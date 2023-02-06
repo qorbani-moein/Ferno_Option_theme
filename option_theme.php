@@ -132,7 +132,7 @@ function product_archive (){
 
   <div class="products-image-category">
     <img class="img-product" src="<?php echo "https://ferno.eightco.org/wp-content/uploads/2023/01/istockphoto-683734168-170667a2.png"; ?>">
-    <h1 class="caption-img-product">برگر</h1>
+    <h1 class="caption-img-product"></h1>
   </div>
 
   <div class="products-slug">
@@ -358,6 +358,7 @@ function resource($elem, $type = null)
             //filter category
             var len_card_product = document.getElementsByClassName("product_card").length;
             var category_attr = e.target.innerHTML;
+            document.getElementsByClassName("caption-img-product").innerHTML = e.target.innerHTML;
             var category_attr_card;
             console.log("len_card_product.length: " + len_card_product);
             for(var i = 0 ; i <= len_card_product -1 ; i++){
