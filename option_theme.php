@@ -369,16 +369,22 @@ function resource($elem, $type = null)
           });
         }
         //document.getElementsByClassName("item-category")[0].click = category_click();
-        var action_list_li_0 = document.getElementsByClassName("item-category")[0];
-        var action_list_li_1 = document.getElementsByClassName("item-category")[1];
-        action_list_li_0.addEventListener("click", set_ua_value, false);
-        action_list_li_1.addEventListener("click", set_ua_value, false);
+        
+        var len_category = document.getElementsByClassName("product_card").length;
+        for(var i = 0 ; i <= len_category ; i++){
+          var action_list_li[i] = document.getElementsByClassName("item-category")[i];
+          action_list_li[i].addEventListener("click", set_ua_value, false);
+        }
+        // var action_list_li_0 = document.getElementsByClassName("item-category")[0];
+        // var action_list_li_1 = document.getElementsByClassName("item-category")[1];
+        // action_list_li_0.addEventListener("click", set_ua_value, false);
+        // action_list_li_1.addEventListener("click", set_ua_value, false);
 
         function set_ua_value (e) {
           console.log(e.target.innerHTML);
-          console.log(e.target.nodeName);
-          if(e.target.nodeName == "A") {
+          if(e.target.nodeName == "LI") {
               console.log(e.target.innerHTML);
+
             }
 
         }
