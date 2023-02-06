@@ -367,7 +367,6 @@ function resource($elem, $type = null)
         ';
       break;
     case "script-category":
-      
       $result = '
       //<script>
       //filter by category
@@ -393,12 +392,15 @@ function resource($elem, $type = null)
               // category_attr_card = document.getElementsByClassName("product_card")[i].getAttribute("data-category");
               category_attr_card = document.querySelectorAll(".value_category a");
 
-              
-              console.log("category_attr_card: " + category_attr_card[i].innerHTML);
               document.getElementsByClassName("product_card")[i].style.display = "block";
-              if(category_attr != category_attr_card[i].innerHTML){
-                console.log("hidden");
-                document.getElementsByClassName("product_card")[i].style.display = "none";
+              
+              for(var y=0 ; y <= category_attr_card.length ; y++){
+                console.log("category_attr_card: " + category_attr_card[y].innerHTML);
+                if(category_attr != category_attr_card[y].innerHTML){
+                  console.log("hidden");
+                  document.getElementsByClassName("product_card")[i].style.display = "none";
+                }
+
               }
               // document.getElementById("test1").addEventListener("click", function(){
               //   console.log(document.getElementsByClassName("product_card")[i].getAttribute("data-category"));
