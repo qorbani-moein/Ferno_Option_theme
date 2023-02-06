@@ -367,7 +367,9 @@ function resource($elem, $type = null)
         ';
       break;
     case "script-category":
+      
       $result = '
+      //<script>
       //filter by category
       //add event click on category
       var len_category = document.getElementsByClassName("product_card").length;
@@ -389,7 +391,7 @@ function resource($elem, $type = null)
             for(var i = 0 ; i <= len_card_product -1 ; i++){
               console.log(document.getElementsByClassName("value_category")[i].innerHTML);
               // category_attr_card = document.getElementsByClassName("product_card")[i].getAttribute("data-category");
-              category_attr_card = document.queryselectorall(".value_category a");
+              category_attr_card = document.querySelectorAll(".value_category a");
 
               
               if(category_attr != category_attr_card[i].innerHTML){
