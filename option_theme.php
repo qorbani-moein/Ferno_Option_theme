@@ -376,11 +376,14 @@ function resource($elem, $type = null)
         action_list_li[i] = document.getElementsByClassName("item-category")[i];
         action_list_li[i].addEventListener("click", set_ua_value, false);
       }
-
+      
+      for(var u = 0 ; u <= document.getElementsByClassName("item-category").length - 1 ; u++){
+        document.getElementsByClassName("item-category")[u].classList.remove("active");
+      }
       function set_ua_value (e) {
         if(e.target.nodeName == "LI") {
             console.log("e.target.innerHTML: " + e.target.innerHTML);
-
+            e.target.classList.add("active");
             //filter category
             var len_card_product = document.getElementsByClassName("product_card").length;
             var category_attr = e.target.innerHTML;
@@ -481,7 +484,9 @@ function resource($elem, $type = null)
         background: #414141;
         cursor: pointer;
       }
-
+      .cat_active{
+        background: #838383;
+      }
       ';
       break;
     case "style-card-product":
