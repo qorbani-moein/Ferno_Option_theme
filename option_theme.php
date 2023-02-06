@@ -395,13 +395,15 @@ function resource($elem, $type = null)
               document.getElementsByClassName("product_card")[i].style.display = "block";
               console.log("category_attr_card.length: " + category_attr_card.length );
               
+              console.log("i: " + i );
               for(var y = 0 ; y <= category_attr_card.length -1; y++){
-                console.log("i: " + i );
                 console.log("y: " + y );
                 console.log("category_attr_card: " + category_attr_card[y].innerHTML);
                 if(category_attr != category_attr_card[y].innerHTML){
                   console.log("hidden");
                   document.getElementsByClassName("product_card")[i].style.display = "none";
+                }else{
+                  document.getElementsByClassName("product_card")[i].style.display = "block";
                 }
 
               }
