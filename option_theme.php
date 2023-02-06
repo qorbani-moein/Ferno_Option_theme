@@ -395,6 +395,7 @@ function resource($elem, $type = null)
 
               
               console.log("category_attr_card: " + category_attr_card[i].innerHTML);
+              document.getElementsByClassName("product_card")[i].style.display = "block";
               if(category_attr != category_attr_card[i].innerHTML){
                 console.log("hidden");
                 document.getElementsByClassName("product_card")[i].style.display = "none";
