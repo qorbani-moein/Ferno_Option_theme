@@ -390,7 +390,7 @@ function resource($elem, $type = null)
             for(var i = 0 ; i <= len_card_product -1 ; i++){
               
               // category_attr_card = document.getElementsByClassName("product_card")[i].getAttribute("data-category");
-              category_attr_card = document.querySelectorAll(".value_category a");
+              category_attr_card = document.getElementsByClassName("product_card")[i].querySelectorAll(".value_category a");
 
               document.getElementsByClassName("product_card")[i].style.display = "block";
               console.log("category_attr_card.length: " + category_attr_card.length );
@@ -403,6 +403,7 @@ function resource($elem, $type = null)
                   console.log("hidden");
                   document.getElementsByClassName("product_card")[i].style.display = "none";
                 }else{
+                  console.log("show");
                   document.getElementsByClassName("product_card")[i].style.display = "block";
                 }
 
