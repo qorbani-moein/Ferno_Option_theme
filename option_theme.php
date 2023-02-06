@@ -127,26 +127,11 @@ function product_archive (){
   // }
 
   $products = wc_get_products( array( 'status' => 'publish', 'limit' => -1 ) );
-  
-  global $wp_query;
 
-  // get the query object
-  $cat = $wp_query->get_queried_object();
-  console($cat, "cat");
-  // get the thumbnail id using the queried category term_id
-  $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true ); 
-  console($thumbnail_id, "thumbnail_id");
-  
-  // get the image URL
-  $image = wp_get_attachment_url( $thumbnail_id ); 
-  console($image, "image");
-
-  // print the IMG HTML
-  // echo "<img src='{$image}' alt='' width='762' height='365' />";
   ?>
 
   <div class="products-image-category">
-    <img class="img_product" src="<?php echo $image; ?>">
+    <img class="img_product" src="<?php echo "https://ferno.eightco.org/wp-content/uploads/2023/01/istockphoto-683734168-170667a2.png"; ?>">
   </div>
 
   <div class="products-slug">
