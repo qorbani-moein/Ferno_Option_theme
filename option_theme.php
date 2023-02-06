@@ -406,6 +406,7 @@ function resource($elem, $type = null)
                 }else{
                   console.log("show");
                   document.getElementsByClassName("product_card")[i].style.display = "block";
+                  break;
                 }
 
               }
