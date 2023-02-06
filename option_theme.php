@@ -391,8 +391,7 @@ function resource($elem, $type = null)
             for(var i = 0 ; i <= len_card_product -1 ; i++){
               
               // category_attr_card = document.getElementsByClassName("product_card")[i].getAttribute("data-category");
-              category_attr_card = document.querySelectorAll(".value_category_" + i);
-              category_attr_card = category_attr_card.querySelectorAll("a");
+              category_attr_card = document.querySelectorAll(".value_category_" + i + " a");
 
               document.getElementsByClassName("product_card")[i].style.display = "block";
               console.log("category_attr_card.length: " + category_attr_card.length );
