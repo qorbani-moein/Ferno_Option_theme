@@ -201,8 +201,9 @@ function product_archive (){
     foreach ($products as $product) {
       ?>
 
+      <?php echo "<pre>" . $product->get_category_ids() . "</pre>"; ?>
       <!-- card of product -->
-      <div id="cart_product" class="product_card" data-category="<?php echo urldecode($product->get_categories()); ?>">
+      <div id="cart_product" class="product_card" data-category="<?php echo urldecode($product->get_category_ids()); ?>">
         <a href="<?php echo get_permalink($product->get_id()); ?>">
         <div class="product-img">
           <?php echo $product->get_image(); ?>
