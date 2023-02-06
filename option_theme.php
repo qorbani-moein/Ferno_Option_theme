@@ -463,7 +463,14 @@ function resource($elem, $type = null)
         width: 100%;
       }
       .caption-img-product{
-
+        position: absolute;
+        color: white;
+        top: 150px;
+        right: 20px;
+        font-family: 'Vazirmatn';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 38px;
       }
       ';
       break;
