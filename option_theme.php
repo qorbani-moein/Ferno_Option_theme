@@ -131,7 +131,7 @@ function product_archive (){
   ?>
 
   <div class="products-image-category">
-    <img class="img_product" src="<?php echo "https://ferno.eightco.org/wp-content/uploads/2023/01/istockphoto-683734168-170667a2.png"; ?>">
+    <img class="img-product" src="<?php echo "https://ferno.eightco.org/wp-content/uploads/2023/01/istockphoto-683734168-170667a2.png"; ?>">
   </div>
 
   <div class="products-slug">
@@ -459,6 +459,9 @@ function resource($elem, $type = null)
       }
       .cat_active{
         background: #838383;
+      }
+      .img-product{
+
       }
       ';
       break;
