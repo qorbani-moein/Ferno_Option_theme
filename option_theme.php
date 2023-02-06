@@ -112,6 +112,7 @@ function product_archive (){
     // echo  $product->get_id() . ' - (get_id)';    // Product ID
     // echo  $product->get_title() . ' - (get_title)'; // Product title
     // echo  $product->get_slug() . ' - (get_slug)'; // Product slug
+    // echo  $product->get_categories() . ' - (get_categories)'; // Product categories
     // echo  $product->get_price() . ' - (get_price)'; // Product price
     // echo  $product->get_catalog_visibility() . ' - (get_catalog_visibility)'; // Product visibility
     // echo  $product->get_stock_status() . ' - (get_stock_status)'; // Product stock status
@@ -201,7 +202,7 @@ function product_archive (){
       ?>
 
       <!-- card of product -->
-      <div id="cart_product" class="product_card" data-category="<?php echo urldecode($product->get_slug()); ?>">
+      <div id="cart_product" class="product_card" data-category="<?php echo urldecode($product->get_categories()); ?>">
         <a href="<?php echo get_permalink($product->get_id()); ?>">
         <div class="product-img">
           <?php echo $product->get_image(); ?>
