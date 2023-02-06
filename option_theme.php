@@ -152,7 +152,7 @@ function product_archive (){
           foreach ($value as $item => $value_item) {
             if($item=="name" && $value_item!=""){
               // echo '<li class="item-category">' . $value_item . '<li>';
-              echo $value_item;
+              echo urldecode($value_item);
             }
           }
           echo"</li>";
@@ -384,7 +384,7 @@ function resource($elem, $type = null)
               category_attr_card = document.getElementsByClassName("product_card")[i].getAttribute("data-category");
 
               
-              if(category_attr != urldecode(category_attr_card)){
+              if(category_attr != category_attr_card){
                 console.log("hidden");
                 document.getElementsByClassName("product_card")[i].style.display = "none";
               }
