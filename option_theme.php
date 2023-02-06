@@ -132,6 +132,7 @@ function product_archive (){
 
   <div class="products-image-category">
     <img class="img-product" src="<?php echo "https://ferno.eightco.org/wp-content/uploads/2023/01/istockphoto-683734168-170667a2.png"; ?>">
+    <h1 class="caption-img-product">برگر</h1>
   </div>
 
   <div class="products-slug">
@@ -415,10 +416,8 @@ function resource($elem, $type = null)
         margin-top: 70px;
       }
       .products-slug{
-
-        margin-bottom: 80px;
-        position: absolute;
-        top: 0px;
+        position: relative;
+        top: -6px;
         right: 0px;
         background-color: #333;
         white-space: nowrap;
@@ -461,6 +460,9 @@ function resource($elem, $type = null)
         background: #838383;
       }
       .img-product{
+        width: 100%;
+      }
+      .caption-img-product{
 
       }
       ';
