@@ -202,9 +202,9 @@ function product_archive (){
       ?>
 
       <?php 
-      echo "<pre>" . var_dump($product->get_category_ids()) . "</pre>";
-      echo "<pre>" . var_dump($product->get_categories()) . "</pre>";
-      echo "<pre>" . ($product->get_categories()) . "</pre>";
+      // echo "<pre>" . var_dump($product->get_category_ids()) . "</pre>";
+      // echo "<pre>" . var_dump($product->get_categories()) . "</pre>";
+      echo '<div class="value_category" hidden>' . $product->get_categories() . "</div>";
       $categories_product = $product->get_category_ids(); 
       ?>
       <!-- card of product -->
@@ -388,7 +388,8 @@ function resource($elem, $type = null)
     
             for(var i = 0 ; i <= len_card_product -1 ; i++){
               console.log(document.getElementsByClassName("product_card")[i].getAttribute("data-category"));
-              category_attr_card = document.getElementsByClassName("product_card")[i].getAttribute("data-category");
+              // category_attr_card = document.getElementsByClassName("product_card")[i].getAttribute("data-category");
+              category_attr_card = document.getElementsByClassName("value_category")[i].value;
 
               
               if(category_attr != category_attr_card){
