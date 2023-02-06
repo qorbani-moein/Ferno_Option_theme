@@ -381,7 +381,7 @@ function resource($elem, $type = null)
 
       function set_ua_value (e) {
         if(e.target.nodeName == "LI") {
-            console.log(e.target.innerHTML);
+            console.log("e.target.innerHTML: " + e.target.innerHTML);
 
             //filter category
             var len_card_product = document.getElementsByClassName("product_card").length;
@@ -389,11 +389,12 @@ function resource($elem, $type = null)
             var category_attr_card;
     
             for(var i = 0 ; i <= len_card_product -1 ; i++){
-              console.log(document.getElementsByClassName("value_category")[i].innerHTML);
+              console.log("value_category")[i].innerHTML: " + document.getElementsByClassName("value_category")[i].innerHTML);
               // category_attr_card = document.getElementsByClassName("product_card")[i].getAttribute("data-category");
               category_attr_card = document.querySelectorAll(".value_category a");
 
               
+              console.log("category_attr_card: " + category_attr_card[i].innerHTML);
               if(category_attr != category_attr_card[i].innerHTML){
                 console.log("hidden");
                 document.getElementsByClassName("product_card")[i].style.display = "none";
