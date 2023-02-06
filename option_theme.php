@@ -367,6 +367,7 @@ function resource($elem, $type = null)
         ';
       break;
     case "script-category":
+      ?>
       $result = '
       //<script>
       //filter by category
@@ -386,7 +387,7 @@ function resource($elem, $type = null)
             var len_card_product = document.getElementsByClassName("product_card").length;
             var category_attr = e.target.innerHTML;
             var category_attr_card;
-    
+            console.log("len_card_product.length: " + len_card_product);
             for(var i = 0 ; i <= len_card_product -1 ; i++){
               
               // category_attr_card = document.getElementsByClassName("product_card")[i].getAttribute("data-category");
@@ -395,7 +396,7 @@ function resource($elem, $type = null)
               document.getElementsByClassName("product_card")[i].style.display = "block";
               console.log("category_attr_card.length: " + category_attr_card.length );
               
-              for(var y = 0 ; y <= category_attr_card.length ; y++){
+              for(var y = 0 ; y <= category_attr_card.length -1; y++){
                 console.log("i: " + i );
                 console.log("y: " + y );
                 console.log("category_attr_card: " + category_attr_card[y].innerHTML);
