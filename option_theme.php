@@ -152,7 +152,7 @@ function product_archive (){
           foreach ($value as $item => $value_item) {
             if($item=="name" && $value_item!=""){
               // echo '<li class="item-category">' . $value_item . '<li>';
-              echo urldecode($value_item);
+              echo $value_item;
             }
           }
           echo"</li>";
@@ -201,7 +201,7 @@ function product_archive (){
       ?>
 
       <!-- card of product -->
-      <div id="cart_product" class="product_card" data-category="<?php echo $product->get_slug(); ?>">
+      <div id="cart_product" class="product_card" data-category="<?php echo urldecode($product->get_slug()); ?>">
         <a href="<?php echo get_permalink($product->get_id()); ?>">
         <div class="product-img">
           <?php echo $product->get_image(); ?>
