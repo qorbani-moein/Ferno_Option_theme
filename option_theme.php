@@ -367,6 +367,7 @@ function resource($elem, $type = null)
         ';
       break;
     case "script-category":
+      ?>
       $result = '
       //<script>
       //filter by category
@@ -393,8 +394,11 @@ function resource($elem, $type = null)
               category_attr_card = document.querySelectorAll(".value_category a");
 
               document.getElementsByClassName("product_card")[i].style.display = "block";
+              console.log("category_attr_card.length: " + category_attr_card.length );
               
-              for(var y=0 ; y <= category_attr_card.length ; y++){
+              for(var y = 0 ; y <= category_attr_card.length ; y++){
+                console.log("i: " + i );
+                console.log("y: " + y );
                 console.log("category_attr_card: " + category_attr_card[y].innerHTML);
                 if(category_attr != category_attr_card[y].innerHTML){
                   console.log("hidden");
