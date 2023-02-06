@@ -131,7 +131,7 @@ function product_archive (){
   ?>
 
   <div class="products-image-category">
-
+    <img class="img_product" src="<?php echo wp_get_attachment_url(22); ?>">
   </div>
 
   <div class="products-slug">
@@ -411,6 +411,9 @@ function resource($elem, $type = null)
       break;
     case "style-category":
       $result = '
+      .products-archive{
+        margin-top: 70px;
+      }
       .products-slug{
 
         margin-bottom: 80px;
