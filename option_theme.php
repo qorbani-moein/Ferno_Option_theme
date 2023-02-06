@@ -367,7 +367,6 @@ function resource($elem, $type = null)
         ';
       break;
     case "script-category":
-      ?>
       $result = '
       //<script>
       //filter by category
