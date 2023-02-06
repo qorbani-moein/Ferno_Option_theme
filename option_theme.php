@@ -374,19 +374,37 @@ function resource($elem, $type = null)
         if(e.target.nodeName == "LI") {
             console.log(e.target.innerHTML);
 
+            //filter category
+            var len_card_product = document.getElementsByClassName("product_card").length;
+            var category_attr = e.target.innerHTML;
+            var category_attr_card;
+    
+            for(var i = 0 ; i <= len_card_product -1 ; i++){
+              console.log(document.getElementsByClassName("product_card")[i].getAttribute("data-category"));
+              category_attr_card = document.getElementsByClassName("product_card")[i].getAttribute("data-category");
+              if(category_attr != category_attr_card){
+                console.log("hidden");
+                document.getElementsByClassName("product_card")[i].style.display = "none";
+              }
+              // document.getElementById("test1").addEventListener("click", function(){
+              //   console.log(document.getElementsByClassName("product_card")[i].getAttribute("data-category"));
+              // });
+            }
           }
 
       }
-        //filter category
-        var len_card_product = document.getElementsByClassName("product_card").length;
-        var x;
+        // filter category
+        // var len_card_product = document.getElementsByClassName("product_card").length;
+        // var category_attr;
 
-        for(var i = 0 ; i <= len_card_product ; i++){
-          console.log(document.getElementsByClassName("product_card")[i].getAttribute("data-category"));
-          // document.getElementById("test1").addEventListener("click", function(){
-          //   console.log(document.getElementsByClassName("product_card")[i].getAttribute("data-category"));
-          // });
-        }
+        // for(var i = 0 ; i <= len_card_product -1 ; i++){
+        //   console.log(document.getElementsByClassName("product_card")[i].getAttribute("data-category"));
+        //   category_attr = document.getElementsByClassName("product_card")[i].getAttribute("data-category");
+          
+        //   // document.getElementById("test1").addEventListener("click", function(){
+        //   //   console.log(document.getElementsByClassName("product_card")[i].getAttribute("data-category"));
+        //   // });
+        // }
         
         
       ';
