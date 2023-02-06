@@ -383,16 +383,8 @@ function resource($elem, $type = null)
               console.log(document.getElementsByClassName("product_card")[i].getAttribute("data-category"));
               category_attr_card = document.getElementsByClassName("product_card")[i].getAttribute("data-category");
 
-              //convert to utf8
-
-              // const utf16Text = "I ❤️ JS";         // I ❤️ JS
-              category_attr_card = toUtf8(category_attr_card);  // I â¤ï¸ JS
-
-              console.log("unicode: " . category_attr_card);  // I â¤ï¸ JS
-
-
-
-              if(category_attr != category_attr_card){
+              
+              if(category_attr != urldecode(category_attr_card)){
                 console.log("hidden");
                 document.getElementsByClassName("product_card")[i].style.display = "none";
               }
@@ -403,29 +395,6 @@ function resource($elem, $type = null)
           }
 
       }
-
-      // Note: Almost all JavaScript engines by default store string literals using UTF-16 encoding format.
-      //       By using the below function we do conversion from default encoding to UTF-8 encoding.
-
-      var toUtf8 = function(text) {
-          var surrogate = encodeURIComponent(text);
-          var result = "";
-          for (var i = 0; i < surrogate.length;) {
-              var character = surrogate[i];
-          i += 1;
-              if (character == '%') {
-                var hex = surrogate.substring(i, i += 2);
-            if (hex) {
-              result += String.fromCharCode(parseInt(hex, 16));
-            }
-              } else {
-                result += character;
-              }
-          }
-          return result;
-      };
-
-      
         // filter category
         // var len_card_product = document.getElementsByClassName("product_card").length;
         // var category_attr;
