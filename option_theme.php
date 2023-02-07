@@ -469,9 +469,11 @@ function resource($elem, $type = null)
           //get cart woocommerce
           for(var i = 0 ; i < woo_product_quantity.length ; i++){
               //replace nth to id for per rendring
-              document.getElementsByClassName("moein-product-quantity")[i].innerHTML += quantity_product_html.split("nth").join(i);
+              document.getElementsByClassName("moein-product-quantity")[i].outerHTML += quantity_product_html.split("nth").join(i);
               
               //put value of [input] number cart woocommerce to my [input] quantity box
+              
+              console.log(woo_product_quantity[i].innerHTML);
               document.getElementById("quantity_cart_" + i).value = woo_product_quantity[i].innerHTML;
               if(woo_product_quantity[i].innerHTML == 0)
                 document.getElementById("quantity_cart_" + i).style.display = "none";
