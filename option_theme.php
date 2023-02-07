@@ -424,7 +424,7 @@ function resource($elem, $type = null)
       function time_check_frm(){
         var exist_elem = document.getElementsByClassName("quantity_cart").length;
         // console.log("exist_elem - " + exist_elem);
-        if(exist_elem == 0)
+        if(exist_elem == 0 || exist_elem == "" || exist_elem == null)
           cart_quantity_product(exist_elem);
       }
       
