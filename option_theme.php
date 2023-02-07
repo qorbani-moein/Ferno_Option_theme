@@ -193,7 +193,7 @@ function product_archive (){
           <div class="product-price">
             <?php echo $product->get_price_html(); ?>
           </div>
-          <div class="product-quantity">
+          <div class="moein-product-quantity">
               <!-- <p> + 1 - </p> -->
               <?php
                 global $woocommerce;
@@ -453,8 +453,8 @@ function resource($elem, $type = null)
       
         function cart_quantity_product (){
           console.log("True true");
-          // var len_cart = document.getElementsByClassName("product-quantity").length;
-          var woo_product_quantity = document.getElementsByClassName("product-quantity");
+          // var len_cart = document.getElementsByClassName("moein-product-quantity").length;
+          var woo_product_quantity = document.getElementsByClassName("moein-product-quantity");
           
           //add box quantity (- 1 +) HTML to end of div
           var quantity_product_html = `
@@ -470,7 +470,7 @@ function resource($elem, $type = null)
           //get cart woocommerce
           for(var i = 0 ; i < woo_product_quantity.length ; i++){
               //replace nth to id for per rendring
-              document.getElementsByClassName("product-quantity")[i].innerHTML += quantity_product_html.split("nth").join(i);
+              document.getElementsByClassName("moein-product-quantity")[i].innerHTML += quantity_product_html.split("nth").join(i);
               
               //put value of [input] number cart woocommerce to my [input] quantity box
               document.getElementById("quantity_cart_" + i).value = woo_product_quantity[i].innerHTML;
