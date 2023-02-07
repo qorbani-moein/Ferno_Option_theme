@@ -194,7 +194,6 @@ function product_archive (){
             <?php echo $product->get_price_html(); ?>
           </div>
           <div class="moein-product-quantity">
-              <!-- <p> + 1 - </p> -->
               <?php
                 global $woocommerce;
                 $items = $woocommerce->cart->get_cart();
@@ -202,7 +201,7 @@ function product_archive (){
                 foreach($items as $item => $values) { 
                     // $_product =  wc_get_product( $values['data']->get_id()); 
                     if($values['data']->get_id() == $product->get_id()){
-                      if($values['quantity'] == "" || $values['quantity'] == null)
+                      if(!isset($values['quantity']))
                         echo '0'; 
                       else
                         echo $values['quantity'];
