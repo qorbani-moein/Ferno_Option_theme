@@ -203,9 +203,9 @@ function product_archive (){
                     // $_product =  wc_get_product( $values['data']->get_id()); 
                     if($values['data']->get_id() == $product->get_id()){
                       if($values['quantity'] == "" || $values['quantity'] == null)
-                        echo '<p>0</p>'; 
+                        echo '0'; 
                       else
-                        echo '<p>' . $values['quantity'] .'</p>';
+                        echo $values['quantity'];
                     }
                     // echo "<b>".$_product->get_title().'</b>  <br> Quantity: '.$values['quantity'].'<br><br><br>' . '
                     // <p style="color:white;">get_id= ' . $values['data']->get_id() . '</p> 
@@ -453,7 +453,8 @@ function resource($elem, $type = null)
       
         function cart_quantity_product (){
           console.log("True true");
-          var len_cart = document.getElementsByClassName("product-quantity").length;
+          // var len_cart = document.getElementsByClassName("product-quantity").length;
+          var woo_product_quantity = document.getElementsByClassName("product-quantity");
           
           //add box quantity (- 1 +) HTML to end of div
           var quantity_product_html = `
@@ -465,10 +466,9 @@ function resource($elem, $type = null)
           `;
       
           //get all product woocommerce
-          var woo_product_quantity = parseInt(document.querySelectorAll(".product-quantity p"));
 
           //get cart woocommerce
-          for(var i = 0 ; i < len_cart ; i++){
+          for(var i = 0 ; i < woo_product_quantity.length ; i++){
               //replace nth to id for per rendring
               document.getElementsByClassName("product-quantity")[i].innerHTML += quantity_product_html.split("nth").join(i);
               
