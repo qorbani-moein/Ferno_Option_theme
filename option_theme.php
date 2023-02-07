@@ -343,9 +343,11 @@ function resource($elem, $type = null)
       //add event click on category
       var len_category = document.getElementsByClassName("product_card").length;
       var action_list_li = [];
-      for(var i = 0 ; i <= len_category ; i++){
+      for(var i = 0 ; i <= len_category - 1 ; i++){
         action_list_li[i] = document.getElementsByClassName("item-category")[i];
-        action_list_li[i].addEventListener("click", set_ua_value, false);
+        if(action_list_li[i]){
+          action_list_li[i].addEventListener("click", set_ua_value, false);
+        }
       }
       
       for(var u = 0 ; u <= document.getElementsByClassName("item-category").length - 1 ; u++){
