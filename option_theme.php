@@ -179,13 +179,16 @@ function product_archive (){
       ?>
       <!-- card of product -->
       <div id="cart_product" class="product_card" data-category="<?php echo urldecode($categories_product[0]); ?>">
-        <a href="<?php echo get_permalink($product->get_id()); ?>">
         <div class="product-img">
+          <a href="<?php echo get_permalink($product->get_id()); ?>">
           <?php echo $product->get_image(); ?>
+          </a>
         </div>
         <div class="product-data">
           <div class="product-title">
-            <h2><?php echo $product->get_title(); ?></h2>
+            <a href="<?php echo get_permalink($product->get_id()); ?>">
+              <h2><?php echo $product->get_title(); ?></h2>
+            </a>
           </div>
           <div class="product-des">
             <p><?php echo $product->get_description(); ?></p>
@@ -193,7 +196,7 @@ function product_archive (){
           <div class="product-price">
             <?php echo $product->get_price_html(); ?>
           </div>
-          <div class="moein-product-quantity">
+          <div class="moein-product-quantity" hidden="">
               <?php
                 global $woocommerce;
                 $items = $woocommerce->cart->get_cart();
@@ -215,7 +218,6 @@ function product_archive (){
               ?>
           </div>
         </div>
-        <a>
       </div>
       
 
@@ -557,7 +559,7 @@ function resource($elem, $type = null)
         position: relative;
         background: #2c2c2c;
         left: 10px;
-        bottom: 20px;
+        top: -40px;
         display: flex;
         flex-wrap: nowrap;
         align-content: stretch;
