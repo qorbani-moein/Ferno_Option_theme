@@ -97,7 +97,7 @@ function script_page_category()
   //     // console($product_description, 'product_description222');
   // }
 
-  echo '<style>' . resource("box-number") . resource("style-card-product") . resource("style-category") . '</style>' . resource("script-category", "js");
+  echo '<style>' . resource("style-card-product") . resource("style-category") . '</style>' . resource("script-category", "js");
 
 
 }
@@ -202,7 +202,10 @@ function product_archive (){
                 foreach($items as $item => $values) { 
                     // $_product =  wc_get_product( $values['data']->get_id()); 
                     if($values['data']->get_id() == $product->get_id()){
-                      echo $values['quantity'];
+                      if($values['quantity'] == "" || $values['quantity'] == null)
+                        echo '<p>0</p>'; 
+                      else
+                        echo '<p>' . $values['quantity'] .'</p>';
                     }
                     // echo "<b>".$_product->get_title().'</b>  <br> Quantity: '.$values['quantity'].'<br><br><br>' . '
                     // <p style="color:white;">get_id= ' . $values['data']->get_id() . '</p> 
@@ -419,10 +422,10 @@ function resource($elem, $type = null)
       // check every secend cart if not have data
       setInterval(time_check_frm,1000);
       function time_check_frm(){
-        var exist_elem = document.getElementsByClassName("number_quantity_cart").length;
+        var exist_elem = document.getElementsByClassName("product-quantity").length;
         // console.log("exist_elem - " + exist_elem);
-        if(exist_elem == 0)
-          cart_quantity_product();
+        if(exist_elem != 0)
+          cart_quantity_product(exist_elem);
       }
       
         //Click on + or - quantity
@@ -448,8 +451,8 @@ function resource($elem, $type = null)
       
         }
       
-        function cart_quantity_product (){
-          var len_num_product = document.getElementsByClassName("product-quantity").length;
+        function cart_quantity_product (var len_cart){
+          // var len_num_product = document.getElementsByClassName("product-quantity").length;
           
           //add box quantity (- 1 +) HTML to end of div
           var quantity_product_html = `
@@ -461,16 +464,20 @@ function resource($elem, $type = null)
           `;
       
           //get all product woocommerce
-          var product_quantity = document.querySelectorAll(".product-quantity");
+          var woo_product_quantity = document.querySelectorAll(".woo_product_quantity p");
 
           //get cart woocommerce
-          for(var i = 0 ; i < len_num_product ; i++){
+          for(var i = 0 ; i < len_cart ; i++){
               //replace nth to id for per rendring
               document.getElementsByClassName("product-quantity")[i].innerHTML += quantity_product_html.split("nth").join(i);
               
               //put value of [input] number cart woocommerce to my [input] quantity box
-              document.getElementById("quantity_cart_" + i).value = product_quantity[i].value;
-      
+              document.getElementById("quantity_cart_" + i).value = woo_product_quantity[i].value;
+              if(woo_product_quantity[i].value == 0)
+                document.getElementById("quantity_cart_" + i).style.display = "none";
+              else
+                document.getElementById("quantity_cart_" + i).style.display = "block";
+
               //show recycle bin if cart is one
               // if (document.getElementById("quantity_cart_" + i).value == 1){
               //   document.querySelectorAll("a.woolentor-cart-product-actions-btn")[i].style = "display: block !important;";
@@ -541,6 +548,50 @@ function resource($elem, $type = null)
         font-weight: 500;
         font-size: 38px;
       }
+      
+      .quantity_cart{
+        width: 30%;
+        color: #FFD15E;
+        position: relative;
+        background: #2c2c2c;
+        left: 10px;
+        bottom: 20px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-content: stretch;
+        justify-content: space-evenly;
+        align-items: center;
+        border: 1px solid #FFD15E;
+        border-radius: 50px;
+        margin-left: 20px;
+        height: 40px;
+        font-size: 20px;
+        padding: 0px 3px 5px 3px;
+        float: left;
+      }
+      .quantity_cart span{
+          color: #FFD15E !important;
+      }
+      .quantity_cart input{
+          width: 50% !important;
+          color: white;
+          background: #2c2c2c;
+          padding: 0px;
+          text-align:center;
+          border-color: #0000;
+          padding: 2px 0px 0px 3px;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+      }
+
+      input[type=number] {
+          -moz-appearance: textfield;
+      }
+
       ';
       break;
     case "style-card-product":
