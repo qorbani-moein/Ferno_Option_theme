@@ -425,7 +425,7 @@ function resource($elem, $type = null)
         var exist_elem = document.getElementsByClassName("quantity_cart").length;
         console.log("exist_elem: - " + exist_elem);
         if(exist_elem == 0 || exist_elem == "" || exist_elem == null)
-          cart_quantity_product(exist_elem);
+          cart_quantity_product();
       }
       
         //Click on + or - quantity
@@ -451,9 +451,9 @@ function resource($elem, $type = null)
       
         }
       
-        function cart_quantity_product (len_cart){
+        function cart_quantity_product (){
           console.log("True true");
-          // var len_num_product = document.getElementsByClassName("product-quantity").length;
+          var len_cart = document.getElementsByClassName("product-quantity").length;
           
           //add box quantity (- 1 +) HTML to end of div
           var quantity_product_html = `
