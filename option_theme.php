@@ -395,20 +395,68 @@ function resource($elem, $type = null)
           }
 
       }
-        // filter category
-        // var len_card_product = document.getElementsByClassName("product_card").length;
-        // var category_attr;
 
-        // for(var i = 0 ; i <= len_card_product -1 ; i++){
-        //   console.log(document.getElementsByClassName("product_card")[i].getAttribute("data-category"));
-        //   category_attr = document.getElementsByClassName("product_card")[i].getAttribute("data-category");
+      //box number (- 1 +)
+        
+      // check every secend cart if not have data
+      setInterval(time_check_frm,1000);
+      function time_check_frm(){
+        var exist_elem = document.getElementsByClassName("number_quantity_cart").length;
+        // console.log("exist_elem - " + exist_elem);
+        if(exist_elem == 0)
+          cart_quantity_product();
+      }
+      
+        //Click on + or - quantity
+        const click_quantity = (id) => {
+          var id_target = id.split("_");
+          id_target = id_target[id_target.length-1];
           
-        //   // document.getElementById("test1").addEventListener("click", function(){
-        //   //   console.log(document.getElementsByClassName("product_card")[i].getAttribute("data-category"));
-        //   // });
-        // }
-        
-        
+          //add or minus with click on + - and change input box
+          if (id.search("plus")>0){
+            document.getElementById("quantity_cart_" + id_target).value ++;
+          }
+          else{
+            if(document.getElementById("quantity_cart_" + id_target).value > 0) {
+              document.getElementById("quantity_cart_" + id_target).value --;
+            }
+          }
+      
+          //put new value to input box woocommerce
+          document.getElementsByClassName("input-text")[id_target].value = document.getElementById("quantity_cart_" + id_target).value;
+          //enable button update cart and click it
+          document.getElementsByClassName("button")[0].removeAttribute("disabled");
+          document.getElementsByClassName("button")[0].click();
+      
+        }
+      
+        function cart_quantity_product (){
+          var len_num_product = document.getElementsByClassName("product-quantity").length;
+          
+          //add box quantity (- 1 +) HTML to end of div
+          var quantity_product_html = `
+            <div class="quantity_cart">
+                <span class="quantity_cart_plus" onclick="click_quantity(this.id)" id="quantity_cart_plus_nth">+</span>
+                <input class="number_quantity_cart" id="quantity_cart_nth" type="number" name="cart_quantity" min="1" max="10" disabled=""/>
+                <span class="quantity_cart_minus" onclick="click_quantity(this.id)" id="quantity_cart_minus_nth">-</span>
+            </div>
+          `;
+      
+          //get all product woocommerce
+          var product_quantity = document.querySelectorAll(".product-quantity");
+          for(var i = 0 ; i < len_num_product ; i++){
+              //replace nth to id for per rendring
+              document.getElementsByClassName("product-quantity")[i].innerHTML += quantity_product_html.split("nth").join(i);
+              
+              //put value of [input] number cart woocommerce to my [input] quantity box
+              document.getElementById("quantity_cart_" + i).value = product_quantity[i].value;
+      
+              //show recycle bin if cart is one
+              // if (document.getElementById("quantity_cart_" + i).value == 1){
+              //   document.querySelectorAll("a.woolentor-cart-product-actions-btn")[i].style = "display: block !important;";
+              // }
+          }
+        }
       ';
       break;
     case "style-category":
