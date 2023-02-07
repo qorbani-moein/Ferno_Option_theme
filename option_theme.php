@@ -474,7 +474,7 @@ function resource($elem, $type = null)
               //put value of [input] number cart woocommerce to my [input] quantity box
               
               console.log(woo_product_quantity[i].innerHTML);
-              document.getElementById("quantity_cart_" + i).value = trim(woo_product_quantity[i].innerHTML);
+              document.getElementById("quantity_cart_" + i).value = woo_product_quantity[i].innerHTML.trim();
               if(woo_product_quantity[i].innerHTML == 0)
                 document.getElementsByClassName("quantity_cart").style.display = "none";
               else
