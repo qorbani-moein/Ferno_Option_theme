@@ -465,7 +465,7 @@ function resource($elem, $type = null)
           `;
       
           //get all product woocommerce
-          var woo_product_quantity = document.querySelectorAll(".woo_product_quantity p");
+          var woo_product_quantity = parseInt(document.querySelectorAll(".product-quantity p"));
 
           //get cart woocommerce
           for(var i = 0 ; i < len_cart ; i++){
@@ -473,8 +473,8 @@ function resource($elem, $type = null)
               document.getElementsByClassName("product-quantity")[i].innerHTML += quantity_product_html.split("nth").join(i);
               
               //put value of [input] number cart woocommerce to my [input] quantity box
-              document.getElementById("quantity_cart_" + i).value = woo_product_quantity[i].value;
-              if(woo_product_quantity[i].value == 0)
+              document.getElementById("quantity_cart_" + i).value = woo_product_quantity[i].innerHTML;
+              if(woo_product_quantity[i].innerHTML == 0)
                 document.getElementById("quantity_cart_" + i).style.display = "none";
               else
                 document.getElementById("quantity_cart_" + i).style.display = "block";
