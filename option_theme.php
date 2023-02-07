@@ -195,6 +195,19 @@ function product_archive (){
           </div>
           <div class="product-quantity">
               <p> + 1 - </p>
+              <?php
+                global $woocommerce;
+                $items = $woocommerce->cart->get_cart();
+
+                foreach($items as $item => $values) { 
+                    $_product =  wc_get_product( $values['data']->get_id()); 
+                    echo "<b>".$_product->get_title().'</b>  <br> Quantity: '.$values['quantity'].'<br><br><br>' . '
+                    <p style="color:white;">get_id= ' . $values['data']->get_id() . '</p> 
+                    <p style="color:white;">$product->get_id()= ' . $product->get_id() . '</p>'; 
+                    // $price = get_post_meta($values['product_id'] , '_price', true);
+                    // echo "  Price: ".$price."<br>";
+                } 
+              ?>
           </div>
         </div>
         <a>
@@ -446,6 +459,8 @@ function resource($elem, $type = null)
       
           //get all product woocommerce
           var product_quantity = document.querySelectorAll(".product-quantity");
+
+          //get cart woocommerce
           for(var i = 0 ; i < len_num_product ; i++){
               //replace nth to id for per rendring
               document.getElementsByClassName("product-quantity")[i].innerHTML += quantity_product_html.split("nth").join(i);
