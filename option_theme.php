@@ -476,9 +476,9 @@ function resource($elem, $type = null)
               console.log(woo_product_quantity[i].innerHTML);
               document.getElementById("quantity_cart_" + i).value = woo_product_quantity[i].innerHTML.trim();
               if(woo_product_quantity[i].innerHTML == 0)
-                document.getElementsByClassName("quantity_cart").style.display = "none";
+                document.getElementsByClassName("quantity_cart")[i].style.display = "none";
               else
-                document.getElementsByClassName("quantity_cart").style.display = "block";
+                document.getElementsByClassName("quantity_cart")[i].style.display = "block";
 
               //show recycle bin if cart is one
               // if (document.getElementById("quantity_cart_" + i).value == 1){
