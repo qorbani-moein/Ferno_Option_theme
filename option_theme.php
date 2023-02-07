@@ -452,6 +452,7 @@ function resource($elem, $type = null)
         }
       
         function cart_quantity_product (len_cart){
+          console.log("True true");
           // var len_num_product = document.getElementsByClassName("product-quantity").length;
           
           //add box quantity (- 1 +) HTML to end of div
