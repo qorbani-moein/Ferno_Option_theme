@@ -194,16 +194,19 @@ function product_archive (){
             <?php echo $product->get_price_html(); ?>
           </div>
           <div class="product-quantity">
-              <p> + 1 - </p>
+              <!-- <p> + 1 - </p> -->
               <?php
                 global $woocommerce;
                 $items = $woocommerce->cart->get_cart();
 
                 foreach($items as $item => $values) { 
-                    $_product =  wc_get_product( $values['data']->get_id()); 
-                    echo "<b>".$_product->get_title().'</b>  <br> Quantity: '.$values['quantity'].'<br><br><br>' . '
-                    <p style="color:white;">get_id= ' . $values['data']->get_id() . '</p> 
-                    <p style="color:white;">$product->get_id()= ' . $product->get_id() . '</p>'; 
+                    // $_product =  wc_get_product( $values['data']->get_id()); 
+                    if($values['data']->get_id() == $product->get_id()){
+                      echo $values['quantity'];
+                    }
+                    // echo "<b>".$_product->get_title().'</b>  <br> Quantity: '.$values['quantity'].'<br><br><br>' . '
+                    // <p style="color:white;">get_id= ' . $values['data']->get_id() . '</p> 
+                    // <p style="color:white;">$product->get_id()= ' . $product->get_id() . '</p>'; 
                     // $price = get_post_meta($values['product_id'] , '_price', true);
                     // echo "  Price: ".$price."<br>";
                 } 
