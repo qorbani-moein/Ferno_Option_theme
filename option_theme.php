@@ -521,7 +521,7 @@ function resource($elem, $type = null)
           document.getElementById("popup_over").classList.add("popup_over_active");
           var product_img = document.getElementsByClassName("product-img");
           
-          console.log("document.querySelectorAll(".popup_product_img img").src: " + document.querySelectorAll(".popup_product_img img").src);
+          // console.log("document.querySelectorAll(".popup_product_img img").src: " + document.querySelectorAll(".popup_product_img img").src);
           document.querySelectorAll(".popup_product_img img").src = product_img[id].src;
 
           console.log("product_img[id]: " + product_img[id]);
