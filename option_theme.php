@@ -522,10 +522,7 @@ function resource($elem, $type = null)
           var product_img = document.querySelectorAll(".product-img img");
           
           var popup_img = document.querySelectorAll(".popup_product_img img");
-          console.log("popup_img.length: " + popup_img.length);
-          popup_img[0].src = "123sd123";
-          console.log("product.src: " + product_img[id].src);
-          console.log("product_img[id].src: " + product_img[id].src);
+          popup_img[0].src = product_img[id].src;
 
         }
 
