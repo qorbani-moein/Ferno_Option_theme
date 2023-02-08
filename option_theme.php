@@ -134,7 +134,7 @@ function product_archive (){
     <div class="popup_product">
       <a class="popup_close" href="#">&times;</a>
       <div class="popup_product_img">
-        <img src="" src="" alt="#">  
+        <img id="popup_product_img" src="" src="" alt="#">  
       </div>
       <div class="popup_product_data"> 
         <div class="popup_product_des">
@@ -519,11 +519,12 @@ function resource($elem, $type = null)
         function popup(id){
           console.log("popup function id:" + id);
           document.getElementById("popup_over").classList.add("popup_over_active");
-          var product_img = document.getElementsByClassName("product-img");
+          var product_img = document.querySelectorAll(".product-img img");
           
-          // console.log("document.querySelectorAll(".popup_product_img img").src: " + document.querySelectorAll(".popup_product_img img").src);
-          document.querySelectorAll(".popup_product_img img").src = "asdadasdasdasd";
-
+          var popup_img = document.querySelectorAll(".popup_product_img img");
+          console.log("popup_img.length: " + popup_img.length);
+          popup_img[0].src = "123sd123";
+          console.log("product.src: " + product_img[id].src);
           console.log("product_img[id].src: " + product_img[id].src);
 
         }
