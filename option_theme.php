@@ -517,14 +517,14 @@ function resource($elem, $type = null)
         }
 
         function popup(id){
-          console.log("popup function");
+          console.log("popup function id:" + id);
           document.getElementById("popup_over").classList.add("popup_over_active");
           var product_img = document.getElementsByClassName("product-img");
           
           // console.log("document.querySelectorAll(".popup_product_img img").src: " + document.querySelectorAll(".popup_product_img img").src);
-          document.querySelectorAll(".popup_product_img img").src = product_img[id].src;
+          document.querySelectorAll(".popup_product_img img").src = "asdadasdasdasd";
 
-          console.log("product_img[id]: " + product_img[id]);
+          console.log("product_img[id].src: " + product_img[id].src);
 
         }
 
