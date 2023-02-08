@@ -132,6 +132,7 @@ function product_archive (){
 
   <div id="popup_over" class="popup_over">
     <div class="popup_product">
+      <a class="popup_close" href="#">&times;</a>
       <div class="popup_product_img">
         <img src="" src="" alt="#">  
       </div>
@@ -635,6 +636,11 @@ function resource($elem, $type = null)
       .popup_over:target {
         visibility: visible;
         opacity: 1;
+        z-index: 1;
+      }
+      .popup_over:active {
+        visibility: hidden;
+        opacity: 0;
       }
       .popup_product{
         margin: 70px auto;
@@ -644,6 +650,16 @@ function resource($elem, $type = null)
         width: 30%;
         position: relative;
         transition: all 5s ease-in-out;
+      }
+      .popup_close{
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        transition: all 200ms;
+        font-size: 30px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #333;
       }
       ';
       break;
