@@ -203,7 +203,7 @@ function product_archive (){
       <!-- card of product -->
       <div id="cart_product" class="product_card" data-category="<?php echo urldecode($categories_product[0]); ?>">
         <div class="product-img">
-          <a href="javascript:popup(<?php echo $j ?>);">
+          <a href="javascript:popup('<?php echo $j ?>');">
           <?php echo $product->get_image(); ?>
           </a>
         </div>
