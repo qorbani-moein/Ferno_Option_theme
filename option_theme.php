@@ -130,7 +130,7 @@ function product_archive (){
 
   ?>
 
-  <div class="popup_over">
+  <div id="popup_over" class="popup_over">
     <div class="popup_product">
       <div class="popup_product_img">
         <img src="" src="" alt="#">  
@@ -202,7 +202,7 @@ function product_archive (){
       <!-- card of product -->
       <div id="cart_product" class="product_card" data-category="<?php echo urldecode($categories_product[0]); ?>">
         <div class="product-img">
-          <a href="<?php echo get_permalink($product->get_id()); ?>">
+          <a href="<?php echo "#popup_over" ?>">
           <?php echo $product->get_image(); ?>
           </a>
         </div>
@@ -622,11 +622,28 @@ function resource($elem, $type = null)
       }
       /* popup */
       .popup_over{
-        background: #c1c1c1;
-        z-index: 1043;
-        outline: none !important;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        transition: opacity 500ms;
+        visibility: hidden;
+        opacity: 0;
+      }
+      .popup_over:target {
+        visibility: visible;
+        opacity: 1;
+      }
+      .popup_product{
+        margin: 70px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 5px;
+        width: 30%;
+        position: relative;
+        transition: all 5s ease-in-out;
       }
       ';
       break;
