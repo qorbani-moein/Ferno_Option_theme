@@ -203,7 +203,7 @@ function product_archive (){
       <!-- card of product -->
       <div id="cart_product" class="product_card" data-category="<?php echo urldecode($categories_product[0]); ?>">
         <div class="product-img">
-          <a href="javascript:popup('<?php echo $j ?>');">
+          <a href="javascript:popup('<?php echo $j - 1 ?>');">
           <?php echo $product->get_image(); ?>
           </a>
         </div>
@@ -519,11 +519,16 @@ function resource($elem, $type = null)
         function popup(id){
           console.log("popup function id:" + id);
           document.getElementById("popup_over").classList.add("popup_over_active");
-          var product_img = document.querySelectorAll(".product-img img");
           
+          //img popup
+          var product_img = document.querySelectorAll(".product-img img");
           var popup_img = document.querySelectorAll(".popup_product_img img");
           popup_img[0].src = product_img[id].src;
 
+          //description
+          var product_des = document.querySelectorAll(".product-des p");
+          var popup_des = document.querySelectorAll(".popup_product_des p");
+          popup_des[0].innerHTML = product_des[id].innerHTML;
         }
 
       ';
