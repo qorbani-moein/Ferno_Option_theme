@@ -203,7 +203,7 @@ function product_archive (){
       <!-- card of product -->
       <div id="cart_product" class="product_card" data-category="<?php echo urldecode($categories_product[0]); ?>">
         <div class="product-img">
-          <a href="<?php echo "#popup_over" ?>">
+          <a href="javascript:popup(<?php echo $j ?>);">
           <?php echo $product->get_image(); ?>
           </a>
         </div>
@@ -511,6 +511,23 @@ function resource($elem, $type = null)
               // }
           }
         }
+        //popup
+        document.getElementById("popup_over").onclick = function(){
+          document.getElementById("popup_over").classList.remove("popup_over_active");
+        }
+
+        function popup(id){
+          console.log("popup function");
+          document.getElementById("popup_over").classList.add("popup_over_active");
+          var product_img = document.getElementsByClassName("product-img");
+          
+          console.log("document.querySelectorAll(".popup_product_img img").src: " + document.querySelectorAll(".popup_product_img img").src);
+          document.querySelectorAll(".popup_product_img img").src = product_img[id].src;
+
+          console.log("product_img[id]: " + product_img[id]);
+
+        }
+
       ';
       break;
     case "style-category":
@@ -633,23 +650,21 @@ function resource($elem, $type = null)
         visibility: hidden;
         opacity: 0;
       }
-      .popup_over:target {
+      .popup_over_active {
         visibility: visible;
         opacity: 1;
         z-index: 1;
       }
-      .popup_over:active {
-        visibility: hidden;
-        opacity: 0;
-      }
+
       .popup_product{
         margin: 70px auto;
         padding: 20px;
-        background: #fff;
+        background: #4D4D4D;
         border-radius: 5px;
-        width: 30%;
+        width: 80%;
         position: relative;
         transition: all 5s ease-in-out;
+        color: white;
       }
       .popup_close{
         position: absolute;
