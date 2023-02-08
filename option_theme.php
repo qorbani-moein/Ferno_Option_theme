@@ -130,6 +130,28 @@ function product_archive (){
 
   ?>
 
+  <div class="popup_over">
+    <div class="popup_product">
+      <div class="popup_product_img">
+        <img src="" src="" alt="#">  
+      </div>
+      <div class="popup_product_data"> 
+        <div class="popup_product_des">
+          <p>popup_product_des</p>
+        </div>
+        <div class="popup_product_title">
+          <p>popup_product_title</p>
+        </div>
+        <div class="popup_product_price">
+          <p>popup_product_price</p>
+        </div>
+      </div>
+      <div class="popup_product_add_to_cart">
+        <a href="#" class="popup_product_btn_addtocart">popup_product_btn_addtocart</a>
+      </div>
+    </div>
+  </div>
+
   <div class="products-image-category">
     <img class="img-product" src="<?php echo "https://ferno.eightco.org/wp-content/uploads/2023/01/istockphoto-683734168-170667a2.png"; ?>">
     <h1 class="caption-img-product"></h1>
@@ -595,7 +617,17 @@ function resource($elem, $type = null)
       input[type=number] {
           -moz-appearance: textfield;
       }
-
+      moein-product-quantity{
+        display:none;
+      }
+      /* popup */
+      .popup_over{
+        background: #c1c1c1;
+        z-index: 1043;
+        outline: none !important;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
       ';
       break;
     case "style-card-product":
@@ -608,7 +640,7 @@ function resource($elem, $type = null)
         padding: 5px 10px 10px 1px;
       }
       .product-data{
-        width: 78%;
+        width: 72%;
         float: left;
       }
       .product-price{
