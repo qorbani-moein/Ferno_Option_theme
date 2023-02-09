@@ -675,7 +675,7 @@ function resource($elem, $type = null)
         transition: all 1s ease-in-out;
         color: white;
       }
-      .popup_product_title{
+      .popup_product_title h4{
         font-size: 18px;
       }
       .popup_product_price{
