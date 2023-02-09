@@ -370,7 +370,7 @@ function resource($elem, $type = null)
       document.getElementsByClassName("elementor-icon")[0].href = "https://ferno.eightco.org";
       
       //
-      document.getElementsByClassName("item-category")[0].click();
+      
       
        
       //<script>
@@ -438,6 +438,7 @@ function resource($elem, $type = null)
 
       }
 
+      document.getElementsByClassName("item-category")[0].click();
       //box number (- 1 +)
         
       // check every secend cart if not have data
