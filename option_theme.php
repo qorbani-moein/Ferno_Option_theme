@@ -514,7 +514,7 @@ function resource($elem, $type = null)
           popup_img[0].src = product_img[id].src;
 
           //description
-          var product_des = document.querySelectorAll(".product-des p");
+          var product_des = document.querySelectorAll(".product-des");
           var popup_des = document.querySelectorAll(".popup_product_des p");
           popup_des[0].innerHTML = product_des[id].innerHTML;
           
