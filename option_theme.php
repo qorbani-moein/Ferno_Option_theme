@@ -44,7 +44,7 @@ function script_query_page()
 {
   $current_page = $_SERVER['SCRIPT_URI'];
   $page_cart = 'https://' . $_SERVER['SERVER_NAME'] . '/cart/';
-  $page_category = 'https://' . $_SERVER['SERVER_NAME'] . '/shop/';
+  $page_category = 'https://' . $_SERVER['SERVER_NAME'] . '/category/';
   // $page_shop_en = 'https://' . $_SERVER['SERVER_NAME'] . '/en/shop/' ;
 
   // console("current_page: " . $current_page); 
@@ -66,36 +66,10 @@ function script_page_category()
   global $woocommerce;
   $items = $woocommerce->cart->get_cart();
 
-  foreach ($items as $item => $values) {
-    console($values['data']->get_id(), "id product");
-    // console($values['data'], "data");
-    // console($values['data']->get_description(), "description");
-    // $product_description = '
-    // <p id="product_description_' . $values['data']->get_id() . '" hidden>
-    //   ' . $values['data']->get_description() . '
-    // </p>
-    // ';
-    // console($values['data']->description(), "description");
-    // console($values['data']['description'], "description");
-
-    // var_dump($values);
-    // $product_description = get_post($item[$values['data']->get_id()])->post_content;
-    // console($product_description, "product_description");
-
-
-    // $_product =  wc_get_product( $values['data']->get_id()); 
-    // echo "<b>".$_product->get_title().'</b>  <br> Quantity: '.$values['quantity'].'<br>'; 
-    // $price = get_post_meta($values['product_id'] , '_price', true);
-    // echo "  Price: ".$price."<br>";
-  }
-
-  // $order = new WC_Order('82');
-
-  // foreach ($order->get_items() as $item)
-  // {
-  //     $product_description = get_post($item['product_id'])->post_content; // I used wordpress built-in functions to get the product object 
-  //     // console($product_description, 'product_description222');
+  // foreach ($items as $item => $values) {
+  //   console($values['data']->get_id(), "id product");
   // }
+
 
   echo '<style>' . resource("style-card-product") . resource("style-category") . '</style>' . resource("script-category", "js");
 
