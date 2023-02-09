@@ -202,7 +202,7 @@ function product_archive (){
       $categories_product = $product->get_category_ids(); 
       ?>
       <!-- card of product -->
-      <div id="cart_product" class="product_card" data-category="<?php echo urldecode($categories_product[0]); ?>">
+      <div id="cart_product" class="product_card" data-id="<?php echo $product->get_id(); ?>" data-category="<?php echo urldecode($categories_product[0]); ?>">
         <div class="product-img">
           <a href="javascript:popup('<?php echo $j - 1 ?>');">
           <?php echo $product->get_image(); ?>
@@ -542,9 +542,9 @@ function resource($elem, $type = null)
           popup_price[0].innerHTML = product_price[id].innerHTML;
 
           //btn add to card
-          var product_id = document.getElementsByClassName("product_card")[id].getAttribute("data-category");
+          var product_id = document.getElementsByClassName("product_card")[id].getAttribute("data-id");
           var popup_btn_addtocard = document.querySelectorAll(".popup_product_add_to_cart");
-          popup_btn_addtocard[0].innerHTML = \'<a rel="nofollow" href="/?add-to-cart=\' + product_id + \'" data-product_id="\' + product_id + \'" class="popup_product_btn_addtocart ajax_add_to_cart">افزودن به یادداشت سفارش +</a>\';
+          popup_btn_addtocard[0].innerHTML = \'<a rel="nofollow" href="?add-to-cart=\' + product_id + \'" data-product_id="\' + product_id + \'" class="popup_product_btn_addtocart ajax_add_to_cart">افزودن به یادداشت سفارش +</a>\';
         }
 
       ';
