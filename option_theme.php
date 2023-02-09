@@ -374,7 +374,7 @@ function resource($elem, $type = null)
       function set_ua_value (e) {
         if(e.target.nodeName == "LI") {
             console.log("e.target.innerHTML: " + e.target.innerHTML);
-            e.target.classList.add("products-slug-active");
+            e.target.classList.add("active");
             //filter category
             var len_card_product = document.getElementsByClassName("product_card").length;
             var category_attr = e.target.innerHTML;
