@@ -141,7 +141,7 @@ function product_archive (){
         </div>
         <div class="popup-row-title-price">
           <div class="popup_product_title">
-            <p>popup_product_title</p>
+            
           </div>
           <div class="popup_product_price">
             <span>popup_product_price</span>
@@ -533,7 +533,7 @@ function resource($elem, $type = null)
           
           //title
           var product_title = document.querySelectorAll(".product-title a");
-          var popup_title = document.querySelectorAll(".popup_product_title p");
+          var popup_title = document.querySelectorAll(".popup_product_title");
           popup_title[0].innerHTML = product_title[id].innerHTML;
 
           //price
@@ -701,6 +701,13 @@ function resource($elem, $type = null)
       .popup_product_add_to_cart{
         text-align: center;
         padding-bottom: 25px;
+      }
+      .popup_product_img{
+        text-align: center;
+      }
+      #popup_product_img{
+        border-radius: 10px;
+        width: 100%;
       }
       ';
       break;
