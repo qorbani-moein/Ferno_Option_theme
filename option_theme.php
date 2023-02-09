@@ -369,6 +369,10 @@ function resource($elem, $type = null)
       //back menu in header
       document.getElementsByClassName("elementor-icon")[0].href = "https://ferno.eightco.org";
       
+      //
+      document.getElementsByClassName("item-category")[0].click();
+      
+       
       //<script>
       //filter by category
       //add event click on category
