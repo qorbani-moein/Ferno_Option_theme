@@ -131,7 +131,7 @@ function product_archive (){
   ?>
 
   <div id="popup_over" class="popup_over">
-    <div class="popup_product">
+    <div id="popup_product" class="popup_product">
       <div class="popup_product_img">
         <img id="popup_product_img" src="" src="" alt="#">  
       </div>
@@ -513,9 +513,16 @@ function resource($elem, $type = null)
           }
         }
         //popup
-        document.getElementById("popup_over").onclick = function(){
-          document.getElementById("popup_over").classList.remove("popup_over_active");
-        }
+        window.addEventListener("click", function(e){   
+          if (document.getElementById("popup_product").contains(e.target)){
+            // Clicked in box
+          } else{
+            document.getElementById("popup_over").classList.remove("popup_over_active");
+          }
+        });
+        // document.getElementById("popup_over").onclick = function(){
+        //   document.getElementById("popup_over").classList.remove("popup_over_active");
+        // }
 
         function popup(id){
           console.log("popup function id:" + id);
@@ -544,7 +551,7 @@ function resource($elem, $type = null)
           //btn add to card
           var product_id = document.getElementsByClassName("product_card")[id].getAttribute("data-id");
           var popup_btn_addtocard = document.querySelectorAll(".popup_product_add_to_cart");
-          popup_btn_addtocard[0].innerHTML = \'<a rel="nofollow" href="?add-to-cart=\' + product_id + \'" data-product_id="\' + product_id + \'" class="popup_product_btn_addtocart ajax_add_to_cart">افزودن به یادداشت سفارش +</a>\';
+          popup_btn_addtocard[0].innerHTML = \'<a rel="nofollow" href="?add-to-cart=\' + product_id + \'" data-product_id="\' + product_id + \'" class="popup_product_btn_addtocart ajax_add_to_cart"> + افزودن به یادداشت سفارش</a>\';
         }
 
       ';
@@ -708,6 +715,14 @@ function resource($elem, $type = null)
       #popup_product_img{
         border-radius: 10px;
         width: 100%;
+      }
+      .popup-row-title-price{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-content: stretch;
+        justify-content: space-between;
+        align-items: center;
       }
       ';
       break;
