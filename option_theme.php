@@ -189,7 +189,7 @@ function product_archive (){
             </a>
           </div>
           <div class="product-des">
-            <p><?php echo $product->get_description(); ?></p>
+            <?php echo $product->get_description(); ?>
           </div>
           <div class="product-price">
             <?php echo $product->get_price_html(); ?>
@@ -782,6 +782,7 @@ function resource($elem, $type = null)
       }
       .woocommerce-Price-currencySymbol{
         color: #939393 !important;
+        padding-right: 8px;
       }
       ';
       break;
