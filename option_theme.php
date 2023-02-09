@@ -97,7 +97,7 @@ function script_page_category()
   //     // console($product_description, 'product_description222');
   // }
 
-  echo '<style>' . resource("style-card-product") . resource("style-category") . '</style>';
+  echo '<style>' . resource("style-card-product") . resource("style-category") . '</style>' . resource("script-category", "js");
 
 
 }
