@@ -132,7 +132,6 @@ function product_archive (){
 
   <div id="popup_over" class="popup_over">
     <div class="popup_product">
-      <a class="popup_close" href="#">&times;</a>
       <div class="popup_product_img">
         <img id="popup_product_img" src="" src="" alt="#">  
       </div>
@@ -140,11 +139,13 @@ function product_archive (){
         <div class="popup_product_des">
           <p>popup_product_des</p>
         </div>
-        <div class="popup_product_title">
-          <p>popup_product_title</p>
-        </div>
-        <div class="popup_product_price">
-          <p>popup_product_price</p>
+        <div class="popup-row-title-price">
+          <div class="popup_product_title">
+            <p>popup_product_title</p>
+          </div>
+          <div class="popup_product_price">
+            <span>popup_product_price</span>
+          </div>
         </div>
       </div>
       <div class="popup_product_add_to_cart">
@@ -529,6 +530,18 @@ function resource($elem, $type = null)
           var product_des = document.querySelectorAll(".product-des p");
           var popup_des = document.querySelectorAll(".popup_product_des p");
           popup_des[0].innerHTML = product_des[id].innerHTML;
+          
+          //title
+          var product_title = document.querySelectorAll(".product-title p");
+          var popup_title = document.querySelectorAll(".popup_product_title p");
+          popup_title[0].innerHTML = product_title[id].innerHTML;
+
+          //price
+          var product_price = document.querySelectorAll(".product-price span");
+          var popup_price = document.querySelectorAll(".popup_product_price span");
+          popup_price[0].innerHTML = product_price[id].innerHTML;
+
+
         }
 
       ';
@@ -669,15 +682,22 @@ function resource($elem, $type = null)
         transition: all 5s ease-in-out;
         color: white;
       }
-      .popup_close{
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        transition: all 200ms;
-        font-size: 30px;
-        font-weight: bold;
-        text-decoration: none;
-        color: #333;
+      .popup_product_title{
+
+      }
+      .popup_product_price{
+
+      }
+      .popup_product_btn_addtocart{
+        padding: 10px 20px 15px 20px;
+        border: 1px solid yellow;
+        border-radius: 50px;
+        color: white;
+        text-align: center;
+      }
+      .popup_product_add_to_cart{
+        text-align: center;
+        padding-bottom: 25px;
       }
       ';
       break;
