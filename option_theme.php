@@ -44,7 +44,7 @@ function script_query_page()
 {
   $current_page = $_SERVER['SCRIPT_URI'];
   $page_cart = 'https://' . $_SERVER['SERVER_NAME'] . '/cart/';
-  $page_category = 'https://' . $_SERVER['SERVER_NAME'] . '/category/';
+  $page_category = 'https://' . $_SERVER['SERVER_NAME'] . '/shop/';
   // $page_shop_en = 'https://' . $_SERVER['SERVER_NAME'] . '/en/shop/' ;
 
   // console("current_page: " . $current_page); 
