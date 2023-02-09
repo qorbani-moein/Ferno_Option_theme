@@ -558,6 +558,8 @@ function resource($elem, $type = null)
       $result = '
       .products-archive{
         margin-top: -16px;
+        margin-bottom: 128px;
+
       }
       .products-slug{
         position: relative;
