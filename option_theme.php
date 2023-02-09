@@ -110,17 +110,17 @@ function product_archive (){
         <img id="popup_product_img" src="" src="" alt="#">  
       </div>
       <div class="popup_product_data"> 
-        <div class="popup_product_des">
-          <p>popup_product_des</p>
-        </div>
         <div class="popup-row-title-price">
           <div class="popup_product_title">
             
+            </div>
+            <div class="popup_product_price">
+              <span>popup_product_price</span>
+            </div>
           </div>
-          <div class="popup_product_price">
-            <span>popup_product_price</span>
+          <div class="popup_product_des">
+            <p>popup_product_des</p>
           </div>
-        </div>
       </div>
       <div class="popup_product_add_to_cart">
         <a href="#" class="popup_product_btn_addtocart">افزودن به یادداشت سفارش</a>
@@ -668,11 +668,11 @@ function resource($elem, $type = null)
       .popup_product{
         margin: 70px auto;
         padding: 20px;
-        background: #4D4D4D;
+        background: #303030;
         border-radius: 5px;
-        width: 80%;
+        width: 90%;
         position: relative;
-        transition: all 5s ease-in-out;
+        transition: all 1s ease-in-out;
         color: white;
       }
       .popup_product_title{
