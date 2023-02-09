@@ -45,6 +45,7 @@ function script_query_page()
   $current_page = $_SERVER['SCRIPT_URI'];
   $page_cart = 'https://' . $_SERVER['SERVER_NAME'] . '/cart/';
   $page_category = 'https://' . $_SERVER['SERVER_NAME'] . '/category/';
+  $page_home = 'https://' . $_SERVER['SERVER_NAME'];
   // $page_shop_en = 'https://' . $_SERVER['SERVER_NAME'] . '/en/shop/' ;
 
   // console("current_page: " . $current_page); 
@@ -55,11 +56,17 @@ function script_query_page()
     script_page_cart();
   } elseif ($current_page == $page_category) {
     script_page_category();
-  } //elseif($current_page == substr($current_page,0,strlen($page_shop_en))){
+  }elseif ($current_page == $page_home){
+    script_page_home();
+  } 
+  //elseif($current_page == substr($current_page,0,strlen($page_shop_en))){
   //     script_page_shop_EnToFa();
   // }
 }
 
+function script_page_home(){
+  echo resource("script-home", "js");
+}
 function script_page_category()
 {
 
@@ -293,6 +300,9 @@ function resource($elem, $type = null)
       break;
     case "script-cart":
       $result = '
+            //back menu in header
+            document.getElementsByClassName("elementor-icon")[0].href = "https://ferno.eightco.org/category/";
+
             // check every secend cart if not have data
             setInterval(time_check_frm,1000);
             function time_check_frm(){
@@ -797,6 +807,12 @@ function resource($elem, $type = null)
         color: #939393 !important;
         padding-right: 8px;
       }
+      ';
+      break;
+    case "script-home":
+      return '
+      //back menu in header
+      document.getElementsByClassName("elementor-icon")[0].display = "none";
       ';
       break;
   }
