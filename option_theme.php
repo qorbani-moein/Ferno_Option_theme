@@ -119,7 +119,7 @@ function product_archive (){
             </div>
           </div>
           <div class="popup_product_des">
-            <p>popup_product_des</p>
+            
           </div>
       </div>
       <div class="popup_product_add_to_cart">
@@ -683,6 +683,9 @@ function resource($elem, $type = null)
       }
       .popup_product_des{
         padding-bottom:20px;
+      }
+      .popup_product_btn_addtocart:active{
+        color:#FCBD1E;
       }
       .popup_product_btn_addtocart{
         padding: 10px 20px 15px 20px;
