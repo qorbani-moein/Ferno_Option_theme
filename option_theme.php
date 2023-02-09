@@ -356,6 +356,9 @@ function resource($elem, $type = null)
       break;
     case "script-category":
       $result = '
+      //back menu in header
+      document.getElementsByClassName("elementor-icon")[0].href = "https://ferno.eightco.org";
+      
       //<script>
       //filter by category
       //add event click on category
