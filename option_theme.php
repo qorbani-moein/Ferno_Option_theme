@@ -748,6 +748,9 @@ function resource($elem, $type = null)
       .product-title a{
         color: #FFFFFF !important;
       }
+      .products-slug::-webkit-scrollbar {
+        display: none; /* for Chrome, Safari, and Opera */
+      }
       .product-title h2{
         font-family: "Inter";
         font-style: normal;
