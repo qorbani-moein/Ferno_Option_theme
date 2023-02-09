@@ -726,7 +726,7 @@ function resource($elem, $type = null)
         width: 72%;
         float: left;
       }
-      .product-price{
+      .product-price:not(.woocommerce-Price-currencySymbol){
         color: #939393;
       }
 
