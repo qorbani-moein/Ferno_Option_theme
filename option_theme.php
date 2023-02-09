@@ -369,12 +369,12 @@ function resource($elem, $type = null)
       }
       
       for(var u = 0 ; u <= document.getElementsByClassName("item-category").length - 1 ; u++){
-        document.getElementsByClassName("item-category")[u].classList.remove("active");
+        document.getElementsByClassName("item-category")[u].classList.remove("products-slug-active");
       }
       function set_ua_value (e) {
         if(e.target.nodeName == "LI") {
             console.log("e.target.innerHTML: " + e.target.innerHTML);
-            e.target.classList.add("active");
+            e.target.classList.add("products-slug-active");
             //filter category
             var len_card_product = document.getElementsByClassName("product_card").length;
             var category_attr = e.target.innerHTML;
@@ -588,12 +588,12 @@ function resource($elem, $type = null)
       .caption-img-product{
         position: absolute;
         color: white;
-        top: 150px;
-        right: 20px;
+        top: 132px;
+        right: 26px;
         font-family: "Vazirmatn";
         font-style: normal;
         font-weight: 500;
-        font-size: 38px;
+        font-size: 20px;
       }
       
       .quantity_cart{
