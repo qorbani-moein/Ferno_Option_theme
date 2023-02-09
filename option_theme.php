@@ -539,7 +539,7 @@ function resource($elem, $type = null)
     case "style-category":
       $result = '
       .products-archive{
-        margin-top: 70px;
+        margin-top: -16px;
       }
       .products-slug{
         position: relative;
@@ -744,7 +744,9 @@ function resource($elem, $type = null)
       }
       .product-title{
         margin-bottom: 7px;
-        color: #FFFFFF;
+      }
+      .product-title a{
+        color: #FFFFFF !important;
       }
       .product-title h2{
         font-family: "Inter";
