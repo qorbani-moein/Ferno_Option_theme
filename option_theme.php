@@ -267,7 +267,7 @@ function resource($elem, $type = null)
             padding: 0px;
             text-align:center;
             border-color: #0000;
-            padding: 2px 0px 0px 3px;
+            padding: 3px 0px 0px 3px;
         }
 
         input::-webkit-outer-spin-button,
@@ -607,8 +607,8 @@ function resource($elem, $type = null)
         color: #FFD15E;
         position: relative;
         background: #2c2c2c;
-        left: 10px;
-        top: -40px;
+        left: 0px;
+        top: -33px;
         display: flex;
         flex-wrap: nowrap;
         align-content: stretch;
@@ -617,9 +617,9 @@ function resource($elem, $type = null)
         border: 1px solid #FFD15E;
         border-radius: 50px;
         margin-left: 20px;
-        height: 40px;
+        height: 36px;
         font-size: 20px;
-        padding: 0px 3px 5px 3px;
+        padding: 5px 3px 5px 3px;
         float: left;
       }
       .quantity_cart span{
@@ -776,7 +776,6 @@ function resource($elem, $type = null)
         font-family: "Inter";
         font-style: normal;
         font-weight: 400;
-        font-size: 14px;
         text-align: right;
       }
       .product-des{
@@ -785,10 +784,11 @@ function resource($elem, $type = null)
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 2; /* number of lines to show */
-                line-clamp: 2; 
+        line-clamp: 2; 
         -webkit-box-orient: vertical;
         padding-left: 10px;
         margin-bottom: 25px;
+        font-size: 12px;
       }
       .woocommerce-Price-currencySymbol{
         color: #939393 !important;
