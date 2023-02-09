@@ -679,14 +679,14 @@ function resource($elem, $type = null)
         font-size: 18px;
       }
       .popup_product_price{
-        font-size:16px;
+        font-size:18px;
       }
       .popup_product_des{
         padding-bottom:20px;
         font-weight: 300 !important;
         font-size: 14px;
       }
-      .popup_product_btn_addtocart:active{
+      .popup_product_btn_addtocart:active , popup_product_btn_addtocart:hover{
         color:#FCBD1E;
       }
       .popup_product_btn_addtocart{
