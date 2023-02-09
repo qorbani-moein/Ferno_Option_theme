@@ -149,7 +149,7 @@ function product_archive (){
         </div>
       </div>
       <div class="popup_product_add_to_cart">
-        <a href="#" class="popup_product_btn_addtocart">popup_product_btn_addtocart</a>
+        <a href="#" class="popup_product_btn_addtocart">افزودن به یادداشت سفارش</a>
       </div>
     </div>
   </div>
@@ -541,7 +541,10 @@ function resource($elem, $type = null)
           var popup_price = document.querySelectorAll(".popup_product_price span");
           popup_price[0].innerHTML = product_price[id].innerHTML;
 
-
+          //btn add to card
+          var product_id = document.getElementsByClassName("product_card")[id].getAttribute("data-category");
+          var popup_btn_addtocard = document.querySelectorAll(".popup_product_add_to_cart");
+          popup_btn_addtocard[0] = `<a href="/?add-to-cart=` . product_id . `" class="popup_product_btn_addtocart">افزودن به یادداشت سفارش +</a>`;
         }
 
       ';
