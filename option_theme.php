@@ -544,7 +544,7 @@ function resource($elem, $type = null)
           //btn add to card
           var product_id = document.getElementsByClassName("product_card")[id].getAttribute("data-category");
           var popup_btn_addtocard = document.querySelectorAll(".popup_product_add_to_cart");
-          popup_btn_addtocard[0] = `<a href="/?add-to-cart=` . product_id . `" class="popup_product_btn_addtocart">افزودن به یادداشت سفارش +</a>`;
+          popup_btn_addtocard[0] = \'<a href="/?add-to-cart=\' . product_id . \' class="popup_product_btn_addtocart">افزودن به یادداشت سفارش +</a>\';
         }
 
       ';
