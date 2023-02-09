@@ -97,7 +97,7 @@ function script_page_category()
   //     // console($product_description, 'product_description222');
   // }
 
-  echo '<style>' . resource("style-card-product") . resource("style-category") . '</style>' . resource("script-category", "js");
+  echo '<style>' . resource("style-card-product") . resource("style-category") . '</style>';
 
 
 }
@@ -512,6 +512,7 @@ function resource($elem, $type = null)
               // }
           }
         }
+
         //popup
         window.addEventListener("click", function(e){   
           if (document.getElementById("popup_product").contains(e.target)){
@@ -723,6 +724,10 @@ function resource($elem, $type = null)
         align-content: stretch;
         justify-content: space-between;
         align-items: center;
+      }
+      /* alert woocommerce */
+      .woocommerce-notices-wrapper{
+        display:none
       }
       ';
       break;
