@@ -368,14 +368,17 @@ function resource($elem, $type = null)
         }
       }
       
-      console.log("u.length: " + document.getElementsByClassName("item-category").length);
-      for(var u = 0 ; u <= document.getElementsByClassName("item-category").length - 1 ; u++){
-        console.log("u: " + u);
-        document.getElementsByClassName("item-category")[u].classList.remove("products-slug-active");
-      }
       function set_ua_value (e) {
         if(e.target.nodeName == "LI") {
-            // console.log("e.target.innerHTML: " + e.target.innerHTML);
+          
+          //remove class menu actived
+            console.log("u.length: " + document.getElementsByClassName("item-category").length);
+            for(var u = 0 ; u <= document.getElementsByClassName("item-category").length - 1 ; u++){
+              console.log("u: " + u);
+              document.getElementsByClassName("item-category")[u].classList.remove("products-slug-active");
+            }
+
+          // console.log("e.target.innerHTML: " + e.target.innerHTML);
             e.target.classList.add("products-slug-active");
             //filter category
             var len_card_product = document.getElementsByClassName("product_card").length;
