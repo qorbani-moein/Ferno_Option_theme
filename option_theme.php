@@ -577,7 +577,8 @@ function resource($elem, $type = null)
         cursor: pointer;
       }
       .products-slug-active{
-        color:#FCBD1E;
+        background: #FCBD1E !important;
+        color: #2c2c2c !important;
       }
       .cat_active{
         background: #838383;
