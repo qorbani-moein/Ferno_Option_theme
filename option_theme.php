@@ -368,41 +368,43 @@ function resource($elem, $type = null)
         }
       }
       
+      console.log("u.length: " + document.getElementsByClassName("item-category").length);
       for(var u = 0 ; u <= document.getElementsByClassName("item-category").length - 1 ; u++){
+        console.log("u: " + u);
         document.getElementsByClassName("item-category")[u].classList.remove("products-slug-active");
       }
       function set_ua_value (e) {
         if(e.target.nodeName == "LI") {
-            console.log("e.target.innerHTML: " + e.target.innerHTML);
+            // console.log("e.target.innerHTML: " + e.target.innerHTML);
             e.target.classList.add("products-slug-active");
             //filter category
             var len_card_product = document.getElementsByClassName("product_card").length;
             var category_attr = e.target.innerHTML;
             document.getElementsByClassName("caption-img-product")[0].innerHTML = e.target.innerHTML;
             var category_attr_card;
-            console.log("len_card_product.length: " + len_card_product);
+            // console.log("len_card_product.length: " + len_card_product);
             for(var i = 0 ; i <= len_card_product -1 ; i++){
               
               // category_attr_card = document.getElementsByClassName("product_card")[i].getAttribute("data-category");
               category_attr_card = document.querySelectorAll(".value_category_" + i + " a");
 
               document.getElementsByClassName("product_card")[i].style.display = "block";
-              console.log("category_attr_card.length: " + category_attr_card.length );
+              // console.log("category_attr_card.length: " + category_attr_card.length );
               
-              console.log("i: " + i );
+              // console.log("i: " + i );
               for(var y = 0 ; y <= category_attr_card.length -1; y++){
-                console.log("y: " + y );
-                console.log("category_attr_card: " + category_attr_card[y].innerHTML);
+                // console.log("y: " + y );
+                // console.log("category_attr_card: " + category_attr_card[y].innerHTML);
                 
                 if(category_attr == "همه"){
                   document.getElementsByClassName("product_card")[i].style.display = "block";
                   break;
                 }
                 if(category_attr != category_attr_card[y].innerHTML){
-                  console.log("hidden");
+                  // console.log("hidden");
                   document.getElementsByClassName("product_card")[i].style.display = "none";
                 }else{
-                  console.log("show");
+                  // console.log("show");
                   document.getElementsByClassName("product_card")[i].style.display = "block";
                   break;
                 }
@@ -422,7 +424,7 @@ function resource($elem, $type = null)
       setInterval(time_check_frm,1000);
       function time_check_frm(){
         var exist_elem = document.getElementsByClassName("quantity_cart").length;
-        console.log("exist_elem: - " + exist_elem);
+        // console.log("exist_elem: - " + exist_elem);
         if(exist_elem == 0 || exist_elem == "" || exist_elem == null)
           cart_quantity_product();
       }
@@ -451,7 +453,7 @@ function resource($elem, $type = null)
         }
       
         function cart_quantity_product (){
-          console.log("True true");
+          // console.log("True true");
           // var len_cart = document.getElementsByClassName("moein-product-quantity").length;
           var woo_product_quantity = document.getElementsByClassName("moein-product-quantity");
           
@@ -500,7 +502,7 @@ function resource($elem, $type = null)
         // }
 
         function popup(id){
-          console.log("popup function id:" + id);
+          // console.log("popup function id:" + id);
           document.getElementById("popup_over").classList.add("popup_over_active");
           
           //img popup
