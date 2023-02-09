@@ -532,7 +532,7 @@ function resource($elem, $type = null)
           popup_des[0].innerHTML = product_des[id].innerHTML;
           
           //title
-          var product_title = document.querySelectorAll(".product-title p");
+          var product_title = document.querySelectorAll(".product-title a");
           var popup_title = document.querySelectorAll(".popup_product_title p");
           popup_title[0].innerHTML = product_title[id].innerHTML;
 
@@ -760,6 +760,7 @@ function resource($elem, $type = null)
                 line-clamp: 2; 
         -webkit-box-orient: vertical;
         padding-left: 10px;
+        margin-bottom: 25px;
       }
       .woocommerce-Price-currencySymbol bdi{
         color: white;
