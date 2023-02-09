@@ -686,10 +686,12 @@ function resource($elem, $type = null)
       }
       .popup_product_btn_addtocart{
         padding: 10px 20px 15px 20px;
-        border: 1px solid yellow;
+        border: 1px solid #FCBD1E;
         border-radius: 50px;
         color: white;
         text-align: center;
+        width: 100%;
+        display: inline-block;
       }
       .popup_product_add_to_cart{
         text-align: center;
