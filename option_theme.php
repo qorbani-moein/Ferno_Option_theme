@@ -727,7 +727,7 @@ function resource($elem, $type = null)
         float: left;
       }
       .product-price:not(.woocommerce-Price-currencySymbol){
-        color: #939393;
+        color: #fff;
       }
 
       .product-img{
@@ -779,8 +779,8 @@ function resource($elem, $type = null)
         padding-left: 10px;
         margin-bottom: 25px;
       }
-      .woocommerce-Price-currencySymbol bdi{
-        color: white;
+      .woocommerce-Price-currencySymbol{
+        color: #939393 !important;
       }
       ';
       break;
