@@ -538,13 +538,13 @@ function resource($elem, $type = null)
       }
       .products-slug{
         position: relative;
-        top: -6px;
+        top: -10px;
         right: 0px;
         background-color: #333;
         white-space: nowrap;
         display: inline-block;
         width: 100%;
-        height: 50px;
+        height: 72px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
         overflow-x: auto;
         -ms-overflow-style: none;
@@ -556,9 +556,8 @@ function resource($elem, $type = null)
       .products-slug ul{
         list-style-type: none;
         margin: 0;
-          margin-bottom: 0px;
-        margin-bottom: 0px;
-        padding-top: 7px;
+        padding-top: 18px;
+        padding-right: 20px;
         overflow: hidden;
         background-color: #333333;
         display: inline-flex;
