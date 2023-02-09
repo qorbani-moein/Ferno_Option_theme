@@ -718,9 +718,9 @@ function resource($elem, $type = null)
       .product_card{
         border: 1px solid #606060 !important;
         border-radius: 5px;
-        height: 150px;
+        height: 162px;
         margin: 20px;
-        padding: 5px 10px 10px 1px;
+        padding: 12px 10px 12px 1px;
       }
       .product-data{
         width: 72%;
