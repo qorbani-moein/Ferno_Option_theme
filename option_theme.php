@@ -537,7 +537,7 @@ function resource($elem, $type = null)
           popup_title[0].innerHTML = product_title[id].innerHTML;
 
           //price
-          var product_price = document.querySelectorAll(".product-price span");
+          var product_price = document.querySelectorAll(".product-price > span");
           var popup_price = document.querySelectorAll(".popup_product_price span");
           popup_price[0].innerHTML = product_price[id].innerHTML;
 
