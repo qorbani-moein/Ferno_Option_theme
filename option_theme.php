@@ -570,8 +570,8 @@ function resource($elem, $type = null)
         display: inline-block;
         color: white;
         text-align: right;
-        margin: 0px 12px;
-        padding: 6px 14px 6px 10px;
+        margin: 0px 8px;
+        padding: 6px 18px 6px 10px;
         border-radius: 30px;
         background: #414141;
         cursor: pointer;
