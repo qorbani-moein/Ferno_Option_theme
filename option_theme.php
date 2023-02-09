@@ -669,20 +669,22 @@ function resource($elem, $type = null)
         margin: 70px auto;
         padding: 20px;
         background: #303030;
-        border-radius: 5px;
+        border-radius: 10px;
         width: 90%;
         position: relative;
         transition: all 1s ease-in-out;
         color: white;
       }
       .popup_product_title{
-
+        font-size: 18px;
       }
       .popup_product_price{
-
+        font-size:16px;
       }
       .popup_product_des{
         padding-bottom:20px;
+        font-weight: 300 !important;
+        font-size: 14px;
       }
       .popup_product_btn_addtocart:active{
         color:#FCBD1E;
@@ -704,7 +706,7 @@ function resource($elem, $type = null)
         text-align: center;
       }
       #popup_product_img{
-        border-radius: 10px;
+        border-radius: 5px;
         width: 100%;
       }
       .popup-row-title-price{
