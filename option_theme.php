@@ -681,6 +681,9 @@ function resource($elem, $type = null)
       .popup_product_price{
 
       }
+      .popup_product_des{
+        padding-bottom:20px;
+      }
       .popup_product_btn_addtocart{
         padding: 10px 20px 15px 20px;
         border: 1px solid yellow;
