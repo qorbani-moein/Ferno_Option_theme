@@ -374,7 +374,7 @@ function resource($elem, $type = null)
       function set_ua_value (e) {
         if(e.target.nodeName == "LI") {
             console.log("e.target.innerHTML: " + e.target.innerHTML);
-            e.target.classList.add("active");
+            e.target.classList.add("products-slug-active");
             //filter category
             var len_card_product = document.getElementsByClassName("product_card").length;
             var category_attr = e.target.innerHTML;
@@ -570,11 +570,14 @@ function resource($elem, $type = null)
         display: inline-block;
         color: white;
         text-align: right;
-        margin: 0px 8px;
+        margin: 0px 6px;
         padding: 6px 18px 6px 10px;
         border-radius: 30px;
         background: #414141;
         cursor: pointer;
+      }
+      .products-slug-active{
+        color:#FCBD1E;
       }
       .cat_active{
         background: #838383;
