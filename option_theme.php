@@ -713,13 +713,13 @@ function resource($elem, $type = null)
       }
       ';
       break;
-      
+
     case "style-card-product":
       $result = '
       .product_card{
         border: 1px solid #606060 !important;
         border-radius: 5px;
-        height: 180pxک
+        height: 180px;
         margin: 20px;
         padding: 12px 10px 12px 1px;
       }
