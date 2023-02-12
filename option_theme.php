@@ -772,7 +772,6 @@ function resource($elem, $type = null)
         height: 180px;
         margin: 20px;
         padding: 12px 10px 12px 1px;
-        margin-top: 80px;
       }
       .product-data{
         width: 72%;
