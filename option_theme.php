@@ -184,45 +184,46 @@ function product_archive (){
       ?>
       <!-- card of product -->
       <div id="cart_product" class="product_card" data-id="<?php echo $product->get_id(); ?>" data-category="<?php echo urldecode($categories_product[0]); ?>">
-        <div class="product-img">
-          <a href="javascript:popup('<?php echo $j - 1 ?>');">
-          <?php echo $product->get_image(); ?>
-          </a>
-        </div>
-        <div class="product-data">
-          <div class="product-title">
-            <a href="<?php echo get_permalink($product->get_id()); ?>">
-              <h2><?php echo $product->get_title(); ?></h2>
-            </a>
+        <a href="javascript:popup('<?php echo $j - 1 ?>');">
+          <div class="product-img">
+            <?php echo $product->get_image(); ?>
           </div>
-          <div class="product-des">
-            <?php echo $product->get_description(); ?>
-          </div>
-          <div class="product-price">
-            <?php echo $product->get_price_html(); ?>
-          </div>
-          <div class="moein-product-quantity" hidden="">
+          <div class="product-data">
+            <div class="product-title">
+              <a href="<?php echo get_permalink($product->get_id()); ?>">
+                <h2><?php echo $product->get_title(); ?></h2>
+              </a>
+            </div>
+            <div class="product-des">
+              <?php echo $product->get_description(); ?>
+            </div>
+            <div class="product-price">
+              <?php echo $product->get_price_html(); ?>
+            </div>
+            <div class="moein-product-quantity" hidden="">
+              
               <?php
-                global $woocommerce;
-                $items = $woocommerce->cart->get_cart();
+                  global $woocommerce;
+                  $items = $woocommerce->cart->get_cart();
 
-                foreach($items as $item => $values) { 
-                    // $_product =  wc_get_product( $values['data']->get_id()); 
-                    if($values['data']->get_id() == $product->get_id()){
-                      if(!isset($values['quantity']))
-                        echo '0'; 
-                      else
-                        echo $values['quantity'];
-                    }
-                    // echo "<b>".$_product->get_title().'</b>  <br> Quantity: '.$values['quantity'].'<br><br><br>' . '
-                    // <p style="color:white;">get_id= ' . $values['data']->get_id() . '</p> 
-                    // <p style="color:white;">$product->get_id()= ' . $product->get_id() . '</p>'; 
-                    // $price = get_post_meta($values['product_id'] , '_price', true);
-                    // echo "  Price: ".$price."<br>";
-                } 
-              ?>
+                  foreach($items as $item => $values) { 
+                      // $_product =  wc_get_product( $values['data']->get_id()); 
+                      if($values['data']->get_id() == $product->get_id()){
+                        if(!isset($values['quantity']))
+                          echo '0'; 
+                        else
+                          echo $values['quantity'];
+                      }
+                      // echo "<b>".$_product->get_title().'</b>  <br> Quantity: '.$values['quantity'].'<br><br><br>' . '
+                      // <p style="color:white;">get_id= ' . $values['data']->get_id() . '</p> 
+                      // <p style="color:white;">$product->get_id()= ' . $product->get_id() . '</p>'; 
+                      // $price = get_post_meta($values['product_id'] , '_price', true);
+                      // echo "  Price: ".$price."<br>";
+                  } 
+                ?>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
       
 
@@ -391,12 +392,12 @@ function resource($elem, $type = null)
       var products_archive = document.getElementById("products_archive");
 
       var imagebar = document.getElementById("products-image-category");
-      var sticky = menubar.offsetTop + imagebar.offsetTop;
+      var sticky = 50 + menubar.offsetTop + imagebar.offsetTop;
 
       function myFunction() {
         // console.log("window.pageYOffset: " + window.pageYOffset);
         // console.log("sticky: " + sticky);
-        if (window.pageYOffset >= 250) {
+        if (window.pageYOffset >= sticky) {
           menubar.classList.add("sticky");
           products_archive.classList.add("products-archive-top");
         } else {
