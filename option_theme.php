@@ -170,7 +170,7 @@ function product_archive (){
     </div>
   </div>
 
-  <div class="products-archive">
+  <div id="products_archive" class="products-archive">
     <?php
     $j = 0;
     foreach ($products as $product) {
@@ -388,6 +388,8 @@ function resource($elem, $type = null)
       window.onscroll = function() {myFunction()};
 
       var menubar = document.getElementById("products-slug");
+      var products_archive = document.getElementById("products_archive");
+
       var imagebar = document.getElementById("products-image-category");
       var sticky = menubar.offsetTop + imagebar.offsetTop;
 
@@ -396,8 +398,10 @@ function resource($elem, $type = null)
         // console.log("sticky: " + sticky);
         if (window.pageYOffset >= 320) {
           menubar.classList.add("sticky");
+          products_archive.classList.add("products-archive-top");
         } else {
           menubar.classList.remove("sticky");
+          products_archive.classList.remove("products-archive-top");
         }
       }
       function set_ua_value (e) {
@@ -572,9 +576,12 @@ function resource($elem, $type = null)
     case "style-category":
       $result = '
       .products-archive{
-        margin-top: 80px;
+        margin-top: -10px;
         margin-bottom: 128px;
 
+      }
+      .products-archive-top{
+        margin-top: 80px !important;
       }
       .products-slug{
         position: relative;
