@@ -571,7 +571,7 @@ function resource($elem, $type = null)
     case "style-category":
       $result = '
       .products-archive{
-        margin-top: -16px;
+        margin-top: 80px;
         margin-bottom: 128px;
 
       }
@@ -760,9 +760,6 @@ function resource($elem, $type = null)
         top: 0;
         width: 100%;
         z-index:5;
-      }
-      .sticky + .products-archive {
-        margin-top: 90px;
       }
       ';
       break;
