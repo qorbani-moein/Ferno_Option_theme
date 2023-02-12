@@ -391,7 +391,8 @@ function resource($elem, $type = null)
       var sticky = menubar.offsetTop;
 
       function myFunction() {
-        
+        console.log("window.pageYOffset: " + window.pageYOffset);
+        console.log("sticky: " + sticky);
         if (window.pageYOffset / 2 >= sticky) {
           menubar.classList.add("sticky");
         } else {
