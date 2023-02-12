@@ -392,7 +392,7 @@ function resource($elem, $type = null)
       var products_archive = document.getElementById("products_archive");
 
       var imagebar = document.getElementById("products-image-category");
-      var sticky = 50 - menubar.offsetTop + imagebar.offsetTop;
+      var sticky = 50 + menubar.height + imagebar.height;
 
       function myFunction() {
         console.log("window.pageYOffset: " + window.pageYOffset);
