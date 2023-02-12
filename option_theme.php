@@ -396,7 +396,7 @@ function resource($elem, $type = null)
       function myFunction() {
         // console.log("window.pageYOffset: " + window.pageYOffset);
         // console.log("sticky: " + sticky);
-        if (window.pageYOffset >= 320) {
+        if (window.pageYOffset >= 350) {
           menubar.classList.add("sticky");
           products_archive.classList.add("products-archive-top");
         } else {
