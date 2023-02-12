@@ -392,9 +392,9 @@ function resource($elem, $type = null)
       var sticky = menubar.offsetTop + imagebar.offsetTop;
 
       function myFunction() {
-        console.log("window.pageYOffset: " + window.pageYOffset);
-        console.log("sticky: " + sticky);
-        if (window.pageYOffset >= sticky) {
+        // console.log("window.pageYOffset: " + window.pageYOffset);
+        // console.log("sticky: " + sticky);
+        if (window.pageYOffset >= 320) {
           menubar.classList.add("sticky");
         } else {
           menubar.classList.remove("sticky");
@@ -577,8 +577,8 @@ function resource($elem, $type = null)
 
       }
       .products-slug{
-        position: absolute;
-        top: 200px;
+        position: relative;
+        top: -10px;
         right: 0px;
         background-color: #333;
         white-space: nowrap;
