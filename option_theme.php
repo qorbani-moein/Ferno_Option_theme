@@ -392,11 +392,11 @@ function resource($elem, $type = null)
       var products_archive = document.getElementById("products_archive");
 
       var imagebar = document.getElementById("products-image-category");
-      var sticky = 50 + menubar.offsetTop + imagebar.offsetTop;
+      var sticky = 50 - menubar.offsetTop + imagebar.offsetTop;
 
       function myFunction() {
-        // console.log("window.pageYOffset: " + window.pageYOffset);
-        // console.log("sticky: " + sticky);
+        console.log("window.pageYOffset: " + window.pageYOffset);
+        console.log("sticky: " + sticky);
         if (window.pageYOffset >= sticky) {
           menubar.classList.add("sticky");
           products_archive.classList.add("products-archive-top");
