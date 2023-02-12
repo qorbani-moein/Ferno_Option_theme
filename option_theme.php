@@ -637,7 +637,7 @@ function resource($elem, $type = null)
       .caption-img-product{
         position: absolute;
         color: white;
-        top: 132px;
+        top: 260px;
         right: 26px;
         font-family: "Vazirmatn";
         font-style: normal;
@@ -729,8 +729,8 @@ function resource($elem, $type = null)
         font-weight: 300 !important;
         font-size: 14px;
       }
-      .popup_product_btn_addtocart:active , popup_product_btn_addtocart:hover{
-        color:#FCBD1E;
+      .popup_product_btn_addtocart:active , .popup_product_btn_addtocart:hover{
+        color:#FCBD1E !important;
       }
       .popup_product_btn_addtocart{
         padding: 10px 20px 15px 20px;
