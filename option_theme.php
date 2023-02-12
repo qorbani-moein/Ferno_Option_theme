@@ -637,7 +637,7 @@ function resource($elem, $type = null)
       .caption-img-product{
         position: absolute;
         color: white;
-        top: 260px;
+        top: 160px;
         right: 26px;
         font-family: "Vazirmatn";
         font-style: normal;
