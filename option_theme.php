@@ -393,7 +393,7 @@ function resource($elem, $type = null)
       function myFunction() {
         console.log("window.pageYOffset: " + window.pageYOffset);
         // console.log("sticky: " + sticky);
-        if (window.pageYOffset >= 300) {
+        if (window.pageYOffset >= 320) {
           menubar.classList.add("sticky");
         } else {
           menubar.classList.remove("sticky");
