@@ -753,6 +753,11 @@ function resource($elem, $type = null)
       .woocommerce-notices-wrapper{
         display:none
       }
+      .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
       ';
       break;
 
