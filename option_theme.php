@@ -135,7 +135,7 @@ function product_archive (){
     </div>
   </div>
 
-  <div class="products-image-category">
+  <div id="products-image-category" class="products-image-category">
     <img class="img-product" src="<?php echo "https://ferno.eightco.org/wp-content/uploads/2023/01/istockphoto-683734168-170667a2.png"; ?>">
     <h1 class="caption-img-product"></h1>
   </div>
@@ -388,12 +388,13 @@ function resource($elem, $type = null)
       window.onscroll = function() {myFunction()};
 
       var menubar = document.getElementById("products-slug");
-      var sticky = menubar.offsetTop;
+      var imagebar = document.getElementById("products-image-category");
+      var sticky = menubar.offsetTop + imagebar.offsetTop;
 
       function myFunction() {
         console.log("window.pageYOffset: " + window.pageYOffset);
-        // console.log("sticky: " + sticky);
-        if (window.pageYOffset >= 320) {
+        console.log("sticky: " + sticky);
+        if (window.pageYOffset >= sticky) {
           menubar.classList.add("sticky");
         } else {
           menubar.classList.remove("sticky");
