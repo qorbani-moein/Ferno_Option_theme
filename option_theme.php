@@ -392,7 +392,7 @@ function resource($elem, $type = null)
 
       function myFunction() {
         if (window.pageYOffset >= sticky) {
-          menubar.classList.add("sticky")
+          menubar.classList.add("sticky");
         } else {
           menubar.classList.remove("sticky");
         }
@@ -757,7 +757,7 @@ function resource($elem, $type = null)
         position: fixed;
         top: 0;
         width: 100%;
-        z-index: 5;
+      
       }
       ';
       break;
