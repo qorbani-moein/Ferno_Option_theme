@@ -140,7 +140,7 @@ function product_archive (){
     <h1 class="caption-img-product"></h1>
   </div>
 
-  <div class="products-slug">
+  <div id="products-slug" class="products-slug">
     <?php
     // Get Woocommerce product categories WP_Term objects
     $categories = get_terms( ['taxonomy' => 'product_cat'] );
@@ -385,6 +385,18 @@ function resource($elem, $type = null)
         }
       }
       
+      window.onscroll = function() {myFunction()};
+
+      var menubar = document.getElementById("products-slug");
+      var sticky = menubar.offsetTop;
+
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          menubar.classList.add("sticky")
+        } else {
+          menubar.classList.remove("sticky");
+        }
+      }
       function set_ua_value (e) {
         if(e.target.nodeName == "LI") {
           
