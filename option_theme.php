@@ -392,7 +392,7 @@ function resource($elem, $type = null)
 
       function myFunction() {
         
-        if (window.pageYOffset * 2 >= sticky) {
+        if (window.pageYOffset / 2 >= sticky) {
           menubar.classList.add("sticky");
         } else {
           menubar.classList.remove("sticky");
