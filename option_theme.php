@@ -576,8 +576,8 @@ function resource($elem, $type = null)
 
       }
       .products-slug{
-        position: relative;
-        top: -10px;
+        position: absolute;
+        top: 200px;
         right: 0px;
         background-color: #333;
         white-space: nowrap;
@@ -775,6 +775,7 @@ function resource($elem, $type = null)
         height: 180px;
         margin: 20px;
         padding: 12px 10px 12px 1px;
+        margin-top: 80px;
       }
       .product-data{
         width: 72%;
