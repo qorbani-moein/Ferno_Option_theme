@@ -761,8 +761,8 @@ function resource($elem, $type = null)
         width: 100%;
         z-index:5;
       }
-      .sticky + .content {
-        padding-top: 60px;
+      .sticky + .products-archive {
+        margin-top: 90px;
       }
       ';
       break;
