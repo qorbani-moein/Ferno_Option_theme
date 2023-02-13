@@ -65,7 +65,7 @@ function script_query_page()
 }
 
 function script_page_home(){
-  echo resource("script-home", "js");
+  echo resource("script-home", "js") . resource("style-home","css");
 }
 function script_page_category()
 {
@@ -135,6 +135,7 @@ function product_archive (){
     </div>
   </div>
 
+    
   <div id="products-image-category" class="products-image-category">
     <img class="img-product" src="<?php echo "https://ferno.eightco.org/wp-content/uploads/2023/01/istockphoto-683734168-170667a2.png"; ?>">
     <h1 class="caption-img-product"></h1>
@@ -848,7 +849,32 @@ function resource($elem, $type = null)
     case "script-home":
       return '
       //back menu in header
-      document.getElementsByClassName("elementor-icon")[0].display = "none";
+      document.getElementsByClassName("elementor-icon")[0].style.display = "none";
+      ';
+      break;
+    case "style-home":
+      return '
+      .popup-coming-soon-line-bar{
+        float: left;
+        width: 60%;
+      }
+      .popup-coming-soon-line-bar hr{
+        width: 30%;
+        border: 2px solid #626262;
+        border-radius: 20px;
+        margin-top: 10px;
+      }
+      .popup-coming-soon{
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+      }
+      .popup-coming-soon-title{
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        color: white;
+        padding-top: 32px;
+      }
       ';
       break;
   }
