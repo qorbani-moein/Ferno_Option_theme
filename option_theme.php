@@ -57,7 +57,9 @@ function script_query_page()
   } elseif ($current_page == $page_category) {
     script_page_category();
   }elseif ($current_page == $page_home){
+    console("script_page_home")
     script_page_home();
+
   } 
   //elseif($current_page == substr($current_page,0,strlen($page_shop_en))){
   //     script_page_shop_EnToFa();
@@ -134,6 +136,7 @@ function product_archive (){
       </div>
     </div>
   </div>
+
 
     
   <div id="products-image-category" class="products-image-category">
