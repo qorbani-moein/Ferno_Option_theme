@@ -28,9 +28,6 @@ function remove_quantity()
   if ($cart_item_id)
     $cart->set_quantity($cart_item_id, 1);
 
-
-
-
   // console($id, 'id');
   // console($cart_id, 'cart_id');
   // console($cart_item_id, 'cart_item_id');
