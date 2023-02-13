@@ -885,8 +885,8 @@ function resource($elem, $type = null)
       .popup-coming-soon-hide{
       }
       @keyframes showpopup {
-        from {bottom: -1000px;}
-        to {bottom: 0;}
+        0%{bottom: -1000px;}
+        100%{bottom: 0px;}
       }
       @keyframes hiddenpopup {
         from {bottom: 0;}
