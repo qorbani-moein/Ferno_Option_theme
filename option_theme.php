@@ -891,7 +891,7 @@ function resource($elem, $type = null)
         background: #303030;
         text-align: center;
         position: absolute;
-        bottom: -1000px;
+        bottom: 0px;
       }
 
       .popup-coming-soon-title{
