@@ -852,6 +852,10 @@ function resource($elem, $type = null)
       //back menu in header
       document.getElementsByClassName("elementor-icon")[0].style.display = "none";
 
+      document.getElementById("moein-card-room").addEventListener("click", function(){
+        
+        document.getElementById("popup_coming_soon").classList.add("popup-coming-soon-show");
+      }); 
       ';
       break;
     case "style-home":
@@ -872,19 +876,21 @@ function resource($elem, $type = null)
         background: #303030;
         text-align: center;
         position: absolute;
-        bottom: 0px;
+        bottom: -1000px;
       }
       .popup-coming-soon-show{
-        @keyframes showpopup {
-          from {top: 0px;}
-          to {top: 200px;}
-        }
+        animation-name: showpopup;
+        animation-duration: 4s;
       }
       .popup-coming-soon-hide{
-        @keyframes hiddenpopup {
-          from {top: 0px;}
-          to {top: 200px;}
-        }
+      }
+      @keyframes showpopup {
+        from {bottom: -1000px;}
+        to {bottom: 0;}
+      }
+      @keyframes hiddenpopup {
+        from {bottom: 0;}
+        to {bottom: -1000px;}
       }
       .popup-coming-soon-title{
         display: inline-block;
