@@ -879,6 +879,10 @@ function resource($elem, $type = null)
         color: white;
         padding-top: 32px;
       }
+      .popup_coming_soon{
+        background: gray;
+        text-align: center;
+      }
       ';
       break;
   }
