@@ -851,13 +851,13 @@ function resource($elem, $type = null)
       ';
       break;
     case "script-home":
-      return '
+      $result = '
       //back menu in header
       document.getElementsByClassName("elementor-icon")[0].style.display = "none";
       ';
       break;
     case "style-home":
-      return '
+      $result = '
       .popup-coming-soon-line-bar{
         float: left;
         width: 60%;
