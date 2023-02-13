@@ -868,6 +868,8 @@ function resource($elem, $type = null)
       .popup-coming-soon{
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
+        background: gray;
+        text-align: center;
       }
       .popup-coming-soon-title{
         display: inline-block;
@@ -877,8 +879,7 @@ function resource($elem, $type = null)
         padding-top: 32px;
       }
       .popup_coming_soon{
-        background: gray;
-        text-align: center;
+        
       }
       ';
       break;
