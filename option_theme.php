@@ -48,7 +48,8 @@ function script_query_page()
   $page_home = 'https://' . $_SERVER['SERVER_NAME'];
   // $page_shop_en = 'https://' . $_SERVER['SERVER_NAME'] . '/en/shop/' ;
 
-  // console("current_page: " . $current_page); 
+  console("current_page: " . $current_page); 
+  console("page_home: " . $page_home); 
   // console("page_shop_en: " . substr($current_page,0,strlen($page_shop_en)));
   // console('page_shop_fa: ' . $page_shop_fa);
 
