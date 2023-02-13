@@ -851,25 +851,7 @@ function resource($elem, $type = null)
       $result = '
       //back menu in header
       document.getElementsByClassName("elementor-icon")[0].style.display = "none";
-      document.getElementById("moein-card-room-desk").addEventListener("click", show_comingsoon); 
-
       
-      function show_comingsoon(){
-        console.log("show_comingsoon");
-        unfade(document.getElementById("popup_coming_soon"));
-      }
-      function unfade(element) {
-        var op = 0.1;  // initial opacity
-        element.style.display = "block";
-        var timer = setInterval(function () {
-            if (op >= 1){
-                clearInterval(timer);
-            }
-            element.style.opacity = op;
-            element.style.filter = "alpha(opacity=" + op * 100 + ")";
-            op += op * 0.1;
-        }, 10);
-    }
       ';
       break;
     case "style-home":
@@ -892,6 +874,18 @@ function resource($elem, $type = null)
         position: absolute;
         bottom: 0px;
         opacity: 0;
+      }
+      .popup-coming-soon-show{
+        @keyframes showpopup {
+          from {top: 0px;}
+          to {top: 200px;}
+        }
+      }
+      .popup-coming-soon-hide{
+        @keyframes hiddenpopup {
+          from {top: 0px;}
+          to {top: 200px;}
+        }
       }
       .popup-coming-soon-title{
         display: inline-block;
