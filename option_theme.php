@@ -851,7 +851,7 @@ function resource($elem, $type = null)
       $result = '
       //back menu in header
       document.getElementsByClassName("elementor-icon")[0].style.display = "none";
-      document.getElementById("moein-card-room-desk").addEventListener("click", show_comingsoon); 
+      document.getElementById("moein_card_room_desk").addEventListener("click", show_comingsoon); 
 
       
       function show_comingsoon(){
