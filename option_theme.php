@@ -57,7 +57,7 @@ function script_query_page()
   } elseif ($current_page == $page_category) {
     script_page_category();
   }elseif ($current_page == $page_home){
-    console("script_page_home")
+    console("script_page_home");
     script_page_home();
 
   } 
