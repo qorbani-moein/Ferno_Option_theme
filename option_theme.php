@@ -891,7 +891,7 @@ function resource($elem, $type = null)
         text-align: center;
         position: absolute;
         bottom: 0px;
-        
+        opacity: 0;
       }
       .popup-coming-soon-title{
         display: inline-block;
@@ -907,7 +907,7 @@ function resource($elem, $type = null)
       .popup-coming-soon-contact-us{
         padding-top: 32px;
       }
-      popup-coming-soon-btn-contact-us{
+      .popup-coming-soon-btn-contact-us{
         margin-top: 32px;
         padding: 32px;
       }
