@@ -876,10 +876,20 @@ function resource($elem, $type = null)
         text-align: center;
         width: 100%;
         color: white;
+        padding-top: 85px;
+      }
+      .popup-coming-soon-loading img{ 
+        width: 100%;
+        padding-bottom: 24px;
+      }
+      .popup-coming-soon-contact-us{
         padding-top: 32px;
       }
-      .popup_coming_soon{
-        
+      popup-coming-soon-btn-contact-us{
+        padding-top: 32px;
+      }
+      .popup-coming-soon-icon , .popup-coming-soon-phone{
+        background: #434343;
       }
       ';
       break;
