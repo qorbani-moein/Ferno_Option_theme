@@ -852,6 +852,7 @@ function resource($elem, $type = null)
       //back menu in header
       document.getElementsByClassName("elementor-icon")[0].style.display = "none";
       document.getElementById("moein-card-room-desk").addEventListener("click", show_comingsoon); 
+
       
       function show_comingsoon(){
         console.log("show_comingsoon");
@@ -888,6 +889,8 @@ function resource($elem, $type = null)
         border-top-right-radius: 15px;
         background: #303030;
         text-align: center;
+        position: absolute;
+        bottom: 0px;
         
       }
       .popup-coming-soon-title{
