@@ -868,7 +868,7 @@ function resource($elem, $type = null)
       .popup-coming-soon{
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
-        background: gray;
+        background: #303030;
         text-align: center;
       }
       .popup-coming-soon-title{
@@ -886,11 +886,32 @@ function resource($elem, $type = null)
         padding-top: 32px;
       }
       popup-coming-soon-btn-contact-us{
-        padding-top: 32px;
+        padding: 32px;
       }
       .popup-coming-soon-icon , .popup-coming-soon-phone{
         background: #434343;
       }
+      .popup-coming-soon-icon{
+        padding: 12px 15px 12px 13px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-left: 1px solid #8A8A8A;
+      }
+      .popup-coming-soon-icon svg{
+        position: relative;
+        top: 9px;
+      }
+      .popup-coming-soon-phone{
+        padding: 12px 70px 12px 20px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+      .popup-coming-soon-phone a{
+        position: relative;
+        top: 4px;
+        color: white;
+      }
+
       ';
       break;
   }
