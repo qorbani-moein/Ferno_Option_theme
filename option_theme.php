@@ -851,6 +851,23 @@ function resource($elem, $type = null)
       $result = '
       //back menu in header
       document.getElementsByClassName("elementor-icon")[0].style.display = "none";
+      document.getElementById("moein-card-room-desk").addEventListener("click", moein-card-room-desk); 
+      
+      function ç(){
+        unfade(popup_coming_soon);
+      }
+      function unfade(element) {
+        var op = 0.1;  // initial opacity
+        element.style.display = "block";
+        var timer = setInterval(function () {
+            if (op >= 1){
+                clearInterval(timer);
+            }
+            element.style.opacity = op;
+            element.style.filter = "alpha(opacity=" + op * 100 + ")";
+            op += op * 0.1;
+        }, 10);
+    }
       ';
       break;
     case "style-home":
@@ -886,6 +903,7 @@ function resource($elem, $type = null)
         padding-top: 32px;
       }
       popup-coming-soon-btn-contact-us{
+        margin-top: 32px;
         padding: 32px;
       }
       .popup-coming-soon-icon , .popup-coming-soon-phone{
