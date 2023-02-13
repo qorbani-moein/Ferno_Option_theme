@@ -540,9 +540,6 @@ function resource($elem, $type = null)
             document.getElementById("popup_over").classList.remove("popup_over_active");
           }
         });
-        // document.getElementById("popup_over").onclick = function(){
-        //   document.getElementById("popup_over").classList.remove("popup_over_active");
-        // }
 
         function popup(id){
           // console.log("popup function id:" + id);
@@ -886,14 +883,26 @@ function resource($elem, $type = null)
         margin-top: 10px;
       }
       .popup-coming-soon{
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
+        /*border-top-left-radius: 15px;
+        border-top-right-radius: 15px;*/
         background: #303030;
         text-align: center;
-        position: absolute;
+        position: fixed;
         bottom: 0px;
+        scale: 0.9;
+        border-radius: 15px;
       }
-
+      .over-screen{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        transition: opacity 500ms;
+        visibility: hidden;
+        opacity: 0;
+      }
       .popup-coming-soon-title{
         display: inline-block;
         text-align: center;
