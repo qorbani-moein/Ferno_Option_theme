@@ -873,7 +873,6 @@ function resource($elem, $type = null)
         text-align: center;
         position: absolute;
         bottom: 0px;
-        opacity: 0;
       }
       .popup-coming-soon-show{
         @keyframes showpopup {
