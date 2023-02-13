@@ -851,10 +851,11 @@ function resource($elem, $type = null)
       $result = '
       //back menu in header
       document.getElementsByClassName("elementor-icon")[0].style.display = "none";
-      document.getElementById("moein-card-room-desk").addEventListener("click", moein-card-room-desk); 
+      document.getElementById("moein-card-room-desk").addEventListener("click", show_comingsoon); 
       
-      function ç(){
-        unfade(popup_coming_soon);
+      function show_comingsoon(){
+        console.log("show_comingsoon");
+        unfade(document.getElementById("popup_coming_soon"));
       }
       function unfade(element) {
         var op = 0.1;  // initial opacity
@@ -887,6 +888,7 @@ function resource($elem, $type = null)
         border-top-right-radius: 15px;
         background: #303030;
         text-align: center;
+        
       }
       .popup-coming-soon-title{
         display: inline-block;
