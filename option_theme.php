@@ -138,7 +138,7 @@ function product_archive (){
 
     
   <div id="products-image-category" class="products-image-category">
-    <img class="img-product" src="<?php echo "https://ferno.eightco.org/wp-content/uploads/2023/01/istockphoto-683734168-170667a2.png"; ?>">
+    <img class="img-product" src="<?php echo "https://ferno.eightco.org/wp-content/uploads/2023/03/01.jpg"; ?>">
     <h1 class="caption-img-product"></h1>
   </div>
 
@@ -154,7 +154,7 @@ function product_archive (){
     // $all_category = json_decode( $categories, true );
     ?>
     <ul class="list-category">
-      <li class="item-category">همه</li>
+      <!-- <li class="item-category">همه</li> -->
       <?php
         foreach ($categories as $category => $value) {  
           echo '<li class="item-category">';        
@@ -438,10 +438,10 @@ function resource($elem, $type = null)
                 // console.log("y: " + y );
                 // console.log("category_attr_card: " + category_attr_card[y].innerHTML);
                 
-                if(category_attr == "همه"){
-                  document.getElementsByClassName("product_card")[i].style.display = "block";
-                  break;
-                }
+                // if(category_attr == "همه"){
+                //   document.getElementsByClassName("product_card")[i].style.display = "block";
+                //   break;
+                // }
                 if(category_attr != category_attr_card[y].innerHTML){
                   // console.log("hidden");
                   document.getElementsByClassName("product_card")[i].style.display = "none";
