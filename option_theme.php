@@ -112,7 +112,7 @@ function product_archive()
 
   <div id="popup_over" class="popup_over">
     <div id="popup_product" class="popup_product">
-      <div class="close-popup"><span>×</span></div>
+      <div class="close-popup" id="popup_over"><span>×</span></div>
       <div class="popup_product_img">
         <img id="popup_product_img" src="" src="" alt="#">
       </div>
@@ -534,6 +534,11 @@ function resource($elem, $type = null)
 
         //popup
         window.addEventListener("click", function(e){   
+          console.log(e.target);
+          console.log(e.target.innerHTML);
+          if(e.target.innerHTML == "×"){
+            document.getElementById("popup_over").classList.remove("popup_over_active");
+          }
           if (document.getElementById("popup_product").contains(e.target)){
             // Clicked in box
           } else{
@@ -575,6 +580,13 @@ function resource($elem, $type = null)
       break;
     case "style-category":
       $result = '
+      .close-popup span{
+        position: absolute;
+        right: 24px;
+        top: 5px;
+        font-size: 32px;
+        cursor: pointer;
+      }
       .products-archive{
         margin-top: -10px;
         margin-bottom: 128px;
@@ -872,12 +884,6 @@ function resource($elem, $type = null)
       break;
     case "style-home":
       $result = '
-      .close-popup span{
-        position: absolute;
-        right:0px;
-        top:0px;
-        font-size: 32px;
-      }
       .popup-coming-soon-line-bar{
         float: left;
         width: 60%;
