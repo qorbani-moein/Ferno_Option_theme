@@ -45,8 +45,8 @@ function script_query_page()
   $page_home = 'https://' . $_SERVER['SERVER_NAME'] . '/';
   // $page_shop_en = 'https://' . $_SERVER['SERVER_NAME'] . '/en/shop/' ;
 
-  console("current_page: " . $current_page); 
-  console("page_home: " . $page_home); 
+  console("current_page: " . $current_page);
+  console("page_home: " . $page_home);
   // console("page_shop_en: " . substr($current_page,0,strlen($page_shop_en)));
   // console('page_shop_fa: ' . $page_shop_fa);
 
@@ -54,18 +54,18 @@ function script_query_page()
     script_page_cart();
   } elseif ($current_page == $page_category) {
     script_page_category();
-  }elseif ($current_page == $page_home){
+  } elseif ($current_page == $page_home) {
     console("script_page_home");
     script_page_home();
-
-  } 
+  }
   //elseif($current_page == substr($current_page,0,strlen($page_shop_en))){
   //     script_page_shop_EnToFa();
   // }
 }
 
-function script_page_home(){
-  echo resource("script-home", "js") . resource("style-home","css");
+function script_page_home()
+{
+  echo resource("script-home", "js") . resource("style-home", "css");
 }
 function script_page_category()
 {
@@ -79,55 +79,55 @@ function script_page_category()
 
 
   echo '<style>' . resource("style-card-product") . resource("style-category") . '</style>' . resource("script-category", "js");
-
-
 }
 
-function product_archive (){
+function product_archive()
+{
   // $products = wc_get_products( array( 'status' => 'publish', 'limit' => -1 ) );
 
   // foreach ( $products as $product ){
-    // echo '<pre class="moein_pre">';
-    // echo  $product->get_status() . ' - (get_status)';  // Product status
-    // echo  $product->get_type() . ' - (get_type)';  // Product type
-    // echo  $product->get_id() . ' - (get_id)';    // Product ID
-    // echo  $product->get_title() . ' - (get_title)'; // Product title
-    // echo  $product->get_slug() . ' - (get_slug)'; // Product slug
-    // echo  $product->get_categories() . ' - (get_categories)'; // Product categories
-    // echo  $product->get_price() . ' - (get_price)'; // Product price
-    // echo  $product->get_catalog_visibility() . ' - (get_catalog_visibility)'; // Product visibility
-    // echo  $product->get_stock_status() . ' - (get_stock_status)'; // Product stock status
-    // echo  $product->get_description() . ' - (get_description)'; // Product get_description
-    // // product date image
-    // echo $product->get_image(); // Returns the main product image.
-    // echo $product->get_image_id(); // Get main image ID.
-    // // product date information
-    // echo $product->get_date_created()->date('Y-m-d H:i:s');
-    // echo $product->get_date_modified()->date('Y-m-d H:i:s');
-    // echo '</pre>';
+  // echo '<pre class="moein_pre">';
+  // echo  $product->get_status() . ' - (get_status)';  // Product status
+  // echo  $product->get_type() . ' - (get_type)';  // Product type
+  // echo  $product->get_id() . ' - (get_id)';    // Product ID
+  // echo  $product->get_title() . ' - (get_title)'; // Product title
+  // echo  $product->get_slug() . ' - (get_slug)'; // Product slug
+  // echo  $product->get_categories() . ' - (get_categories)'; // Product categories
+  // echo  $product->get_price() . ' - (get_price)'; // Product price
+  // echo  $product->get_catalog_visibility() . ' - (get_catalog_visibility)'; // Product visibility
+  // echo  $product->get_stock_status() . ' - (get_stock_status)'; // Product stock status
+  // echo  $product->get_description() . ' - (get_description)'; // Product get_description
+  // // product date image
+  // echo $product->get_image(); // Returns the main product image.
+  // echo $product->get_image_id(); // Get main image ID.
+  // // product date information
+  // echo $product->get_date_created()->date('Y-m-d H:i:s');
+  // echo $product->get_date_modified()->date('Y-m-d H:i:s');
+  // echo '</pre>';
   // }
 
-  $products = wc_get_products( array( 'status' => 'publish', 'limit' => -1 ) );
+  $products = wc_get_products(array('status' => 'publish', 'limit' => -1));
 
-  ?>
+?>
 
   <div id="popup_over" class="popup_over">
     <div id="popup_product" class="popup_product">
+      <div class="close-popup">×</div>
       <div class="popup_product_img">
-        <img id="popup_product_img" src="" src="" alt="#">  
+        <img id="popup_product_img" src="" src="" alt="#">
       </div>
-      <div class="popup_product_data"> 
+      <div class="popup_product_data">
         <div class="popup-row-title-price">
           <div class="popup_product_title">
-            
-            </div>
-            <div class="popup_product_price">
-              <span>popup_product_price</span>
-            </div>
+
           </div>
-          <div class="popup_product_des">
-            
+          <div class="popup_product_price">
+            <span>popup_product_price</span>
           </div>
+        </div>
+        <div class="popup_product_des">
+
+        </div>
       </div>
       <div class="popup_product_add_to_cart">
         <a href="#" class="popup_product_btn_addtocart">افزودن به یادداشت سفارش</a>
@@ -136,7 +136,7 @@ function product_archive (){
   </div>
 
 
-    
+
   <div id="products-image-category" class="products-image-category">
     <img class="img-product" src="<?php echo "https://ferno.eightco.org/wp-content/uploads/2023/03/01.jpg"; ?>">
     <h1 class="caption-img-product"></h1>
@@ -145,7 +145,7 @@ function product_archive (){
   <div id="products-slug" class="products-slug">
     <?php
     // Get Woocommerce product categories WP_Term objects
-    $categories = get_terms( ['taxonomy' => 'product_cat'] );
+    $categories = get_terms(['taxonomy' => 'product_cat']);
 
     // Getting a visual raw output
     // echo '<pre>'; var_dump( $categories ); echo '</pre>';
@@ -156,33 +156,33 @@ function product_archive (){
     <ul class="list-category">
       <!-- <li class="item-category">همه</li> -->
       <?php
-        foreach ($categories as $category => $value) {  
-          echo '<li class="item-category">';        
-          foreach ($value as $item => $value_item) {
-            if($item=="name" && $value_item!=""){
-              // echo '<li class="item-category">' . $value_item . '<li>';
-              echo $value_item;
-            }
+      foreach ($categories as $category => $value) {
+        echo '<li class="item-category">';
+        foreach ($value as $item => $value_item) {
+          if ($item == "name" && $value_item != "") {
+            // echo '<li class="item-category">' . $value_item . '<li>';
+            echo $value_item;
           }
-          echo"</li>";
         }
+        echo "</li>";
+      }
       ?>
     </ul>
 
-    </div>
+  </div>
   </div>
 
   <div id="products_archive" class="products-archive">
     <?php
     $j = 0;
     foreach ($products as $product) {
-      ?>
+    ?>
 
-      <?php 
+      <?php
       // echo "<pre>" . var_dump($product->get_category_ids()) . "</pre>";
       // echo "<pre>" . var_dump($product->get_categories()) . "</pre>";
       echo '<div class="value_category_' . $j++ . '" hidden>' . $product->get_categories() . "</div>";
-      $categories_product = $product->get_category_ids(); 
+      $categories_product = $product->get_category_ids();
       ?>
       <!-- card of product -->
       <div id="cart_product" class="product_card" data-id="<?php echo $product->get_id(); ?>" data-category="<?php echo urldecode($categories_product[0]); ?>">
@@ -203,37 +203,37 @@ function product_archive (){
               <?php echo $product->get_price_html(); ?>
             </div>
             <div class="moein-product-quantity" hidden="">
-              
-              <?php
-                  global $woocommerce;
-                  $items = $woocommerce->cart->get_cart();
 
-                  foreach($items as $item => $values) { 
-                      // $_product =  wc_get_product( $values['data']->get_id()); 
-                      if($values['data']->get_id() == $product->get_id()){
-                        if(!isset($values['quantity']))
-                          echo '0'; 
-                        else
-                          echo $values['quantity'];
-                      }
-                      // echo "<b>".$_product->get_title().'</b>  <br> Quantity: '.$values['quantity'].'<br><br><br>' . '
-                      // <p style="color:white;">get_id= ' . $values['data']->get_id() . '</p> 
-                      // <p style="color:white;">$product->get_id()= ' . $product->get_id() . '</p>'; 
-                      // $price = get_post_meta($values['product_id'] , '_price', true);
-                      // echo "  Price: ".$price."<br>";
-                  } 
-                ?>
+              <?php
+              global $woocommerce;
+              $items = $woocommerce->cart->get_cart();
+
+              foreach ($items as $item => $values) {
+                // $_product =  wc_get_product( $values['data']->get_id()); 
+                if ($values['data']->get_id() == $product->get_id()) {
+                  if (!isset($values['quantity']))
+                    echo '0';
+                  else
+                    echo $values['quantity'];
+                }
+                // echo "<b>".$_product->get_title().'</b>  <br> Quantity: '.$values['quantity'].'<br><br><br>' . '
+                // <p style="color:white;">get_id= ' . $values['data']->get_id() . '</p> 
+                // <p style="color:white;">$product->get_id()= ' . $product->get_id() . '</p>'; 
+                // $price = get_post_meta($values['product_id'] , '_price', true);
+                // echo "  Price: ".$price."<br>";
+              }
+              ?>
             </div>
           </div>
         </a>
       </div>
-      
 
-      <?php
+
+    <?php
     }
     ?>
   </div>
-  <?php
+<?php
 
 }
 
@@ -870,11 +870,16 @@ function resource($elem, $type = null)
             element.style.filter = "alpha(opacity=" + op * 100 + ")";
             op += op * 0.1;
         }, 10);
-    }
+          }
       ';
       break;
     case "style-home":
       $result = '
+      .close-popup{
+        position: absolute;
+        right:0px;
+        top:0px;
+      }
       .popup-coming-soon-line-bar{
         float: left;
         width: 60%;
