@@ -188,7 +188,7 @@ function product_archive()
       <div id="cart_product" class="product_card" data-id="<?php echo $product->get_id(); ?>" data-category="<?php echo urldecode($categories_product[0]); ?>">
         <a href="javascript:popup('<?php echo $j - 1 ?>');">
           <div class="product-img">
-            <?php echo $product->get_image(); ?>
+            <?php echo $product->get_image(array(1024, 1024)); ?>
           </div>
           <div class="product-data">
             <div class="product-title">
@@ -293,6 +293,10 @@ function resource($elem, $type = null)
       break;
     case "style-cart":
       $result = '
+            .woocommerce .woolentor-cart-list .product-name a, .woocommerce .woolentor-cart-list .product-name {
+              font-size: 16px !important;
+              font-weight: 300 !important;
+            }
             .button:nth-child(1){
                 display: none !important;
             }
@@ -580,6 +584,9 @@ function resource($elem, $type = null)
       break;
     case "style-category":
       $result = '
+      .popup_product_data{
+        padding-top:32px;
+      }
       .close-popup span{
         position: absolute;
         right: 24px;
@@ -615,8 +622,7 @@ function resource($elem, $type = null)
       .products-slug ul{
         list-style-type: none;
         margin: 0;
-        padding-top: 18px;
-        padding-right: 20px;
+        padding: 18px 20px 0px 20px;
         overflow: hidden;
         background-color: #333333;
         display: inline-flex;
@@ -654,6 +660,7 @@ function resource($elem, $type = null)
         font-style: normal;
         font-weight: 500;
         font-size: 20px;
+        display:none;
       }
       
       .quantity_cart{
@@ -716,11 +723,11 @@ function resource($elem, $type = null)
       .popup_over_active {
         visibility: visible;
         opacity: 1;
-        z-index: 1;
+        z-index: 10;
       }
 
       .popup_product{
-        margin: 70px auto;
+        margin: 100px auto;
         padding: 20px;
         background: #303030;
         border-radius: 10px;
@@ -736,9 +743,10 @@ function resource($elem, $type = null)
         font-size:18px;
       }
       .popup_product_des{
-        padding-bottom:20px;
+        padding-bottom: 20px;
         font-weight: 300 !important;
         font-size: 14px;
+        padding-top: 10px;
       }
       .popup_product_btn_addtocart:active , .popup_product_btn_addtocart:hover{
         color:#FCBD1E !important;
@@ -756,12 +764,27 @@ function resource($elem, $type = null)
         text-align: center;
         padding-bottom: 25px;
       }
+      .popup_product_img img{
+        max-width: 100%;
+        border: none;
+        box-shadow: none;
+        margin-top: -105px;
+      }
       .popup_product_img{
         text-align: center;
+        background-image: url("https://ferno.eightco.org/wp-content/uploads/2023/03/Untitled.png");
+        background-repeat: no-repeat;
+        padding: 100px;
+        background-position: center;
+        height: 100px;
+        background-size: contain;
+        width: 100%;
       }
       #popup_product_img{
         border-radius: 5px;
-        width: 100%;
+        height: 210px;
+        max-width: 210px !important;
+        margin-right: -28px;
       }
       .popup-row-title-price{
         display: flex;
