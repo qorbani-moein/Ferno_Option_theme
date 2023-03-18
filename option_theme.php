@@ -112,7 +112,7 @@ function product_archive()
 
   <div id="popup_over" class="popup_over">
     <div id="popup_product" class="popup_product">
-      <div class="close-popup">×</div>
+      <div class="close-popup"><span>×</span></div>
       <div class="popup_product_img">
         <img id="popup_product_img" src="" src="" alt="#">
       </div>
@@ -872,10 +872,11 @@ function resource($elem, $type = null)
       break;
     case "style-home":
       $result = '
-      .close-popup{
+      .close-popup span{
         position: absolute;
         right:0px;
         top:0px;
+        font-size: 32px;
       }
       .popup-coming-soon-line-bar{
         float: left;
