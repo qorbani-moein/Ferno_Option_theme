@@ -635,7 +635,7 @@ function resource($elem, $type = null)
         color: white;
         text-align: right;
         margin: 0px 6px;
-        padding: 6px 18px 6px 10px;
+        padding: 6px 18px 6px 18px;
         border-radius: 30px;
         background: #414141;
         cursor: pointer;
