@@ -569,7 +569,7 @@ function resource($elem, $type = null)
           // console.log(product_price[id].innerHTML);
           popup_price[0].innerHTML = product_price[id].innerHTML;
 
-          for(var i = 0 ; i < = 40 ; i++){
+          for(var i = 0 ; i <= 40 ; i++){
             console.log(product_price[i].innerHTML);
 
           }
