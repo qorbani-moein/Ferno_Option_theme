@@ -565,9 +565,9 @@ function resource($elem, $type = null)
           //price
           var product_price = document.querySelectorAll(".product-price span bdi");
           var popup_price = document.querySelectorAll(".popup_product_price span");
-          // console.log(id);
+          console.log(id);
           // console.log(product_price[id].innerHTML);
-          popup_price[0].innerHTML = product_price[id].innerHTML;
+          popup_price[0].innerHTML = product_price[id - 5].innerHTML;
 
           for(var i = 0 ; i <= 40 ; i++){
             console.log(i + " - " + product_price[i].innerHTML);
