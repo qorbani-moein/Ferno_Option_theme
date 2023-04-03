@@ -543,6 +543,7 @@ function resource($elem, $type = null)
         });
 
         function popup(id){
+          var e = "";
           e = e || window.event;
           var target = e.target || e.srcElement;
 
