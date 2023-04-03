@@ -543,6 +543,13 @@ function resource($elem, $type = null)
         });
 
         function popup(id){
+          e = e || window.event;
+          var target = e.target || e.srcElement,
+
+          console.log(target.innerText);
+
+
+          
           // console.log("popup function id:" + id);
           document.getElementById("popup_over").classList.add("popup_over_active");
           
