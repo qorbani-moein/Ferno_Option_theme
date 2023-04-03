@@ -570,7 +570,7 @@ function resource($elem, $type = null)
           popup_price[0].innerHTML = product_price[id].innerHTML;
 
           for(var i = 0 ; i <= 40 ; i++){
-            console.log(product_price[i].innerHTML);
+            console.log(i + " - " + product_price[i].innerHTML);
 
           }
           //btn add to card
