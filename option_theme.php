@@ -63,21 +63,11 @@ function script_query_page()
   // }
 }
 
-function script_page_home()
-{
+function script_page_home(){
   echo resource("script-home", "js") . resource("style-home", "css");
 }
-function script_page_category()
-{
 
-  global $woocommerce;
-  $items = $woocommerce->cart->get_cart();
-
-  // foreach ($items as $item => $values) {
-  //   console($values['data']->get_id(), "id product");
-  // }
-
-
+function script_page_category(){
   echo '<style>' . resource("style-card-product") . resource("style-category") . '</style>' . resource("script-category", "js");
 }
 
@@ -122,7 +112,7 @@ function product_archive()
 
           </div>
           <div class="popup_product_price">
-            <span>popup_product_price</span>
+            <span>قیمت</span>
           </div>
         </div>
         <div class="popup_product_des">
@@ -547,6 +537,8 @@ function resource($elem, $type = null)
             // Clicked in box
           } else{
             document.getElementById("popup_over").classList.remove("popup_over_active");
+            var popup_img = document.querySelectorAll(".popup_product_img img");
+            popup_img[0].src="";
           }
         });
 
@@ -572,6 +564,8 @@ function resource($elem, $type = null)
           //price
           var product_price = document.querySelectorAll(".product-price > span");
           var popup_price = document.querySelectorAll(".popup_product_price span");
+          console.log(id);
+          console.log(product_price[id].innerHTML);
           popup_price[0].innerHTML = product_price[id].innerHTML;
 
           //btn add to card
@@ -779,12 +773,13 @@ function resource($elem, $type = null)
         height: 100px;
         background-size: contain;
         width: 100%;
+        display: flex;
+        justify-content: center;
       }
       #popup_product_img{
         border-radius: 5px;
         height: 210px;
         max-width: 210px !important;
-        margin-right: -28px;
       }
       .popup-row-title-price{
         display: flex;
