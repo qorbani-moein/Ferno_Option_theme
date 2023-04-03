@@ -405,9 +405,9 @@ function resource($elem, $type = null)
         if(e.target.nodeName == "LI") {
           
           //remove class menu actived
-            console.log("u.length: " + document.getElementsByClassName("item-category").length);
+            // console.log("u.length: " + document.getElementsByClassName("item-category").length);
             for(var u = 0 ; u <= document.getElementsByClassName("item-category").length - 1 ; u++){
-              console.log("u: " + u);
+              // console.log("u: " + u);
               document.getElementsByClassName("item-category")[u].classList.remove("products-slug-active");
             }
 
@@ -512,7 +512,7 @@ function resource($elem, $type = null)
               
               //put value of [input] number cart woocommerce to my [input] quantity box
               
-              console.log(woo_product_quantity[i].innerHTML);
+              // console.log(woo_product_quantity[i].innerHTML);
               document.getElementById("quantity_cart_" + i).value = woo_product_quantity[i].innerHTML.trim();
               if(woo_product_quantity[i].innerHTML == 0)
                 document.getElementsByClassName("quantity_cart")[i].style.display = "none";
@@ -528,8 +528,8 @@ function resource($elem, $type = null)
 
         //popup
         window.addEventListener("click", function(e){   
-          console.log(e.target);
-          console.log(e.target.innerHTML);
+          // console.log(e.target);
+          // console.log(e.target.innerHTML);
           if(e.target.innerHTML == "×"){
             document.getElementById("popup_over").classList.remove("popup_over_active");
           }
@@ -571,8 +571,8 @@ function resource($elem, $type = null)
           //price
           var product_price = document.querySelectorAll(".product-price span bdi");
           var popup_price = document.querySelectorAll(".popup_product_price span");
-          console.log(id);
-          console.log(product_price[id].innerHTML);
+          // console.log(id);
+          // console.log(product_price[id].innerHTML);
           popup_price[0].innerHTML = product_price[id].innerHTML;
 
           //btn add to card
@@ -890,7 +890,7 @@ function resource($elem, $type = null)
 
       
       function show_comingsoon(){
-        console.log("show_comingsoon");
+        // console.log("show_comingsoon");
         unfade(document.getElementById("popup_coming_soon"));
       }
       function unfade(element) {
