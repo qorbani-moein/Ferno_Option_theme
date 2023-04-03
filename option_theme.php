@@ -569,6 +569,10 @@ function resource($elem, $type = null)
           // console.log(product_price[id].innerHTML);
           popup_price[0].innerHTML = product_price[id].innerHTML;
 
+          for(var i = 0 ; i < = 40 ; i++){
+            console.log(product_price[i].innerHTML);
+
+          }
           //btn add to card
           var product_id = document.getElementsByClassName("product_card")[id].getAttribute("data-id");
           var popup_btn_addtocard = document.querySelectorAll(".popup_product_add_to_cart");
