@@ -544,7 +544,7 @@ function resource($elem, $type = null)
 
         function popup(id){
           e = e || window.event;
-          var target = e.target || e.srcElement,
+          var target = e.target || e.srcElement;
 
           console.log(target.innerText);
 
