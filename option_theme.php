@@ -825,7 +825,7 @@ function resource($elem, $type = null)
       }
 
       .product-img{
-        opacity: 1;
+        opacity: 1 !important;
         width: 40%;
         padding-top: 15px;
         padding-right: 0px;
