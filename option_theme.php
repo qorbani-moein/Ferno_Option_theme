@@ -128,7 +128,7 @@ function product_archive()
 
 
   <div id="products-image-category" class="products-image-category">
-    <img class="img-product" src="<?php echo "https://ferno.eightco.org/wp-content/uploads/2023/03/01.jpg"; ?>">
+    <img class="img-product" src="<?php echo "https://menu.fernofood.com/wp-content/uploads/2023/03/01.jpg"; ?>">
     <h1 class="caption-img-product"></h1>
   </div>
 
@@ -298,7 +298,7 @@ function resource($elem, $type = null)
     case "script-cart":
       $result = '
             //back menu in header
-            document.getElementsByClassName("elementor-icon")[0].href = "https://ferno.eightco.org/category/";
+            document.getElementsByClassName("elementor-icon")[0].href = "https://menu.fernofood.com/category/";
 
             // check every secend cart if not have data
             setInterval(time_check_frm,1000);
@@ -364,7 +364,7 @@ function resource($elem, $type = null)
     case "script-category":
       $result = '
       //back menu in header
-      document.getElementsByClassName("elementor-icon")[0].href = "https://ferno.eightco.org";
+      document.getElementsByClassName("elementor-icon")[0].href = "https://menu.fernofood.com";
       
       //
       
@@ -771,7 +771,7 @@ function resource($elem, $type = null)
       }
       .popup_product_img{
         text-align: center;
-        background-image: url("https://ferno.eightco.org/wp-content/uploads/2023/03/Untitled.png");
+        background-image: url("https://menu.fernofood.com/wp-content/uploads/2023/03/Untitled.png");
         background-repeat: no-repeat;
         padding: 100px;
         background-position: center;
