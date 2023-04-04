@@ -825,13 +825,13 @@ function resource($elem, $type = null)
       }
 
       .product-img{
+        opacity: 1;
         width: 40%;
         padding-top: 15px;
         padding-right: 0px;
         position: absolute;
       }
       .product-img img{
-        opacity: 1;
         border-radius: 100%;
         height: 80px;
         width: 80px !important;
