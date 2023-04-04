@@ -177,7 +177,7 @@ function product_archive()
       <!-- card of product -->
       <div id="cart_product" class="product_card" data-id="<?php echo $product->get_id(); ?>" data-category="<?php echo urldecode($categories_product[0]); ?>">
         <a href="javascript:popup('<?php echo $j - 1 ?>');">
-          <div class="product-img">
+          <div style="opacity: 0;" class="product-img">
             <?php echo $product->get_image(array(1024, 1024)); ?>
           </div>
           <div class="product-data">
@@ -831,6 +831,7 @@ function resource($elem, $type = null)
         position: absolute;
       }
       .product-img img{
+        opacity: 1;
         border-radius: 100%;
         height: 80px;
         width: 80px !important;
