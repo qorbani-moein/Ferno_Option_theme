@@ -732,7 +732,7 @@ function resource($elem, $type = null)
         border-radius: 10px;
         width: 90%;
         position: relative;
-        transition: all 1s ease-in-out;
+        // transition: all 1s ease-in-out;
         color: white;
       }
       .popup_product_title h4{
