@@ -771,7 +771,7 @@ function resource($elem, $type = null)
       }
       .popup_product_img{
         text-align: center;
-        background-image: url("https://menu.fernofood.com/wp-content/uploads/2023/03/Untitled.png");
+        /*background-image: url("https://menu.fernofood.com/wp-content/uploads/2023/03/Untitled.png");*/
         background-repeat: no-repeat;
         padding: 100px;
         background-position: center;
