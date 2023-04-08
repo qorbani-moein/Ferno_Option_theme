@@ -410,11 +410,12 @@ function resource($elem, $type = null)
       });
       const set_now_ss = new Date();
       var s_scroll = sessionStorage.getItem("scroll");
-      var xi = set_now_ss.getTime() - s_scroll[1];
-      if(60000 > xi ){
-        window.scrollTo(s_scroll[0], 0); 
+      if(s_scroll != ""){
+        var xi = set_now_ss.getTime() - s_scroll[1];
+        if(60000 > xi ){
+          window.scrollTo(s_scroll[0], 0); 
+        }
       }
-
       //click on tab items
       function set_ua_value (e) {
         if(e.target.nodeName == "LI") {
