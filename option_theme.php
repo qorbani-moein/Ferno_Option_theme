@@ -417,7 +417,7 @@ function resource($elem, $type = null)
             //set page add product
             for(var u = 0 ; u <= document.getElementsByClassName("item-category").length - 1 ; u++){
               var tab_items = document.getElementsByClassName("item-category")[u].className;
-              if(tab_items.search("products-slug-active")){
+              if(tab_items.search("products-slug-active") > 0){
                 console.log(u);
                 const set_now = new Date();
                 
