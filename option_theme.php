@@ -420,7 +420,75 @@ function resource($elem, $type = null)
 
 
       //click on tab items
+      function set_ua_value (e) {
+        if(e.target.nodeName == "LI") {
+          
+          //remove class menu actived
+            // console.log("u.length: " + document.getElementsByClassName("item-category").length);
+            for(var u = 0 ; u <= document.getElementsByClassName("item-category").length - 1 ; u++){
+              // console.log("u: " + u);
+              document.getElementsByClassName("item-category")[u].classList.remove("products-slug-active");
+              
+            }
+            
+            e.target.classList.add("products-slug-active");
 
+            //set page add product
+            for(var u = 0 ; u <= document.getElementsByClassName("item-category").length - 1 ; u++){
+              var tab_items = document.getElementsByClassName("item-category")[u].className;
+              if(tab_items.search("products-slug-active") > 0){
+                // console.log(u);
+                const set_now = new Date();
+                
+                // console.log(i + "-" + set_now.getTime());
+                sessionStorage.setItem("tab-clicked", u + "-" + set_now.getTime());
+              }
+            }
+
+
+          // console.log("e.target.innerHTML: " + e.target.innerHTML);
+            //filter category
+            var len_card_product = document.getElementsByClassName("product_card").length;
+            var category_attr = e.target.innerHTML;
+            document.getElementsByClassName("caption-img-product")[0].innerHTML = e.target.innerHTML;
+            var category_attr_card;
+            // console.log("len_card_product.length: " + len_card_product);
+            for(var i = 0 ; i <= len_card_product -1 ; i++){
+              
+              // category_attr_card = document.getElementsByClassName("product_card")[i].getAttribute("data-category");
+              category_attr_card = document.querySelectorAll(".value_category_" + i + " a");
+
+              document.getElementsByClassName("product_card")[i].style.display = "block";
+              // console.log("category_attr_card.length: " + category_attr_card.length );
+              
+              // console.log("i: " + i );
+              for(var y = 0 ; y <= category_attr_card.length -1; y++){
+                // console.log("y: " + y );
+                // console.log("category_attr_card: " + category_attr_card[y].innerHTML);
+                
+                // if(category_attr == "همه"){
+                //   document.getElementsByClassName("product_card")[i].style.display = "block";
+                //   break;
+                // }
+                if(category_attr != category_attr_card[y].innerHTML){
+                  // console.log("hidden");
+                  document.getElementsByClassName("product_card")[i].style.display = "none";
+                }else{
+                  // console.log("show");
+                  document.getElementsByClassName("product_card")[i].style.display = "block";
+                  break;
+                }
+
+              }
+              
+
+              // document.getElementById("test1").addEventListener("click", function(){
+              //   console.log(document.getElementsByClassName("product_card")[i].getAttribute("data-category"));
+              // });
+            }
+          }
+
+      }
 
       // document.getElementsByClassName("item-category")[0].click();
 
