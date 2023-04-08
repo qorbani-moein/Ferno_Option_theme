@@ -406,7 +406,7 @@ function resource($elem, $type = null)
       //save and get scrolling
       document.addEventListener("scroll", (event) => {
         const set_now = new Date();
-        sessionStorage.setItem("scroll" , document.body.scrollTop + "-" + set_now.getTime());
+        sessionStorage.setItem("scroll" , window.x + "-" + set_now.getTime());
       });
       const set_now_ss = new Date();
       var s_scroll = sessionStorage.getItem("scroll");
