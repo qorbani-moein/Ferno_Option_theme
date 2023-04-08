@@ -382,6 +382,7 @@ function resource($elem, $type = null)
         }
       }
       
+      //sticky menu in top page
       window.onscroll = function() {myFunction()};
 
       var menubar = document.getElementById("products-slug");
@@ -401,6 +402,8 @@ function resource($elem, $type = null)
           products_archive.classList.remove("products-archive-top");
         }
       }
+
+      //click on tab items
       function set_ua_value (e) {
         if(e.target.nodeName == "LI") {
           
@@ -418,10 +421,10 @@ function resource($elem, $type = null)
             for(var u = 0 ; u <= document.getElementsByClassName("item-category").length - 1 ; u++){
               var tab_items = document.getElementsByClassName("item-category")[u].className;
               if(tab_items.search("products-slug-active") > 0){
-                console.log(u);
+                // console.log(u);
                 const set_now = new Date();
                 
-                console.log(i + "-" + set_now.getTime());
+                // console.log(i + "-" + set_now.getTime());
                 sessionStorage.setItem("tab-clicked", u + "-" + set_now.getTime());
               }
             }
@@ -471,7 +474,18 @@ function resource($elem, $type = null)
 
       }
 
-      document.getElementsByClassName("item-category")[0].click();
+      //sessionStorage.setItem("tab-clicked", u + "-" + set_now.getTime());
+
+      console.log(sessionStorage.getItem("tab-clicked"));
+
+      var user_clicked = sessionStorage.getItem("tab-clicked").split("-");
+      const set_now = new Date();
+
+      if(60000 > set_now - user_clicked[1] ){
+        document.getElementsByClassName("item-category")[user_clicked[0]].click();
+      }else{
+        document.getElementsByClassName("item-category")[0].click();
+      }
       //box number (- 1 +)
         
       // check every secend cart if not have data
