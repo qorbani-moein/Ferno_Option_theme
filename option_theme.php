@@ -418,6 +418,11 @@ function resource($elem, $type = null)
       //   }
       // }
 
+      window.addEventListener("scroll", function(event) {
+        var top = this.scrollY,
+            left =this.scrollX;
+    }, false);
+    
       //click on tab items
       function set_ua_value (e) {
         if(e.target.nodeName == "LI") {
