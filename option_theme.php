@@ -474,7 +474,7 @@ function resource($elem, $type = null)
 
       }
 
-      document.getElementsByClassName("item-category")[0].click();
+      // document.getElementsByClassName("item-category")[0].click();
 
       //sessionStorage.setItem("tab-clicked", u + "-" + set_now.getTime());
 
