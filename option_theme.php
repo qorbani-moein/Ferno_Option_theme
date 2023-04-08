@@ -444,8 +444,14 @@ function resource($elem, $type = null)
                   document.getElementsByClassName("product_card")[i].style.display = "block";
                   break;
                 }
-
+                console.log(i);
+                const set_now = new Date();
+                
+                console.log(i + "-" + set_now.getTime());
+                sessionStorage.setItem("tab-clicked", i + "-" + set_now.getTime());
               }
+              
+
               // document.getElementById("test1").addEventListener("click", function(){
               //   console.log(document.getElementsByClassName("product_card")[i].getAttribute("data-category"));
               // });
