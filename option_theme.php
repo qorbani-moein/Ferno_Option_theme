@@ -68,7 +68,7 @@ function script_page_home(){
 }
 
 function script_page_category(){
-  echo '<style>' . resource("style-card-product") . resource("style-category") . '</style>' . resource("script-category", "js");
+  //echo '<style>' . resource("style-card-product") . resource("style-category") . '</style>' . resource("script-category", "js");
 }
 
 function product_archive()
@@ -422,7 +422,7 @@ function resource($elem, $type = null)
         var top = this.scrollY,
             left =this.scrollX;
     }, false);
-    
+
       //click on tab items
       function set_ua_value (e) {
         if(e.target.nodeName == "LI") {
