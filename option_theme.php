@@ -474,13 +474,15 @@ function resource($elem, $type = null)
 
       }
 
+      document.getElementsByClassName("item-category")[0].click();
+
       //sessionStorage.setItem("tab-clicked", u + "-" + set_now.getTime());
 
-      // console.log(sessionStorage.getItem("tab-clicked"));
+      console.log(sessionStorage.getItem("tab-clicked"));
 
-      // var user_clicked = sessionStorage.getItem("tab-clicked");
-      // user_clicked = user_clicked.split("-");
-      // const set_now = new Date();
+      var user_clicked = sessionStorage.getItem("tab-clicked");
+      user_clicked = user_clicked.split("-");
+      const set_now = new Date();
 
       // if(60000 > set_now - user_clicked[1] ){
       //   document.getElementsByClassName("item-category")[user_clicked[0]].click();
