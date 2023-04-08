@@ -478,7 +478,7 @@ function resource($elem, $type = null)
 
       //sessionStorage.setItem("tab-clicked", u + "-" + set_now.getTime());
 
-      console.log(sessionStorage.getItem("tab-clicked2"));
+      console.log(sessionStorage.getItem("tab-clicked"));
 
       var user_clicked = sessionStorage.getItem("tab-clicked");
       user_clicked = user_clicked.split("-");
@@ -486,6 +486,7 @@ function resource($elem, $type = null)
       var xj = set_now.getTime() - user_clicked[1];
       if(60000 > xj ){
         document.getElementsByClassName("item-category")[user_clicked[0]].click();
+        window.scrollTo(user_clicked[2], 0); 
       }else{
         document.getElementsByClassName("item-category")[0].click();
       }
