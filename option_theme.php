@@ -482,11 +482,14 @@ function resource($elem, $type = null)
       user_clicked = user_clicked.split("-");
       const set_now = new Date();
 
-      if(60000 > set_now - user_clicked[1] ){
-        document.getElementsByClassName("item-category")[user_clicked[0]].click();
-      }else{
-        document.getElementsByClassName("item-category")[0].click();
-      }
+      // if(60000 > set_now - user_clicked[1] ){
+      //   document.getElementsByClassName("item-category")[user_clicked[0]].click();
+      // }else{
+      //   document.getElementsByClassName("item-category")[0].click();
+      // }
+
+
+
       //box number (- 1 +)
         
       // check every secend cart if not have data
