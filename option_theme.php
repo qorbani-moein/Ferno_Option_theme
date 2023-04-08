@@ -408,8 +408,9 @@ function resource($elem, $type = null)
         const set_now = new Date();
         sessionStorage.setItem("scroll" , document.body.scrollTop + "-" + set_now.getTime());
       });
+      const set_now_ss = new Date();
       var s_scroll = sessionStorage.getItem("scroll");
-      var xi = set_now.getTime() - s_scroll[1];
+      var xi = set_now_ss.getTime() - s_scroll[1];
       if(60000 > xi ){
         window.scrollTo(s_scroll[0], 0); 
       }
