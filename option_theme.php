@@ -425,7 +425,7 @@ function resource($elem, $type = null)
                 const set_now = new Date();
                 
                 // console.log(i + "-" + set_now.getTime());
-                sessionStorage.setItem("tab-clicked", u + "-" + set_now.getTime());
+                sessionStorage.setItem("tab-clicked", u + "-" + set_now.getTime() + "-" + document.body.scrollTop);
               }
             }
 
@@ -478,7 +478,7 @@ function resource($elem, $type = null)
 
       //sessionStorage.setItem("tab-clicked", u + "-" + set_now.getTime());
 
-      console.log(sessionStorage.getItem("tab-clicked"));
+      console.log(sessionStorage.getItem("tab-clicked2"));
 
       var user_clicked = sessionStorage.getItem("tab-clicked");
       user_clicked = user_clicked.split("-");
