@@ -410,6 +410,7 @@ function resource($elem, $type = null)
       });
       const set_now_ss = new Date();
       var s_scroll = sessionStorage.getItem("scroll");
+      s_scroll = s_scroll.split("-");
       if(s_scroll != ""){
         var xi = set_now_ss.getTime() - s_scroll[1];
         if(60000 > xi ){
