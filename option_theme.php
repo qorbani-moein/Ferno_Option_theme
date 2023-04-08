@@ -404,19 +404,19 @@ function resource($elem, $type = null)
       }
 
       //save and get scrolling
-      document.addEventListener("scroll", (event) => {
-        const set_now = new Date();
-        sessionStorage.setItem("scroll" , document.documentElement.scrollHeight  + "-" + set_now.getTime());
-      });
-      const set_now_ss = new Date();
-      var s_scroll = sessionStorage.getItem("scroll");
-      s_scroll = s_scroll.split("-");
-      if(s_scroll != ""){
-        var xi = set_now_ss.getTime() - s_scroll[1];
-        if(60000 > xi ){
-          window.scrollTo(0, s_scroll[0]); 
-        }
-      }
+      // document.addEventListener("scroll", (event) => {
+      //   const set_now = new Date();
+      //   sessionStorage.setItem("scroll" , document.documentElement.scrollHeight  + "-" + set_now.getTime());
+      // });
+      // const set_now_ss = new Date();
+      // var s_scroll = sessionStorage.getItem("scroll");
+      // s_scroll = s_scroll.split("-");
+      // if(s_scroll != ""){
+      //   var xi = set_now_ss.getTime() - s_scroll[1];
+      //   if(60000 > xi ){
+      //     window.scrollTo(0, s_scroll[0]); 
+      //   }
+      // }
 
 
       //click on tab items
