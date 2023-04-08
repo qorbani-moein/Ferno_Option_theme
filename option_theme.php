@@ -478,7 +478,8 @@ function resource($elem, $type = null)
 
       console.log(sessionStorage.getItem("tab-clicked"));
 
-      var user_clicked = sessionStorage.getItem("tab-clicked").split("-");
+      var user_clicked = sessionStorage.getItem("tab-clicked");
+      user_clicked = user_clicked.split("-");
       const set_now = new Date();
 
       if(60000 > set_now - user_clicked[1] ){
