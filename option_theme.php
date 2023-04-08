@@ -483,8 +483,8 @@ function resource($elem, $type = null)
       var user_clicked = sessionStorage.getItem("tab-clicked");
       user_clicked = user_clicked.split("-");
       const set_now = new Date();
-
-      if(60000 > set_now.getTime() - user_clicked[1] ){
+      var xj = set_now.getTime() - user_clicked[1];
+      if(60000 > xj ){
         document.getElementsByClassName("item-category")[user_clicked[0]].click();
       }else{
         document.getElementsByClassName("item-category")[0].click();
