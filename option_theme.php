@@ -416,7 +416,7 @@ function resource($elem, $type = null)
       //   if(60000 > xi ){
       //     window.scrollTo(s_scroll[0], 0); 
       //   }
-      }
+      // }
 
       //click on tab items
       function set_ua_value (e) {
