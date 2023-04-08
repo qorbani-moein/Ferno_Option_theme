@@ -410,13 +410,13 @@ function resource($elem, $type = null)
             for(var u = 0 ; u <= document.getElementsByClassName("item-category").length - 1 ; u++){
               // console.log("u: " + u);
               document.getElementsByClassName("item-category")[u].classList.remove("products-slug-active");
-              if(document.getElementsByClassName("item-category")[u].className.search == "products-slug-active"){
+              // if(document.getElementsByClassName("item-category")[u].className.search == "products-slug-active"){
                 console.log(u);
                 const set_now = new Date();
                 
                 console.log(i + "-" + set_now.getTime());
                 sessionStorage.setItem("tab-clicked", u + "-" + set_now.getTime());
-              }
+              // }
             }
 
           // console.log("e.target.innerHTML: " + e.target.innerHTML);
