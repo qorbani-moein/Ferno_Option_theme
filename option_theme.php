@@ -406,13 +406,20 @@ function resource($elem, $type = null)
           
           //remove class menu actived
             // console.log("u.length: " + document.getElementsByClassName("item-category").length);
+            e.target.classList.add("products-slug-active");
             for(var u = 0 ; u <= document.getElementsByClassName("item-category").length - 1 ; u++){
               // console.log("u: " + u);
               document.getElementsByClassName("item-category")[u].classList.remove("products-slug-active");
+              if(document.getElementsByClassName("item-category")[u].className.search == "products-slug-active"){
+                console.log(i);
+                const set_now = new Date();
+                
+                console.log(i + "-" + set_now.getTime());
+                sessionStorage.setItem("tab-clicked", i + "-" + set_now.getTime());
+              }
             }
 
           // console.log("e.target.innerHTML: " + e.target.innerHTML);
-            e.target.classList.add("products-slug-active");
             //filter category
             var len_card_product = document.getElementsByClassName("product_card").length;
             var category_attr = e.target.innerHTML;
@@ -444,11 +451,7 @@ function resource($elem, $type = null)
                   document.getElementsByClassName("product_card")[i].style.display = "block";
                   break;
                 }
-                console.log(i);
-                const set_now = new Date();
-                
-                console.log(i + "-" + set_now.getTime());
-                sessionStorage.setItem("tab-clicked", i + "-" + set_now.getTime());
+
               }
               
 
