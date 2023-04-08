@@ -485,7 +485,7 @@ function resource($elem, $type = null)
       // if(60000 > set_now - user_clicked[1] ){
       //   document.getElementsByClassName("item-category")[user_clicked[0]].click();
       // }else{
-      //   document.getElementsByClassName("item-category")[0].click();
+        document.getElementsByClassName("item-category")[0].click();
       // }
 
 
