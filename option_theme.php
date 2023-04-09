@@ -521,10 +521,20 @@ function resource($elem, $type = null)
         var x = document.getElementById("products-slug").scrollLeft;
         var y = document.getElementsByClassName("item-category")[0].scrollLeft;
         var z = document.getElementsByClassName("list-category")[0].scrollLeft;
-        window.scrollTo(100,200); 
-        window.scrollBy(0,50)
+        /*window.scrollTo(100,200); 
+        window.scrollBy(0,50);*/
 
         document.getElementById("products-slug").scroll({
+          top: 100,
+          left: 100,
+          behavior: "smooth",
+        });
+        document.getElementsByClassName("item-category")[0].scroll({
+          top: 100,
+          left: 100,
+          behavior: "smooth",
+        });
+        document.getElementsByClassName("list-category")[0].scroll({
           top: 100,
           left: 100,
           behavior: "smooth",
