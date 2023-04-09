@@ -332,6 +332,7 @@ function resource($elem, $type = null)
                   }
                 }
             
+                
                 //put new value to input box woocommerce
                 var target_cart = "quantity_cart_" + id_target;
                 document.getElementsByClassName("input-text")[id_target].value = document.getElementById(target_cart).value;
