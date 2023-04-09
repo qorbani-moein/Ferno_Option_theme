@@ -499,7 +499,7 @@ function resource($elem, $type = null)
       console.log(sessionStorage.getItem("tab-clicked"));
 
       var user_clicked = sessionStorage.getItem("tab-clicked");
-      if(user_clicked != ""){
+      if(user_clicked != null){
         user_clicked = user_clicked.split("-");
         const set_now = new Date();
         var xj = set_now.getTime() - user_clicked[1];
