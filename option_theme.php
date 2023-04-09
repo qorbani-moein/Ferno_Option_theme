@@ -505,8 +505,8 @@ function resource($elem, $type = null)
 
       if(url_site.indexOf("/?") > 0){
 
-        // url_site = url_site.split("?");
-        // location.href = url_site[0];
+        url_site = url_site.split("?");
+        location.href = url_site[0];
 
         // let url = new URL(location.href);
         // url.searchParams.delete(/[\[\]?*+|{}\\()@.\n\r]/);
