@@ -404,19 +404,19 @@ function resource($elem, $type = null)
       }
 
       //save and get scrolling
-      // document.addEventListener("scroll", (event) => {
-      //   const set_now = new Date();
-      //   sessionStorage.setItem("scroll" , document.documentElement.scrollHeight  + "-" + set_now.getTime());
-      // });
-      // const set_now_ss = new Date();
-      // var s_scroll = sessionStorage.getItem("scroll");
-      // s_scroll = s_scroll.split("-");
-      // if(s_scroll != ""){
-      //   var xi = set_now_ss.getTime() - s_scroll[1];
-      //   if(60000 > xi ){
-      //     window.scrollTo(0, s_scroll[0]); 
-      //   }
-      // }
+      document.addEventListener("scroll", (event) => {
+        const set_now = new Date();
+        sessionStorage.setItem("scroll" , document.documentElement.scrollHeight  + "-" + set_now.getTime());
+      });
+      const set_now_ss = new Date();
+      var s_scroll = sessionStorage.getItem("scroll");
+      if(s_scroll != ""){
+        s_scroll = s_scroll.split("-");
+        var xi = set_now_ss.getTime() - s_scroll[1];
+        if(60000 > xi ){
+          window.scrollTo(0, s_scroll[0]); 
+        }
+      }
 
 
       //click on tab items
@@ -490,6 +490,8 @@ function resource($elem, $type = null)
 
       }
 
+
+      //Click on tabs
       // document.getElementsByClassName("item-category")[0].click();
 
       //sessionStorage.setItem("tab-clicked", u + "-" + set_now.getTime());
@@ -497,16 +499,17 @@ function resource($elem, $type = null)
       console.log(sessionStorage.getItem("tab-clicked"));
 
       var user_clicked = sessionStorage.getItem("tab-clicked");
-      user_clicked = user_clicked.split("-");
-      const set_now = new Date();
-      var xj = set_now.getTime() - user_clicked[1];
-      if(60000 > xj ){
-        document.getElementsByClassName("item-category")[user_clicked[0]].click();
-        window.scrollTo(user_clicked[2], 0); 
+      if(user_clicked != ""){
+        user_clicked = user_clicked.split("-");
+        const set_now = new Date();
+        var xj = set_now.getTime() - user_clicked[1];
+        if(60000 > xj ){
+          document.getElementsByClassName("item-category")[user_clicked[0]].click();
+          window.scrollTo(user_clicked[2], 0); 
+        }
       }else{
         document.getElementsByClassName("item-category")[0].click();
       }
-
 
 
       //box number (- 1 +)
