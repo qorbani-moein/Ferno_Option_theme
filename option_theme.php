@@ -670,7 +670,7 @@ function resource($elem, $type = null)
         top: -10px;
         right: 0px;
         background-color: #333;
-        white-space: nowrap;
+        /*white-space: nowrap;*/
         display: inline-block;
         width: 100%;
         height: 72px;
@@ -689,8 +689,8 @@ function resource($elem, $type = null)
         overflow: hidden;
         background-color: #333333;
         display: inline-flex;
-        overflow: auto;
-        white-space: nowrap;
+        /*overflow: auto;
+        white-space: nowrap;*/
         color: white;
       }
       .products-slug li{
