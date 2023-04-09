@@ -551,6 +551,7 @@ function resource($elem, $type = null)
         function myFunction() {
           console.log( document.getElementById("products-slug").scrollLeft);
           console.log( document.getElementById("products-slug").scrollTop);
+          console.log( document.body.scrollTop);
         }
 
 
