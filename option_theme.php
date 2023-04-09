@@ -504,8 +504,12 @@ function resource($elem, $type = null)
       console.log(url_site.search(/[\[\]?*+|{}\\()@.\n\r]/));
 
       if(url_site.search(/[\[\]?*+|{}\\()@.\n\r]/) > 0){
-        url_site = url_site.split("?");
-        location.href = url_site[0];
+        // url_site = url_site.split("?");
+        // location.href = url_site[0];
+
+        let url = new URL(location.href);
+        url.searchParams.delete(/[\[\]?*+|{}\\()@.\n\r]/);
+
       }
       //Click on tabs
       // document.getElementsByClassName("item-category")[0].click();
