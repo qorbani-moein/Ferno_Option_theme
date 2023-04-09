@@ -526,17 +526,17 @@ function resource($elem, $type = null)
 
         document.getElementById("products-slug").scroll({
           top: 100,
-          left: 100,
+          left: 2000,
           behavior: "smooth",
         });
         document.getElementsByClassName("item-category")[0].scroll({
           top: 100,
-          left: 100,
+          left: 2000,
           behavior: "smooth",
         });
         document.getElementsByClassName("list-category")[0].scroll({
           top: 100,
-          left: 100,
+          left: 2000,
           behavior: "smooth",
         });
 
