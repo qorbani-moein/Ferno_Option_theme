@@ -626,7 +626,7 @@ function resource($elem, $type = null)
           // }
           
           var all_quantity_cart = document.getElementsByClassName("quantity_cart");
-          for(var j=0; j <= all_quantity_cart.length ; j++){
+          for(var j=0; j <= all_quantity_cart.length - 1 ; j++){
             var tmp_quantity_cart = document.getElementsByClassName("quantity_cart")[j].innerHTML
             tmp_quantity_cart = tmp_quantity_cart.split(`<span id="quantity_cart_add_to_card" hidden="">`);
 
