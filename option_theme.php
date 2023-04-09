@@ -514,7 +514,13 @@ function resource($elem, $type = null)
       }
 
       //scrollleft menu 
+      /*document.getElementById("products-slug").scrollLeft = 400;
+      document.getElementsByClassName("item-category")[0].scrollLeft = 400;
+      document.getElementsByClassName("list-category")[0].scrollLeft = 400;
 
+        var x = document.getElementById("products-slug").scrollLeft;
+        var y = document.getElementsByClassName("item-category")[0].scrollLeft;
+        var z = document.getElementsByClassName("list-category")[0].scrollLeft;*/
         /*window.scrollTo(100,200); 
         window.scrollBy(0,50);*/
 
@@ -673,7 +679,7 @@ function resource($elem, $type = null)
         top: -10px;
         right: 0px;
         background-color: #333;
-        /*white-space: nowrap;*/
+        white-space: nowrap;
         display: inline-block;
         width: 100%;
         height: 72px;
@@ -692,8 +698,8 @@ function resource($elem, $type = null)
         overflow: hidden;
         background-color: #333333;
         display: inline-flex;
-        /*overflow: auto;
-        white-space: nowrap;*/
+        overflow: auto;
+        white-space: nowrap;
         color: white;
       }
       .products-slug li{
