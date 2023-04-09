@@ -499,6 +499,70 @@ function resource($elem, $type = null)
       }
 
 
+      //Click on tabs
+      // document.getElementsByClassName("item-category")[0].click();
+
+      //sessionStorage.setItem("tab-clicked", u + "-" + set_now.getTime());
+
+      console.log(sessionStorage.getItem("tab-clicked"));
+
+      var user_clicked = sessionStorage.getItem("tab-clicked");
+      if(user_clicked != null){
+        user_clicked = user_clicked.split("-");
+        const set_now = new Date();
+        var xj = set_now.getTime() - user_clicked[1];
+        if(60000 > xj ){
+          document.getElementsByClassName("item-category")[user_clicked[0]].click();
+          window.scrollTo(user_clicked[2], 0); 
+        }else{
+          document.getElementsByClassName("item-category")[0].click();
+        }
+      }else{
+        document.getElementsByClassName("item-category")[0].click();
+      }
+
+      //scrollleft menu 
+      /*console.log(sessionStorage.getItem("tab-scroll"));*/
+
+      if(sessionStorage.getItem("tab-scroll") != null){
+        var tab_scroll = sessionStorage.getItem("tab-scroll");
+        tab_scroll = tab_scroll.split("_");
+        const set_now = new Date();
+        var xj = set_now.getTime() - tab_scroll[1];
+        if(60000 > xj ){
+          document.getElementById("products-slug").scroll(tab_scroll[0], 0);
+        }
+      }
+
+      document.getElementById("products-slug").addEventListener("scroll", event => {
+        const set_now = new Date();
+        sessionStorage.setItem("tab-scroll", document.getElementById("products-slug").scrollLeft + "_" + set_now.getTime());
+      }, { passive: true });
+
+
+
+
+        console.log(sessionStorage.getItem("window-scroll"));
+
+        if(sessionStorage.getItem("window-scroll") != null){
+          var window_scroll = sessionStorage.getItem("window-scroll");
+          window_scroll = window_scroll.split("_");
+          const set_now = new Date();
+          var xj = set_now.getTime() - window_scroll[1];
+          if(60000 > xj ){
+            window.scrollTo(0,window_scroll[0]); 
+          }
+        }
+
+        window.onscroll = function() {listenwindowscroll()};
+
+
+        function listenwindowscroll() {
+          const set_now = new Date();
+          sessionStorage.setItem("window-scroll", document.documentElement.scrollTop + "_" + set_now.getTime());
+        }
+
+        
 
 
 
