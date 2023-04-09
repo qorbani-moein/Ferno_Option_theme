@@ -673,10 +673,10 @@ function resource($elem, $type = null)
         height: 72px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
         overflow-x: auto;
-        -ms-overflow-style: none;
+        /*-ms-overflow-style: none;
         scrollbar-width: none;
         overflow-y: hidden;
-        -ms-overflow-style: none;
+        -ms-overflow-style: none;*/
         text-align: right;
       }
       .products-slug ul{
