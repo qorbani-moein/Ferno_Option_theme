@@ -506,6 +506,8 @@ function resource($elem, $type = null)
         if(60000 > xj ){
           document.getElementsByClassName("item-category")[user_clicked[0]].click();
           window.scrollTo(user_clicked[2], 0); 
+        }else{
+          document.getElementsByClassName("item-category")[0].click();
         }
       }else{
         document.getElementsByClassName("item-category")[0].click();
