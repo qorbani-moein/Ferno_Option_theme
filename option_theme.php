@@ -528,7 +528,7 @@ function resource($elem, $type = null)
 
         if(sessionStorage.getItem("tab-scroll") != null){
           var tab_scroll = sessionStorage.getItem("tab-scroll");
-          tab_scroll = tab_scroll.split("-");
+          tab_scroll = tab_scroll.split("_");
           const set_now = new Date();
           var xj = set_now.getTime() - tab_scroll[1];
           if(60000 > xj ){
@@ -539,7 +539,7 @@ function resource($elem, $type = null)
         document.getElementById("products-slug").addEventListener("scroll", event => {
           const set_now = new Date();
           console.log( document.getElementById("products-slug").scrollLeft);
-          sessionStorage.setItem("tab-scroll", document.getElementById("products-slug").scrollLeft + "-" + set_now.getTime());
+          sessionStorage.setItem("tab-scroll", document.getElementById("products-slug").scrollLeft + "_" + set_now.getTime());
         }, { passive: true });
 
 
