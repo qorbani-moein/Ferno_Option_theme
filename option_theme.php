@@ -528,8 +528,8 @@ function resource($elem, $type = null)
 
 
         document.getElementById("products-slug").addEventListener("scroll", event => {
-          console.log( event.scrollLeft);
-          console.log( event.scrollTop);
+          console.log( document.getElementById("products-slug").scrollLeft);
+          console.log( document.getElementById("products-slug").scrollTop);
 
         }, { passive: true });
 
