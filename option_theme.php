@@ -502,8 +502,8 @@ function resource($elem, $type = null)
       //menu.fernofood.com/category/?x=asd  ->  menu.fernofood.com/category/
       var url_site = location.href;
       console.log(url_site.search("?"));
-      
-      if(url_site.search("?") > 0){
+
+      if(url_site.search(/[\[\]?*+|{}\\()@.\n\r]/) > 0){
         url_site = url_site.split("?");
         location.href = url_site[0];
       }
