@@ -655,7 +655,7 @@ function resource($elem, $type = null)
               else
                 document.getElementsByClassName("quantity_cart")[i].style.display = "flex";
 
-                document.getElementsByClassName("quantity_cart")[i].innerHTML = document.getElementsByClassName("quantity_cart")[i].innerHTML + "<span id="/quantity_cart_add_to_card"/>1</span>"
+                document.getElementsByClassName("quantity_cart")[i].innerHTML = document.getElementsByClassName("quantity_cart")[i].innerHTML + "<span id=quantity_cart_add_to_card>1</span>"
               //show recycle bin if cart is one
               // if (document.getElementById("quantity_cart_" + i).value == 1){
               //   document.querySelectorAll("a.woolentor-cart-product-actions-btn")[i].style = "display: block !important;";
