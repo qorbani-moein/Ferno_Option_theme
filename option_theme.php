@@ -528,6 +528,67 @@ function resource($elem, $type = null)
         document.getElementsByClassName("item-category")[0].scroll(200, 1000);
         document.getElementsByClassName("list-category")[0].scroll(200, 1000);
 
+        document.getElementById("products-slug").scrollBy({
+          top: 1000,
+          left: 1000,
+          behavior: "smooth",
+        });
+        document.getElementsByClassName("item-category")[0].scrollBy({
+          top: 1000,
+          left: 1000,
+          behavior: "smooth",
+        });
+        document.getElementsByClassName("list-category")[0].scrollBy({
+          top: 1000,
+          left: 1000,
+          behavior: "smooth",
+        });
+
+
+        
+        document.getElementById("products-slug").scrollTo({
+          top: 1000,
+          left: 1000,
+          behavior: "smooth",
+        });
+        document.getElementsByClassName("item-category")[0].scrollTo({
+          top: 1000,
+          left: 1000,
+          behavior: "smooth",
+        });
+        document.getElementsByClassName("list-category")[0].scrollTo({
+          top: 1000,
+          left: 1000,
+          behavior: "smooth",
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
       //box number (- 1 +)
         
       // check every secend cart if not have data
