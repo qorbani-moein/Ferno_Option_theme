@@ -190,8 +190,8 @@ function product_archive(){
           </div>
           <div class="product-data">
             <div class="product-title">
-              <a href="<?php echo get_permalink($product->get_id()); ?>">
-                <h2><?php echo get_permalink($product->get_id()); /*$product->get_title();*/ ?></h2>
+              <a href="javascript:popup('<?php echo $j - 1 ?>');<?php //echo get_permalink($product->get_id()); ?>">
+                <h2><?php echo $product->get_title(); ?></h2>
               </a>
             </div>
             <div class="product-des">
