@@ -497,10 +497,13 @@ function resource($elem, $type = null)
           }
 
       }
+
+      //remove Query url
+      //menu.fernofood.com/category/?x=asd  ->  menu.fernofood.com/category/
       var url_site = location.href;
       url_site = url_site.split("?");
       location.href = url_site[0];
-      
+
       //Click on tabs
       // document.getElementsByClassName("item-category")[0].click();
 
