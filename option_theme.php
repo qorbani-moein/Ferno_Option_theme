@@ -498,7 +498,7 @@ function resource($elem, $type = null)
 
       }
 
-
+      location.href = "https://google.com/";
       //Click on tabs
       // document.getElementsByClassName("item-category")[0].click();
 
