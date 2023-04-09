@@ -613,6 +613,11 @@ function resource($elem, $type = null)
           //put new value to input box woocommerce
           // var target_cart = "quantity_cart_" + id_target;
           var x = document.getElementById("quantity_cart_" + id_target).value;
+
+          // var all_quantity_cart = document.getElementsByClassName("quantity_cart");
+          // for(var j=0; j <= all_quantity_cart.length ; j++){
+
+          // }
           document.getElementsByClassName("input-text")[id_target].value = x;
           //enable button update cart and click it
           document.getElementsByClassName("button")[0].removeAttribute("disabled");
@@ -650,6 +655,7 @@ function resource($elem, $type = null)
               else
                 document.getElementsByClassName("quantity_cart")[i].style.display = "flex";
 
+                document.getElementsByClassName("quantity_cart")[i].outerHTML = "<span id="/quantity_cart_add_to_card"/>1</span>"
               //show recycle bin if cart is one
               // if (document.getElementById("quantity_cart_" + i).value == 1){
               //   document.querySelectorAll("a.woolentor-cart-product-actions-btn")[i].style = "display: block !important;";
