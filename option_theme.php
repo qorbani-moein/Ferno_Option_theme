@@ -525,17 +525,17 @@ function resource($elem, $type = null)
         window.scrollBy(0,50);*/
 
         document.getElementById("products-slug").scroll({
-          top: 100,
+          top: 0,
           left: 2000,
           behavior: "smooth",
         });
         document.getElementsByClassName("item-category")[0].scroll({
-          top: 100,
+          top: 0,
           left: 2000,
           behavior: "smooth",
         });
         document.getElementsByClassName("list-category")[0].scroll({
-          top: 100,
+          top: 0,
           left: 2000,
           behavior: "smooth",
         });
