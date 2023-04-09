@@ -612,13 +612,32 @@ function resource($elem, $type = null)
       
           //put new value to input box woocommerce
           // var target_cart = "quantity_cart_" + id_target;
-          var x = document.getElementById("quantity_cart_" + id_target).value;
+          // var x = document.getElementById("quantity_cart_" + id_target).value;
 
           // var all_quantity_cart = document.getElementsByClassName("quantity_cart");
           // for(var j=0; j <= all_quantity_cart.length ; j++){
 
           // }
-          document.getElementsByClassName("input-text")[id_target].value = x;
+          // document.getElementById["quantity_cart_add_to_card"].innerHtml
+          
+          // var all_quantity_cart = document.getElementsByClassName("quantity_cart_add_to_card");
+          // for(var j=0; j <= all_quantity_cart.length ; j++){
+          //   document.getElementsByClassName("input-text")[j].value = x;
+          // }
+          
+          var all_quantity_cart = document.getElementsByClassName("quantity_cart");
+          for(var j=0; j <= all_quantity_cart.length ; j++){
+            var tmp_quantity_cart = document.getElementsByClassName("quantity_cart")[j].innerHTML
+            tmp_quantity_cart = tmp_quantity_cart.split(`<span id="quantity_cart_add_to_card" hidden="">`);
+
+            if(tmp_quantity_cart.length > 0){
+              tmp_quantity_cart = tmp_quantity_cart[1].split("</span>");
+              document.getElementsByClassName("input-text")[tmp_quantity_cart].value = document.getElementById("quantity_cart_" + j).value;
+            }
+            // <span id="quantity_cart_add_to_card" hidden="">0</span>
+          }
+
+          // document.getElementsByClassName("input-text")[id_target].value = x;
           //enable button update cart and click it
           document.getElementsByClassName("button")[0].removeAttribute("disabled");
           document.getElementsByClassName("button")[0].click();
