@@ -501,7 +501,7 @@ function resource($elem, $type = null)
       //remove Query url
       //menu.fernofood.com/category/?x=asd  ->  menu.fernofood.com/category/
       var url_site = location.href;
-      console.log(url_site.search("?"));
+      console.log(url_site.search(/[\[\]?*+|{}\\()@.\n\r]/));
 
       if(url_site.search(/[\[\]?*+|{}\\()@.\n\r]/) > 0){
         url_site = url_site.split("?");
