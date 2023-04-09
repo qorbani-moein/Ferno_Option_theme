@@ -524,7 +524,7 @@ function resource($elem, $type = null)
         /*window.scrollTo(100,200); 
         window.scrollBy(0,50);*/
 
-        console.log(sessionStorage.getItem("tab-scroll"));
+        /*console.log(sessionStorage.getItem("tab-scroll"));*/
 
         if(sessionStorage.getItem("tab-scroll") != null){
           var tab_scroll = sessionStorage.getItem("tab-scroll");
@@ -537,8 +537,8 @@ function resource($elem, $type = null)
         }
 
         document.getElementById("products-slug").addEventListener("scroll", event => {
-          const set_now = new Date();
-          console.log( document.getElementById("products-slug").scrollLeft);
+          /*const set_now = new Date();
+          console.log( document.getElementById("products-slug").scrollLeft);*/
           sessionStorage.setItem("tab-scroll", document.getElementById("products-slug").scrollLeft + "_" + set_now.getTime());
         }, { passive: true });
 
@@ -549,8 +549,8 @@ function resource($elem, $type = null)
 
 
         function myFunction() {
-          console.log( document.getElementById("products-slug").scrollLeft);
-          console.log( document.getElementById("products-slug").scrollTop);
+          /*console.log( document.getElementById("products-slug").scrollLeft);
+          console.log( document.getElementById("products-slug").scrollTop);*/
           console.log( document.body.scrollTop);
         }
 
