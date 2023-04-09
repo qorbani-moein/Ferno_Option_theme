@@ -552,6 +552,7 @@ function resource($elem, $type = null)
           /*console.log( document.getElementById("products-slug").scrollLeft);
           console.log( document.getElementById("products-slug").scrollTop);*/
           console.log( document.body.scrollTop);
+          console.log( document.documentElement.scrollTop );
         }
 
 
