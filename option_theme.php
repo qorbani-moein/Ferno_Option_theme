@@ -524,14 +524,25 @@ function resource($elem, $type = null)
         /*window.scrollTo(100,200); 
         window.scrollBy(0,50);*/
 
-        document.getElementById("products-slug").scroll(-200, -1000);
+        console.log(sessionStorage.getItem("tab-scroll"));
 
+        if(sessionStorage.getItem("tab-scroll") != null){
+          var tab_scroll = sessionStorage.getItem("tab-scroll");
+          tab_scroll = tab_scroll.split("-");
+          const set_now = new Date();
+          var xj = set_now.getTime() - tab_scroll[1];
+          if(60000 > xj ){
+            document.getElementById("products-slug").scroll(tab_scroll[0], 0);
+          }
+        }
 
         document.getElementById("products-slug").addEventListener("scroll", event => {
+          const set_now = new Date();
           console.log( document.getElementById("products-slug").scrollLeft);
-          console.log( document.getElementById("products-slug").scrollTop);
-
+          sessionStorage.setItem("tab-scroll", document.getElementById("products-slug").scrollLeft + "-" + set_now.getTime());
         }, { passive: true });
+
+
 
 
         window.onscroll = function() {myFunction()};
