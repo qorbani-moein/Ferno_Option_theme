@@ -498,20 +498,7 @@ function resource($elem, $type = null)
 
       }
 
-      //remove Query url
-      //menu.fernofood.com/category/?x=asd  ->  menu.fernofood.com/category/
-      // var url_site = location.href;
-      // console.log(url_site.indexOf("/?"));
 
-      // if(url_site.indexOf("/?") > 0){
-
-        // url_site = url_site.split("?");
-        // location.replace = url_site[0];
-
-        // let url = new URL(location.href);
-        // url.searchParams.delete(/[\[\]?*+|{}\\()@.\n\r]/);
-
-      // }
       //Click on tabs
       // document.getElementsByClassName("item-category")[0].click();
 
@@ -766,10 +753,10 @@ function resource($elem, $type = null)
         height: 72px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
         overflow-x: auto;
-        /*-ms-overflow-style: none;
+        -ms-overflow-style: none;
         scrollbar-width: none;
         overflow-y: hidden;
-        -ms-overflow-style: none;*/
+        -ms-overflow-style: none;
         text-align: right;
       }
       .products-slug ul{
