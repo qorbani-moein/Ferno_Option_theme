@@ -500,10 +500,10 @@ function resource($elem, $type = null)
 
       //remove Query url
       //menu.fernofood.com/category/?x=asd  ->  menu.fernofood.com/category/
-      var url_site = location.href;
-      console.log(url_site.indexOf("/?"));
+      // var url_site = location.href;
+      // console.log(url_site.indexOf("/?"));
 
-      if(url_site.indexOf("/?") > 0){
+      // if(url_site.indexOf("/?") > 0){
 
         // url_site = url_site.split("?");
         // location.replace = url_site[0];
@@ -511,7 +511,7 @@ function resource($elem, $type = null)
         // let url = new URL(location.href);
         // url.searchParams.delete(/[\[\]?*+|{}\\()@.\n\r]/);
 
-      }
+      // }
       //Click on tabs
       // document.getElementsByClassName("item-category")[0].click();
 
