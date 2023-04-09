@@ -515,6 +515,9 @@ function resource($elem, $type = null)
 
       //scrollleft menu 
       document.getElementById("products-slug").scrollLeft = 400;
+      document.getElementsByClassName("item-category")[0].scrollLeft = 400;
+      document.getElementsByClassName("list-category")[0].scrollLeft = 400;
+
 
       //box number (- 1 +)
         
