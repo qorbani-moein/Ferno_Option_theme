@@ -524,41 +524,41 @@ function resource($elem, $type = null)
         /*window.scrollTo(100,200); 
         window.scrollBy(0,50);*/
 
-        document.getElementById("products-slug").scroll(200, 1000);
-        document.getElementsByClassName("item-category")[0].scroll(200, 1000);
-        document.getElementsByClassName("list-category")[0].scroll(200, 1000);
+        document.getElementById("products-slug").scroll(-200, -1000);
+        document.getElementsByClassName("item-category")[0].scroll(-200, -1000);
+        document.getElementsByClassName("list-category")[0].scroll(-200, -1000);
 
         document.getElementById("products-slug").scrollBy({
-          top: 1000,
-          left: 1000,
+          top: -1000,
+          left: -1000,
           behavior: "smooth",
         });
         document.getElementsByClassName("item-category")[0].scrollBy({
-          top: 1000,
-          left: 1000,
+          top: -1000,
+          left: -1000,
           behavior: "smooth",
         });
         document.getElementsByClassName("list-category")[0].scrollBy({
-          top: 1000,
-          left: 1000,
+          top: -1000,
+          left: -1000,
           behavior: "smooth",
         });
 
 
-        
+
         document.getElementById("products-slug").scrollTo({
-          top: 1000,
-          left: 1000,
+          top: -1000,
+          left: -1000,
           behavior: "smooth",
         });
         document.getElementsByClassName("item-category")[0].scrollTo({
-          top: 1000,
-          left: 1000,
+          top: -1000,
+          left: -1000,
           behavior: "smooth",
         });
         document.getElementsByClassName("list-category")[0].scrollTo({
-          top: 1000,
-          left: 1000,
+          top: -1000,
+          left: -1000,
           behavior: "smooth",
         });
 
