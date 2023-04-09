@@ -610,7 +610,8 @@ function resource($elem, $type = null)
           }
       
           //put new value to input box woocommerce
-          document.getElementsByClassName("input-text")[id_target].value = document.getElementById("quantity_cart_" + id_target).value;
+          var target_cart = "quantity_cart_" + id_target;
+          document.getElementsByClassName("input-text")[id_target].value = document.getElementById(target_cart).value;
           //enable button update cart and click it
           document.getElementsByClassName("button")[0].removeAttribute("disabled");
           document.getElementsByClassName("button")[0].click();
