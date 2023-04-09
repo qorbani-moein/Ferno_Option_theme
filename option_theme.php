@@ -534,10 +534,13 @@ function resource($elem, $type = null)
         }, { passive: true });
 
 
+        window.onscroll = function() {myFunction()};
 
 
-
-
+        function myFunction() {
+          console.log( document.getElementById("products-slug").scrollLeft);
+          console.log( document.getElementById("products-slug").scrollTop);
+        }
 
 
 
