@@ -52,6 +52,7 @@ function script_query_page()
 
   if ($current_page == $page_cart) {
     script_page_cart();
+    style_page_cart();
   } elseif ($current_page == $page_category) {
     script_page_category();
   } elseif ($current_page == $page_home) {
@@ -70,9 +71,16 @@ function script_page_home(){
 function script_page_category(){
   echo '<style>' . resource("style-card-product") . resource("style-category") . '</style>' . resource("script-category", "js");
 }
-
-function product_archive()
-{
+function style_page_cart(){
+  ?>
+    <style>
+      .woocommerce-error{
+        display: none;
+      }
+    </style>
+  <?php
+}
+function product_archive(){
   // $products = wc_get_products( array( 'status' => 'publish', 'limit' => -1 ) );
 
   // foreach ( $products as $product ){
