@@ -441,7 +441,7 @@ function resource($elem, $type = null)
             
             e.target.classList.add("products-slug-active");
 
-            //set page add product
+            //find div of product has class"products-slug-active" for 
             for(var u = 0 ; u <= document.getElementsByClassName("item-category").length - 1 ; u++){
               var tab_items = document.getElementsByClassName("item-category")[u].className;
               if(tab_items.search("products-slug-active") > 0){
@@ -510,16 +510,6 @@ function resource($elem, $type = null)
 
         // let url = new URL(location.href);
         // url.searchParams.delete(/[\[\]?*+|{}\\()@.\n\r]/);
-
-        const nextURL = "https://my-website.com/page_b";
-        const nextTitle = "My new page title";
-        const nextState = { additionalInformation: "Updated the URL with JS" };
-
-        // This will create a new entry in the browser s history, without reloading
-        window.history.pushState(nextState, nextTitle, nextURL);
-
-        // This will replace the current entry in the browser s history, without reloading
-        window.history.replaceState(nextState, nextTitle, nextURL);
 
       }
       //Click on tabs
