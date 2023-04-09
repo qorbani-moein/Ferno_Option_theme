@@ -537,25 +537,39 @@ function resource($elem, $type = null)
         }
 
         document.getElementById("products-slug").addEventListener("scroll", event => {
-          /*const set_now = new Date();
-          console.log( document.getElementById("products-slug").scrollLeft);*/
+          const set_now = new Date();
+          /*console.log( document.getElementById("products-slug").scrollLeft);*/
           sessionStorage.setItem("tab-scroll", document.getElementById("products-slug").scrollLeft + "_" + set_now.getTime());
         }, { passive: true });
 
 
 
 
-        window.onscroll = function() {myFunction()};
+        console.log(sessionStorage.getItem("window-scroll"));
 
-
-        function myFunction() {
-          /*console.log( document.getElementById("products-slug").scrollLeft);
-          console.log( document.getElementById("products-slug").scrollTop);*/
-          console.log( document.body.scrollTop);
-          console.log( document.documentElement.scrollTop );
+        if(sessionStorage.getItem("window-scroll") != null){
+          var window_scroll = sessionStorage.getItem("window-scroll");
+          window_scroll = window_scroll.split("_");
+          const set_now = new Date();
+          var xj = set_now.getTime() - window_scroll[1];
+          if(60000 > xj ){
+            window.scrollTo(0,window_scroll[0]); 
+          }
         }
 
+        window.onscroll = function() {listenwindowscroll()};
 
+
+        function listenwindowscroll() {
+          /*console.log( document.getElementById("products-slug").scrollLeft);
+          console.log( document.getElementById("products-slug").scrollTop);
+          console.log( document.body.scrollTop);
+          console.log( document.documentElement.scrollTop );*/
+          const set_now = new Date();
+          sessionStorage.setItem("window-scroll", document.documentElement.scrollTop + "_" + set_now.getTime());
+        }
+
+        
 
 
 
