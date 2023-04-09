@@ -642,20 +642,21 @@ function resource($elem, $type = null)
           //get all product woocommerce
 
           //get cart woocommerce
+          var true_i = 0
           for(var i = 0 ; i < woo_product_quantity.length ; i++){
               //replace nth to id for per rendring
               document.getElementsByClassName("moein-product-quantity")[i].outerHTML += quantity_product_html.split("nth").join(i);
-              
               //put value of [input] number cart woocommerce to my [input] quantity box
               
               // console.log(woo_product_quantity[i].innerHTML);
               document.getElementById("quantity_cart_" + i).value = woo_product_quantity[i].innerHTML.trim();
-              if(woo_product_quantity[i].innerHTML == 0)
-                document.getElementsByClassName("quantity_cart")[i].style.display = "none";
-              else
+              if(woo_product_quantity[i].innerHTML == 0){
+                document.getElementsByClassName("quantity_cart")[i].style.display = "none";}
+              else{
                 document.getElementsByClassName("quantity_cart")[i].style.display = "flex";
-
-                document.getElementsByClassName("quantity_cart")[i].innerHTML = document.getElementsByClassName("quantity_cart")[i].innerHTML + "<span id=quantity_cart_add_to_card>1</span>"
+                document.getElementsByClassName("quantity_cart")[i].innerHTML = document.getElementsByClassName("quantity_cart")[i].innerHTML + "<span id=quantity_cart_add_to_card>true_i</span>"
+                true_i++;
+              }
               //show recycle bin if cart is one
               // if (document.getElementById("quantity_cart_" + i).value == 1){
               //   document.querySelectorAll("a.woolentor-cart-product-actions-btn")[i].style = "display: block !important;";
