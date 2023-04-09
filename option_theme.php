@@ -497,8 +497,10 @@ function resource($elem, $type = null)
           }
 
       }
-
-      location.href = "https://google.com/";
+      var url_site = location.href;
+      url_site = url_site.split("?");
+      location.href = url_site[0];
+      
       //Click on tabs
       // document.getElementsByClassName("item-category")[0].click();
 
