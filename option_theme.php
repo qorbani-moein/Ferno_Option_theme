@@ -338,12 +338,10 @@ function resource($elem, $type = null)
                 var x = document.getElementById("quantity_cart_" + id_target).value;
                 document.getElementsByClassName("input-text")[id_target].value = document.getElementById("quantity_cart_" + id_target).value;
                 //enable button update cart and click it
+                console.log(document.getElementsByClassName("button")[0].innerHTML);
                 
-                var button = document.getElementsByClassName("button");
-                
-                console.log(document.getElementsByClassName("button")[button.length - 1].innerHTML);
-                document.getElementsByClassName("button")[button.length - 1].removeAttribute("disabled");
-                document.getElementsByClassName("button")[button.length - 1].click();
+                document.getElementsByClassName("button")[0].removeAttribute("disabled");
+                document.getElementsByClassName("button")[0].click();
             
               }
             
@@ -643,8 +641,12 @@ function resource($elem, $type = null)
 
           // document.getElementsByClassName("input-text")[id_target].value = x;
           //enable button update cart and click it
-          document.getElementsByClassName("button")[0].removeAttribute("disabled");
-          document.getElementsByClassName("button")[0].click();
+
+          var button_update_cart = document.getElementsByClassName("button");
+          console.log(document.getElementsByClassName("button")[button_update_cart.length - 1].innerHTML);
+
+          document.getElementsByClassName("button")[button_update_cart.length - 1].removeAttribute("disabled");
+          document.getElementsByClassName("button")[button_update_cart.length - 1].click();
       
         }
       
