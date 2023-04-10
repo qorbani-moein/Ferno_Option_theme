@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
   die('-1');
 }
 
-add_action("wp-head","back_url_to_category");
+add_action("wp-header","back_url_to_category");
 
 function back_url_to_category(){
   $current_page = $_SERVER['SCRIPT_URI'];
