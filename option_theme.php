@@ -636,7 +636,7 @@ function resource($elem, $type = null)
               tmp_quantity_cart = tmp_quantity_cart[1].split("</span>");
               document.getElementsByClassName("input-text")[tmp_quantity_cart[0]].value = document.getElementById("quantity_cart_" + j).value;
             }
-            <span id="quantity_cart_add_to_card" hidden="">0</span>
+            // <span id="quantity_cart_add_to_card" hidden="">0</span>
           }
 
           // document.getElementsByClassName("input-text")[id_target].value = x;
@@ -679,7 +679,7 @@ function resource($elem, $type = null)
                 document.getElementsByClassName("quantity_cart")[i].style.display = "none";}
               else{
                 document.getElementsByClassName("quantity_cart")[i].style.display = "flex";
-                // document.getElementsByClassName("quantity_cart")[i].innerHTML = document.getElementsByClassName("quantity_cart")[i].innerHTML + "<span hidden id=quantity_cart_add_to_card>" + true_i + "</span>"
+                document.getElementsByClassName("quantity_cart")[i].innerHTML = document.getElementsByClassName("quantity_cart")[i].innerHTML + "<span hidden id=quantity_cart_add_to_card>" + true_i + "</span>"
                 true_i++;
               }
               //show recycle bin if cart is one
