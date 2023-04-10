@@ -207,6 +207,9 @@ function product_archive(){
                 <h2><?php echo $product->get_title(); ?></h2>
               </a>
             </div>
+            <div class="product-sku">
+              <P id="product-sku_<?php echo $j - 1 ?>"><?php echo $product->get_sku(); ?></P>
+            </div>
             <div class="product-des">
               <?php echo $product->get_description(); ?>
             </div>
