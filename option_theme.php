@@ -655,27 +655,28 @@ function resource($elem, $type = null)
                 var cart_sku = document.querySelectorAll("dd.variation-SKU p")[m].innerHTML;
               if(my_sku == cart_sku){
                 console.log("ok");
-
+                document.getElementsByClassName("input-text")[m].value = document.getElementById("quantity_cart_" + j).value;
+                console.log("ok -" + document.getElementsByClassName("input-text")[m].value + " - " + document.getElementById("quantity_cart_" + j).value);
               }
             }
 
-            var tmp_quantity_cart = document.getElementsByClassName("quantity_cart")[j].innerHTML
+            // var tmp_quantity_cart = document.getElementsByClassName("quantity_cart")[j].innerHTML
 
-            //firefox
-            tmp_quantity_cart = tmp_quantity_cart.split(`<span id="quantity_cart_add_to_card" hidden="">`);
+            // //firefox
+            // tmp_quantity_cart = tmp_quantity_cart.split(`<span id="quantity_cart_add_to_card" hidden="">`);
 
-            if(tmp_quantity_cart.length > 1){
-              tmp_quantity_cart = tmp_quantity_cart[1].split("</span>");
-              document.getElementsByClassName("input-text")[tmp_quantity_cart[0]].value = document.getElementById("quantity_cart_" + j).value;
-            }else{
-              //chrome
-              tmp_quantity_cart = tmp_quantity_cart[0].split(`<span hidden="" id="quantity_cart_add_to_card">`);
+            // if(tmp_quantity_cart.length > 1){
+            //   tmp_quantity_cart = tmp_quantity_cart[1].split("</span>");
+            //   document.getElementsByClassName("input-text")[tmp_quantity_cart[0]].value = document.getElementById("quantity_cart_" + j).value;
+            // }else{
+            //   //chrome
+            //   tmp_quantity_cart = tmp_quantity_cart[0].split(`<span hidden="" id="quantity_cart_add_to_card">`);
 
-              if(tmp_quantity_cart.length > 1){
-                tmp_quantity_cart = tmp_quantity_cart[1].split("</span>");
-                document.getElementsByClassName("input-text")[tmp_quantity_cart[0]].value = document.getElementById("quantity_cart_" + j).value;
-              }
-            }
+            //   if(tmp_quantity_cart.length > 1){
+            //     tmp_quantity_cart = tmp_quantity_cart[1].split("</span>");
+            //     document.getElementsByClassName("input-text")[tmp_quantity_cart[0]].value = document.getElementById("quantity_cart_" + j).value;
+            //   }
+            // }
 
 
 
