@@ -690,7 +690,7 @@ function resource($elem, $type = null)
           console.log(document.getElementsByClassName("button")[0].outerHTML);
 
           document.getElementsByClassName("button")[0].removeAttribute("disabled");
-          // document.getElementsByClassName("button")[0].click();
+          document.getElementsByClassName("button")[0].click();
       
         }
       
