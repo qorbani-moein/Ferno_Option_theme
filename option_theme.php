@@ -25,7 +25,7 @@ function back_url_to_category(){
   }elseif(strpos($current_page , "removed_item=") === true && strpos($current_page , "?") === true ){
     $current_page = explode('?' , $current_page);
   }
-  console($current_page[0]);
+  echo($current_page[0]);
   // header("LOCATION: " . $current_page[0]);
   die('');
 }
