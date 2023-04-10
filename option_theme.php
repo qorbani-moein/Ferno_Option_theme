@@ -52,6 +52,7 @@ function script_query_page()
 
   if ($current_page == $page_cart) {
     script_page_cart();
+    style_page_cart();
   } elseif ($current_page == $page_category) {
     script_page_category();
   } elseif ($current_page == $page_home) {
@@ -70,9 +71,16 @@ function script_page_home(){
 function script_page_category(){
   echo '<style>' . resource("style-card-product") . resource("style-category") . '</style>' . resource("script-category", "js");
 }
-
-function product_archive()
-{
+function style_page_cart(){
+  ?>
+    <style>
+      .woocommerce-error{
+        display: none;
+      }
+    </style>
+  <?php
+}
+function product_archive(){
   // $products = wc_get_products( array( 'status' => 'publish', 'limit' => -1 ) );
 
   // foreach ( $products as $product ){
@@ -182,7 +190,7 @@ function product_archive()
           </div>
           <div class="product-data">
             <div class="product-title">
-              <a href="<?php echo get_permalink($product->get_id()); ?>">
+              <a href="javascript:popup('<?php echo $j - 1 ?>');<?php //echo get_permalink($product->get_id()); ?>">
                 <h2><?php echo $product->get_title(); ?></h2>
               </a>
             </div>
@@ -269,11 +277,13 @@ function resource($elem, $type = null)
             border-color: #0000;
             padding: 3px 0px 0px 3px;
         }
+
         input::-webkit-outer-spin-button,
         input::-webkit-inner-spin-button {
             -webkit-appearance: none;
             margin: 0;
         }
+
         input[type=number] {
             -moz-appearance: textfield;
         }
@@ -297,6 +307,7 @@ function resource($elem, $type = null)
       $result = '
             //back menu in header
             document.getElementsByClassName("elementor-icon")[0].href = "https://menu.fernofood.com/category/";
+
             // check every secend cart if not have data
             setInterval(time_check_frm,1000);
             function time_check_frm(){
@@ -321,9 +332,14 @@ function resource($elem, $type = null)
                   }
                 }
             
+                
                 //put new value to input box woocommerce
+                // var target_cart = "quantity_cart_" + id_target;
+                var x = document.getElementById("quantity_cart_" + id_target).value;
                 document.getElementsByClassName("input-text")[id_target].value = document.getElementById("quantity_cart_" + id_target).value;
                 //enable button update cart and click it
+                console.log(document.getElementsByClassName("button")[0].innerHTML);
+                
                 document.getElementsByClassName("button")[0].removeAttribute("disabled");
                 document.getElementsByClassName("button")[0].click();
             
@@ -379,11 +395,15 @@ function resource($elem, $type = null)
         }
       }
       
+      //sticky menu in top page
       window.onscroll = function() {myFunction()};
+
       var menubar = document.getElementById("products-slug");
       var products_archive = document.getElementById("products_archive");
+
       var imagebar = document.getElementById("products-image-category");
       var sticky = 50 + menubar.offsetTop + imagebar.offsetTop;
+
       function myFunction() {
         // console.log("window.pageYOffset: " + window.pageYOffset);
         // console.log("sticky: " + sticky);
@@ -395,6 +415,24 @@ function resource($elem, $type = null)
           products_archive.classList.remove("products-archive-top");
         }
       }
+
+      //save and get scrolling
+      document.addEventListener("scroll", (event) => {
+        const set_now = new Date();
+        sessionStorage.setItem("scroll" , document.documentElement.scrollHeight  + "-" + set_now.getTime());
+      });
+      const set_now_ss = new Date();
+      var s_scroll = sessionStorage.getItem("scroll");
+      if(s_scroll != null){
+        s_scroll = s_scroll.split("-");
+        var xi = set_now_ss.getTime() - s_scroll[1];
+        if(60000 > xi ){
+          window.scrollTo(0, s_scroll[0]); 
+        }
+      }
+
+
+      //click on tab items
       function set_ua_value (e) {
         if(e.target.nodeName == "LI") {
           
@@ -403,9 +441,25 @@ function resource($elem, $type = null)
             for(var u = 0 ; u <= document.getElementsByClassName("item-category").length - 1 ; u++){
               // console.log("u: " + u);
               document.getElementsByClassName("item-category")[u].classList.remove("products-slug-active");
+              
             }
-          // console.log("e.target.innerHTML: " + e.target.innerHTML);
+            
             e.target.classList.add("products-slug-active");
+
+            //find div of product has class"products-slug-active" for 
+            for(var u = 0 ; u <= document.getElementsByClassName("item-category").length - 1 ; u++){
+              var tab_items = document.getElementsByClassName("item-category")[u].className;
+              if(tab_items.search("products-slug-active") > 0){
+                // console.log(u);
+                const set_now = new Date();
+                
+                // console.log(i + "-" + set_now.getTime());
+                sessionStorage.setItem("tab-clicked", u + "-" + set_now.getTime());
+              }
+            }
+
+
+          // console.log("e.target.innerHTML: " + e.target.innerHTML);
             //filter category
             var len_card_product = document.getElementsByClassName("product_card").length;
             var category_attr = e.target.innerHTML;
@@ -416,6 +470,7 @@ function resource($elem, $type = null)
               
               // category_attr_card = document.getElementsByClassName("product_card")[i].getAttribute("data-category");
               category_attr_card = document.querySelectorAll(".value_category_" + i + " a");
+
               document.getElementsByClassName("product_card")[i].style.display = "block";
               // console.log("category_attr_card.length: " + category_attr_card.length );
               
@@ -436,14 +491,101 @@ function resource($elem, $type = null)
                   document.getElementsByClassName("product_card")[i].style.display = "block";
                   break;
                 }
+
               }
+              
+
               // document.getElementById("test1").addEventListener("click", function(){
               //   console.log(document.getElementsByClassName("product_card")[i].getAttribute("data-category"));
               // });
             }
           }
+
       }
-      document.getElementsByClassName("item-category")[0].click();
+
+
+      //Click on tabs
+      // document.getElementsByClassName("item-category")[0].click();
+
+      //sessionStorage.setItem("tab-clicked", u + "-" + set_now.getTime());
+
+      console.log(sessionStorage.getItem("tab-clicked"));
+
+      var user_clicked = sessionStorage.getItem("tab-clicked");
+      if(user_clicked != null){
+        user_clicked = user_clicked.split("-");
+        const set_now = new Date();
+        var xj = set_now.getTime() - user_clicked[1];
+        if(60000 > xj ){
+          document.getElementsByClassName("item-category")[user_clicked[0]].click();
+          window.scrollTo(user_clicked[2], 0); 
+        }else{
+          document.getElementsByClassName("item-category")[0].click();
+        }
+      }else{
+        document.getElementsByClassName("item-category")[0].click();
+      }
+
+      //scrollleft menu 
+      /*console.log(sessionStorage.getItem("tab-scroll"));*/
+
+      if(sessionStorage.getItem("tab-scroll") != null){
+        var tab_scroll = sessionStorage.getItem("tab-scroll");
+        tab_scroll = tab_scroll.split("_");
+        const set_now = new Date();
+        var xj = set_now.getTime() - tab_scroll[1];
+        if(60000 > xj ){
+          document.getElementById("products-slug").scroll(tab_scroll[0], 0);
+        }
+      }
+
+      document.getElementById("products-slug").addEventListener("scroll", event => {
+        const set_now = new Date();
+        sessionStorage.setItem("tab-scroll", document.getElementById("products-slug").scrollLeft + "_" + set_now.getTime());
+      }, { passive: true });
+
+
+
+
+        console.log(sessionStorage.getItem("window-scroll"));
+
+        if(sessionStorage.getItem("window-scroll") != null){
+          var window_scroll = sessionStorage.getItem("window-scroll");
+          window_scroll = window_scroll.split("_");
+          const set_now = new Date();
+          var xj = set_now.getTime() - window_scroll[1];
+          if(60000 > xj ){
+            window.scrollTo(0,window_scroll[0]); 
+          }
+        }
+
+        window.onscroll = function() {listenwindowscroll()};
+
+
+        function listenwindowscroll() {
+          const set_now = new Date();
+          sessionStorage.setItem("window-scroll", document.documentElement.scrollTop + "_" + set_now.getTime());
+        }
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
       //box number (- 1 +)
         
       // check every secend cart if not have data
@@ -471,8 +613,38 @@ function resource($elem, $type = null)
           }
       
           //put new value to input box woocommerce
-          document.getElementsByClassName("input-text")[id_target].value = document.getElementById("quantity_cart_" + id_target).value;
+          // var target_cart = "quantity_cart_" + id_target;
+          // var x = document.getElementById("quantity_cart_" + id_target).value;
+
+          // var all_quantity_cart = document.getElementsByClassName("quantity_cart");
+          // for(var j=0; j <= all_quantity_cart.length ; j++){
+
+          // }
+          // document.getElementById["quantity_cart_add_to_card"].innerHtml
+          
+          // var all_quantity_cart = document.getElementsByClassName("quantity_cart_add_to_card");
+          // for(var j=0; j <= all_quantity_cart.length ; j++){
+          //   document.getElementsByClassName("input-text")[j].value = x;
+          // }
+          
+          var all_quantity_cart = document.getElementsByClassName("quantity_cart");
+          for(var j=0; j <= all_quantity_cart.length - 1 ; j++){
+            var tmp_quantity_cart = document.getElementsByClassName("quantity_cart")[j].innerHTML
+            tmp_quantity_cart = tmp_quantity_cart.split(`<span id="quantity_cart_add_to_card" hidden="">`);
+
+            if(tmp_quantity_cart.length > 1){
+              tmp_quantity_cart = tmp_quantity_cart[1].split("</span>");
+              document.getElementsByClassName("input-text")[tmp_quantity_cart[0]].value = document.getElementById("quantity_cart_" + j).value;
+            }
+            // <span id="quantity_cart_add_to_card" hidden="">0</span>
+          }
+
+          // document.getElementsByClassName("input-text")[id_target].value = x;
           //enable button update cart and click it
+
+          var button_update_cart = document.getElementsByClassName("button");
+          console.log(document.getElementsByClassName("button")[0].outerHTML);
+
           document.getElementsByClassName("button")[0].removeAttribute("disabled");
           document.getElementsByClassName("button")[0].click();
       
@@ -487,31 +659,36 @@ function resource($elem, $type = null)
           var quantity_product_html = `
             <div class="quantity_cart">
                 <span class="quantity_cart_plus" onclick="click_quantity(this.id)" id="quantity_cart_plus_nth">+</span>
-                <input class="number_quantity_cart" id="quantity_cart_nth" type="number" name="cart_quantity" min="1" max="10" disabled=""/>
+                <input class="number_quantity_cart" id="quantity_cart_nth" type="number" name="cart_quantity" min="1" max="10" />
                 <span class="quantity_cart_minus" onclick="click_quantity(this.id)" id="quantity_cart_minus_nth">-</span>
             </div>
           `;
       
           //get all product woocommerce
+
           //get cart woocommerce
+          var true_i = 0
           for(var i = 0 ; i < woo_product_quantity.length ; i++){
               //replace nth to id for per rendring
               document.getElementsByClassName("moein-product-quantity")[i].outerHTML += quantity_product_html.split("nth").join(i);
-              
               //put value of [input] number cart woocommerce to my [input] quantity box
               
-              // console.log(woo_product_quantity[i].innerHTML);
+              console.log(woo_product_quantity[i].innerHTML);
               document.getElementById("quantity_cart_" + i).value = woo_product_quantity[i].innerHTML.trim();
-              if(woo_product_quantity[i].innerHTML == 0)
-                document.getElementsByClassName("quantity_cart")[i].style.display = "none";
-              else
+              if(woo_product_quantity[i].innerHTML == 0){
+                document.getElementsByClassName("quantity_cart")[i].style.display = "none";}
+              else{
                 document.getElementsByClassName("quantity_cart")[i].style.display = "flex";
+                // document.getElementsByClassName("quantity_cart")[i].innerHTML = document.getElementsByClassName("quantity_cart")[i].innerHTML + "<span hidden id=quantity_cart_add_to_card>" + true_i + "</span>"
+                true_i++;
+              }
               //show recycle bin if cart is one
               // if (document.getElementById("quantity_cart_" + i).value == 1){
               //   document.querySelectorAll("a.woolentor-cart-product-actions-btn")[i].style = "display: block !important;";
               // }
           }
         }
+
         //popup
         window.addEventListener("click", function(e){   
           // console.log(e.target);
@@ -527,6 +704,7 @@ function resource($elem, $type = null)
             popup_img[0].src="";
           }
         });
+
         function popup(id){
           
           // console.log("popup function id:" + id);
@@ -536,6 +714,7 @@ function resource($elem, $type = null)
           var product_img = document.querySelectorAll(".product-img img");
           var popup_img = document.querySelectorAll(".popup_product_img img");
           popup_img[0].src = product_img[id].src;
+
           //description
           var product_des = document.querySelectorAll(".product-des");
           var popup_des = document.querySelectorAll(".popup_product_des");
@@ -545,20 +724,24 @@ function resource($elem, $type = null)
           var product_title = document.querySelectorAll(".product-title h2");
           var popup_title = document.querySelectorAll(".popup_product_title");
           popup_title[0].innerHTML = \'<h4>\' + product_title[id].innerHTML + \'</h4>\';
+
           //price
           var product_price = document.querySelectorAll(".product-price span bdi");
           var popup_price = document.querySelectorAll(".popup_product_price span");
           console.log(id);
           // console.log(product_price[id].innerHTML);
           popup_price[0].innerHTML = product_price[id].innerHTML;
+
           for(var i = 0 ; i <= 40 ; i++){
             console.log(i + " - " + product_price[i].innerHTML);
+
           }
           //btn add to card
           var product_id = document.getElementsByClassName("product_card")[id].getAttribute("data-id");
           var popup_btn_addtocard = document.querySelectorAll(".popup_product_add_to_cart");
           popup_btn_addtocard[0].innerHTML = \'<a rel="nofollow" href="?add-to-cart=\' + product_id + \'" data-product_id="\' + product_id + \'" class="popup_product_btn_addtocart ajax_add_to_cart"> + افزودن به یادداشت سفارش</a>\';
         }
+
       ';
       break;
     case "style-category":
@@ -576,6 +759,7 @@ function resource($elem, $type = null)
       .products-archive{
         margin-top: -10px;
         margin-bottom: 128px;
+
       }
       .products-archive-top{
         margin-top: 80px !important;
@@ -673,11 +857,13 @@ function resource($elem, $type = null)
           border-color: #0000;
           padding: 2px 0px 0px 3px;
       }
+
       input::-webkit-outer-spin-button,
       input::-webkit-inner-spin-button {
           -webkit-appearance: none;
           margin: 0;
       }
+
       input[type=number] {
           -moz-appearance: textfield;
       }
@@ -701,6 +887,7 @@ function resource($elem, $type = null)
         opacity: 1;
         z-index: 10;
       }
+
       .popup_product{
         margin: 100px auto;
         padding: 20px;
@@ -799,6 +986,7 @@ function resource($elem, $type = null)
       .product-price:not(.woocommerce-Price-currencySymbol){
         color: #fff;
       }
+
       .product-img{
         opacity: 1 !important;
         width: 40%;
@@ -861,6 +1049,7 @@ function resource($elem, $type = null)
       document.getElementsByClassName("elementor-icon")[0].style.display = "none";
       
       document.getElementById("moein_card_room_desk").addEventListener("click", show_comingsoon); 
+
       
       function show_comingsoon(){
         // console.log("show_comingsoon");
@@ -954,6 +1143,7 @@ function resource($elem, $type = null)
         top: 4px;
         color: white;
       }
+
       ';
       break;
   }
