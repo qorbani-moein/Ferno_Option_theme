@@ -646,13 +646,17 @@ function resource($elem, $type = null)
           var all_quantity_cart = document.getElementsByClassName("quantity_cart");
           for(var j=0; j <= all_quantity_cart.length - 1 ; j++){
 
-            //get sku my code
-              var my_sku = document.getElementById("product-sku_" + j).innerHTML;
-            //get sku plugin
-              var cart_sku = document.querySelectorAll("dd.variation-SKU p")[0].innerHTML;
-            if(my_sku == cart_sku){
-              console.log("ok");
 
+            var all_item_cart = document.querySelectorAll("dd.variation-SKU p");
+            for(var m=0 ; m <= all_item_cart.length -1; m++){
+              //get sku my code
+                var my_sku = document.getElementById("product-sku_" + j).innerHTML;
+              //get sku plugin
+                var cart_sku = document.querySelectorAll("dd.variation-SKU p")[m].innerHTML;
+              if(my_sku == cart_sku){
+                console.log("ok");
+
+              }
             }
 
             var tmp_quantity_cart = document.getElementsByClassName("quantity_cart")[j].innerHTML
