@@ -680,7 +680,7 @@ function resource($elem, $type = null)
               else{
                 document.getElementsByClassName("quantity_cart")[i].style.display = "flex";
                 console.log(document.getElementsByClassName("quantity_cart")[i].outerHTML);
-                document.getElementsByClassName("quantity_cart")[i].outerHTML = document.getElementsByClassName("quantity_cart")[i].outerHTML + "<span hidden id=quantity_cart_add_to_card>" + true_i + "</span>"
+                document.getElementsByClassName("quantity_cart")[i].innerHTML = document.getElementsByClassName("quantity_cart")[i].innerHTML + "<span hidden id=\"quantity_cart_add_to_card\">" + true_i + "</span>"
                 true_i++;
               }
               //show recycle bin if cart is one
