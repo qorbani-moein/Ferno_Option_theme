@@ -19,12 +19,14 @@ add_action("wp_head","back_url_to_category");
 
 function back_url_to_category(){
   $current_page = $_SERVER['SCRIPT_URI'];
-  if(strpos($current_page , "add-to-cart=") === true && strpos($current_page , "?") === true ){
+  
+
+  if(isset($_GET['add-to-cart']) ){
     $current_page = explode('?' , $current_page);
-    die($current_page[0]);
-  }elseif(strpos($current_page , "removed_item=") === true && strpos($current_page , "?") === true ){
+    die("add-to-cart" . $current_page[0]);
+  }elseif(isset($_GET['removed_item'])){
     $current_page = explode('?' , $current_page);
-    die($current_page[0]);
+    die("removed_item" . $current_page[0]);
   }
   // $current_page = explode('?' , $current_page);
   // header("LOCATION: " . $current_page[0]);
