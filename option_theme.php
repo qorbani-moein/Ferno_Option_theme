@@ -21,15 +21,13 @@ function back_url_to_category(){
   $current_page = $_SERVER['SCRIPT_URI'];
   
 
-  if(isset($_GET['add-to-cart']) ){
+  if(isset($_GET['add-to-cart']) || isset($_GET['removed_item']) ){
     $current_page = explode('?' , $current_page);
-    die("add-to-cart" . $current_page[0]);
-  }elseif(isset($_GET['removed_item'])){
-    $current_page = explode('?' , $current_page);
-    die("removed_item" . $current_page[0]);
+    // die("add-to-cart" . $current_page[0]);
+    header("LOCATION: " . $current_page[0]);
   }
   // $current_page = explode('?' , $current_page);
-  // header("LOCATION: " . $current_page[0]);
+  die("");
 }
 add_shortcode('moein_product_archive', 'product_archive');
 
