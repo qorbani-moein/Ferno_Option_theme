@@ -207,7 +207,7 @@ function product_archive(){
                 <h2><?php echo $product->get_title(); ?></h2>
               </a>
             </div>
-            <div class="product-sku">
+            <div hidden="">
               <P id="product-sku_<?php echo $j - 1 ?>"><?php echo $product->get_sku(); ?></P>
             </div>
             <div class="product-des">
@@ -645,6 +645,16 @@ function resource($elem, $type = null)
           
           var all_quantity_cart = document.getElementsByClassName("quantity_cart");
           for(var j=0; j <= all_quantity_cart.length - 1 ; j++){
+
+            //get sku my code
+              var my_sku = document.getElementById("product-sku_" + j).innerHTML;
+            //get sku plugin
+              var cart_sku = document.querySelectorAll("dd.variation-SKU p")[0];
+            if(my_sku == cart_sku){
+              console.log("ok");
+
+            }
+
             var tmp_quantity_cart = document.getElementsByClassName("quantity_cart")[j].innerHTML
 
             //firefox
