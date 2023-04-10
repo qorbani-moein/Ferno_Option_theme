@@ -20,13 +20,14 @@ add_action("wp_head","back_url_to_category");
 function back_url_to_category(){
   $current_page = $_SERVER['SCRIPT_URI'];
   if(strpos($current_page , "add-to-cart=") === true && strpos($current_page , "?") === true ){
-    $current_page = explode('?' , $current_page);
+    // $current_page = explode('?' , $current_page);
 
   }elseif(strpos($current_page , "removed_item=") === true && strpos($current_page , "?") === true ){
-    $current_page = explode('?' , $current_page);
+    // $current_page = explode('?' , $current_page);
   }
+  $current_page = explode('?' , $current_page);
   // header("LOCATION: " . $current_page[0]);
-  die($current_page[0]);
+  die( $_SERVER['SCRIPT_URI'] . " - " . $current_page[0]);
 }
 add_shortcode('moein_product_archive', 'product_archive');
 
