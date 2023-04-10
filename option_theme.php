@@ -643,10 +643,10 @@ function resource($elem, $type = null)
           //enable button update cart and click it
 
           var button_update_cart = document.getElementsByClassName("button");
-          console.log(document.getElementsByClassName("button")[button_update_cart.length - 1].innerHTML);
+          console.log(document.getElementsByClassName("button")[0].outerHTML);
 
-          document.getElementsByClassName("button")[button_update_cart.length - 1].removeAttribute("disabled");
-          document.getElementsByClassName("button")[button_update_cart.length - 1].click();
+          document.getElementsByClassName("button")[0].removeAttribute("disabled");
+          document.getElementsByClassName("button")[0].click();
       
         }
       
