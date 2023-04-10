@@ -149,7 +149,7 @@ function product_archive(){
 
 
   <div id="products-image-category" class="products-image-category">
-    <img class="img-product" src="<?php echo "https://menu.fernofood.com/wp-content/uploads/2023/03/01.jpg"; ?>">
+    <img class="img-product" src="<?php echo "https://menu.fernofood.com/wp-content/uploads/2023/04/ferno-menu1.jpg"; ?>">
     <h1 class="caption-img-product"></h1>
   </div>
 
