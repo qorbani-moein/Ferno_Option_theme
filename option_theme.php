@@ -338,6 +338,7 @@ function resource($elem, $type = null)
                 var x = document.getElementById("quantity_cart_" + id_target).value;
                 document.getElementsByClassName("input-text")[id_target].value = document.getElementById("quantity_cart_" + id_target).value;
                 //enable button update cart and click it
+                console.log(document.getElementsByClassName("button")[0]);
                 document.getElementsByClassName("button")[0].removeAttribute("disabled");
                 document.getElementsByClassName("button")[0].click();
             
