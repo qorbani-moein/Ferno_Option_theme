@@ -679,7 +679,8 @@ function resource($elem, $type = null)
                 document.getElementsByClassName("quantity_cart")[i].style.display = "none";}
               else{
                 document.getElementsByClassName("quantity_cart")[i].style.display = "flex";
-                document.getElementsByClassName("quantity_cart")[i].innerHTML = document.getElementsByClassName("quantity_cart")[i].innerHTML + "<span hidden id=quantity_cart_add_to_card>" + true_i + "</span>"
+                console.log(document.getElementsByClassName("quantity_cart")[i].outerHTML);
+                document.getElementsByClassName("quantity_cart")[i].outerHTML = document.getElementsByClassName("quantity_cart")[i].outerHTML + "<span hidden id=quantity_cart_add_to_card>" + true_i + "</span>"
                 true_i++;
               }
               //show recycle bin if cart is one
