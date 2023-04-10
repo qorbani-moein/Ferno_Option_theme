@@ -27,7 +27,7 @@ function back_url_to_category(){
     header("LOCATION: " . $current_page[0]);
   }
   // $current_page = explode('?' , $current_page);
-  die("");
+  // die("");
 }
 add_shortcode('moein_product_archive', 'product_archive');
 
