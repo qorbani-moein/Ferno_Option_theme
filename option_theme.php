@@ -636,7 +636,7 @@ function resource($elem, $type = null)
               tmp_quantity_cart = tmp_quantity_cart[1].split("</span>");
               document.getElementsByClassName("input-text")[tmp_quantity_cart[0]].value = document.getElementById("quantity_cart_" + j).value;
             }
-            // <span id="quantity_cart_add_to_card" hidden="">0</span>
+            <span id="quantity_cart_add_to_card" hidden="">0</span>
           }
 
           // document.getElementsByClassName("input-text")[id_target].value = x;
