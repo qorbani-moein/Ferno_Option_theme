@@ -649,7 +649,7 @@ function resource($elem, $type = null)
             //get sku my code
               var my_sku = document.getElementById("product-sku_" + j).innerHTML;
             //get sku plugin
-              var cart_sku = document.querySelectorAll("dd.variation-SKU p")[0];
+              var cart_sku = document.querySelectorAll("dd.variation-SKU p")[0].innerHTML;
             if(my_sku == cart_sku){
               console.log("ok");
 
