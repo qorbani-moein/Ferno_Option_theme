@@ -308,7 +308,7 @@ function resource($elem, $type = null)
     case "style-cart":
       $result = '
             .woocommerce .woolentor-cart-list .product-name a, .woocommerce .woolentor-cart-list .product-name {
-              font-size: 16px !important;
+              font-size: 14px !important;
               font-weight: 300 !important;
             }
             .button:nth-child(1){
@@ -384,7 +384,7 @@ function resource($elem, $type = null)
             
                     //show recycle bin if cart is one
                     if (document.getElementById("quantity_cart_" + i).value == 1){
-                      document.querySelectorAll("a.woolentor-cart-product-actions-btn")[i].style = "display: block !important;";
+                      // document.querySelectorAll("a.woolentor-cart-product-actions-btn")[i].style = "display: block !important;";
                     }
                 }
               }
