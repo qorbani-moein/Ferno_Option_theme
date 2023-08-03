@@ -1040,14 +1040,14 @@ function resource($elem, $type = null)
       }
       @media (min-width:767px){
         .product-img img{
-          height: 130px;
+          height: 130px !important;
           width: 130px !important;
         }
         .product-img{
-          padding-right: 20px;
+          padding-right: 20px !important;
         }
         .product-title h2{
-          font-size: 20px;
+          font-size: 20px !important;
         }
       }
       .product-data{
