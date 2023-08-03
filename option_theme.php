@@ -808,6 +808,12 @@ function resource($elem, $type = null)
           margin-left: 128px;
           margin-right: 128px;
         }
+
+        .img-product{
+          height: 500px !important;
+          object-fit: cover;
+        }
+
       }
       .products-archive{
         margin-top: -10px;
@@ -865,8 +871,6 @@ function resource($elem, $type = null)
       }
       .img-product{
         width: 100%;
-        height: 500px !important;
-        object-fit: cover;
       }
       .caption-img-product{
         position: absolute;
@@ -1033,6 +1037,18 @@ function resource($elem, $type = null)
         height: 180px;
         margin: 20px;
         padding: 12px 10px 12px 1px;
+      }
+      @media (min-width:767px){
+        .product-img img{
+          height: 130px;
+          width: 130px !important;
+        }
+        .product-img{
+          padding-right: 20px;
+        }
+        .product-title h2{
+          font-size: 20px;
+        }
       }
       .product-data{
         width: 72%;
