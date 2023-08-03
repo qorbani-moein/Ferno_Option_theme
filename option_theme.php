@@ -1049,6 +1049,9 @@ function resource($elem, $type = null)
         .product-title h2{
           font-size: 20px !important;
         }
+        .product-des p{
+          font-size: 18px;
+        }
       }
       .product-data{
         width: 72%;
