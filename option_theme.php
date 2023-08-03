@@ -211,7 +211,7 @@ function product_archive(){
               <P id="product-sku_<?php echo $j - 1 ?>"><?php echo $product->get_sku(); ?></P>
             </div>
             <div class="product-des">
-              <?php echo $product->get_description(); ?>
+              <p><?php echo $product->get_description(); ?></p>
             </div>
             <div class="product-price">
               <?php echo $product->get_price_html(); ?>
@@ -1068,7 +1068,7 @@ function resource($elem, $type = null)
       .product-img img{
         border-radius: 100%;
         height: 80px;
-        width: 80px !important;
+        width: 80px;
         object-fit: cover;
       }
       .product-title{
