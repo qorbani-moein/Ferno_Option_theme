@@ -801,6 +801,14 @@ function resource($elem, $type = null)
         font-size: 32px;
         cursor: pointer;
       }
+      @media (min-width:767px){
+        .products-archive{
+          display: grid;
+          grid-template-columns: 50% 50%;
+          margin-left: 128px;
+          margin-right: 128px;
+        }
+      }
       .products-archive{
         margin-top: -10px;
         margin-bottom: 128px;
@@ -857,6 +865,8 @@ function resource($elem, $type = null)
       }
       .img-product{
         width: 100%;
+        height: 500px !important;
+        object-fit: cover;
       }
       .caption-img-product{
         position: absolute;
