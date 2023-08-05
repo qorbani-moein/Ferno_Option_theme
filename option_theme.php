@@ -1095,7 +1095,7 @@ function resource($elem, $type = null)
             position: absolute;
             left: 0px;
             top: 540px;
-            height: 100%;
+            height: 180px;
             width: 100%;
             background-repeat: no-repeat;
             background-image: url(https://menu.fernofood.com/wp-content/uploads/2023/08/Group_.png);
@@ -1106,7 +1106,7 @@ function resource($elem, $type = null)
           position: absolute;
           right: 0px;
           top: 318px;
-          height: 100%;
+          height: 180px;
           width: 100%;
           background-repeat: no-repeat;
           background-image: url(https://menu.fernofood.com/wp-content/uploads/2023/08/Group_1.png);
