@@ -805,7 +805,6 @@ function resource($elem, $type = null)
         .products-archive{
           display: grid;
           grid-template-columns: 50% 50%;
-          margin: 12px 128px 32px 128px;
         }
 
         .img-product{
@@ -815,6 +814,7 @@ function resource($elem, $type = null)
         .products-slug{
           justify-content: center;
           display: flex;
+          margin: 12px 128px 32px 128px;
         }
         .products-slug ul{
           background-color:#ffffff00 !important;
