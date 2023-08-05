@@ -164,6 +164,12 @@ function product_archive(){
     // echo '<pre>'; var_dump( $categories[1]['name'] ); echo '</pre>';
     // $all_category = json_decode( $categories, true );
     ?>
+    <div class="show_cart">
+        <a class="show_cart_link" href="/cart">
+            مشاهده یادداشت سفارشات
+        </a>
+    </div>
+
     <ul class="list-category">
       <!-- <li class="item-category">همه</li> -->
       <?php
@@ -1065,6 +1071,12 @@ function resource($elem, $type = null)
         }
         .product-des p{
           font-size: 18px;
+        }
+        .show_cart{
+          margin:12px;
+        }
+        .show_cart_link{
+          background:yellow;
         }
       }
       .product-data{
