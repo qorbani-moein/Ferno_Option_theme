@@ -1105,7 +1105,7 @@ function resource($elem, $type = null)
           color: #ffffff00;
           position: absolute;
           right: 0px;
-          top: 318px;
+          top: 850px;
           height: 180px;
           width: 300px;
           background-repeat: no-repeat;
