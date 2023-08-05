@@ -1079,9 +1079,10 @@ function resource($elem, $type = null)
           position: absolute;
           right: 0px;
           margin-top: 18px;
+          transition-duration: .3s;
         }
         .show_cart:hover{
-          padding: 9px 0px 26px 12px;
+          padding: 9px 20px 6px 12px;
         }
         .show_cart_link{
           color: #000;
