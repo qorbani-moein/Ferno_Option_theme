@@ -1074,7 +1074,7 @@ function resource($elem, $type = null)
         }
         .show_cart{
           background: #FCBD1E;
-          padding: 9px 0px 6px 12px;
+          padding: 11px 0px 8px 12px;
           border-radius: 20px 0px 0px 20px;
           position: absolute;
           right: 0px;
@@ -1089,6 +1089,30 @@ function resource($elem, $type = null)
           padding: 14px;
           padding-bottom: 12px !important;
         }
+        .products-archive:before {
+            content: "-";
+            color: #ffffff00;
+            position: absolute;
+            left: 0px;
+            top: 540px;
+            height: 100%;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-image: url(https://menu.fernofood.com/wp-content/uploads/2023/08/Group_.png);
+        }
+        .products-archive:after {
+          content: "-";
+          color: #ffffff00;
+          position: absolute;
+          right: 0px;
+          top: 318px;
+          height: 100%;
+          width: 100%;
+          background-repeat: no-repeat;
+          background-image: url(https://menu.fernofood.com/wp-content/uploads/2023/08/Group_1.png);
+          background-position: right;
+          overflow: hidden;
+      }
       }
       @media (max-width:767px){
         .show_cart{
