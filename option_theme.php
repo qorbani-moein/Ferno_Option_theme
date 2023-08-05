@@ -805,16 +805,23 @@ function resource($elem, $type = null)
         .products-archive{
           display: grid;
           grid-template-columns: 50% 50%;
-          margin-left: 128px;
-          margin-right: 128px;
+          margin: 12px 128px 32px 128px;
         }
 
         .img-product{
           height: 500px !important;
           object-fit: cover;
         }
-
+        .products-slug{
+          justify-content: center;
+          display: flex;
+        }
+        .products-slug ul{
+          background-color:#ffffff00 !important;
+        }
       }
+
+
       .products-archive{
         margin-top: -10px;
         margin-bottom: 128px;
@@ -823,23 +830,28 @@ function resource($elem, $type = null)
       .products-archive-top{
         margin-top: 80px !important;
       }
-      .products-slug{
-        position: relative;
-        top: -10px;
-        right: 0px;
-        background-color: #333;
-        white-space: nowrap;
-        display: inline-block;
-        width: 100%;
-        height: 72px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-        overflow-x: auto;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        overflow-y: hidden;
-        -ms-overflow-style: none;
-        text-align: right;
+
+
+      @media (max-width:767px){
+        .products-slug{
+          position: relative;
+          top: -10px;
+          right: 0px;
+          background-color: #333;
+          white-space: nowrap;
+          display: inline-block;
+          width: 100%;
+          height: 72px;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+          overflow-x: auto;
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+          overflow-y: hidden;
+          -ms-overflow-style: none;
+          text-align: right;
+        }
       }
+
       .products-slug ul{
         list-style-type: none;
         margin: 0;
