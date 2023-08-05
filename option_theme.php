@@ -1073,10 +1073,20 @@ function resource($elem, $type = null)
           font-size: 18px;
         }
         .show_cart{
-          margin:12px;
+          background: #FCBD1E;
+          padding: 9px 0px 6px 12px;
+          border-radius: 20px 0px 0px 20px;
+          position: absolute;
+          right: 0px;
+          margin-top: 18px;
+        }
+        .show_cart:hover{
+          padding: 9px 0px 26px 12px;
         }
         .show_cart_link{
-          background:yellow;
+          color: #000;
+          padding: 14px;
+          padding-bottom: 12px !important;
         }
       }
       .product-data{
