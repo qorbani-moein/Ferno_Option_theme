@@ -805,6 +805,8 @@ function resource($elem, $type = null)
         .products-archive{
           display: grid;
           grid-template-columns: 50% 50%;
+          margin-left:128px;
+          margin-right:128px;
         }
 
         .img-product{
