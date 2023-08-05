@@ -323,6 +323,19 @@ function resource($elem, $type = null)
             .input-text {
                 display: none;
             }
+            .woocommerce-message{
+              display:none;
+            }
+            a.bdt-ep-button{
+              border-radius: 50px;
+              width: 100%;
+            }
+            .woolentor-cart-product{
+              border-left: none;
+              border-right: none;
+              border-top: none;
+            }
+
         ';
       break;
     case "script-cart":
