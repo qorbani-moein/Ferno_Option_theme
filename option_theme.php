@@ -1090,6 +1090,11 @@ function resource($elem, $type = null)
           padding-bottom: 12px !important;
         }
       }
+      @media (max-width:767px){
+        .show_cart{
+          display:none;
+        }
+      }
       .product-data{
         width: 72%;
         float: left;
