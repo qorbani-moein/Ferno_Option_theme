@@ -967,6 +967,11 @@ function resource($elem, $type = null)
         z-index: 10;
       }
 
+      @media (min-width:767px){
+        .popup_product{
+          width: 20% !important;
+        }
+      }
       .popup_product{
         margin: 100px auto;
         padding: 20px;
@@ -974,8 +979,9 @@ function resource($elem, $type = null)
         border-radius: 10px;
         width: 90%;
         position: relative;
-        // transition: all 1s ease-in-out;
+        /* transition: all 1s ease-in-out; */
         color: white;
+        border: 1px solid rgba(255,255,255, 0.2);
       }
       .popup_product_title h4{
         font-size: 18px;
@@ -1078,7 +1084,7 @@ function resource($elem, $type = null)
           border-radius: 20px 0px 0px 20px;
           position: absolute;
           right: 0px;
-          margin-top: 18px;
+          margin-top: 14px;
           transition-duration: .3s;
         }
         .show_cart:hover{
