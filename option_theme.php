@@ -387,6 +387,7 @@ function resource($elem, $type = null)
                 var quantity_product = `
                   <div class="quantity_cart">
                       <span class="quantity_cart_plus" onclick="click_quantity(this.id)" id="quantity_cart_plus_nth">+</span>
+                      <label for="quantity_cart_nth" class="quantity_cart_lbl" id="quantity_cart_lbl_nth"></label>
                       <input class="number_quantity_cart" id="quantity_cart_nth" type="number" name="cart_quantity" min="1" max="10" disabled=""/>
                       <span class="quantity_cart_minus" onclick="click_quantity(this.id)" id="quantity_cart_minus_nth">-</span>
                   </div>
@@ -418,7 +419,6 @@ function resource($elem, $type = null)
       
       
        
-      //<script>
       //filter by category
       //add event click on category
       var len_category = document.getElementsByClassName("product_card").length;
@@ -722,7 +722,7 @@ function resource($elem, $type = null)
           var quantity_product_html = `
             <div class="quantity_cart">
                 <span class="quantity_cart_plus" onclick="click_quantity(this.id)" id="quantity_cart_plus_nth">+</span>
-                <label for="quantity_cart_nth"></label>
+                <label for="quantity_cart_nth" class="quantity_cart_lbl" id="quantity_cart_lbl_nth"></label>
                 <input class="number_quantity_cart" id="quantity_cart_nth" type="number" name="cart_quantity" min="1" max="10" />
                 <span class="quantity_cart_minus" onclick="click_quantity(this.id)" id="quantity_cart_minus_nth">-</span>
             </div>
@@ -745,6 +745,8 @@ function resource($elem, $type = null)
                   console.log(document.getElementsByClassName("quantity_cart")[i].outerHTML);
                   document.getElementsByClassName("quantity_cart")[i].innerHTML = document.getElementsByClassName("quantity_cart")[i].innerHTML + "<span hidden id=\"quantity_cart_add_to_card\">" + true_i + "</span>"
                   document.getElementById("quantity_cart_" + i).value = woo_product_quantity[i].innerHTML.trim();
+                  document.getElementById("quantity_cart_lbl_" + i).value = woo_product_quantity[i].innerHTML.trim();
+
                   true_i++;
               }
               //show recycle bin if cart is one
