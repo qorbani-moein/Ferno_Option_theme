@@ -745,7 +745,7 @@ function resource($elem, $type = null)
                   console.log(document.getElementsByClassName("quantity_cart")[i].outerHTML);
                   document.getElementsByClassName("quantity_cart")[i].innerHTML = document.getElementsByClassName("quantity_cart")[i].innerHTML + "<span hidden id=\"quantity_cart_add_to_card\">" + true_i + "</span>"
                   document.getElementById("quantity_cart_" + i).value = woo_product_quantity[i].innerHTML.trim();
-                  document.getElementById("quantity_cart_lbl_" + i).value = woo_product_quantity[i].innerHTML.trim();
+                  document.getElementById("quantity_cart_lbl_" + i).innerHTML = woo_product_quantity[i].innerHTML.trim();
 
                   true_i++;
               }
