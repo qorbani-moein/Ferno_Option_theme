@@ -832,7 +832,7 @@ function resource($elem, $type = null)
         }
 
         .img-product{
-          height: 500px !important;
+          /* height: 500px !important; */
           object-fit: cover;
         }
         .products-slug{
