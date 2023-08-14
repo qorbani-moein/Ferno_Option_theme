@@ -1148,7 +1148,10 @@ function resource($elem, $type = null)
       .product-price:not(.woocommerce-Price-currencySymbol){
         color: #fff;
       }
-
+      .product-price{
+        position: relative;
+        bottom: 14px;
+      }
       .product-img{
         opacity: 1 !important;
         width: 40%;
