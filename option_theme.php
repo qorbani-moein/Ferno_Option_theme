@@ -149,7 +149,8 @@ function product_archive(){
 
 
   <div id="products-image-category" class="products-image-category">
-    <img class="img-product" src="<?php echo "https://menu.fernofood.com/wp-content/uploads/2023/08/ferno-menu-2-scaled.webp"; ?>">
+    <img class="img-product-desktop" src="<?php echo "https://menu.fernofood.com/wp-content/uploads/2023/08/ferno-menu-2-scaled.webp"; ?>">
+    <img class="img-product-moblie" src="<?php echo "https://menu.fernofood.com/wp-content/uploads/2023/04/ferno-menu1.jpg"; ?>">
     <h1 class="caption-img-product"></h1>
   </div>
 
@@ -415,9 +416,18 @@ function resource($elem, $type = null)
       //back menu in header
       document.getElementsByClassName("elementor-icon")[0].href = "https://menu.fernofood.com";
       
-      //
       
-      
+      //header Image
+      @media (max-width:767px){
+        .img-product-desktop{
+          display:none;
+        }
+      }
+      @media (min-width:767px){
+        .img-product-moblie{
+          display:none;
+        }
+      }
        
       //filter by category
       //add event click on category
