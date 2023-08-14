@@ -416,18 +416,6 @@ function resource($elem, $type = null)
       //back menu in header
       document.getElementsByClassName("elementor-icon")[0].href = "https://menu.fernofood.com";
       
-      
-      //header Image
-      @media (max-width:767px){
-        .img-product-desktop{
-          display:none;
-        }
-      }
-      @media (min-width:767px){
-        .img-product-moblie{
-          display:none;
-        }
-      }
        
       //filter by category
       //add event click on category
@@ -823,6 +811,21 @@ function resource($elem, $type = null)
       break;
     case "style-category":
       $result = '
+
+
+      //header Image
+      @media (max-width:767px){
+        .img-product-desktop{
+          display:none;
+        }
+      }
+      @media (min-width:767px){
+        .img-product-moblie{
+          display:none;
+        }
+      }
+
+      
       .popup_product_data{
         padding-top:32px;
       }
