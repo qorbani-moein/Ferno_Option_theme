@@ -985,7 +985,7 @@ function resource($elem, $type = null)
 
       @media (min-width:767px){
         .popup_product{
-          width: 20% !important;
+          width: 25% !important;
         }
       }
       .popup_product{
