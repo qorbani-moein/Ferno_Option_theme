@@ -88,6 +88,7 @@ function script_page_category(){
 function function_cart(){
   if ($_GET['empty_cart'] == true){
     WC()->cart->empty_cart();
+    header("Refresh:0");
   }
 }
 function style_page_cart(){
