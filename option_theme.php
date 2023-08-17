@@ -66,6 +66,7 @@ function script_query_page()
   if ($current_page == $page_cart) {
     script_page_cart();
     style_page_cart();
+    function_cart();
   } elseif ($current_page == $page_category) {
     script_page_category();
   } elseif ($current_page == $page_home) {
@@ -83,6 +84,11 @@ function script_page_home(){
 
 function script_page_category(){
   echo '<style>' . resource("style-card-product") . resource("style-category") . '</style>' . resource("script-category", "js");
+}
+function function_cart(){
+  if ($_GET['empty_cart'] == true){
+    WC()->cart->empty_cart();
+  }
 }
 function style_page_cart(){
   ?>
