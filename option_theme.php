@@ -345,6 +345,15 @@ function resource($elem, $type = null)
             table.wl_cart_table {
               border:none !important;
             }
+            .elementor-widget-wrap {
+              margin: 32px 128px 32px 128px;
+            }
+            .icon-empty-cart{
+              display:block !important;
+            }
+            .icon-offcanvas{
+              display:none;
+            }
         ';
       break;
     case "script-cart":
