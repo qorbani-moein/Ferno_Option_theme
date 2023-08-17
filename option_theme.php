@@ -345,7 +345,7 @@ function resource($elem, $type = null)
             table.wl_cart_table {
               border:none !important;
             }
-            .elementor-widget-wrap {
+            .page-content .elementor-widget-wrap {
               margin: 32px 128px 32px 128px;
             }
             .icon-empty-cart{
