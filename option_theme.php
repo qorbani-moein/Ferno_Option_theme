@@ -336,7 +336,13 @@ function resource($elem, $type = null)
               border-right: none;
               border-top: none;
             }
-
+            .woolentor-cart-product{
+              border-bottom: 1px solid #484848 !important;
+              border: none;
+            }
+            table.wl_cart_table {
+              border:none !important;
+            }
         ';
       break;
     case "script-cart":
@@ -1200,7 +1206,7 @@ function resource($elem, $type = null)
       .product-des p{
         font-family: "Inter";
         font-style: normal;
-        font-weight: 400;
+        font-weight: 300;
         text-align: right;
       }
       .product-des{
