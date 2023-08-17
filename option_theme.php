@@ -88,7 +88,7 @@ function script_page_category(){
 function function_cart(){
   if ($_GET['empty_cart'] == true){
     WC()->cart->empty_cart();
-    header("Refresh:0");
+    header("Refresh:0 url=https://menu.fernofood.com/cart"); 
   }
 }
 function style_page_cart(){
