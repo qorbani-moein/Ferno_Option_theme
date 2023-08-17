@@ -338,7 +338,9 @@ function resource($elem, $type = null)
             }
             .woolentor-cart-product{
               border-bottom: 1px solid #484848 !important;
-              border: none;
+              border-left: none !important;
+              border-right: none !important;
+              border-top: none !important;
             }
             table.wl_cart_table {
               border:none !important;
