@@ -57,6 +57,11 @@ function script_query_page_head(){
   } 
 }
 
+function function_cart(){
+  if ($_GET['empty_cart'] == true){
+    WC()->cart->empty_cart();
+  }
+}
 add_action('wp_footer', 'script_query_page');
 
 function script_query_page()
@@ -93,12 +98,7 @@ function script_page_home(){
 function script_page_category(){
   echo '<style>' . resource("style-card-product") . resource("style-category") . '</style>' . resource("script-category", "js");
 }
-function function_cart(){
-  if ($_GET['empty_cart'] == true){
-    WC()->cart->empty_cart();
-    header("Refresh:0 url=https://menu.fernofood.com/cart"); 
-  }
-}
+
 function style_page_cart(){
   ?>
     <style>
