@@ -48,7 +48,7 @@ function remove_quantity()
 
 
 add_action( 'wp_head', 'script_query_page_head');
-function script_query_page(){
+function script_query_page_head(){
   $current_page = $_SERVER['SCRIPT_URI'];
   $page_cart = 'https://' . $_SERVER['SERVER_NAME'] . '/cart/';
 
