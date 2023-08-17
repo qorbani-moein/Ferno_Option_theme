@@ -47,6 +47,15 @@ function remove_quantity()
 }
 
 
+add_action( 'wp_head', 'script_query_page_head');
+fucntion script_query_page(){
+  $current_page = $_SERVER['SCRIPT_URI'];
+  $page_cart = 'https://' . $_SERVER['SERVER_NAME'] . '/cart/';
+
+  if ($current_page == $page_cart) {
+    function_cart();
+  } 
+}
 
 add_action('wp_footer', 'script_query_page');
 
@@ -66,7 +75,6 @@ function script_query_page()
   if ($current_page == $page_cart) {
     script_page_cart();
     style_page_cart();
-    function_cart();
   } elseif ($current_page == $page_category) {
     script_page_category();
   } elseif ($current_page == $page_home) {
