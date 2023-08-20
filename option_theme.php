@@ -460,6 +460,7 @@ function resource($elem, $type = null)
         }
       }
       
+      console.log("sticky menu");
       //sticky menu in top page
       window.onscroll = function() {myFunction()};
 
