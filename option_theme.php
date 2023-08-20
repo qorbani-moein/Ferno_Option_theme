@@ -470,8 +470,8 @@ function resource($elem, $type = null)
       var sticky = 50 + menubar.offsetTop + imagebar.offsetTop;
 
       function myFunction() {
-        // console.log("window.pageYOffset: " + window.pageYOffset);
-        // console.log("sticky: " + sticky);
+        console.log("window.pageYOffset: " + window.pageYOffset);
+        console.log("sticky: " + sticky);
         if (window.pageYOffset >= 250) {
           menubar.classList.add("sticky");
           products_archive.classList.add("products-archive-top");
