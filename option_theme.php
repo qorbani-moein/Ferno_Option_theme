@@ -845,7 +845,7 @@ function resource($elem, $type = null)
       $result = '
 
 
-      //header Image
+      /* header Image */
       @media (max-width:767px){
         .img-product-desktop{
           display:none;
