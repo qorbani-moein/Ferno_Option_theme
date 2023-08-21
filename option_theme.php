@@ -461,7 +461,8 @@ function resource($elem, $type = null)
       }
       
       //sticky menu in top page
-      window.onscroll = function() {sticky_menu()};
+      
+      window.onscroll = sticky_menu();
       
       console.log("sticky menu");
       var menubar = document.getElementById("products-slug");
