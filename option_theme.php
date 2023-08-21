@@ -421,7 +421,7 @@ function resource($elem, $type = null)
                   <div class="quantity_cart">
                       <span class="quantity_cart_plus" onclick="click_quantity(this.id)" id="quantity_cart_plus_nth">+</span>
                       <label for="quantity_cart_nth" class="quantity_cart_lbl" id="quantity_cart_lbl_nth"></label>
-                      <input class="number_quantity_cart" id="quantity_cart_nth" type="number" name="cart_quantity" min="1" max="10" disabled="" hidden/>
+                      <input class="number_quantity_cart" id="quantity_cart_nth" type="number" name="cart_quantity" min="1" max="10" disabled=""/>
                       <span class="quantity_cart_minus" onclick="click_quantity(this.id)" id="quantity_cart_minus_nth">-</span>
                   </div>
                 `;
@@ -460,17 +460,18 @@ function resource($elem, $type = null)
         }
       }
       
-      console.log("sticky menu");
       //sticky menu in top page
-      window.onscroll = function() {myFunction()};
-
+      window.onscroll = function() {sticky_menu()};
+      
+      console.log("sticky menu");
       var menubar = document.getElementById("products-slug");
       var products_archive = document.getElementById("products_archive");
 
       var imagebar = document.getElementById("products-image-category");
       var sticky = 50 + menubar.offsetTop + imagebar.offsetTop;
 
-      function myFunction() {
+      console.log("menubar: " + menubar + " - products_archive: " + products_archive + " - imagebar: " + imagebar + " - sticky: " + sticky);
+      function sticky_menu() {
         console.log("window.pageYOffset: " + window.pageYOffset);
         console.log("sticky: " + sticky);
         if (window.pageYOffset >= 250) {
@@ -844,8 +845,11 @@ function resource($elem, $type = null)
       break;
     case "style-category":
       $result = '
+      /* cart - 1  + (number change color) */
 
-
+      .quantity_cart_lbl{
+        color:white;
+      }
       /* header Image */
       @media (max-width:767px){
         .img-product-desktop{
@@ -976,11 +980,11 @@ function resource($elem, $type = null)
         position: relative;
         background: #2c2c2c;
         left: 0px;
-        top: -33px;
+        top: -50px;
         display: flex;
         flex-wrap: nowrap;
         align-content: stretch;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center;
         border: 1px solid #FFD15E;
         border-radius: 50px;
