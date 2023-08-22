@@ -714,6 +714,10 @@ function resource($elem, $type = null)
           console.log(document.getElementsByClassName("button")[0].outerHTML);
 
           document.getElementsByClassName("button")[0].removeAttribute("disabled");
+          console.log("sleep Start");
+          setTimeout(1000);
+          console.log("sleep end");
+          
           // document.getElementsByClassName("button")[0].click();
       
         }
