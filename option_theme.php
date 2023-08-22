@@ -502,10 +502,10 @@ function resource($elem, $type = null)
         if(sticky > 0){
           if (window.pageYOffset >= 260) {
             menubar.classList.add("sticky_menu");
-            products_archive.classList.add("products-archive-top");
+            // products_archive.classList.add("products-archive-top");
           } else {
             menubar.classList.remove("sticky_menu");
-            products_archive.classList.remove("products-archive-top");
+            // products_archive.classList.remove("products-archive-top");
           }
         }
       }
