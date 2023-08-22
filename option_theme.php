@@ -480,7 +480,7 @@ function resource($elem, $type = null)
         console.log("window.pageYOffset: " + window.pageYOffset);
         console.log("sticky: " + sticky);
         if(sticky > 0){
-          if (window.pageYOffset >= 450) {
+          if (window.pageYOffset >= 560) {
             menubar.classList.add("sticky");
             products_archive.classList.add("products-archive-top");
           } else {
@@ -1123,11 +1123,15 @@ function resource($elem, $type = null)
       .woocommerce-notices-wrapper{
         display:none
       }
-      .sticky {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index:5;
+      
+      /* Sticky menu */
+      @media (max-width:767px){
+        .sticky {
+          position: fixed;
+          top: 0;
+          width: 100%;
+          z-index:5;
+        }
       }
       ';
       break;
