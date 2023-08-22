@@ -730,6 +730,7 @@ function resource($elem, $type = null)
           // }
 
           //add or minus with click on + - and change input box
+          console.log("id.search: "id.search("plus"));
           if (id.search("plus")>0){
             console.log("id_target.value:(" + document.getElementById("quantity_cart_" + id_target).value + ")");
             // if(document.getElementById("quantity_cart_" + id_target).value == ""){document.getElementById("quantity_cart_" + id_target).value = count_product}
