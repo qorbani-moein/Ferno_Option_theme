@@ -711,14 +711,13 @@ function resource($elem, $type = null)
 
           //add or minus with click on + - and change input box
           if (id.search("plus")>0){
-            console.log("id_target.value:(" + document.getElementById("quantity_cart_" + id_target).value + ")");
-            // if(document.getElementById("quantity_cart_" + id_target).value == ""){document.getElementById("quantity_cart_" + id_target).value = count_product}
-            // document.getElementById("quantity_cart_" + id_target).value =
-            document.getElementById("quantity_cart_" + id_target).value ++;
+            console.log("id_target.value:(" + document.getElementById("quantity_cart_lbl_" + id_target).value + ")");
+            // if(document.getElementById("quantity_cart_lbl_" + id_target).value == ""){document.getElementById("quantity_cart_lbl_" + id_target).value = count_product}
+            document.getElementById("quantity_cart_lbl_" + id_target).value ++;
           }
           else{
-            if(document.getElementById("quantity_cart_" + id_target).value > 0) {
-              document.getElementById("quantity_cart_" + id_target).value --;
+            if(document.getElementById("quantity_cart_lbl_" + id_target).value > 0) {
+              document.getElementById("quantity_cart_lbl_" + id_target).value --;
             }
           }
           
@@ -736,9 +735,9 @@ function resource($elem, $type = null)
                 var cart_sku = document.querySelectorAll("dd.variation-SKU p")[m].innerHTML;
               if(my_sku == cart_sku){
                 console.log("ok");
-                if(document.getElementById("quantity_cart_" + j).value != ""){
-                  document.getElementsByClassName("input-text")[m].value = document.getElementById("quantity_cart_" + j).value;
-                  console.log("ok -" + document.getElementsByClassName("input-text")[m].value + " - " + document.getElementById("quantity_cart_" + j).value);
+                if(document.getElementById("quantity_cart_lbl_" + j).value != ""){
+                  document.getElementsByClassName("input-text")[m].value = document.getElementById("quantity_cart_lbl_" + j).value;
+                  console.log("ok -" + document.getElementsByClassName("input-text")[m].value + " - " + document.getElementById("quantity_cart_lbl_" + j).value);
                 }
               }
             }
