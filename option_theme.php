@@ -715,7 +715,7 @@ function resource($elem, $type = null)
 
           document.getElementsByClassName("button")[0].removeAttribute("disabled");
           console.log("sleep Start");
-          setTimeout(10000);
+          setTimeout(() => console.log("Howdy!"), 1000)
           console.log("sleep end");
           
           // document.getElementsByClassName("button")[0].click();
