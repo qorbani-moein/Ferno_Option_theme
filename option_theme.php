@@ -717,6 +717,7 @@ function resource($elem, $type = null)
             // document.getElementById("quantity_cart_lbl_" + id_target).innerHTML++;
             // document.getElementById("quantity_cart_lbl_39").innerText++;
             gg = document.getElementById("quantity_cart_lbl_39");
+            gg2 = document.getElementById("quantity_cart_lbl_39").innerText;
 
           }
           else{
