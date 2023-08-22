@@ -617,7 +617,7 @@ function resource($elem, $type = null)
 
 
 
-        console.log(sessionStorage.getItem("window-scroll"));
+        //console.log(sessionStorage.getItem("window-scroll"));
 
         if(sessionStorage.getItem("window-scroll") != null){
           var window_scroll = sessionStorage.getItem("window-scroll");
