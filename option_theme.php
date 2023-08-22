@@ -706,7 +706,7 @@ function resource($elem, $type = null)
 
 
           for(let i=0 ; i < 100 ; i++ ){
-            console.log("id_target.value:(" + document.getElementById("quantity_cart_" + i).value + ")");
+            console.log("id_target.value:(" + document.getElementById("quantity_cart_lbl_" + i).innerHTML + ")");
           }
 
           //add or minus with click on + - and change input box
