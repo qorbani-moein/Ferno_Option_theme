@@ -481,10 +481,10 @@ function resource($elem, $type = null)
         console.log("sticky: " + sticky);
         if(sticky > 0){
           if (window.pageYOffset >= 260) {
-            menubar.classList.add("sticky");
+            menubar.classList.add("sticky_menu");
             products_archive.classList.add("products-archive-top");
           } else {
-            menubar.classList.remove("sticky");
+            menubar.classList.remove("sticky_menu");
             products_archive.classList.remove("products-archive-top");
           }
         }
@@ -1132,7 +1132,7 @@ function resource($elem, $type = null)
       
       /* Sticky menu */
       @media (max-width:767px){
-        .sticky {
+        .sticky_menu {
           position: fixed;
           top: 0;
           width: 100%;
