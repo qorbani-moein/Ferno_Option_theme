@@ -783,13 +783,13 @@ function resource($elem, $type = null)
           console.log(document.getElementsByClassName("button")[0].outerHTML);
 
           document.getElementsByClassName("button")[0].removeAttribute("disabled");
-          console.log("sleep Start");
+          // console.log("sleep Start");
+          document.getElementsByClassName("button")[0].click();
           
 
-          setTimeout(function () {
-            document.getElementsByClassName("button")[0].click();
-            console.log("sleep end"); 
-          }, 1000)
+          // setTimeout(function () {
+          //   console.log("sleep end"); 
+          // }, 1000)
 
           // console.log("sleep end");
           
