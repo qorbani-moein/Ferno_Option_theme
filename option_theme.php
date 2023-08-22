@@ -686,7 +686,8 @@ function resource($elem, $type = null)
             }
           }
           
-          console.log(document.getElementById("quantity_cart_" + id_target).value);
+          console.log("id_target.value" + document.getElementById("quantity_cart_" + id_target).value);
+          console.log("id.search: " + id.search);
 
           var all_quantity_cart = document.getElementsByClassName("quantity_cart");
           for(var j=0; j <= all_quantity_cart.length - 1 ; j++){
