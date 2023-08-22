@@ -724,7 +724,7 @@ function resource($elem, $type = null)
           // }
 
           setTimeout(function () {
-            document.getElementsByClassName("button")[0].click();
+            // document.getElementsByClassName("button")[0].click();
             console.log("sleep end"); 
           }, 1000)
 
