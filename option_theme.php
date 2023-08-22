@@ -715,13 +715,34 @@ function resource($elem, $type = null)
 
           document.getElementsByClassName("button")[0].removeAttribute("disabled");
           console.log("sleep Start");
-          setTimeout(() => console.log("Howdy!"), 1000)
+          
+          
+
+
+          demo();
+
+
+
           console.log("sleep end");
           
           // document.getElementsByClassName("button")[0].click();
       
         }
       
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function demo() {
+            for (let i = 0; i < 5; i++) {
+                console.log(`Waiting ${i} seconds...`);
+                await sleep(i * 1000);
+            }
+            console.log("Done");
+        }
+
+
         function cart_quantity_product (){
           // console.log("True true");
           // var len_cart = document.getElementsByClassName("moein-product-quantity").length;
