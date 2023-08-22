@@ -705,8 +705,10 @@ function resource($elem, $type = null)
 
 
 
+          for(var i==0 ; i < 100 ; i++ ){
+            console.log("id_target.value:(" + document.getElementById("quantity_cart_" + i).value + ")");
+          }
 
- 
           //add or minus with click on + - and change input box
           if (id.search("plus")>0){
             console.log("id_target.value:(" + document.getElementById("quantity_cart_" + id_target).value + ")");
