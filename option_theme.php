@@ -718,14 +718,14 @@ function resource($elem, $type = null)
           
           
 
-          for (let i = 0; i < 5; i++) {
-              console.log(`Waiting ${i} seconds...`);
-              await sleep(i * 1000);
-          }
+          // for (let i = 0; i < 5; i++) {
+          //     console.log(`Waiting ${i} seconds...`);
+          //     await sleep(i * 1000);
+          // }
 
+          setTimeout(function () { console.log("sleep end") }, 1000)
 
-
-          console.log("sleep end");
+          // console.log("sleep end");
           
           // document.getElementsByClassName("button")[0].click();
       
