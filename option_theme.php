@@ -718,6 +718,8 @@ function resource($elem, $type = null)
             // document.getElementById("quantity_cart_lbl_39").innerText++;
             gg = document.getElementById("quantity_cart_lbl_39");
             gg2 = document.getElementById("quantity_cart_lbl_39").innerText;
+            gg3 = gg2++;
+            gg4 = parseInt(document.getElementById("quantity_cart_lbl_39").innerText);
 
           }
           else{
