@@ -218,8 +218,8 @@ function product_archive(){
       $categories_product = $product->get_category_ids();
       ?>
       <!-- card of product -->
-      <a href="javascript:popup('<?php echo $j - 1 ?>');">
-        <div id="cart_product" class="product_card" data-id="<?php echo $product->get_id(); ?>" data-category="<?php echo urldecode($categories_product[0]); ?>">
+      <div id="cart_product" class="product_card" data-id="<?php echo $product->get_id(); ?>" data-category="<?php echo urldecode($categories_product[0]); ?>">
+        <a href="javascript:popup('<?php echo $j - 1 ?>');">
           <div style="opacity: 0;" class="product-img">
             <?php echo $product->get_image(array(1024, 1024)); ?>
           </div>
@@ -261,8 +261,8 @@ function product_archive(){
               ?>
             </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
 
 
     <?php
@@ -1279,7 +1279,7 @@ function resource($elem, $type = null)
       }
       .product-img{
         opacity: 1 !important;
-        width: 40%;
+        width: 560px;
         padding-top: 15px;
         padding-right: 0px;
         position: absolute;
