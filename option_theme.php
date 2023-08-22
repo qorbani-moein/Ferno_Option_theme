@@ -679,27 +679,27 @@ function resource($elem, $type = null)
 
 
           //get count value from cart products
-          var count_product;
-          var all_quantity_cart = document.getElementsByClassName("quantity_cart");
-          for(var j=0; j <= all_quantity_cart.length - 1 ; j++){
+          // var count_product;
+          // var all_quantity_cart = document.getElementsByClassName("quantity_cart");
+          // for(var j=0; j <= all_quantity_cart.length - 1 ; j++){
 
 
-            var all_item_cart = document.querySelectorAll("dd.variation-SKU p");
-            for(var m=0 ; m <= all_item_cart.length -1; m++){
-              //get sku my code
-                var my_sku = document.getElementById("product-sku_" + j).innerHTML;
-              //get sku plugin
-                var cart_sku = document.querySelectorAll("dd.variation-SKU p")[m].innerHTML;
-              if(my_sku == cart_sku){
-                // console.log("ok");
-                // document.getElementsByClassName("input-text")[m].value = document.getElementById("quantity_cart_" + j).value;
-                // console.log("ok -" + document.getElementsByClassName("input-text")[m].value + " - " + document.getElementById("quantity_cart_" + j).value);
-                count_product = document.getElementsByClassName("input-text")[m].value;
-              }
-            }
-          }
+          //   var all_item_cart = document.querySelectorAll("dd.variation-SKU p");
+          //   for(var m=0 ; m <= all_item_cart.length -1; m++){
+          //     //get sku my code
+          //       var my_sku = document.getElementById("product-sku_" + j).innerHTML;
+          //     //get sku plugin
+          //       var cart_sku = document.querySelectorAll("dd.variation-SKU p")[m].innerHTML;
+          //     if(my_sku == cart_sku){
+          //       // console.log("ok");
+          //       // document.getElementsByClassName("input-text")[m].value = document.getElementById("quantity_cart_" + j).value;
+          //       // console.log("ok -" + document.getElementsByClassName("input-text")[m].value + " - " + document.getElementById("quantity_cart_" + j).value);
+          //       count_product = document.getElementsByClassName("input-text")[m].value;
+          //     }
+          //   }
+          // }
 
-          console.log("count value product selected: " + count_product);
+          // console.log("count value product selected: " + count_product);
 
 
 
@@ -711,13 +711,15 @@ function resource($elem, $type = null)
 
           //add or minus with click on + - and change input box
           if (id.search("plus")>0){
-            console.log("id_target.value:(" + document.getElementById("quantity_cart_lbl_" + id_target).value + ")");
-            // if(document.getElementById("quantity_cart_lbl_" + id_target).value == ""){document.getElementById("quantity_cart_lbl_" + id_target).value = count_product}
+            console.log("id_target.value:(" + document.getElementById("quantity_cart_" + id_target).value + ")");
+            // if(document.getElementById("quantity_cart_" + id_target).value == ""){document.getElementById("quantity_cart_" + id_target).value = count_product}
+            document.getElementById("quantity_cart_" + id_target).value ++;
             document.getElementById("quantity_cart_lbl_" + id_target).value ++;
+
           }
           else{
-            if(document.getElementById("quantity_cart_lbl_" + id_target).value > 0) {
-              document.getElementById("quantity_cart_lbl_" + id_target).value --;
+            if(document.getElementById("quantity_cart_" + id_target).value > 0) {
+              document.getElementById("quantity_cart_" + id_target).value --;
             }
           }
           
@@ -735,9 +737,9 @@ function resource($elem, $type = null)
                 var cart_sku = document.querySelectorAll("dd.variation-SKU p")[m].innerHTML;
               if(my_sku == cart_sku){
                 console.log("ok");
-                if(document.getElementById("quantity_cart_lbl_" + j).value != ""){
-                  document.getElementsByClassName("input-text")[m].value = document.getElementById("quantity_cart_lbl_" + j).value;
-                  console.log("ok -" + document.getElementsByClassName("input-text")[m].value + " - " + document.getElementById("quantity_cart_lbl_" + j).value);
+                if(document.getElementById("quantity_cart_" + j).value != ""){
+                  document.getElementsByClassName("input-text")[m].value = document.getElementById("quantity_cart_" + j).value;
+                  console.log("ok -" + document.getElementsByClassName("input-text")[m].value + " - " + document.getElementById("quantity_cart_" + j).value);
                 }
               }
             }
