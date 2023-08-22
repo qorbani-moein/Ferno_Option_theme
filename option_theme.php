@@ -705,7 +705,7 @@ function resource($elem, $type = null)
 
 
 
-          for(var i==0 ; i < 100 ; i++ ){
+          for(let i=0 ; i < 100 ; i++ ){
             console.log("id_target.value:(" + document.getElementById("quantity_cart_" + i).value + ")");
           }
 
