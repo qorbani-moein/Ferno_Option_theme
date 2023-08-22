@@ -238,7 +238,7 @@ function product_archive(){
             <div class="product-price">
               <?php echo $product->get_price_html(); ?>
             </div>
-            <div class="moein-product-quantity" hidden="">
+            <div class="moein-product-quantity" data-sku="<?php echo $product->get_sku(); ?>" hidden="">
 
               <?php
               global $woocommerce;
@@ -475,10 +475,10 @@ function resource($elem, $type = null)
       var imagebar = document.getElementById("products-image-category");
       var sticky = 50 + menubar.offsetTop + imagebar.offsetTop;
 
-      console.log("menubar: " + menubar + " - products_archive: " + products_archive + " - imagebar: " + imagebar + " - sticky: " + sticky);
+      // console.log("menubar: " + menubar + " - products_archive: " + products_archive + " - imagebar: " + imagebar + " - sticky: " + sticky);
       function sticky_menu() {
-        console.log("window.pageYOffset: " + window.pageYOffset);
-        console.log("sticky: " + sticky);
+        // console.log("window.pageYOffset: " + window.pageYOffset);
+        // console.log("sticky: " + sticky);
         if(sticky > 0){
           if (window.pageYOffset >= 260) {
             menubar.classList.add("sticky_menu");
@@ -677,6 +677,8 @@ function resource($elem, $type = null)
           id_target = id_target[id_target.length-1];
           
 
+
+          //get count value frome cart products
           var count_product;
           var all_quantity_cart = document.getElementsByClassName("quantity_cart");
           for(var j=0; j <= all_quantity_cart.length - 1 ; j++){
@@ -698,6 +700,12 @@ function resource($elem, $type = null)
           }
 
           console.log("count value product selected: " + count_product);
+
+
+
+
+
+
 
           //add or minus with click on + - and change input box
           if (id.search("plus")>0){
