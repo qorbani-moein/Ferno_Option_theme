@@ -747,9 +747,7 @@ function resource($elem, $type = null)
           }
           else{
 
-            console.log(fixNumbers(document.getElementById("quantity_cart_lbl_" + id_target).innerHTML));
-
-            document.getElementById("quantity_cart_lbl_" + id_target).innerHTML == parseInt(fixNumbers(document.getElementById("quantity_cart_lbl_" + id_target).innerHTML)) - 1 ;
+            document.getElementById("quantity_cart_lbl_" + id_target).innerHTML = parseInt(fixNumbers(document.getElementById("quantity_cart_lbl_" + id_target).innerHTML)) - 1 ;
             document.getElementById("quantity_cart_" + id_target).value = parseInt(fixNumbers(document.getElementById("quantity_cart_lbl_" + id_target).innerHTML));
             
             
