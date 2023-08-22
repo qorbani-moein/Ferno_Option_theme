@@ -462,7 +462,7 @@ function resource($elem, $type = null)
       
       //sticky menu in top page
       
-      window.onscroll = sticky_menu();
+      // window.onscroll = sticky_menu();
       
       console.log("sticky menu");
       var menubar = document.getElementById("products-slug");
@@ -866,7 +866,7 @@ function resource($elem, $type = null)
       }
 
       /* hidden empty cart */
-      .category{
+      .woocommerce-info{
         display:none !important;
       }
       
