@@ -715,8 +715,8 @@ function resource($elem, $type = null)
             // if(document.getElementById("quantity_cart_" + id_target).value == ""){document.getElementById("quantity_cart_" + id_target).value = count_product}
             document.getElementById("quantity_cart_" + id_target).value++;
             document.getElementById("quantity_cart_lbl_" + id_target).innerHTML++;
-            document.getElementById("quantity_cart_lbl_39").innerText++;
-            gg = document.getElementById("quantity_cart_lbl_39").innerText;
+            // document.getElementById("quantity_cart_lbl_39").innerText++;
+            gg = document.getElementById("quantity_cart_lbl_39");
 
           }
           else{
