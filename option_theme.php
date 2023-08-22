@@ -770,12 +770,12 @@ function resource($elem, $type = null)
               document.getElementsByClassName("moein-product-quantity")[i].outerHTML += quantity_product_html.split("nth").join(i);
               //put value of [input] number cart woocommerce to my [input] quantity box
               
-              console.log(woo_product_quantity[i].innerHTML);
+              //console.log(woo_product_quantity[i].innerHTML);
               if(woo_product_quantity[i].innerHTML == 0){
                 document.getElementsByClassName("quantity_cart")[i].style.display = "none";}
                 else{
                   document.getElementsByClassName("quantity_cart")[i].style.display = "flex";
-                  console.log(document.getElementsByClassName("quantity_cart")[i].outerHTML);
+                  //console.log(document.getElementsByClassName("quantity_cart")[i].outerHTML);
                   document.getElementsByClassName("quantity_cart")[i].innerHTML = document.getElementsByClassName("quantity_cart")[i].innerHTML + "<span hidden id=\"quantity_cart_add_to_card\">" + true_i + "</span>"
                   document.getElementById("quantity_cart_" + i).value = woo_product_quantity[i].innerHTML.trim();
                   document.getElementById("quantity_cart_lbl_" + i).innerHTML = woo_product_quantity[i].innerHTML.trim();
