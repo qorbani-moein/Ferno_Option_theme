@@ -784,6 +784,8 @@ function resource($elem, $type = null)
 
           document.getElementsByClassName("button")[0].removeAttribute("disabled");
           // console.log("sleep Start");
+          
+          document.getElementsByClassName("e-page-transition--entered")[0].style.display = "block";
           document.getElementsByClassName("button")[0].click();
           
 
