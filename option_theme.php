@@ -445,6 +445,26 @@ function resource($elem, $type = null)
       break;
     case "script-category":
       $result = '
+
+
+      //Convert Number Perian to English
+      var
+      persianNumbers = [/۰/g, /۱/g, /۲/g, /۳/g, /۴/g, /۵/g, /۶/g, /۷/g, /۸/g, /۹/g],
+      arabicNumbers  = [/٠/g, /١/g, /٢/g, /٣/g, /٤/g, /٥/g, /٦/g, /٧/g, /٨/g, /٩/g],
+      fixNumbers = function (str)
+      {
+        if(typeof str === "string")
+        {
+          for(var i=0; i<10; i++)
+          {
+            str = str.replace(persianNumbers[i], i).replace(arabicNumbers[i], i);
+          }
+        }
+        return str;
+      };
+
+
+
       //back menu in header
       document.getElementsByClassName("elementor-icon")[0].href = "https://menu.fernofood.com";
       
@@ -721,6 +741,9 @@ function resource($elem, $type = null)
             gg3 = gg2++;
             gg4 = parseInt(document.getElementById("quantity_cart_lbl_39").innerText);
 
+            var mystr = "Sample text ۱۱۱۵۱ and ٢٨٢٢";
+            mystr = fixNumbers(mystr);
+            console.log("mystr: " + mystr);
           }
           else{
             if(document.getElementById("quantity_cart_" + id_target).value > 0) {
