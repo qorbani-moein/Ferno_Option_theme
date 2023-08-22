@@ -464,6 +464,10 @@ function resource($elem, $type = null)
       
       // window.onscroll = sticky_menu();
       
+      document.addEventListener("scroll", (event) => {
+        sticky_menu();
+      });
+      
       console.log("sticky menu");
       var menubar = document.getElementById("products-slug");
       var products_archive = document.getElementById("products_archive");
