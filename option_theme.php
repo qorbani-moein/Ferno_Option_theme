@@ -238,7 +238,7 @@ function product_archive(){
             <div class="product-price">
               <?php echo $product->get_price_html(); ?>
             </div>
-            <div class="moein-product-quantity" data-sku="<?php echo $product->get_sku(); ?>" hidden="">
+            <div class="moein-product-quantity" hidden="">
 
               <?php
               global $woocommerce;
@@ -678,7 +678,7 @@ function resource($elem, $type = null)
           
 
 
-          //get count value frome cart products
+          //get count value from cart products
           var count_product;
           var all_quantity_cart = document.getElementsByClassName("quantity_cart");
           for(var j=0; j <= all_quantity_cart.length - 1 ; j++){
@@ -734,8 +734,10 @@ function resource($elem, $type = null)
                 var cart_sku = document.querySelectorAll("dd.variation-SKU p")[m].innerHTML;
               if(my_sku == cart_sku){
                 console.log("ok");
-                document.getElementsByClassName("input-text")[m].value = document.getElementById("quantity_cart_" + j).value;
-                console.log("ok -" + document.getElementsByClassName("input-text")[m].value + " - " + document.getElementById("quantity_cart_" + j).value);
+                if(document.getElementById("quantity_cart_" + j).value != ""){
+                  document.getElementsByClassName("input-text")[m].value = document.getElementById("quantity_cart_" + j).value;
+                  console.log("ok -" + document.getElementsByClassName("input-text")[m].value + " - " + document.getElementById("quantity_cart_" + j).value);
+                }
               }
             }
           }
