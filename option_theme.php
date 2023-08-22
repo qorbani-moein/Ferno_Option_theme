@@ -478,6 +478,7 @@ function resource($elem, $type = null)
       console.log("menubar: " + menubar + " - products_archive: " + products_archive + " - imagebar: " + imagebar + " - sticky: " + sticky);
       function sticky_menu() {
         console.log("window.pageYOffset: " + window.pageYOffset);
+        console.log("window.pageXOffset: " + window.pageXOffset);
         console.log("sticky: " + sticky);
         if(sticky > 0){
           if (window.pageYOffset >= 560) {
