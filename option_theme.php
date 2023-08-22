@@ -718,8 +718,10 @@ function resource($elem, $type = null)
           
           
 
-
-          demo();
+          for (let i = 0; i < 5; i++) {
+              console.log(`Waiting ${i} seconds...`);
+              await sleep(i * 1000);
+          }
 
 
 
