@@ -733,13 +733,14 @@ function resource($elem, $type = null)
           if (id.search("plus")>0){
             console.log("id_target.value:(" + document.getElementById("quantity_cart_" + id_target).value + ")");
             // if(document.getElementById("quantity_cart_" + id_target).value == ""){document.getElementById("quantity_cart_" + id_target).value = count_product}
-            // document.getElementById("quantity_cart_" + id_target).value++;
+            document.getElementById("quantity_cart_" + id_target).value = parseInt(fixNumbers(document.getElementById("quantity_cart_lbl_" + id_target).innerHTML)) + 1;
+            gg = parseInt(fixNumbers(document.getElementById("quantity_cart_lbl_" + id_target).innerHTML)) + 1;
             // document.getElementById("quantity_cart_lbl_" + id_target).innerHTML++;
             // document.getElementById("quantity_cart_lbl_39").innerText++;
-            gg = document.getElementById("quantity_cart_lbl_39");
-            gg2 = document.getElementById("quantity_cart_lbl_39").innerText;
-            gg3 = gg2++;
-            gg4 = parseInt(fixNumbers(document.getElementById("quantity_cart_lbl_39").innerText));
+            // gg = document.getElementById("quantity_cart_lbl_39");
+            // gg2 = document.getElementById("quantity_cart_lbl_39").innerText;
+            // gg3 = gg2++;
+            // gg4 = parseInt(fixNumbers(document.getElementById("quantity_cart_lbl_39").innerText));
           }
           else{
             if(document.getElementById("quantity_cart_" + id_target).value > 0) {
