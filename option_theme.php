@@ -475,12 +475,14 @@ function resource($elem, $type = null)
       function sticky_menu() {
         console.log("window.pageYOffset: " + window.pageYOffset);
         console.log("sticky: " + sticky);
-        if (window.pageYOffset >= 250) {
-          menubar.classList.add("sticky");
-          products_archive.classList.add("products-archive-top");
-        } else {
-          menubar.classList.remove("sticky");
-          products_archive.classList.remove("products-archive-top");
+        if(sticky > 0){
+          if (window.pageYOffset >= 250) {
+            menubar.classList.add("sticky");
+            products_archive.classList.add("products-archive-top");
+          } else {
+            menubar.classList.remove("sticky");
+            products_archive.classList.remove("products-archive-top");
+          }
         }
       }
 
