@@ -713,13 +713,13 @@ function resource($elem, $type = null)
           if (id.search("plus")>0){
             console.log("id_target.value:(" + document.getElementById("quantity_cart_" + id_target).value + ")");
             // if(document.getElementById("quantity_cart_" + id_target).value == ""){document.getElementById("quantity_cart_" + id_target).value = count_product}
-            document.getElementById("quantity_cart_" + id_target).value ++;
-            document.getElementById("quantity_cart_lbl_" + id_target).value ++;
+            document.getElementById("quantity_cart_" + id_target).value++;
+            document.getElementById("quantity_cart_lbl_" + id_target).value++;
 
           }
           else{
             if(document.getElementById("quantity_cart_" + id_target).value > 0) {
-              document.getElementById("quantity_cart_" + id_target).value --;
+              document.getElementById("quantity_cart_" + id_target).value--;
             }
           }
           
