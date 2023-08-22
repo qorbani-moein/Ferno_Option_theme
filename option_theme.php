@@ -781,7 +781,7 @@ function resource($elem, $type = null)
           var quantity_product_html = `
             <div class="quantity_cart">
                 <span class="quantity_cart_plus" onclick="click_quantity(this.id)" id="quantity_cart_plus_nth">+</span>
-                <label for="quantity_cart_nth" class="quantity_cart_lbl" id="quantity_cart_lbl_nth">123</label>
+                <label for="quantity_cart_nth" class="quantity_cart_lbl" id="quantity_cart_lbl_nth"></label>
                 <input class="number_quantity_cart" id="quantity_cart_nth" type="number" name="cart_quantity" min="1" max="10" hidden/>
                 <span class="quantity_cart_minus" onclick="click_quantity(this.id)" id="quantity_cart_minus_nth">-</span>
             </div>
