@@ -1279,7 +1279,7 @@ function resource($elem, $type = null)
       }
       .product-img{
         opacity: 1 !important;
-        width: 560px;
+        width: 37%;
         padding-top: 15px;
         padding-right: 0px;
         position: absolute;
