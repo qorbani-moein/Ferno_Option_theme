@@ -694,7 +694,7 @@ function resource($elem, $type = null)
                 // console.log("ok");
                 // document.getElementsByClassName("input-text")[m].value = document.getElementById("quantity_cart_" + j).value;
                 // console.log("ok -" + document.getElementsByClassName("input-text")[m].value + " - " + document.getElementById("quantity_cart_" + j).value);
-                count_product = document.getElementsByClassName("input-text")[m].value
+                count_product = document.getElementsByClassName("input-text")[m].value;
               }
             }
           }
