@@ -870,7 +870,7 @@ function resource($elem, $type = null)
       }
 
       /* cart - 1  + (plus/minus change color) */
-      .quantity_cart_plus , quantity_cart_minus{
+      .quantity_cart_plus , .quantity_cart_minus{
         cursor: pointer;
       }
 
