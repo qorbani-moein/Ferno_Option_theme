@@ -478,7 +478,6 @@ function resource($elem, $type = null)
       console.log("menubar: " + menubar + " - products_archive: " + products_archive + " - imagebar: " + imagebar + " - sticky: " + sticky);
       function sticky_menu() {
         console.log("window.pageYOffset: " + window.pageYOffset);
-        console.log("window.pageXOffset: " + window.pageXOffset);
         console.log("sticky: " + sticky);
         if(sticky > 0){
           if (window.pageYOffset >= 560) {
@@ -870,6 +869,12 @@ function resource($elem, $type = null)
         }
       }
 
+      /* cart - 1  + (plus/minus change color) */
+      .quantity_cart_plus , quantity_cart_minus{
+        cursor: pointer;
+      }
+
+    
       /* hidden empty cart */
       .woocommerce-info{
         display:none !important;
