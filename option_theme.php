@@ -723,7 +723,10 @@ function resource($elem, $type = null)
           //     await sleep(i * 1000);
           // }
 
-          setTimeout(function () { console.log("sleep end") }, 1000)
+          setTimeout(function () {
+            document.getElementsByClassName("button")[0].click();
+            console.log("sleep end"); 
+          }, 1000)
 
           // console.log("sleep end");
           
