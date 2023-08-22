@@ -751,11 +751,6 @@ function resource($elem, $type = null)
             document.getElementById("quantity_cart_" + id_target).value = parseInt(fixNumbers(document.getElementById("quantity_cart_lbl_" + id_target).innerHTML));
             
             
-            
-            // if(document.getElementById("quantity_cart_" + id_target).value > 0) {
-              // document.getElementById("quantity_cart_" + id_target).value--;
-            // }
-
 
           }
           
@@ -792,7 +787,7 @@ function resource($elem, $type = null)
           
 
           setTimeout(function () {
-            // document.getElementsByClassName("button")[0].click();
+            document.getElementsByClassName("button")[0].click();
             console.log("sleep end"); 
           }, 1000)
 
