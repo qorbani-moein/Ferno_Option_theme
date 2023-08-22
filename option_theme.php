@@ -676,10 +676,33 @@ function resource($elem, $type = null)
           var id_target = id.split("_");
           id_target = id_target[id_target.length-1];
           
+
+          var count_product;
+          var all_quantity_cart = document.getElementsByClassName("quantity_cart");
+          for(var j=0; j <= all_quantity_cart.length - 1 ; j++){
+
+
+            var all_item_cart = document.querySelectorAll("dd.variation-SKU p");
+            for(var m=0 ; m <= all_item_cart.length -1; m++){
+              //get sku my code
+                var my_sku = document.getElementById("product-sku_" + j).innerHTML;
+              //get sku plugin
+                var cart_sku = document.querySelectorAll("dd.variation-SKU p")[m].innerHTML;
+              if(my_sku == cart_sku){
+                // console.log("ok");
+                // document.getElementsByClassName("input-text")[m].value = document.getElementById("quantity_cart_" + j).value;
+                // console.log("ok -" + document.getElementsByClassName("input-text")[m].value + " - " + document.getElementById("quantity_cart_" + j).value);
+                count_product = document.getElementsByClassName("input-text")[m].value
+              }
+            }
+          }
+
+          console.log("count value product selected: " + count_product);
+
           //add or minus with click on + - and change input box
           if (id.search("plus")>0){
             console.log("id_target.value:(" + document.getElementById("quantity_cart_" + id_target).value + ")");
-            if(document.getElementById("quantity_cart_" + id_target).value == ""){document.getElementById("quantity_cart_" + id_target).value = 1}
+            if(document.getElementById("quantity_cart_" + id_target).value == ""){document.getElementById("quantity_cart_" + id_target).value = count_product}
             // document.getElementById("quantity_cart_" + id_target).value =
             document.getElementById("quantity_cart_" + id_target).value ++;
           }
@@ -718,12 +741,6 @@ function resource($elem, $type = null)
           document.getElementsByClassName("button")[0].removeAttribute("disabled");
           console.log("sleep Start");
           
-          
-
-          // for (let i = 0; i < 5; i++) {
-          //     console.log(`Waiting ${i} seconds...`);
-          //     await sleep(i * 1000);
-          // }
 
           setTimeout(function () {
             // document.getElementsByClassName("button")[0].click();
@@ -741,13 +758,6 @@ function resource($elem, $type = null)
             return new Promise(resolve => setTimeout(resolve, ms));
         }
 
-        async function demo() {
-            for (let i = 0; i < 5; i++) {
-                console.log(`Waiting ${i} seconds...`);
-                await sleep(i * 1000);
-            }
-            console.log("Done");
-        }
 
 
         function cart_quantity_product (){
