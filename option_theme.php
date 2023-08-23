@@ -374,7 +374,7 @@ function resource($elem, $type = null)
     case "script-cart":
       $result = '
             //back menu in header
-            document.getElementsByClassName("back_menu")[0].href = "https://menu.fernofood.com/category/";
+            document.getElementById("back_menu").href = "https://menu.fernofood.com/category/";
 
             // check every secend cart if not have data
             setInterval(time_check_frm,1000);
@@ -466,8 +466,8 @@ function resource($elem, $type = null)
 
 
       //back menu in header
-      document.getElementsByClassName("elementor-icon")[0].href = "https://menu.fernofood.com";
-      
+      document.getElementById("back_menu").href = "https://menu.fernofood.com";
+      // document.getElementsByClassName("elementor-icon")[0].href = "https://menu.fernofood.com";
        
       //filter by category
       //add event click on category
