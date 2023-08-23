@@ -934,6 +934,11 @@ function resource($elem, $type = null)
         display:none !important;
       }
       
+
+      .products-image-category{
+        margin-bottom: -10px;
+      }
+
       .popup_product_data{
         padding-top:32px;
       }
@@ -968,7 +973,7 @@ function resource($elem, $type = null)
 
 
       .products-archive{
-        margin-top: -10px;
+        margin-top: 90px;
         margin-bottom: 128px;
 
       }
@@ -979,8 +984,7 @@ function resource($elem, $type = null)
 
       @media (max-width:767px){
         .products-slug{
-          position: relative;
-          top: -10px;
+          position: absolute;
           right: 0px;
           background-color: #333;
           white-space: nowrap;
