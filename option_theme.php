@@ -375,7 +375,7 @@ function resource($elem, $type = null)
       $result = '
             //back menu in header
             document.querySelectorAll("#back_menu .elementor-icon")[0].href = "https://menu.fernofood.com/category/";
-            gg = document.querySelectorAll("#back_menu .elementor-icon");
+
             // check every secend cart if not have data
             setInterval(time_check_frm,1000);
             function time_check_frm(){
@@ -466,7 +466,7 @@ function resource($elem, $type = null)
 
 
       //back menu in header
-      document.getElementById("back_menu").href = "https://menu.fernofood.com";
+      document.querySelectorAll("#back_menu .elementor-icon")[0].href = "https://menu.fernofood.com";
       // document.getElementsByClassName("elementor-icon")[0].href = "https://menu.fernofood.com";
        
       //filter by category
