@@ -497,10 +497,10 @@ function resource($elem, $type = null)
 
       // console.log("menubar: " + menubar + " - products_archive: " + products_archive + " - imagebar: " + imagebar + " - sticky: " + sticky);
       function sticky_menu() {
-        // console.log("window.pageYOffset: " + window.pageYOffset);
-        console.log("sticky: " + sticky);
+        console.log("window.pageYOffset: " + window.pageYOffset);
+        // console.log("sticky: " + sticky);
         if(sticky > 0){
-          if (window.pageYOffset >= 270) {
+          if (window.pageYOffset >= 240) {
             menubar.classList.add("sticky_menu");
             // products_archive.classList.add("products-archive-top");
           } else {
