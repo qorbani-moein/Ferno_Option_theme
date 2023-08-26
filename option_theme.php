@@ -1218,6 +1218,7 @@ function resource($elem, $type = null)
         }
         .product-img{
           padding-right: 20px !important;
+          z-index:1;
         }
         .product-title h2{
           font-size: 20px !important;
