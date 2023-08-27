@@ -219,13 +219,13 @@ function product_archive(){
       ?>
       <!-- card of product -->
       <div id="cart_product" class="product_card" data-id="<?php echo $product->get_id(); ?>" data-category="<?php echo urldecode($categories_product[0]); ?>">
-        <a href="javascript:popup('<?php echo $j?>');">
+        <a href="javascript:popup('<?php echo $j - 1 ?>');">
           <div style="opacity: 0;" class="product-img">
             <?php echo $product->get_image(array(1024, 1024)); ?>
           </div>
           <div class="product-data">
             <div class="product-title">
-              <a href="javascript:popup('<?php echo $j ?>');<?php //echo get_permalink($product->get_id()); ?>">
+              <a href="javascript:popup('<?php echo $j - 1 ?>');<?php //echo get_permalink($product->get_id()); ?>">
                 <h2><?php echo $product->get_title(); ?></h2>
               </a>
             </div>
