@@ -219,7 +219,7 @@ function product_archive(){
       ?>
       <!-- card of product -->
       <div id="cart_product" class="product_card" data-id="<?php echo $product->get_id(); ?>" data-category="<?php echo urldecode($categories_product[0]); ?>">
-        <a href="javascript:popup('<?php echo $j - 1 ?>');">
+        <a href="javascript:popup('<?php echo $j?>');">
           <div style="opacity: 0;" class="product-img">
             <?php echo $product->get_image(array(1024, 1024)); ?>
           </div>
@@ -853,8 +853,8 @@ function resource($elem, $type = null)
 
         //popup
         window.addEventListener("click", function(e){   
-          // console.log(e.target);
-          // console.log(e.target.innerHTML);
+          console.log(e.target);
+          console.log(e.target.innerHTML);
           if(e.target.innerHTML == "×"){
             document.getElementById("popup_over").classList.remove("popup_over_active");
           }
@@ -1224,7 +1224,7 @@ function resource($elem, $type = null)
           font-size: 20px !important;
         }
         .product-des p{
-          font-size: 18px;
+          font-size: 16px;
         }
         .show_cart{
           background: #FCBD1E;
@@ -1283,6 +1283,8 @@ function resource($elem, $type = null)
       .product-price{
         position: relative;
         bottom: 14px;
+        font-size: 18px;
+        font-weight: 100;
       }
       .product-img{
         opacity: 1 !important;
@@ -1309,7 +1311,7 @@ function resource($elem, $type = null)
       .product-title h2{
         font-family: "Inter";
         font-style: normal;
-        font-weight: 500;
+        font-weight: 300;
         font-size: 16px;
         line-height: 19px;
       }
