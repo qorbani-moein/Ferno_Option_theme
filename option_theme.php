@@ -225,12 +225,12 @@ function product_archive(){
           </div>
           <div class="product-data">
             <div class="product-title">
-              <a href="javascript:popup('<?php echo $j - 1 ?>');<?php //echo get_permalink($product->get_id()); ?>">
+              <a href="javascript:popup('<?php echo $j ?>');<?php //echo get_permalink($product->get_id()); ?>">
                 <h2><?php echo $product->get_title(); ?></h2>
               </a>
             </div>
             <div hidden="">
-              <P id="product-sku_<?php echo $j - 1 ?>"><?php echo $product->get_sku(); ?></P>
+              <P id="product-sku_<?php echo $j?>"><?php echo $product->get_sku(); ?></P>
             </div>
             <div class="product-des">
               <p><?php echo $product->get_description(); ?></p>
