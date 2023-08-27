@@ -230,7 +230,7 @@ function product_archive(){
               </a>
             </div>
             <div hidden="">
-              <P id="product-sku_<?php echo $j?>"><?php echo $product->get_sku(); ?></P>
+              <P id="product-sku_<?php echo $j - 1 ?>"><?php echo $product->get_sku(); ?></P>
             </div>
             <div class="product-des">
               <p><?php echo $product->get_description(); ?></p>
