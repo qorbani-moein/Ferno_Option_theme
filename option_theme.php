@@ -214,7 +214,7 @@ function product_archive(){
       <?php
       // echo "<pre>" . var_dump($product->get_category_ids()) . "</pre>";
       // echo "<pre>" . var_dump($product->get_categories()) . "</pre>";
-      $j = $j + 1
+      $j = $j + 1;
       echo '<div class="value_category_' . $j . '" hidden>' . $product->get_categories() . "</div>";
       $categories_product = $product->get_category_ids();
       ?>
