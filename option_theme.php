@@ -214,8 +214,7 @@ function product_archive(){
       <?php
       // echo "<pre>" . var_dump($product->get_category_ids()) . "</pre>";
       // echo "<pre>" . var_dump($product->get_categories()) . "</pre>";
-      $j = $j + 1;
-      echo '<div class="value_category_' . $j . '" hidden>' . $product->get_categories() . "</div>";
+      echo '<div class="value_category_' . $j++ . '" hidden>' . $product->get_categories() . "</div>";
       $categories_product = $product->get_category_ids();
       ?>
       <!-- card of product -->
@@ -893,7 +892,7 @@ function resource($elem, $type = null)
           var popup_price = document.querySelectorAll(".popup_product_price span");
           console.log(id);
           // console.log(product_price[id].innerHTML);
-          popup_price[0].innerHTML = product_price[id].innerHTML;
+          popup_price[0].innerHTML = product_price[id - 1].innerHTML;
 
           for(var i = 0 ; i <= 40 ; i++){
             console.log(i + " - " + product_price[i].innerHTML);
