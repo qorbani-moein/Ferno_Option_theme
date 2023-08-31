@@ -517,20 +517,34 @@ function resource($elem, $type = null)
         const set_now = new Date();
         if (window.innerWidth <= "767"){
           console.log("mobile");
+          sessionStorage.setItem("scroll_mob" , document.documentElement.scrollHeight  + "-" + set_now.getTime());
         }else{
-          sessionStorage.setItem("scroll" , document.documentElement.scrollHeight  + "-" + set_now.getTime());
+          sessionStorage.setItem("scroll_desk" , document.documentElement.scrollHeight  + "-" + set_now.getTime());
           console.log("desk");
         }
       });
       const set_now_ss = new Date();
-      var s_scroll = sessionStorage.getItem("scroll");
-      if(s_scroll != null){
-        s_scroll = s_scroll.split("-");
-        var xi = set_now_ss.getTime() - s_scroll[1];
-        if(60000 > xi ){
-          window.scrollTo(0, s_scroll[0]); 
+      
+      if (window.innerWidth <= "767"){//mob
+        var s_scroll = sessionStorage.getItem("scroll_mob");
+        if(s_scroll != null){
+          s_scroll = s_scroll.split("-");
+          var xi = set_now_ss.getTime() - s_scroll[1];
+          if(60000 > xi ){
+            window.scrollTo(0, s_scroll[0]); 
+          }
+        }
+      }else{//desk
+        var s_scroll = sessionStorage.getItem("scroll_desk");
+        if(s_scroll != null){
+          s_scroll = s_scroll.split("-");
+          var xi = set_now_ss.getTime() - s_scroll[1];
+          if(60000 > xi ){
+            window.scrollTo(0, s_scroll[0]); 
+          }
         }
       }
+
 
 
       //click on tab items
