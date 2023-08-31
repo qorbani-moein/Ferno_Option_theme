@@ -517,7 +517,7 @@ function resource($elem, $type = null)
         const set_now = new Date();
         if (window.innerWidth <= "767"){
           console("mobile");
-        else{
+        }else{
           sessionStorage.setItem("scroll" , document.documentElement.scrollHeight  + "-" + set_now.getTime());
           console("desk");
         }
