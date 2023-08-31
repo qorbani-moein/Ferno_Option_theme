@@ -516,10 +516,10 @@ function resource($elem, $type = null)
       document.addEventListener("scroll", (event) => {
         const set_now = new Date();
         if (window.innerWidth <= "767"){
-          console("mobile");
+          console.log("mobile");
         }else{
           sessionStorage.setItem("scroll" , document.documentElement.scrollHeight  + "-" + set_now.getTime());
-          console("desk");
+          console.log("desk");
         }
       });
       const set_now_ss = new Date();
