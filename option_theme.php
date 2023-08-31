@@ -72,8 +72,8 @@ function script_query_page()
   $page_home = 'https://' . $_SERVER['SERVER_NAME'] . '/';
   // $page_shop_en = 'https://' . $_SERVER['SERVER_NAME'] . '/en/shop/' ;
 
-  console("current_page: " . $current_page);
-  console("page_home: " . $page_home);
+  // console("current_page: " . $current_page);
+  // console("page_home: " . $page_home);
   // console("page_shop_en: " . substr($current_page,0,strlen($page_shop_en)));
   // console('page_shop_fa: ' . $page_shop_fa);
 
@@ -83,7 +83,7 @@ function script_query_page()
   } elseif ($current_page == $page_category) {
     script_page_category();
   } elseif ($current_page == $page_home) {
-    console("script_page_home");
+    // console("script_page_home");
     script_page_home();
   }
   //elseif($current_page == substr($current_page,0,strlen($page_shop_en))){
@@ -407,7 +407,7 @@ function resource($elem, $type = null)
                 var x = document.getElementById("quantity_cart_" + id_target).value;
                 document.getElementsByClassName("input-text")[id_target].value = document.getElementById("quantity_cart_" + id_target).value;
                 //enable button update cart and click it
-                console.log(document.getElementsByClassName("button")[0].innerHTML);
+                // console.log(document.getElementsByClassName("button")[0].innerHTML);
                 
                 document.getElementsByClassName("button")[0].removeAttribute("disabled");
                 document.getElementsByClassName("button")[0].click();
@@ -490,7 +490,7 @@ function resource($elem, $type = null)
         sticky_menu();
       });
       
-      console.log("sticky menu");
+      // console.log("sticky menu");
       var menubar = document.getElementById("products-slug");
       var products_archive = document.getElementById("products_archive");
 
@@ -499,7 +499,7 @@ function resource($elem, $type = null)
 
       // console.log("menubar: " + menubar + " - products_archive: " + products_archive + " - imagebar: " + imagebar + " - sticky: " + sticky);
       function sticky_menu() {
-        console.log("window.pageYOffset: " + window.pageYOffset);
+        // console.log("window.pageYOffset: " + window.pageYOffset);
         // console.log("sticky: " + sticky);
         if(sticky > 0){
           if (window.pageYOffset >= 310) {
@@ -515,7 +515,12 @@ function resource($elem, $type = null)
       //save and get scrolling
       document.addEventListener("scroll", (event) => {
         const set_now = new Date();
-        sessionStorage.setItem("scroll" , document.documentElement.scrollHeight  + "-" + set_now.getTime());
+        if (window.innerWidth <= "767"){
+          console("mobile");
+        else{
+          sessionStorage.setItem("scroll" , document.documentElement.scrollHeight  + "-" + set_now.getTime());
+          console("desk");
+        }
       });
       const set_now_ss = new Date();
       var s_scroll = sessionStorage.getItem("scroll");
@@ -605,7 +610,7 @@ function resource($elem, $type = null)
 
       //sessionStorage.setItem("tab-clicked", u + "-" + set_now.getTime());
 
-      console.log(sessionStorage.getItem("tab-clicked"));
+      // console.log(sessionStorage.getItem("tab-clicked"));
 
       var user_clicked = sessionStorage.getItem("tab-clicked");
       if(user_clicked != null){
@@ -732,9 +737,9 @@ function resource($elem, $type = null)
           // }
 
           //add or minus with click on + - and change input box
-          console.log("id.search: " + id.search("plus"));
+          // console.log("id.search: " + id.search("plus"));
           if (id.search("plus")>0){
-            console.log("id_target.value:(" + document.getElementById("quantity_cart_" + id_target).value + ")");
+            // console.log("id_target.value:(" + document.getElementById("quantity_cart_" + id_target).value + ")");
             // if(document.getElementById("quantity_cart_" + id_target).value == ""){document.getElementById("quantity_cart_" + id_target).value = count_product}
             document.getElementById("quantity_cart_lbl_" + id_target).innerHTML = parseInt(fixNumbers(document.getElementById("quantity_cart_lbl_" + id_target).innerHTML)) + 1
             document.getElementById("quantity_cart_" + id_target).value = parseInt(fixNumbers(document.getElementById("quantity_cart_lbl_" + id_target).innerHTML));
@@ -769,10 +774,10 @@ function resource($elem, $type = null)
               //get sku plugin
                 var cart_sku = document.querySelectorAll("dd.variation-SKU p")[m].innerHTML;
               if(my_sku == cart_sku){
-                console.log("ok");
+                // console.log("ok");
                 if(document.getElementById("quantity_cart_" + j).value != ""){
                   document.getElementsByClassName("input-text")[m].value = document.getElementById("quantity_cart_" + j).value;
-                  console.log("ok -" + document.getElementsByClassName("input-text")[m].value + " - " + document.getElementById("quantity_cart_" + j).value);
+                  // console.log("ok -" + document.getElementsByClassName("input-text")[m].value + " - " + document.getElementById("quantity_cart_" + j).value);
                 }
               }
             }
@@ -782,7 +787,7 @@ function resource($elem, $type = null)
           //enable button update cart and click it
 
           var button_update_cart = document.getElementsByClassName("button");
-          console.log(document.getElementsByClassName("button")[0].outerHTML);
+          // console.log(document.getElementsByClassName("button")[0].outerHTML);
 
           document.getElementsByClassName("button")[0].removeAttribute("disabled");
           // console.log("sleep Start");
@@ -853,8 +858,8 @@ function resource($elem, $type = null)
 
         //popup
         window.addEventListener("click", function(e){   
-          console.log(e.target);
-          console.log(e.target.innerHTML);
+          // console.log(e.target);
+          // console.log(e.target.innerHTML);
           if(e.target.innerHTML == "×"){
             document.getElementById("popup_over").classList.remove("popup_over_active");
           }
@@ -890,12 +895,12 @@ function resource($elem, $type = null)
           //price
           var product_price = document.querySelectorAll(".product-price span bdi");
           var popup_price = document.querySelectorAll(".popup_product_price span");
-          console.log(id);
+          // console.log(id);
           // console.log(product_price[id].innerHTML);
           popup_price[0].innerHTML = product_price[id].innerHTML;
 
           for(var i = 0 ; i <= 40 ; i++){
-            console.log(i + " - " + product_price[i].innerHTML);
+            // console.log(i + " - " + product_price[i].innerHTML);
 
           }
           //btn add to card
