@@ -517,9 +517,9 @@ function resource($elem, $type = null)
         const set_now = new Date();
         if (window.innerWidth <= "767"){
           console.log("mobile");
-          sessionStorage.setItem("scroll_mob" , document.documentElement.scrollHeight  + "-" + set_now.getTime());
+          sessionStorage.setItem("scroll_mob" , window.pageYOffset  + "-" + set_now.getTime());
         }else{
-          sessionStorage.setItem("scroll_desk" , document.documentElement.scrollHeight  + "-" + set_now.getTime());
+          sessionStorage.setItem("scroll_desk" , window.pageYOffset  + "-" + set_now.getTime());
           console.log("desk");
         }
       });
