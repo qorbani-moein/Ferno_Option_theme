@@ -523,27 +523,32 @@ function resource($elem, $type = null)
           console.log("desk");
         }
       });
-      const set_now_ss = new Date();
+
+
+      window.addEventListener("load", (event) => {
+        const set_now_ss = new Date();
       
-      if (window.innerWidth <= "767"){//mob
-        var s_scroll = sessionStorage.getItem("scroll_mob");
-        if(s_scroll != null){
-          s_scroll = s_scroll.split("-");
-          var xi = set_now_ss.getTime() - s_scroll[1];
-          if(60000 > xi ){
-            window.scrollTo(0, s_scroll[0]); 
+        if (window.innerWidth <= "767"){//mob
+          var s_scroll = sessionStorage.getItem("scroll_mob");
+          if(s_scroll != null){
+            s_scroll = s_scroll.split("-");
+            var xi = set_now_ss.getTime() - s_scroll[1];
+            if(60000 > xi ){
+              window.scrollTo(0, s_scroll[0]); 
+            }
+          }
+        }else{//desk
+          var s_scroll = sessionStorage.getItem("scroll_desk");
+          if(s_scroll != null){
+            s_scroll = s_scroll.split("-");
+            var xi = set_now_ss.getTime() - s_scroll[1];
+            if(60000 > xi ){
+              window.scrollTo(0, s_scroll[0]); 
+            }
           }
         }
-      }else{//desk
-        var s_scroll = sessionStorage.getItem("scroll_desk");
-        if(s_scroll != null){
-          s_scroll = s_scroll.split("-");
-          var xi = set_now_ss.getTime() - s_scroll[1];
-          if(60000 > xi ){
-            window.scrollTo(0, s_scroll[0]); 
-          }
-        }
-      }
+      });
+
 
 
 
