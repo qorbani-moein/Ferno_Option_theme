@@ -568,8 +568,8 @@ function resource($elem, $type = null)
           window.scrollTo(0, s_scroll[0]);
           console.log("y: " + s_scroll[0]);
           if(window.pageYOffset > 0){
-            clearInterval(scrollY);
-            console.log("clearInterval");
+            // clearInterval(scrollY);
+            // console.log("clearInterval");
           }
         }
       }
