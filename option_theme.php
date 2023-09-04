@@ -562,32 +562,30 @@ function resource($elem, $type = null)
 
       //scroll to position
       function scrollY(){
+
+
+        
         console.log("loop");
         var s_scroll = sessionStorage.getItem("scroll_mob");
         s_scroll = s_scroll.split("-");
-        if(s_scroll != null){
-          window.scrollTo(0, s_scroll[0]);
-          console.log("y: " + s_scroll[0]);
-          if(window.pageYOffset > 0){
-            // clearInterval(scrollY);
-            // console.log("clearInterval");
-          }
-        }
+        if(s_scroll != null){        
+            
+          var intervalId = window.setInterval(function(){
 
-        
-        
-        var intervalId = window.setInterval(function(){
-          console.log("loop loop");
-        }, 5000);
+
+            window.scrollTo(0, s_scroll[0]);
+            console.log("y: " + s_scroll[0]);
+
+
+
+            if(window.pageYOffset == 0){
+              console.log("stop loop");
+              clearInterval(myInterval);
+            }
+
+          }, 5000);
   
-  
-        function everyTime() {
-          console.log("each 1 second...");
         }
-        
-        var myInterval = setInterval(everyTime, 1000);
-  
-  
   
       }
 
