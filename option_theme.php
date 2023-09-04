@@ -514,16 +514,18 @@ function resource($elem, $type = null)
 
       //save and get scrolling
       document.addEventListener("scroll", (event) => {
-        const set_now = new Date();
-        if (window.innerWidth <= "767"){
-          console.log("mobile");
-          console.log("window.pageYOffset: " + window.pageYOffset);
-          sessionStorage.setItem("scroll_mob" , window.pageYOffset  + "-" + set_now.getTime());
-          console.log("sessionStorage scroll_mob: " + sessionStorage.getItem("scroll_mob"));
+        if(window.pageYOffset > 0){
+          const set_now = new Date();
+          if (window.innerWidth <= "767"){
+            console.log("mobile");
+            console.log("window.pageYOffset: " + window.pageYOffset);
+            sessionStorage.setItem("scroll_mob" , window.pageYOffset  + "-" + set_now.getTime());
+            console.log("sessionStorage scroll_mob: " + sessionStorage.getItem("scroll_mob"));
 
-        }else{
-          sessionStorage.setItem("scroll_desk" , window.pageYOffset  + "-" + set_now.getTime());
-          console.log("desk");
+          }else{
+            sessionStorage.setItem("scroll_desk" , window.pageYOffset  + "-" + set_now.getTime());
+            console.log("desk");
+          }
         }
       });
 
