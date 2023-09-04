@@ -540,7 +540,7 @@ function resource($elem, $type = null)
             if(s_scroll[0] > 0){
               var xi = set_now_ss.getTime() - s_scroll[1];
               if(60000 > xi ){
-                window.scrollTo(0, s_scroll[0]); 
+                setTimeout(window.scrollTo(0, s_scroll[0]),100);
               }else{
                 localStorage.removeItem("scroll_mob");
               }
@@ -552,7 +552,7 @@ function resource($elem, $type = null)
             s_scroll = s_scroll.split("-");
             var xi = set_now_ss.getTime() - s_scroll[1];
             if(60000 > xi ){
-              window.scrollTo(0, s_scroll[0]); 
+              setTimeout(window.scrollTo(0, s_scroll[0]),100);
             }else{
               localStorage.removeItem("scroll_desk");
             }
