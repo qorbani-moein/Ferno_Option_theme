@@ -517,7 +517,10 @@ function resource($elem, $type = null)
         const set_now = new Date();
         if (window.innerWidth <= "767"){
           console.log("mobile");
+          console.log("window.pageYOffset: " + window.pageYOffset);
           sessionStorage.setItem("scroll_mob" , window.pageYOffset  + "-" + set_now.getTime());
+          console.log("sessionStorage scroll_mob: " + sessionStorage.getItem("scroll_mob"));
+
         }else{
           sessionStorage.setItem("scroll_desk" , window.pageYOffset  + "-" + set_now.getTime());
           console.log("desk");
@@ -535,6 +538,8 @@ function resource($elem, $type = null)
             var xi = set_now_ss.getTime() - s_scroll[1];
             if(60000 > xi ){
               window.scrollTo(0, s_scroll[0]); 
+            }else{
+              localStorage.removeItem("scroll_mob");
             }
           }
         }else{//desk
@@ -544,6 +549,8 @@ function resource($elem, $type = null)
             var xi = set_now_ss.getTime() - s_scroll[1];
             if(60000 > xi ){
               window.scrollTo(0, s_scroll[0]); 
+            }else{
+              localStorage.removeItem("scroll_desk");
             }
           }
         }
