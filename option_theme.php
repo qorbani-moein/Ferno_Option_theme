@@ -578,9 +578,9 @@ function resource($elem, $type = null)
 
 
 
-            if(window.pageYOffset == 0){
+            if(window.pageYOffset > 0){
               console.log("stop loop");
-              clearInterval(myInterval);
+              // clearInterval(myInterval);
             }
 
           }, 5000);
