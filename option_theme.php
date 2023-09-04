@@ -470,11 +470,121 @@ function resource($elem, $type = null)
       document.querySelectorAll("#back_menu .elementor-icon")[0].href = "https://menu.fernofood.com";
       document.querySelectorAll("#back_menu_mob .elementor-icon")[0].href = "https://menu.fernofood.com";
       // document.getElementsByClassName("elementor-icon")[0].href = "https://menu.fernofood.com";
-
-
-
-
+       
+      //filter by category
+      //add event click on category
+      var len_category = document.getElementsByClassName("product_card").length;
+      var action_list_li = [];
+      for(var i = 0 ; i <= len_category - 1 ; i++){
+        action_list_li[i] = document.getElementsByClassName("item-category")[i];
+        if(action_list_li[i]){
+          action_list_li[i].addEventListener("click", set_ua_value, false);
+        }
+      }
       
+      //sticky menu in top page
+      
+      // window.onscroll = sticky_menu();
+      
+      document.addEventListener("scroll", (event) => {
+        sticky_menu();
+      });
+      
+      // console.log("sticky menu");
+      var menubar = document.getElementById("products-slug");
+      var products_archive = document.getElementById("products_archive");
+
+      var imagebar = document.getElementById("products-image-category");
+      var sticky = 50 + menubar.offsetTop + imagebar.offsetTop;
+
+      // console.log("menubar: " + menubar + " - products_archive: " + products_archive + " - imagebar: " + imagebar + " - sticky: " + sticky);
+      function sticky_menu() {
+        // console.log("window.pageYOffset: " + window.pageYOffset);
+        // console.log("sticky: " + sticky);
+        if(sticky > 0){
+          if (window.pageYOffset >= 310) {
+            menubar.classList.add("sticky_menu");
+            // products_archive.classList.add("products-archive-top");
+          } else {
+            menubar.classList.remove("sticky_menu");
+            // products_archive.classList.remove("products-archive-top");
+          }
+        }
+      }
+
+      //save and get scrolling
+      document.addEventListener("scroll", (event) => {
+        if(window.pageYOffset > 0){
+          const set_now = new Date();
+          if (window.innerWidth <= "767"){
+            console.log("mobile");
+            console.log("window.pageYOffset: " + window.pageYOffset);
+            sessionStorage.setItem("scroll_mob" , window.pageYOffset  + "-" + set_now.getTime());
+            console.log("sessionStorage scroll_mob: " + sessionStorage.getItem("scroll_mob"));
+
+          }else{
+            sessionStorage.setItem("scroll_desk" , window.pageYOffset  + "-" + set_now.getTime());
+            console.log("desk");
+          }
+        }
+      });
+
+
+      window.addEventListener("load", (event) => {
+        const set_now_ss = new Date();
+      
+        if (window.innerWidth <= "767"){//mob
+          var s_scroll = sessionStorage.getItem("scroll_mob");
+          if(s_scroll != null){
+            s_scroll = s_scroll.split("-");
+            if(s_scroll[0] > 0){
+              var xi = set_now_ss.getTime() - s_scroll[1];
+              if(60000 > xi ){
+                setInterval(scrollY(),1000);
+              }else{
+                localStorage.removeItem("scroll_mob");
+              }
+            }
+          }
+        }else{//desk
+          var s_scroll = sessionStorage.getItem("scroll_desk");
+          if(s_scroll != null){
+            s_scroll = s_scroll.split("-");
+            var xi = set_now_ss.getTime() - s_scroll[1];
+            if(60000 > xi ){
+              setTimeout(window.scrollTo(0, s_scroll[0]),100);
+            }else{
+              localStorage.removeItem("scroll_desk");
+            }
+          }
+        }
+      });
+
+      //scroll to position
+      function scrollY(){
+        console.log("loop");
+        var s_scroll = sessionStorage.getItem("scroll_mob");
+        s_scroll = s_scroll.split("-");
+        if(s_scroll != null){
+          window.scrollTo(0, s_scroll[0]);
+          console.log("y: " + s_scroll[0]);
+          if(window.pageYOffset > 0){
+            // clearInterval(scrollY);
+            // console.log("clearInterval");
+          }
+        }
+      }
+
+
+
+
+
+
+
+
+
+
+
 
       const msToRun = 2000 // 2 seconds
 
@@ -496,10 +606,163 @@ function resource($elem, $type = null)
         }
       })
 
+      var intervalId = window.setInterval(function(){
+        console.log("loop loop");
+      }, 5000);
+
+
+      function everyTime() {
+        console.log("each 1 second...");
+      }
+      
+      var myInterval = setInterval(everyTime, 1000);
 
 
 
 
+
+
+
+
+
+
+
+      //click on tab items
+      function set_ua_value (e) {
+        if(e.target.nodeName == "LI") {
+          
+          //remove class menu actived
+            // console.log("u.length: " + document.getElementsByClassName("item-category").length);
+            for(var u = 0 ; u <= document.getElementsByClassName("item-category").length - 1 ; u++){
+              // console.log("u: " + u);
+              document.getElementsByClassName("item-category")[u].classList.remove("products-slug-active");
+              
+            }
+            
+            e.target.classList.add("products-slug-active");
+
+            //find div of product has class"products-slug-active" for 
+            for(var u = 0 ; u <= document.getElementsByClassName("item-category").length - 1 ; u++){
+              var tab_items = document.getElementsByClassName("item-category")[u].className;
+              if(tab_items.search("products-slug-active") > 0){
+                // console.log(u);
+                const set_now = new Date();
+                
+                // console.log(i + "-" + set_now.getTime());
+                sessionStorage.setItem("tab-clicked", u + "-" + set_now.getTime());
+              }
+            }
+
+
+          // console.log("e.target.innerHTML: " + e.target.innerHTML);
+            //filter category
+            var len_card_product = document.getElementsByClassName("product_card").length;
+            var category_attr = e.target.innerHTML;
+            document.getElementsByClassName("caption-img-product")[0].innerHTML = e.target.innerHTML;
+            var category_attr_card;
+            // console.log("len_card_product.length: " + len_card_product);
+            for(var i = 0 ; i <= len_card_product -1 ; i++){
+              
+              // category_attr_card = document.getElementsByClassName("product_card")[i].getAttribute("data-category");
+              category_attr_card = document.querySelectorAll(".value_category_" + i + " a");
+
+              document.getElementsByClassName("product_card")[i].style.display = "block";
+              // console.log("category_attr_card.length: " + category_attr_card.length );
+              
+              // console.log("i: " + i );
+              for(var y = 0 ; y <= category_attr_card.length -1; y++){
+                // console.log("y: " + y );
+                // console.log("category_attr_card: " + category_attr_card[y].innerHTML);
+                
+                // if(category_attr == "همه"){
+                //   document.getElementsByClassName("product_card")[i].style.display = "block";
+                //   break;
+                // }
+                if(category_attr != category_attr_card[y].innerHTML){
+                  // console.log("hidden");
+                  document.getElementsByClassName("product_card")[i].style.display = "none";
+                }else{
+                  // console.log("show");
+                  document.getElementsByClassName("product_card")[i].style.display = "block";
+                  break;
+                }
+
+              }
+              
+
+              // document.getElementById("test1").addEventListener("click", function(){
+              //   console.log(document.getElementsByClassName("product_card")[i].getAttribute("data-category"));
+              // });
+            }
+          }
+
+      }
+
+
+      //Click on tabs
+      // document.getElementsByClassName("item-category")[0].click();
+
+      //sessionStorage.setItem("tab-clicked", u + "-" + set_now.getTime());
+
+      // console.log(sessionStorage.getItem("tab-clicked"));
+
+      var user_clicked = sessionStorage.getItem("tab-clicked");
+      if(user_clicked != null){
+        user_clicked = user_clicked.split("-");
+        const set_now = new Date();
+        var xj = set_now.getTime() - user_clicked[1];
+        if(60000 > xj ){
+          document.getElementsByClassName("item-category")[user_clicked[0]].click();
+          //window.scrollTo(user_clicked[2], 0); 
+        }else{
+          document.getElementsByClassName("item-category")[0].click();
+        }
+      }else{
+        document.getElementsByClassName("item-category")[0].click();
+      }
+
+      //scrollleft menu 
+      /*console.log(sessionStorage.getItem("tab-scroll"));*/
+
+      if(sessionStorage.getItem("tab-scroll") != null){
+        var tab_scroll = sessionStorage.getItem("tab-scroll");
+        tab_scroll = tab_scroll.split("_");
+        const set_now = new Date();
+        var xj = set_now.getTime() - tab_scroll[1];
+        if(60000 > xj ){
+          document.getElementById("products-slug").scroll(tab_scroll[0], 0);
+        }
+      }
+
+      document.getElementById("products-slug").addEventListener("scroll", event => {
+        const set_now = new Date();
+        sessionStorage.setItem("tab-scroll", document.getElementById("products-slug").scrollLeft + "_" + set_now.getTime());
+      }, { passive: true });
+
+
+
+
+        //console.log(sessionStorage.getItem("window-scroll"));
+
+        if(sessionStorage.getItem("window-scroll") != null){
+          var window_scroll = sessionStorage.getItem("window-scroll");
+          window_scroll = window_scroll.split("_");
+          const set_now = new Date();
+          var xj = set_now.getTime() - window_scroll[1];
+          if(60000 > xj ){
+            window.scrollTo(0,window_scroll[0]); 
+          }
+        }
+
+        window.onscroll = function() {listenwindowscroll()};
+
+
+        function listenwindowscroll() {
+          const set_now = new Date();
+          sessionStorage.setItem("window-scroll", document.documentElement.scrollTop + "_" + set_now.getTime());
+        }
+
+        
 
 
 
