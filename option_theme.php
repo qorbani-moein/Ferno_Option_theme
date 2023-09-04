@@ -481,7 +481,7 @@ function resource($elem, $type = null)
           action_list_li[i].addEventListener("click", set_ua_value, false);
         }
       }
-ff
+
 
       const msToRun = 2000 // 2 seconds
 
