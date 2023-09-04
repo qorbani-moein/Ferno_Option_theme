@@ -470,18 +470,11 @@ function resource($elem, $type = null)
       document.querySelectorAll("#back_menu .elementor-icon")[0].href = "https://menu.fernofood.com";
       document.querySelectorAll("#back_menu_mob .elementor-icon")[0].href = "https://menu.fernofood.com";
       // document.getElementsByClassName("elementor-icon")[0].href = "https://menu.fernofood.com";
-       
-      //filter by category
-      //add event click on category
-      var len_category = document.getElementsByClassName("product_card").length;
-      var action_list_li = [];
-      for(var i = 0 ; i <= len_category - 1 ; i++){
-        action_list_li[i] = document.getElementsByClassName("item-category")[i];
-        if(action_list_li[i]){
-          action_list_li[i].addEventListener("click", set_ua_value, false);
-        }
-      }
 
+
+
+
+      
 
       const msToRun = 2000 // 2 seconds
 
