@@ -564,6 +564,10 @@ function resource($elem, $type = null)
       function scrollY(y){
         window.scrollTo(0, y);
         console.log("y: " + y);
+        if(window.pageYOffset > 0){
+          clearInterval(scrollY);
+          console.log("clearInterval");
+        }
       }
 
 
