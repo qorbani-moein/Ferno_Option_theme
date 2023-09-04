@@ -562,6 +562,7 @@ function resource($elem, $type = null)
 
       //scroll to position
       function scrollY(){
+        console.log("loop");
         var s_scroll = sessionStorage.getItem("scroll_mob");
         s_scroll = s_scroll.split("-");
         if(s_scroll != null){
