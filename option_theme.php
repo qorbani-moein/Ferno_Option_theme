@@ -561,12 +561,16 @@ function resource($elem, $type = null)
       });
 
       //scroll to position
-      function scrollY(y){
-        window.scrollTo(0, y);
-        console.log("y: " + y);
-        if(window.pageYOffset > 0){
-          clearInterval(scrollY);
-          console.log("clearInterval");
+      function scrollY(){
+        var s_scroll = sessionStorage.getItem("scroll_mob");
+        s_scroll = s_scroll.split("-");
+        if(s_scroll != null){
+          window.scrollTo(0, s_scroll[0]);
+          console.log("y: " + s_scroll[0]);
+          if(window.pageYOffset > 0){
+            clearInterval(scrollY);
+            console.log("clearInterval");
+          }
         }
       }
 
