@@ -576,6 +576,32 @@ function resource($elem, $type = null)
       }
 
 
+      const msToRun = 2000 // 2 seconds
+
+      const t0 = performance.now() // or Date.now()
+      
+      let iterations = 0
+      
+      setTimeout(() => {
+        console.log(`This will be logged before the loop is over.`)
+      }, 0)
+      
+      const intervalID = setInterval(() => {
+        ++iterations
+        
+        if (performance.now() - t0 >= msToRun) {
+          clearInterval(intervalID)
+          
+          console.log(`Loop run for ${ iterations } iterations.`)
+        }
+      })
+
+
+
+
+
+
+
       //click on tab items
       function set_ua_value (e) {
         if(e.target.nodeName == "LI") {
