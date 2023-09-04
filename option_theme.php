@@ -573,49 +573,34 @@ function resource($elem, $type = null)
             // console.log("clearInterval");
           }
         }
-      }
 
-
-
-
-
-
-
-
-
-
-
-
-      const msToRun = 2000 // 2 seconds
-
-      const t0 = performance.now() // or Date.now()
-      
-      let iterations = 0
-      
-      setTimeout(() => {
-        console.log(`This will be logged before the loop is over.`)
-      }, 0)
-      
-      const intervalID = setInterval(() => {
-        ++iterations
         
-        if (performance.now() - t0 >= msToRun) {
-          clearInterval(intervalID)
-          
-          console.log(`Loop run for ${ iterations } iterations.`)
+        
+        var intervalId = window.setInterval(function(){
+          console.log("loop loop");
+        }, 5000);
+  
+  
+        function everyTime() {
+          console.log("each 1 second...");
         }
-      })
-
-      var intervalId = window.setInterval(function(){
-        console.log("loop loop");
-      }, 5000);
-
-
-      function everyTime() {
-        console.log("each 1 second...");
+        
+        var myInterval = setInterval(everyTime, 1000);
+  
+  
+  
       }
-      
-      var myInterval = setInterval(everyTime, 1000);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
