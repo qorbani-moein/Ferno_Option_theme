@@ -540,10 +540,7 @@ function resource($elem, $type = null)
             if(s_scroll[0] > 0){
               var xi = set_now_ss.getTime() - s_scroll[1];
               if(60000 > xi ){
-                setTimeout(window.scrollTo(0, s_scroll[0]),100);
-                setTimeout(window.scrollTo(0, s_scroll[0]),500);
-                setTimeout(window.scrollTo(0, s_scroll[0]),1000);
-                setTimeout(window.scrollTo(0, s_scroll[0]),5000);
+                setInterval(scrollY(window.scrollTo(0, s_scroll[0])),100);
               }else{
                 localStorage.removeItem("scroll_mob");
               }
@@ -563,7 +560,11 @@ function resource($elem, $type = null)
         }
       });
 
-
+      //scroll to position
+      function scrollY(y){
+        window.scrollTo(0, y);
+        console.log("y: " + y);
+      }
 
 
       //click on tab items
