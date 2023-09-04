@@ -540,7 +540,7 @@ function resource($elem, $type = null)
             if(s_scroll[0] > 0){
               var xi = set_now_ss.getTime() - s_scroll[1];
               if(60000 > xi ){
-                setInterval(scrollY(),1000);
+                scrollY();
               }else{
                 localStorage.removeItem("scroll_mob");
               }
