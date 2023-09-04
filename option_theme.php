@@ -541,6 +541,8 @@ function resource($elem, $type = null)
               var xi = set_now_ss.getTime() - s_scroll[1];
               if(60000 > xi ){
                 setTimeout(window.scrollTo(0, s_scroll[0]),100);
+                setTimeout(window.scrollTo(0, s_scroll[0]),500);
+                setTimeout(window.scrollTo(0, s_scroll[0]),1000);
               }else{
                 localStorage.removeItem("scroll_mob");
               }
