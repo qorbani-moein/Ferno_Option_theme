@@ -1148,6 +1148,7 @@ function resource($elem, $type = null)
         font-size: 20px;
         padding: 5px 3px 5px 3px;
         float: left;
+        z-index:999;
       }
       .quantity_cart span{
           color: #FFD15E !important;
