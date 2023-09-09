@@ -1191,7 +1191,7 @@ function resource($elem, $type = null)
       .popup_over_active {
         visibility: visible;
         opacity: 1;
-        z-index: 10;
+        z-index: 1000;
       }
 
       @media (min-width:767px){
