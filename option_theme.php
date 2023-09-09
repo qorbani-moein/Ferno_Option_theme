@@ -969,8 +969,9 @@ function resource($elem, $type = null)
           var popup_title = document.querySelectorAll(".popup_product_title");
           popup_title[0].innerHTML = \'<h4>\' + product_title[id].innerHTML + \'</h4>\';
 
+          
           //price
-          var product_price = document.querySelectorAll(".product-price span bdi");
+          var product_price = document.querySelectorAll("#products_archive .product-price span bdi");
           var popup_price = document.querySelectorAll(".popup_product_price span");
           // console.log(id);
           // console.log(product_price[id].innerHTML);
