@@ -870,6 +870,7 @@ function resource($elem, $type = null)
           // console.log("sleep Start");
           
           document.getElementsByClassName("e-page-transition--entered")[0].style.display = "block";
+          document.getElementsByClassName("e-page-transition--preloader")[0].style = "opacity:1;left: 50%;top: 50%;";
           document.getElementsByClassName("button")[0].click();
           
 
